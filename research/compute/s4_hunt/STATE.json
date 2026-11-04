@@ -86,6 +86,14 @@
    "N": 67,
    "group": "cyc:67:1:0",
    "outcome": "2nd solve >100s with 33 primary vars; CEGAR+cadical too slow"
+  },
+  {
+   "method": "orbit-exhaustive group actions (run_actions.py/orbit_exh.c)",
+   "N": "52..66",
+   "group": "64 actions from actions.json, V<=23 completed",
+   "time": "2026-11-04T12:04Z",
+   "outcome": "none: all 64 have no S_4 tournament"
   }
- ]
+ ],
+ "stopped": "2026-11-04T12:53Z by user request; resume with run_actions.py 24 34, then 35 36, 37 38"
 }

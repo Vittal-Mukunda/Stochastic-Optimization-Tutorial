@@ -2,3 +2,63 @@
 {"key": "aff:61:15:[[[\"C\", 15], 1]]", "N": 61, "V": 2, "order": 915, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T11:53:37Z"}
 {"key": "aff:59:29:[[[\"C\", 29], 1], [[\"ZC\", 29], 1]]", "N": 60, "V": 2, "order": 1711, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T11:54:14Z"}
 {"key": "aff:53:13:[[[\"C\", 13], 1]]", "N": 53, "V": 2, "order": 689, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T11:54:23Z"}
+{"key": "aff:61:15:[[[\"C\", 15], 1], [[\"ZC\", 15], 1]]", "N": 62, "V": 3, "order": 915, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T11:54:46Z"}
+{"key": "aff:53:13:[[[\"C\", 13], 1], [[\"ZC\", 13], 1]]", "N": 54, "V": 3, "order": 689, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T11:54:55Z"}
+{"key": "aff:61:15:[[[\"ZC\", 5], 1], [[\"C\", 15], 1]]", "N": 64, "V": 4, "order": 915, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T11:55:22Z"}
+{"key": "aff:61:15:[[[\"ZC\", 3], 1], [[\"C\", 15], 1]]", "N": 66, "V": 5, "order": 915, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T11:55:50Z"}
+{"key": "aff:31:15:[[[\"C\", 15], 2]]", "N": 62, "V": 5, "order": 465, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T11:56:03Z"}
+{"key": "aff:61:15:[[[\"ZC\", 5], 1], [[\"C\", 15], 1], [[\"ZC\", 15], 1]]", "N": 65, "V": 6, "order": 915, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T11:56:33Z"}
+{"key": "aff:61:5:[[[\"C\", 5], 1]]", "N": 61, "V": 6, "order": 305, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T11:56:41Z"}
+{"key": "aff:31:15:[[[\"C\", 15], 2], [[\"ZC\", 15], 1]]", "N": 63, "V": 7, "order": 465, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T11:56:55Z"}
+{"key": "aff:61:5:[[[\"C\", 5], 1], [[\"ZC\", 5], 1]]", "N": 62, "V": 7, "order": 305, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T11:57:03Z"}
+{"key": "aff:31:15:[[[\"ZC\", 5], 1], [[\"C\", 15], 2]]", "N": 65, "V": 8, "order": 465, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T11:57:18Z"}
+{"key": "aff:43:21:[[[\"ZC\", 3], 1], [[\"ZC\", 7], 1], [[\"C\", 21], 1]]", "N": 53, "V": 8, "order": 903, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T11:57:29Z"}
+{"key": "aff:53:13:[[[\"ZC\", 1], 1], [[\"C\", 13], 1]]", "N": 66, "V": 9, "order": 689, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T11:57:52Z"}
+{"key": "aff:61:5:[[[\"ZC\", 1], 1], [[\"C\", 5], 1]]", "N": 66, "V": 9, "order": 305, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T11:58:02Z"}
+{"key": "aff:29:7:[[[\"C\", 7], 2]]", "N": 58, "V": 9, "order": 203, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T11:58:06Z"}
+{"key": "aff:61:3:[[[\"C\", 3], 1]]", "N": 61, "V": 10, "order": 183, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T11:58:10Z"}
+{"key": "aff:19:9:[[[\"C\", 3], 1]]", "N": 57, "V": 10, "order": 171, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T11:58:14Z"}
+{"key": "aff:31:15:[[[\"ZC\", 5], 1], [[\"C\", 15], 2], [[\"ZC\", 15], 1]]", "N": 66, "V": 11, "order": 465, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T11:58:29Z"}
+{"key": "aff:61:3:[[[\"C\", 3], 1], [[\"ZC\", 3], 1]]", "N": 62, "V": 11, "order": 183, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T11:58:34Z"}
+{"key": "aff:29:7:[[[\"C\", 7], 2], [[\"ZC\", 7], 1]]", "N": 59, "V": 11, "order": 203, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T11:58:37Z"}
+{"key": "aff:19:9:[[[\"C\", 3], 1], [[\"ZC\", 9], 1]]", "N": 58, "V": 11, "order": 171, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T11:58:41Z"}
+{"key": "aff:43:21:[[[\"ZC\", 3], 1], [[\"ZC\", 7], 1], [[\"C\", 21], 1], [[\"ZC\", 21], 1]]", "N": 54, "V": 11, "order": 903, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T11:58:53Z"}
+{"key": "aff:43:21:[[[\"ZC\", 1], 1], [[\"C\", 21], 1]]", "N": 64, "V": 12, "order": 903, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T11:59:19Z"}
+{"key": "aff:61:3:[[[\"ZC\", 1], 1], [[\"C\", 3], 1]]", "N": 64, "V": 12, "order": 183, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T11:59:24Z"}
+{"key": "aff:19:9:[[[\"C\", 9], 3]]", "N": 57, "V": 12, "order": 171, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T11:59:27Z"}
+{"key": "aff:23:11:[[[\"ZC\", 1], 1], [[\"C\", 11], 2]]", "N": 57, "V": 12, "order": 253, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T11:59:31Z"}
+{"key": "aff:31:5:[[[\"C\", 5], 2]]", "N": 62, "V": 13, "order": 155, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T11:59:35Z"}
+{"key": "aff:29:7:[[[\"ZC\", 1], 1], [[\"C\", 7], 2]]", "N": 65, "V": 14, "order": 203, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T11:59:42Z"}
+{"key": "aff:43:21:[[[\"ZC\", 1], 1], [[\"C\", 21], 1], [[\"ZC\", 21], 1]]", "N": 65, "V": 14, "order": 903, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T12:00:10Z"}
+{"key": "aff:61:3:[[[\"ZC\", 1], 1], [[\"C\", 3], 1], [[\"ZC\", 3], 1]]", "N": 65, "V": 14, "order": 183, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T12:00:16Z"}
+{"key": "aff:19:9:[[[\"C\", 3], 1], [[\"ZC\", 3], 1]]", "N": 60, "V": 14, "order": 171, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T12:00:20Z"}
+{"key": "aff:43:21:[[[\"ZC\", 3], 1], [[\"ZC\", 7], 2], [[\"C\", 21], 1]]", "N": 56, "V": 14, "order": 903, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T12:00:34Z"}
+{"key": "aff:31:5:[[[\"C\", 5], 2], [[\"ZC\", 5], 1]]", "N": 63, "V": 15, "order": 155, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T12:00:38Z"}
+{"key": "aff:19:9:[[[\"C\", 9], 3], [[\"ZC\", 9], 1]]", "N": 58, "V": 15, "order": 171, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T12:00:42Z"}
+{"key": "aff:23:11:[[[\"ZC\", 1], 1], [[\"C\", 11], 2], [[\"ZC\", 11], 1]]", "N": 58, "V": 15, "order": 253, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T12:00:46Z"}
+{"key": "aff:19:9:[[[\"C\", 3], 1], [[\"ZC\", 3], 1], [[\"ZC\", 9], 1]]", "N": 61, "V": 16, "order": 171, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T12:00:50Z"}
+{"key": "aff:19:9:[[[\"ZC\", 3], 1], [[\"C\", 9], 3]]", "N": 60, "V": 16, "order": 171, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T12:00:54Z"}
+{"key": "aff:43:21:[[[\"ZC\", 3], 2], [[\"C\", 21], 1]]", "N": 57, "V": 16, "order": 903, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T12:01:08Z"}
+{"key": "aff:43:21:[[[\"ZC\", 7], 3], [[\"C\", 21], 1]]", "N": 52, "V": 16, "order": 903, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T12:01:19Z"}
+{"key": "aff:19:9:[[[\"ZC\", 1], 1], [[\"C\", 3], 1]]", "N": 66, "V": 17, "order": 171, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T12:01:25Z"}
+{"key": "aff:29:7:[[[\"ZC\", 1], 1], [[\"C\", 7], 2], [[\"ZC\", 7], 1]]", "N": 66, "V": 17, "order": 203, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T12:01:32Z"}
+{"key": "aff:43:7:[[[\"ZC\", 1], 2], [[\"C\", 7], 1]]", "N": 57, "V": 18, "order": 301, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T12:01:37Z"}
+{"key": "aff:43:21:[[[\"ZC\", 3], 1], [[\"ZC\", 7], 2], [[\"C\", 21], 1], [[\"ZC\", 21], 1]]", "N": 57, "V": 18, "order": 903, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T12:01:53Z"}
+{"key": "aff:41:5:[[[\"ZC\", 1], 2], [[\"C\", 5], 1], [[\"ZC\", 5], 1]]", "N": 52, "V": 18, "order": 205, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T12:01:55Z"}
+{"key": "aff:19:9:[[[\"ZC\", 1], 1], [[\"C\", 9], 3]]", "N": 66, "V": 19, "order": 171, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T12:02:01Z"}
+{"key": "aff:43:21:[[[\"ZC\", 3], 2], [[\"C\", 21], 1], [[\"ZC\", 21], 1]]", "N": 58, "V": 19, "order": 903, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T12:02:18Z"}
+{"key": "aff:19:9:[[[\"ZC\", 3], 1], [[\"C\", 9], 3], [[\"ZC\", 9], 1]]", "N": 61, "V": 20, "order": 171, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T12:02:22Z"}
+{"key": "aff:43:21:[[[\"ZC\", 3], 2], [[\"ZC\", 7], 1], [[\"C\", 21], 1]]", "N": 60, "V": 20, "order": 903, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T12:02:41Z"}
+{"key": "aff:43:21:[[[\"ZC\", 7], 3], [[\"C\", 21], 1], [[\"ZC\", 21], 1]]", "N": 53, "V": 20, "order": 903, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T12:02:52Z"}
+{"key": "aff:31:15:[[[\"ZC\", 1], 1], [[\"ZC\", 3], 1], [[\"C\", 15], 1], [[\"ZC\", 15], 1]]", "N": 52, "V": 20, "order": 465, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T12:02:57Z"}
+{"key": "aff:37:9:[[[\"ZC\", 1], 1], [[\"ZC\", 3], 2], [[\"C\", 9], 1]]", "N": 52, "V": 20, "order": 333, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T12:03:01Z"}
+{"key": "aff:19:9:[[[\"C\", 3], 1], [[\"ZC\", 3], 2]]", "N": 63, "V": 21, "order": 171, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T12:03:06Z"}
+{"key": "aff:31:3:[[[\"C\", 3], 2]]", "N": 62, "V": 21, "order": 93, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T12:03:09Z"}
+{"key": "aff:43:7:[[[\"ZC\", 1], 2], [[\"C\", 7], 1], [[\"ZC\", 7], 1]]", "N": 58, "V": 21, "order": 301, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T12:03:14Z"}
+{"key": "aff:37:9:[[[\"ZC\", 1], 2], [[\"C\", 9], 1]]", "N": 55, "V": 21, "order": 333, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T12:03:19Z"}
+{"key": "aff:31:15:[[[\"ZC\", 1], 1], [[\"ZC\", 5], 2], [[\"C\", 15], 1]]", "N": 52, "V": 22, "order": 465, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T12:03:24Z"}
+{"key": "aff:43:3:[[[\"ZC\", 1], 3], [[\"C\", 3], 1]]", "N": 52, "V": 22, "order": 129, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T12:03:26Z"}
+{"key": "aff:19:9:[[[\"ZC\", 3], 2], [[\"C\", 9], 3]]", "N": 63, "V": 23, "order": 171, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T12:03:31Z"}
+{"key": "aff:31:3:[[[\"C\", 3], 2], [[\"ZC\", 3], 1]]", "N": 63, "V": 23, "order": 93, "found": 0, "seconds": 1, "outcome": "none", "time": "2026-11-04T12:03:34Z"}
+{"key": "aff:43:21:[[[\"ZC\", 3], 1], [[\"ZC\", 7], 3], [[\"C\", 21], 1]]", "N": 59, "V": 23, "order": 903, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T12:03:50Z"}
+{"key": "aff:31:15:[[[\"ZC\", 1], 1], [[\"ZC\", 3], 1], [[\"ZC\", 5], 1], [[\"C\", 15], 1]]", "N": 54, "V": 23, "order": 465, "found": 0, "seconds": 0, "outcome": "none", "time": "2026-11-04T12:03:57Z"}

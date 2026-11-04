@@ -17,3 +17,7 @@ Start 2026-11-04T11:20Z, budget 48h. State in STATE.json; per-run logs in runs/.
 - sa_cycles.c: SA with 3-/4-cycle reversals (score preserving), exact incremental undominated count
   (recheck matches). From Paley67-minus-vertex (330): at T=2 no move accepted in 157k tries (every cycle
   reversal is uphill); T=40 drifts to ~7800. Needs tuning; secondary method.
+- 12:04Z last completed action: 64 group actions (V <= 23) exhausted, none has S_4.
+- 12:53Z STOPPED by user. Background jobs not running. To resume: `python3 run_actions.py 24 34`,
+  then 35 36 and 37 38 (finished actions are skipped through runs/actions_results.jsonl).
+  Removed a stray FOUND_N67.txt left by the Paley-67 sanity test of satgroup.py (N=67, not a result).
