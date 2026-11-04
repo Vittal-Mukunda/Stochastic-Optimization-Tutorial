@@ -25,6 +25,10 @@ def decode(code, N, k):
 
 def main(spec, outfile):
     N, G = build_group(spec)
+    return write_instance(N, G, outfile)
+
+
+def write_instance(N, G, outfile):
     seen = np.zeros((N, N), dtype=bool)
     vars_ = []
     for u in range(N):
@@ -50,6 +54,7 @@ def main(spec, outfile):
             for X, w in lines[k]:
                 f.write(" ".join(map(str, X)) + f" {w}\n")
     print(N, len(G), len(vars_), len(lines[0]), len(lines[1]))
+    return len(vars_)
 
 
 if __name__ == "__main__":

@@ -1,2 +1,4 @@
 runs/circ_exh
 runs/orbit_tabu
+runs/orbit_exh
+runs/sa_cycles

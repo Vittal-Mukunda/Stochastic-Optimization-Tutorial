@@ -10,7 +10,7 @@
    "N": 65,
    "group": "Z_65 regular (all connection sets, 1 in S wlog)",
    "seed": null,
-   "time": "2026-11-04T11:50Z",
+   "time": "2026-11-04T11:45Z",
    "checked": 2147483648,
    "best": ">0 (none S_4)",
    "outcome": "none: no circulant S_4 tournament"
@@ -20,7 +20,7 @@
    "N": 63,
    "group": "Z_63 regular (all connection sets, 1 in S wlog)",
    "seed": null,
-   "time": "2026-11-04T11:50Z",
+   "time": "2026-11-04T11:45Z",
    "checked": 1073741824,
    "best": ">0 (none S_4)",
    "outcome": "none: no circulant S_4 tournament"
@@ -30,7 +30,7 @@
    "N": 61,
    "group": "Z_61 regular (all connection sets, 1 in S wlog)",
    "seed": null,
-   "time": "2026-11-04T11:50Z",
+   "time": "2026-11-04T11:45Z",
    "checked": 536870912,
    "best": ">0 (none S_4)",
    "outcome": "none: no circulant S_4 tournament"
@@ -40,7 +40,7 @@
    "N": 59,
    "group": "Z_59 regular (all connection sets, 1 in S wlog)",
    "seed": null,
-   "time": "2026-11-04T11:50Z",
+   "time": "2026-11-04T11:45Z",
    "checked": 268435456,
    "best": ">0 (none S_4)",
    "outcome": "none: no circulant S_4 tournament"
@@ -50,7 +50,7 @@
    "N": 57,
    "group": "Z_57 regular (all connection sets, 1 in S wlog)",
    "seed": null,
-   "time": "2026-11-04T11:50Z",
+   "time": "2026-11-04T11:45Z",
    "checked": 134217728,
    "best": ">0 (none S_4)",
    "outcome": "none: no circulant S_4 tournament"
@@ -60,7 +60,7 @@
    "N": 55,
    "group": "Z_55 regular (all connection sets, 1 in S wlog)",
    "seed": null,
-   "time": "2026-11-04T11:50Z",
+   "time": "2026-11-04T11:45Z",
    "checked": 67108864,
    "best": ">0 (none S_4)",
    "outcome": "none: no circulant S_4 tournament"
@@ -70,7 +70,7 @@
    "N": 53,
    "group": "Z_53 regular (all connection sets, 1 in S wlog)",
    "seed": null,
-   "time": "2026-11-04T11:50Z",
+   "time": "2026-11-04T11:45Z",
    "checked": 33554432,
    "best": ">0 (none S_4)",
    "outcome": "none: no circulant S_4 tournament"
