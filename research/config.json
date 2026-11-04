@@ -1,0 +1,11 @@
+{
+  "problem_id": "erdos-902",
+  "max_concurrent_agents": 4,
+  "max_attempts_per_task": 3,
+  "backoff_seconds_base": 30,
+  "agent_timeout_seconds": 2700,
+  "max_rounds_per_day": 8,
+  "max_compute_seconds": 180,
+  "max_checkpoint_backups": 100,
+  "cursor_session_limitation": "Cursor Task subagents and any shell loop started inside the IDE stop when the session or the machine stops. The checkpoint on disk survives. Resume with: python research/orchestrator.py resume && python research/orchestrator.py plan-round"
+}

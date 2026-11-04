@@ -1,0 +1,765 @@
+{
+  "task_id": "R5-C-pattern",
+  "agent": "C",
+  "claim": "The common-in-neighbour numbers c(A,B) = 4 and c(C,D) = 0 occur in a 5-regular tournament on 11 vertices. The recorded tournament uses vertices 0 through 10, with A = 0, B = 1, C = 2, and D = 3. Its out-sets are in the evidence. The six positive counts, in the order (A,B), (A,D), (A,C), (B,C), (B,D), (C,D), are 4, 3, 2, 2, 3, 0. Those two forced values occur, and the other four lie in the windows compatible with dominator counts 16, 14, 13, 13, 12, 12. Every common-in-neighbour count from {A,B,C,D} into {4,5,6,7,8,9,10} is at most 3. The construction stops at these eleven vertices. f(4) >= 52 is not proved, and Erdős problem 902 is not solved.",
+  "status": "proved",
+  "definitions": "The recorded tournament has vertex set {0,1,2,3,4,5,6,7,8,9,10}. An out-set is the set of vertices beaten by a given vertex. The tournament is 5-regular when every out-set has size 5 and, on every pair, exactly one endpoint lies in the out-set of the other. For distinct vertices u and v, c(u,v) is the number of common in-neighbours, that is, the number of vertices that beat both. The positive vertices are A = 0, B = 1, C = 2, and D = 3. V_0 = {4,5,6,7,8,9,10}. The dominator counts |D({A,B})| = 16, |D({A,D})| = 14, |D({A,C})| = 13, |D({B,C})| = 13, |D({B,D})| = 12, and |D({C,D})| = 12, the pair excesses E_both = 0, 3, 3, 0, 0, 3 in that same pair order, and the budgets Ex(A) = 16, Ex(B) = 15, Ex(C) = 6, Ex(D) = 6 are inputs taken from the R4-C report. They count vertices in the 52-vertex tournament. They are not counts inside the tournament on these eleven vertices. The triple excess of a positive pair is 4|D| - c - 45 - E_both. The windows forced by requiring that excess to lie between 0 and the smaller endpoint budget, together with the bound 0 ≤ c ≤ 4, are c(A,B) = 4, c(C,D) = 0, c(A,D) in {2,3,4}, c(B,C) in {1,2,3,4}, c(B,D) in {0,1,2,3}, and c(A,C) in {0,1,2,3,4}. Lemma A is an input, used only for the bound it states: c ≤ 3 on every pair with one end in {A,B,C,D} and the other in V_0. The interval circulant is the separate tournament on Z/11Z in which the out-set of i is {i+1, i+2, i+3, i+4, i+5} modulo 11.",
+  "argument": "Verdict. The numbers c(A,B) = 4 and c(C,D) = 0 occur in a 5-regular tournament on 11 vertices. The tournament recorded below also meets the other windows of the cell J = 5, s = 4 and the bound of 3 on every common-in-neighbour count from a positive vertex into V_0.\n\nThe interval circulant is a short witness for the two numbers. On Z/11Z, the out-set of i is {i+1, i+2, i+3, i+4, i+5} modulo 11. The connection set S = {1, 2, 3, 4, 5} and its negative {6, 7, 8, 9, 10} partition {1, ..., 10}, so each pair has one direction and every out-set has size 5. The in-set of 0 is {6, 7, 8, 9, 10}, and the in-set of d is its translate by d. The intersection sizes for differences 1 through 10 are 4, 3, 2, 1, 0, 0, 1, 2, 3, 4. Each size is the number of elements common to {6, 7, 8, 9, 10} and the translate of that set by the difference. The in-sets of 0 and 1 meet in {7, 8, 9, 10}, so c(0,1) = 4. The in-sets of 0 and 5 are {6, 7, 8, 9, 10} and {0, 1, 2, 3, 4}, and those two sets are disjoint, so c(0,5) = 0. Since 7 - 2 = 5 and the count depends only on the difference, c(2,7) = 0. The pairs {0,1} and {2,7} are disjoint.\n\nIn this circulant the intersection size is 4 exactly for differences 1 and 10. Difference 1 sends v to v+1, and difference 10 sends v to v-1, so the two vertices at count 4 from v are its two neighbours on the cycle. Suppose a 4-vertex set S has common-in-neighbour count at most 3 on every pair with one end in S and the other in the complement. Then both neighbours of each vertex of S lie in S. Walking forward from any vertex of S along the cycle stays inside S, and that walk visits every residue, so S is all of Z/11Z. The set S has four vertices, so the supposition is false. Every 4-vertex set in the circulant has some complementary count equal to 4. The circulant realizes the two numbers, and every labeling of A, B, C, D inside it has some count 4 from those four vertices into the complementary seven.\n\nThe recorded tournament is a different orientation. Its out-sets are 0: {1, 2, 4, 7, 10}; 1: {2, 4, 7, 8, 10}; 2: {4, 5, 6, 7, 9}; 3: {0, 1, 2, 8, 10}; 4: {3, 5, 6, 9, 10}; 5: {0, 1, 3, 7, 8}; 6: {0, 1, 3, 5, 10}; 7: {3, 4, 6, 8, 9}; 8: {0, 2, 4, 6, 9}; 9: {0, 1, 3, 5, 6}; 10: {2, 5, 7, 8, 9}. Each set has five vertices and omits its owner. On each of the 55 pairs, exactly one endpoint lies in the out-set of the other, so the lists form a 5-regular tournament. The in-set of a vertex is the set of vertices whose out-set contains it. The in-sets are 0: {3, 5, 6, 8, 9}; 1: {0, 3, 5, 6, 9}; 2: {0, 1, 3, 8, 10}; 3: {4, 5, 6, 7, 9}; 4: {0, 1, 2, 7, 8}; 5: {2, 4, 6, 9, 10}; 6: {2, 4, 7, 8, 9}; 7: {0, 1, 2, 5, 10}; 8: {1, 3, 5, 7, 10}; 9: {2, 4, 7, 8, 10}; 10: {0, 1, 3, 4, 6}.\n\nInside {A,B,C,D} the intersections are as follows. The common in-neighbours of A and B are {3, 5, 6, 9}; of A and D, {5, 6, 9}; of A and C, {3, 8}; of B and C, {0, 3}; of B and D, {5, 6, 9}. C and D have none. The sizes are c(A,B) = 4, c(A,D) = 3, c(A,C) = 2, c(B,C) = 2, c(B,D) = 3, c(C,D) = 0. In particular c(A,B) = 4 and c(C,D) = 0. The counts from A, B, C, and D to the vertices 4, 5, 6, 7, 8, 9, 10, in that order, are A: 1, 2, 2, 1, 2, 1, 2; B: 1, 2, 1, 2, 2, 0, 3; C: 3, 1, 1, 3, 3, 2, 3; D: 1, 3, 3, 1, 2, 2, 2. Each entry is the size of the intersection of the two listed in-sets, and each of these 28 numbers is at most 3.\n\nThe row identity of the R4 report holds for every vertex of every 5-regular tournament on 11 vertices, and it holds here. Each of the five in-neighbours of a vertex beats four further vertices, so the ten common-in-neighbour counts at that vertex sum to 20. At A the three positive counts sum to 9 and the seven counts into V_0 sum to 11. At B the two sums are 9 and 11. At C they are 4 and 16. At D they are 6 and 14. Each pair of sums adds to 20.\n\nThese sizes sit in the windows. Using the input dominator counts 16, 14, 13, 13, 12, 12 and the input excesses E_both = 0, 3, 3, 0, 0, 3 on the pairs (A,B), (A,D), (A,C), (B,C), (B,D), (C,D), the triple excess is 4|D| - c - 45 - E_both. For (A,B) that quantity is 4*16 - 4 - 45 - 0 = 15. The six excesses, in the same pair order, are 15, 5, 2, 5, 0, 0. The smaller endpoint budgets, from Ex(A) = 16, Ex(B) = 15, Ex(C) = 6, and Ex(D) = 6, are 15, 6, 6, 6, 6, 6. Each triple excess is an integer between 0 and its budget inclusive.\n\nThe construction stops at these eleven vertices. The two heavy vertices and the 37 light vertices remain unassigned. f(4) >= 52 is not proved, and Erdős problem 902 is not solved.",
+  "evidence": {
+    "recorded_tournament": {
+      "vertices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "labels": {
+        "A": 0,
+        "B": 1,
+        "C": 2,
+        "D": 3,
+        "V0": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      "out_sets": {
+        "0": [
+          1,
+          2,
+          4,
+          7,
+          10
+        ],
+        "1": [
+          2,
+          4,
+          7,
+          8,
+          10
+        ],
+        "2": [
+          4,
+          5,
+          6,
+          7,
+          9
+        ],
+        "3": [
+          0,
+          1,
+          2,
+          8,
+          10
+        ],
+        "4": [
+          3,
+          5,
+          6,
+          9,
+          10
+        ],
+        "5": [
+          0,
+          1,
+          3,
+          7,
+          8
+        ],
+        "6": [
+          0,
+          1,
+          3,
+          5,
+          10
+        ],
+        "7": [
+          3,
+          4,
+          6,
+          8,
+          9
+        ],
+        "8": [
+          0,
+          2,
+          4,
+          6,
+          9
+        ],
+        "9": [
+          0,
+          1,
+          3,
+          5,
+          6
+        ],
+        "10": [
+          2,
+          5,
+          7,
+          8,
+          9
+        ]
+      },
+      "in_sets": {
+        "0": [
+          3,
+          5,
+          6,
+          8,
+          9
+        ],
+        "1": [
+          0,
+          3,
+          5,
+          6,
+          9
+        ],
+        "2": [
+          0,
+          1,
+          3,
+          8,
+          10
+        ],
+        "3": [
+          4,
+          5,
+          6,
+          7,
+          9
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          7,
+          8
+        ],
+        "5": [
+          2,
+          4,
+          6,
+          9,
+          10
+        ],
+        "6": [
+          2,
+          4,
+          7,
+          8,
+          9
+        ],
+        "7": [
+          0,
+          1,
+          2,
+          5,
+          10
+        ],
+        "8": [
+          1,
+          3,
+          5,
+          7,
+          10
+        ],
+        "9": [
+          2,
+          4,
+          7,
+          8,
+          10
+        ],
+        "10": [
+          0,
+          1,
+          3,
+          4,
+          6
+        ]
+      },
+      "directed_edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          0,
+          7
+        ],
+        [
+          8,
+          0
+        ],
+        [
+          9,
+          0
+        ],
+        [
+          0,
+          10
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          9,
+          1
+        ],
+        [
+          1,
+          10
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          10,
+          2
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          7,
+          3
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          9,
+          3
+        ],
+        [
+          3,
+          10
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          7,
+          4
+        ],
+        [
+          8,
+          4
+        ],
+        [
+          4,
+          9
+        ],
+        [
+          4,
+          10
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          9,
+          5
+        ],
+        [
+          10,
+          5
+        ],
+        [
+          7,
+          6
+        ],
+        [
+          8,
+          6
+        ],
+        [
+          9,
+          6
+        ],
+        [
+          6,
+          10
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          7,
+          9
+        ],
+        [
+          10,
+          7
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          10,
+          8
+        ],
+        [
+          10,
+          9
+        ]
+      ],
+      "edge_count": 55,
+      "out_degrees": [
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+      ],
+      "pair_orientations_unique": true
+    },
+    "positive_intersections": {
+      "AB": [
+        3,
+        5,
+        6,
+        9
+      ],
+      "AD": [
+        5,
+        6,
+        9
+      ],
+      "AC": [
+        3,
+        8
+      ],
+      "BC": [
+        0,
+        3
+      ],
+      "BD": [
+        5,
+        6,
+        9
+      ],
+      "CD": []
+    },
+    "positive_c": {
+      "AB": 4,
+      "AD": 3,
+      "AC": 2,
+      "BC": 2,
+      "BD": 3,
+      "CD": 0
+    },
+    "c_to_V0": {
+      "order_of_targets": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "A": {
+        "sizes": [
+          1,
+          2,
+          2,
+          1,
+          2,
+          1,
+          2
+        ],
+        "intersections": {
+          "4": [
+            8
+          ],
+          "5": [
+            6,
+            9
+          ],
+          "6": [
+            8,
+            9
+          ],
+          "7": [
+            5
+          ],
+          "8": [
+            3,
+            5
+          ],
+          "9": [
+            8
+          ],
+          "10": [
+            3,
+            6
+          ]
+        }
+      },
+      "B": {
+        "sizes": [
+          1,
+          2,
+          1,
+          2,
+          2,
+          0,
+          3
+        ],
+        "intersections": {
+          "4": [
+            0
+          ],
+          "5": [
+            6,
+            9
+          ],
+          "6": [
+            9
+          ],
+          "7": [
+            0,
+            5
+          ],
+          "8": [
+            3,
+            5
+          ],
+          "9": [],
+          "10": [
+            0,
+            3,
+            6
+          ]
+        }
+      },
+      "C": {
+        "sizes": [
+          3,
+          1,
+          1,
+          3,
+          3,
+          2,
+          3
+        ],
+        "intersections": {
+          "4": [
+            0,
+            1,
+            8
+          ],
+          "5": [
+            10
+          ],
+          "6": [
+            8
+          ],
+          "7": [
+            0,
+            1,
+            10
+          ],
+          "8": [
+            1,
+            3,
+            10
+          ],
+          "9": [
+            8,
+            10
+          ],
+          "10": [
+            0,
+            1,
+            3
+          ]
+        }
+      },
+      "D": {
+        "sizes": [
+          1,
+          3,
+          3,
+          1,
+          2,
+          2,
+          2
+        ],
+        "intersections": {
+          "4": [
+            7
+          ],
+          "5": [
+            4,
+            6,
+            9
+          ],
+          "6": [
+            4,
+            7,
+            9
+          ],
+          "7": [
+            5
+          ],
+          "8": [
+            5,
+            7
+          ],
+          "9": [
+            4,
+            7
+          ],
+          "10": [
+            4,
+            6
+          ]
+        }
+      }
+    },
+    "row_sums": {
+      "identity": "In a 5-regular tournament on 11 vertices the ten common-in-neighbour counts at each vertex sum to 20.",
+      "all_vertices": [
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20
+      ],
+      "positive_part": {
+        "A": 9,
+        "B": 9,
+        "C": 4,
+        "D": 6
+      },
+      "V0_part": {
+        "A": 11,
+        "B": 11,
+        "C": 16,
+        "D": 14
+      }
+    },
+    "window_check_using_R4_inputs": {
+      "dominator_counts": {
+        "AB": 16,
+        "AD": 14,
+        "AC": 13,
+        "BC": 13,
+        "BD": 12,
+        "CD": 12
+      },
+      "E_both": {
+        "AB": 0,
+        "AD": 3,
+        "AC": 3,
+        "BC": 0,
+        "BD": 0,
+        "CD": 3
+      },
+      "Ex": {
+        "A": 16,
+        "B": 15,
+        "C": 6,
+        "D": 6
+      },
+      "triple_excess": {
+        "AB": 15,
+        "AD": 5,
+        "AC": 2,
+        "BC": 5,
+        "BD": 0,
+        "CD": 0
+      },
+      "smaller_endpoint_budget": {
+        "AB": 15,
+        "AD": 6,
+        "AC": 6,
+        "BC": 6,
+        "BD": 6,
+        "CD": 6
+      },
+      "inside_windows": true,
+      "formula": "4|D| - c - 45 - E_both"
+    },
+    "interval_circulant": {
+      "connection_set": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "c_by_difference_1_through_10": [
+        4,
+        3,
+        2,
+        1,
+        0,
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "witness_pairs": {
+        "c_4": [
+          0,
+          1
+        ],
+        "c_0": [
+          2,
+          7
+        ]
+      },
+      "common_in_neighbours_of_0_and_1": [
+        7,
+        8,
+        9,
+        10
+      ],
+      "four_sets_checked": 330,
+      "four_sets_with_some_complementary_c_equal_to_4": 330
+    },
+    "classification_of_the_551_tournaments": false,
+    "light_vertices_assigned": false,
+    "heavy_vertices_constructed": false,
+    "tight_pair_on_52_vertices_constructed": false,
+    "f4_at_least_52_proved": false,
+    "erdos_902_solved": false
+  },
+  "weaknesses": "The result is existence of one tournament, read off its out-sets. The out-sets were located by a constraint search; the proof is the inspection of the lists, and the search is not a step in that inspection. The 551 isomorphism classes of 5-regular tournaments on 11 vertices were not listed, and the report does not claim that the common-in-neighbour tuple is unique. The dominator counts, the excesses E_both, the budgets Ex, and the bound c ≤ 3 on pairs into V_0 are inputs from the R4-C report. That report takes J = 5 and s = 4 from earlier reports in the same agent role. Those bounds are not re-proved here. The two heavy vertices and the 37 light vertices are unassigned, so a tight pair on 52 vertices is neither built nor excluded. f(4) >= 52 is not proved, and Erdős problem 902 is not solved.",
+  "references": [
+    "research/AGENT_TASKS/R4-C-tight-s4.report.json",
+    "research/LEMMAS.md"
+  ],
+  "next_step": "Assign the two heavy vertices and the 37 light vertices for this common-in-neighbour pattern on the eleven dominators, or run the same identities at J = 5 and s = 5.",
+  "relation_to_prior": "The R4-C report leaves the cell J = 5, s = 4 at one integer pattern and does not realize the common-in-neighbour numbers in a 5-regular tournament on the eleven dominators. This report starts from c(A,B) = 4 and c(C,D) = 0 and exhibits such a tournament, including counts inside the remaining windows and at most 3 into V_0. It does not rebuild the excess partitions of 9, the case trees for s ≤ 3, or the bounds J ≥ 5 and s ≥ 4. The exhausted approach keys are not used.",
+  "novelty": "Relative to R4-C, which stops at integer windows and does not build the tournament, the new object is an explicit 5-regular tournament on 11 vertices whose positive common-in-neighbour counts are 4, 3, 2, 2, 3, 0 on the pairs (A,B), (A,D), (A,C), (B,C), (B,D), (C,D), with every count from those four vertices into the other seven at most 3. The interval circulant is a second, smaller witness that c = 4 and c = 0 occur on disjoint pairs; in that circulant every 4-vertex set has a complementary count equal to 4.",
+  "verification": "unreviewed",
+  "source": "file"
+}

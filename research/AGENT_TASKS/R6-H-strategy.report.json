@@ -1,0 +1,104 @@
+{
+  "task_id": "R6-H-strategy",
+  "agent": "H",
+  "claim": "The next round has two tasks, and the round after it has one. Round 7 decides the four-set cubic identity on the equality margin (26, 338, 5), and it tests one 5-regular tournament on 11 vertices that keeps the J=5, s=4 counts and keeps every pair of zero-excess vertices at most 3 common in-neighbours. Round 8 runs the pair and triple identities at J=5 and s=5. The bound f(4) >= 52 stays checked, the bound f(4) <= 67 stays unchanged, the pair and triple moments stay compatible with every triple having at least 5 dominators, and three-level deletion stays closed. Erdős problem 902 is not solved.",
+  "status": "inconclusive",
+  "definitions": "S_4 means every 4-set has a dominator outside itself. f(4) is the least order of a tournament with S_4. A pair is tight when it has exactly 11 dominators. For a tight pair, J is the sum of (in-degree minus 25) over those 11 dominators, and s is the number of those dominators whose in-degree is greater than 25. The equality margin (26, 338, 5) is the degree pattern of twenty-six in-degrees 25 and twenty-six in-degrees 26, pair excesses summing to 338, and triple dominator counts tested at 5. A zero-excess dominator is one of the seven vertices of in-degree 25 in the J=5, s=4 pattern. The four-set cubic identity is sum over 4-sets of C(|D(X)|, 3) = sum over triples of C(ν(Y), 4), where ν(Y) is the number of common out-neighbours of the triple. A strategy is an allocation of tasks, not a theorem.",
+  "argument": "Settled inputs, left closed. f(4) >= 52 is the checked bound in research/LEMMAS.md. f(4) <= 67 is the Paley tournament of order 67, and the explicit families of orders 52 through 66 in R4-D do not improve it. Lemma S1, R4-B, and R5-B give the equality margin an integer solution in which every triple has at least 5 dominators and the transitive dominator sum is 91572. R4-G forces some triple to have at least 7 dominators under the triple hypothesis and does not remove that solution. R5-G and the on-disk report R6-G keep a second score sequence alive as integers: the extreme sequence meets sum C(ν, 2) = 388592 and the third-moment symmetry with every dominator count at least 5. R5-F shows that three nested deletions leave the coefficient of log2 log2 N equal to 1, and that a further deletion of the same kind has the same shape. That approach key is exhausted.\n\nWhat those inputs do not decide. An S_4 tournament on 52 vertices is still open, so f(4) is still only pinned between 52 and 67. The no-tight branch and the tight-pair branch are separate. On the no-tight branch, R6-B, read from disk, records that the pair and triple identities do not contradict S_4. The four-set count sum |D(X)| = sum_v C(d^+(v), 4) is at least 717600 against C(52, 4) = 270725, and on the equality margin the second-moment companion is at least 730730 and still allows every 4-set two dominators. The identity those two comparisons leave open is the four-set cubic. On the tight-pair branch, R4-C leaves one pattern at J=5 and s=4, with positive counts 16, 14, 13, 13, 12, 12 and common-in-neighbour numbers 4, 3, 2, 2, 3, 0. R5-C realises those six numbers in one 5-regular tournament on vertices 0 through 10. R6-C, read from disk, shows that the two heavy vertices cannot sit against that tournament: the zero-excess pair {6, 9} has four common in-neighbours, and the pair-excess budget at either endpoint is 10 against a lower bound of 14. The same report says a different tournament, with every zero-excess pair at most 3, is not excluded. At J=5 the conditional bound s >= 4 leaves two degree shapes. Four positive excesses sum to 5 only as 2, 1, 1, 1, which is the shape already under test. Five positive excesses sum to 5 only as 1, 1, 1, 1, 1. Six or more positive integers cannot sum to 5. The identities at s=5 have not been run.\n\nAllocation. Round 7 spends one task on each branch that a proof of no S_4 tournament on 52 vertices has to close, at the first identity the latest report leaves open. The cubic task asks whether the repaired rows of R5-B can sit under the four-set cubic with every 4-set dominated. It takes as input the fact that the pair and triple moments do not force a triple below 5, and it does not try to force that triple bound again. The tournament task asks for one 5-regular tournament on 11 vertices with the six positive counts, with every common-in-neighbour count from the four positive vertices into the seven at most 3, and with every pair inside the seven at most 3, and then applies the same heavy-vertex budget. A counting proof that no such tournament exists is a valid result. A list of the isomorphism classes of the regular tournaments on 11 vertices is not. Round 8 runs the s=5 shape. It is the other half of J=5 once s >= 4 is granted, and it can be specified before the round-7 tournament returns. The two round-7 tasks are on different branches, so they can run together. The s=5 task is the next tight-pair shape, sequenced one round later so that the live s=4 obstruction is the tight-pair task in the nearer round.\n\nLeft outside these three slots. The extreme score sequence now has integer rows meeting the dominated-side moments. One surviving margin already shows that those moments do not force a triple below 5, so the intersection test named in R6-G is the reserve behind the cubic, for a later round if the cubic still allows every 4-set a dominator. J >= 6 remains after J=5. A further deletion level has the shape already computed in R5-F. Another explicit family in orders 52 through 66 is the continuation of a census that left f(4) <= 67 unchanged. The checked bound f(4) >= 52 is not reopened. None of the three tasks declares Erdős problem 902 solved.",
+  "evidence": {
+    "erdos_902_solved": false,
+    "f4_at_least_52": "checked",
+    "f4_at_most_67": "unchanged",
+    "triple_moments_force_a_triple_below_5": false,
+    "three_level_deletion": "exhausted",
+    "ranking": [
+      {
+        "rank": 1,
+        "obstacle": "Four-set cubic identity on the equality margin",
+        "blocks": "S_4 on the degree pattern of twenty-six 25s and twenty-six 26s",
+        "disposition": "Round 7 task R7-B-cubic"
+      },
+      {
+        "rank": 2,
+        "obstacle": "A 5-regular tournament on 11 vertices with the J=5, s=4 counts and with every zero-excess pair at most 3 common in-neighbours",
+        "blocks": "The heavy-vertex step of the one pattern R4-C left at s=4",
+        "disposition": "Round 7 task R7-C-avoid"
+      },
+      {
+        "rank": 3,
+        "obstacle": "J=5 and s=5, five in-degree excesses equal to 1, heavy excess 9",
+        "blocks": "The other degree shape at J=5 under the conditional bound s >= 4",
+        "disposition": "Round 8 task R8-C-s5"
+      }
+    ],
+    "round_7_tasks": [
+      {
+        "id": "R7-B-cubic",
+        "role": "B",
+        "approach_key": "n52-four-set-cubic-margin",
+        "target": "Use the repaired (k, ν) rows in research/AGENT_TASKS/R5-B-outsets.report.json. They meet every triple at least 5 dominators, the transitive dominator sum 91572, and the pair and third moments on the equality margin. research/AGENT_TASKS/R6-B-s4.report.json records that sum |D(X)| = sum_v C(d^+(v), 4) is at least 717600 against 270725 four-sets, and that sum C(|D(X)|, 2) = sum_P C(μ(P), 4) is at least 730730 and still allows every 4-set two dominators. Decide sum over 4-sets of C(|D(X)|, 3) = sum over triples of C(ν(Y), 4) on those rows. Either give nonnegative four-set counts, every |D(X)| at least 1, meeting this equation together with the two earlier four-set equations, or prove that no such counts exist. If another ν distribution meets the same triple equations and changes the verdict, record that distribution. Keep the pair and triple solution as an input.",
+        "does_not_repeat": "This does not repeat n52-s4-from-recorded-identities, which left the four-set cubic undecided after the four-set first and second moments still allowed every 4-set a dominator.",
+        "blocks": "Rank 1"
+      },
+      {
+        "id": "R7-C-avoid",
+        "role": "C",
+        "approach_key": "n52-zero-excess-pairs-c-at-most-3",
+        "target": "Keep the six positive common-in-neighbour counts 4, 3, 2, 2, 3, 0 from research/AGENT_TASKS/R4-C-tight-s4.report.json and research/AGENT_TASKS/R5-C-pattern.report.json, and keep every count from {A, B, C, D} into the seven zero-excess vertices at most 3. Find one 5-regular tournament on 11 vertices in which every pair inside those seven vertices also has at most 3 common in-neighbours, and apply the heavy-vertex budget of research/AGENT_TASKS/R6-C-heavy.report.json: one vertex of q=11 and one vertex of q=8 missing {A, C, D}. The recorded tournament fails the new condition on {6, 9}, where the budget is 10 and the lower bound is 14. If no tournament meets the condition, that nonexistence, proved by a counting obstruction, is the claim. Do not list the isomorphism classes of the regular tournaments on 11 vertices. One failed tournament does not close the J=5, s=4 cell.",
+        "does_not_repeat": "This does not repeat n52-two-heavy-vertices, which placed the two heavy vertices on the recorded tournament and stopped at the pair {6, 9}.",
+        "blocks": "Rank 2"
+      }
+    ],
+    "round_8_tasks": [
+      {
+        "id": "R8-C-s5",
+        "role": "C",
+        "approach_key": "n52-j5-s5-degree-shape",
+        "target": "Assume a tight pair in an S_4 tournament on 52 vertices with J=5 and s=5. Those two bounds are conditional inputs and are not rebuilt. The five positive in-degree excesses are 1, 1, 1, 1, 1, and the heavy excess is 14 - J = 9. Using Lemma A, the pair-sum, and the triple-excess formula, either exclude this degree shape or write the one integer pattern of heavy vertices and dominator counts that survives. Stop at that pattern or that exclusion. Do not build a tournament on 11 vertices.",
+        "does_not_repeat": "This does not repeat n52-j5-s4-one-restriction, which ran the identities only for the degree shape 2, 1, 1, 1 and left five excesses equal to 1 unrun.",
+        "blocks": "Rank 3"
+      }
+    ],
+    "not_assigned": [
+      "Claim L",
+      "one-level counting past c*",
+      "two-stage averaging",
+      "three-level deletion",
+      "a random Cayley upper bound",
+      "a classification of the regular tournaments on 11 vertices",
+      "a return to the pair and triple moments in order to force a triple below 5",
+      "reopening the checked bound f(4) >= 52",
+      "another explicit family of orders 52 through 66",
+      "the out-set intersection test for the extreme score sequence in R6-G",
+      "J >= 6"
+    ],
+    "round_6_reports_read_from_disk": [
+      "research/AGENT_TASKS/R6-B-s4.report.json",
+      "research/AGENT_TASKS/R6-C-heavy.report.json",
+      "research/AGENT_TASKS/R6-G-nu.report.json"
+    ]
+  },
+  "weaknesses": "This is a strategy. It proves no bound and it exhibits no tournament. The three round-6 reports were read from disk and are not yet ledger entries. J >= 5 and s >= 4 remain conditional on unreviewed reports in the same agent line. A four-set solution on the equality margin leaves the extreme score sequence untouched, and an exclusion on that margin leaves every other score sequence untouched. One 11-vertex tournament can meet the zero-excess condition and still reject the two heavy vertices, and acceptance of those two vertices would leave the 37 light vertices unassigned. A proof that no such tournament exists does not by itself close J=5 and s=4. The s=5 task does not treat J >= 6. Erdős problem 902 is not solved, and these three tasks do not determine f(4).",
+  "references": [
+    "research/LEDGER.md",
+    "research/LEMMAS.md",
+    "research/STATE.md",
+    "research/PROBLEM.md",
+    "research/AGENT_TASKS/R4-B-no-tight.report.json",
+    "research/AGENT_TASKS/R4-C-tight-s4.report.json",
+    "research/AGENT_TASKS/R4-D-upper.report.json",
+    "research/AGENT_TASKS/R4-G-degree-24.report.json",
+    "research/AGENT_TASKS/R5-B-outsets.report.json",
+    "research/AGENT_TASKS/R5-C-pattern.report.json",
+    "research/AGENT_TASKS/R5-F-three.report.json",
+    "research/AGENT_TASKS/R5-G-push.report.json",
+    "research/AGENT_TASKS/R6-B-s4.report.json",
+    "research/AGENT_TASKS/R6-C-heavy.report.json",
+    "research/AGENT_TASKS/R6-G-nu.report.json"
+  ],
+  "next_step": "Dispatch two round-7 tasks and one round-8 task. R7-B-cubic, approach key n52-four-set-cubic-margin: decide the four-set cubic identity on the repaired rows of the equality margin. This does not repeat n52-s4-from-recorded-identities, which left that cubic undecided after the four-set first and second moments still allowed every 4-set a dominator. R7-C-avoid, approach key n52-zero-excess-pairs-c-at-most-3: test one 5-regular tournament on 11 vertices whose pairs inside the seven zero-excess vertices have at most 3 common in-neighbours. This does not repeat n52-two-heavy-vertices, which placed the two heavy vertices on the recorded tournament and stopped at the pair {6, 9}. R8-C-s5, approach key n52-j5-s5-degree-shape: run the pair and triple identities at J=5 and s=5. This does not repeat n52-j5-s4-one-restriction, which ran the identities only for the degree shape 2, 1, 1, 1 and left five excesses equal to 1 unrun.",
+  "relation_to_prior": "Approach key strategy-after-round5. Three-level deletion is exhausted, the pair and triple moments at order 52 do not force a triple below 5, f(4) >= 52 is checked, and f(4) <= 67 is unchanged. The allocation uses the round-5 ledger and the round-6 reports on disk. It does not reopen claim-L-single-pair-link, one-level-counting-past-cstar, two-stage-averaging-second-log, random-cayley-beat-erdos-upper, n51-local-milp-certificates, wrong-direction-covering-local48, or three-level-count-second-log.",
+  "novelty": "The new judgment is the order of the three tasks after the round-6 reports. The four-set cubic is the S_4 count on the equality margin, the condition that every zero-excess pair has at most 3 common in-neighbours is the test that avoids the pair {6, 9}, and J=5 with s=5 is the other degree shape at J=5. The extreme-sequence intersection test and every J greater than 5 stay outside these three slots.",
+  "verification": "unreviewed",
+  "source": "file"
+}

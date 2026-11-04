@@ -1,0 +1,410 @@
+{
+ "4/5": {
+  "32": {
+   "exact_constraints_ok": true,
+   "violation": null,
+   "checked": 11440,
+   "recursive_checked": true,
+   "inputs_nu_s_ge_gamma_ok": true,
+   "N_below_gamma_n_2n": false,
+   "N_over_n2n": 0.8359374999708962,
+   "lemmaB1_hyp": false
+  },
+  "48": {
+   "exact_constraints_ok": true,
+   "violation": null,
+   "checked": 38024,
+   "recursive_checked": true,
+   "inputs_nu_s_ge_gamma_ok": true,
+   "N_below_gamma_n_2n": false,
+   "N_over_n2n": 0.8151041666670987,
+   "lemmaB1_hyp": false
+  },
+  "64": {
+   "exact_constraints_ok": true,
+   "violation": null,
+   "checked": 89440,
+   "recursive_checked": true,
+   "inputs_nu_s_ge_gamma_ok": true,
+   "N_below_gamma_n_2n": false,
+   "N_over_n2n": 0.8027343750004405,
+   "lemmaB1_hyp": false
+  },
+  "80": {
+   "exact_constraints_ok": true,
+   "violation": null,
+   "checked": 173880,
+   "recursive_checked": true,
+   "inputs_nu_s_ge_gamma_ok": true,
+   "N_below_gamma_n_2n": true,
+   "N_over_n2n": 0.7953125000004434,
+   "lemmaB1_hyp": true
+  },
+  "100": {
+   "exact_constraints_ok": true,
+   "violation": null,
+   "checked": 338350,
+   "recursive_checked": true,
+   "inputs_nu_s_ge_gamma_ok": true,
+   "N_below_gamma_n_2n": true,
+   "N_over_n2n": 0.7931250000004456,
+   "lemmaB1_hyp": true
+  },
+  "128": {
+   "exact_constraints_ok": true,
+   "violation": null,
+   "checked": 16384,
+   "recursive_checked": false,
+   "inputs_nu_s_ge_gamma_ok": true,
+   "N_below_gamma_n_2n": true,
+   "N_over_n2n": 0.79375,
+   "lemmaB1_hyp": true
+  },
+  "200": {
+   "exact_constraints_ok": true,
+   "violation": null,
+   "checked": 40000,
+   "recursive_checked": false,
+   "inputs_nu_s_ge_gamma_ok": true,
+   "N_below_gamma_n_2n": true,
+   "N_over_n2n": 0.796,
+   "lemmaB1_hyp": true
+  },
+  "256": {
+   "exact_constraints_ok": true,
+   "violation": null,
+   "checked": 65536,
+   "recursive_checked": false,
+   "inputs_nu_s_ge_gamma_ok": true,
+   "N_below_gamma_n_2n": true,
+   "N_over_n2n": 0.796875,
+   "lemmaB1_hyp": true
+  },
+  "400": {
+   "exact_constraints_ok": true,
+   "violation": null,
+   "checked": 160000,
+   "recursive_checked": false,
+   "inputs_nu_s_ge_gamma_ok": true,
+   "N_below_gamma_n_2n": true,
+   "N_over_n2n": 0.798,
+   "lemmaB1_hyp": null
+  },
+  "512": {
+   "exact_constraints_ok": true,
+   "violation": null,
+   "checked": 262144,
+   "recursive_checked": false,
+   "inputs_nu_s_ge_gamma_ok": true,
+   "N_below_gamma_n_2n": true,
+   "N_over_n2n": 0.7984375,
+   "lemmaB1_hyp": null
+  }
+ },
+ "79/100": {
+  "32": {
+   "exact_constraints_ok": true,
+   "violation": null,
+   "checked": 11440,
+   "recursive_checked": true,
+   "inputs_nu_s_ge_gamma_ok": true,
+   "N_below_gamma_n_2n": false,
+   "N_over_n2n": 0.8359374999708962,
+   "lemmaB1_hyp": false
+  },
+  "48": {
+   "exact_constraints_ok": true,
+   "violation": null,
+   "checked": 38024,
+   "recursive_checked": true,
+   "inputs_nu_s_ge_gamma_ok": true,
+   "N_below_gamma_n_2n": false,
+   "N_over_n2n": 0.8151041666670987,
+   "lemmaB1_hyp": false
+  },
+  "64": {
+   "exact_constraints_ok": true,
+   "violation": null,
+   "checked": 89440,
+   "recursive_checked": true,
+   "inputs_nu_s_ge_gamma_ok": true,
+   "N_below_gamma_n_2n": false,
+   "N_over_n2n": 0.8027343750004405,
+   "lemmaB1_hyp": false
+  },
+  "80": {
+   "exact_constraints_ok": true,
+   "violation": null,
+   "checked": 173880,
+   "recursive_checked": true,
+   "inputs_nu_s_ge_gamma_ok": true,
+   "N_below_gamma_n_2n": false,
+   "N_over_n2n": 0.7953125000004434,
+   "lemmaB1_hyp": true
+  },
+  "100": {
+   "exact_constraints_ok": true,
+   "violation": null,
+   "checked": 338350,
+   "recursive_checked": true,
+   "inputs_nu_s_ge_gamma_ok": true,
+   "N_below_gamma_n_2n": false,
+   "N_over_n2n": 0.7931250000004456,
+   "lemmaB1_hyp": true
+  },
+  "128": {
+   "exact_constraints_ok": true,
+   "violation": null,
+   "checked": 16384,
+   "recursive_checked": false,
+   "inputs_nu_s_ge_gamma_ok": true,
+   "N_below_gamma_n_2n": true,
+   "N_over_n2n": 0.7866210937504476,
+   "lemmaB1_hyp": true
+  },
+  "200": {
+   "exact_constraints_ok": true,
+   "violation": null,
+   "checked": 40000,
+   "recursive_checked": false,
+   "inputs_nu_s_ge_gamma_ok": true,
+   "N_below_gamma_n_2n": true,
+   "N_over_n2n": 0.78605,
+   "lemmaB1_hyp": true
+  },
+  "256": {
+   "exact_constraints_ok": true,
+   "violation": null,
+   "checked": 65536,
+   "recursive_checked": false,
+   "inputs_nu_s_ge_gamma_ok": true,
+   "N_below_gamma_n_2n": true,
+   "N_over_n2n": 0.7869140625,
+   "lemmaB1_hyp": true
+  },
+  "400": {
+   "exact_constraints_ok": true,
+   "violation": null,
+   "checked": 160000,
+   "recursive_checked": false,
+   "inputs_nu_s_ge_gamma_ok": true,
+   "N_below_gamma_n_2n": true,
+   "N_over_n2n": 0.788025,
+   "lemmaB1_hyp": null
+  },
+  "512": {
+   "exact_constraints_ok": true,
+   "violation": null,
+   "checked": 262144,
+   "recursive_checked": false,
+   "inputs_nu_s_ge_gamma_ok": true,
+   "N_below_gamma_n_2n": true,
+   "N_over_n2n": 0.78845703125,
+   "lemmaB1_hyp": null
+  }
+ },
+ "78/100": {
+  "32": {
+   "exact_constraints_ok": true,
+   "violation": null,
+   "checked": 11440,
+   "recursive_checked": true,
+   "inputs_nu_s_ge_gamma_ok": true,
+   "N_below_gamma_n_2n": false,
+   "N_over_n2n": 0.8359374999708962,
+   "lemmaB1_hyp": false
+  },
+  "48": {
+   "exact_constraints_ok": true,
+   "violation": null,
+   "checked": 38024,
+   "recursive_checked": true,
+   "inputs_nu_s_ge_gamma_ok": true,
+   "N_below_gamma_n_2n": false,
+   "N_over_n2n": 0.8151041666670987,
+   "lemmaB1_hyp": false
+  },
+  "64": {
+   "exact_constraints_ok": true,
+   "violation": null,
+   "checked": 89440,
+   "recursive_checked": true,
+   "inputs_nu_s_ge_gamma_ok": true,
+   "N_below_gamma_n_2n": false,
+   "N_over_n2n": 0.8027343750004405,
+   "lemmaB1_hyp": false
+  },
+  "80": {
+   "exact_constraints_ok": true,
+   "violation": null,
+   "checked": 173880,
+   "recursive_checked": true,
+   "inputs_nu_s_ge_gamma_ok": true,
+   "N_below_gamma_n_2n": false,
+   "N_over_n2n": 0.7953125000004434,
+   "lemmaB1_hyp": true
+  },
+  "100": {
+   "exact_constraints_ok": true,
+   "violation": null,
+   "checked": 338350,
+   "recursive_checked": true,
+   "inputs_nu_s_ge_gamma_ok": true,
+   "N_below_gamma_n_2n": false,
+   "N_over_n2n": 0.7931250000004456,
+   "lemmaB1_hyp": true
+  },
+  "128": {
+   "exact_constraints_ok": true,
+   "violation": null,
+   "checked": 16384,
+   "recursive_checked": false,
+   "inputs_nu_s_ge_gamma_ok": true,
+   "N_below_gamma_n_2n": false,
+   "N_over_n2n": 0.7866210937504476,
+   "lemmaB1_hyp": true
+  },
+  "200": {
+   "exact_constraints_ok": true,
+   "violation": null,
+   "checked": 40000,
+   "recursive_checked": false,
+   "inputs_nu_s_ge_gamma_ok": true,
+   "N_below_gamma_n_2n": false,
+   "N_over_n2n": 0.7807812500004502,
+   "lemmaB1_hyp": true
+  },
+  "256": {
+   "exact_constraints_ok": true,
+   "violation": null,
+   "checked": 65536,
+   "recursive_checked": false,
+   "inputs_nu_s_ge_gamma_ok": true,
+   "N_below_gamma_n_2n": true,
+   "N_over_n2n": 0.7779541015629512,
+   "lemmaB1_hyp": true
+  },
+  "400": {
+   "exact_constraints_ok": true,
+   "violation": null,
+   "checked": 160000,
+   "recursive_checked": false,
+   "inputs_nu_s_ge_gamma_ok": true,
+   "N_below_gamma_n_2n": true,
+   "N_over_n2n": 0.77805,
+   "lemmaB1_hyp": null
+  },
+  "512": {
+   "exact_constraints_ok": true,
+   "violation": null,
+   "checked": 262144,
+   "recursive_checked": false,
+   "inputs_nu_s_ge_gamma_ok": true,
+   "N_below_gamma_n_2n": true,
+   "N_over_n2n": 0.7784765625,
+   "lemmaB1_hyp": null
+  }
+ },
+ "775/1000": {
+  "32": {
+   "exact_constraints_ok": true,
+   "violation": null,
+   "checked": 11440,
+   "recursive_checked": true,
+   "inputs_nu_s_ge_gamma_ok": true,
+   "N_below_gamma_n_2n": false,
+   "N_over_n2n": 0.8359374999708962,
+   "lemmaB1_hyp": false
+  },
+  "48": {
+   "exact_constraints_ok": true,
+   "violation": null,
+   "checked": 38024,
+   "recursive_checked": true,
+   "inputs_nu_s_ge_gamma_ok": true,
+   "N_below_gamma_n_2n": false,
+   "N_over_n2n": 0.8151041666670987,
+   "lemmaB1_hyp": false
+  },
+  "64": {
+   "exact_constraints_ok": true,
+   "violation": null,
+   "checked": 89440,
+   "recursive_checked": true,
+   "inputs_nu_s_ge_gamma_ok": true,
+   "N_below_gamma_n_2n": false,
+   "N_over_n2n": 0.8027343750004405,
+   "lemmaB1_hyp": false
+  },
+  "80": {
+   "exact_constraints_ok": true,
+   "violation": null,
+   "checked": 173880,
+   "recursive_checked": true,
+   "inputs_nu_s_ge_gamma_ok": true,
+   "N_below_gamma_n_2n": false,
+   "N_over_n2n": 0.7953125000004434,
+   "lemmaB1_hyp": true
+  },
+  "100": {
+   "exact_constraints_ok": true,
+   "violation": null,
+   "checked": 338350,
+   "recursive_checked": true,
+   "inputs_nu_s_ge_gamma_ok": true,
+   "N_below_gamma_n_2n": false,
+   "N_over_n2n": 0.7931250000004456,
+   "lemmaB1_hyp": true
+  },
+  "128": {
+   "exact_constraints_ok": true,
+   "violation": null,
+   "checked": 16384,
+   "recursive_checked": false,
+   "inputs_nu_s_ge_gamma_ok": true,
+   "N_below_gamma_n_2n": false,
+   "N_over_n2n": 0.7866210937504476,
+   "lemmaB1_hyp": true
+  },
+  "200": {
+   "exact_constraints_ok": true,
+   "violation": null,
+   "checked": 40000,
+   "recursive_checked": false,
+   "inputs_nu_s_ge_gamma_ok": true,
+   "N_below_gamma_n_2n": false,
+   "N_over_n2n": 0.7807812500004502,
+   "lemmaB1_hyp": true
+  },
+  "256": {
+   "exact_constraints_ok": true,
+   "violation": null,
+   "checked": 65536,
+   "recursive_checked": false,
+   "inputs_nu_s_ge_gamma_ok": true,
+   "N_below_gamma_n_2n": false,
+   "N_over_n2n": 0.7779541015629512,
+   "lemmaB1_hyp": true
+  },
+  "400": {
+   "exact_constraints_ok": true,
+   "violation": null,
+   "checked": 160000,
+   "recursive_checked": false,
+   "inputs_nu_s_ge_gamma_ok": true,
+   "N_below_gamma_n_2n": true,
+   "N_over_n2n": 0.7748828125004524,
+   "lemmaB1_hyp": null
+  },
+  "512": {
+   "exact_constraints_ok": true,
+   "violation": null,
+   "checked": 262144,
+   "recursive_checked": false,
+   "inputs_nu_s_ge_gamma_ok": true,
+   "N_below_gamma_n_2n": true,
+   "N_over_n2n": 0.773712158203578,
+   "lemmaB1_hyp": null
+  }
+ }
+}

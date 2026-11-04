@@ -1,0 +1,204 @@
+{
+  "task_id": "R1-A-literature",
+  "agent": "A",
+  "claim": "Bibliographic classification only, checked on 23 October 2026. Erdős problem 902 is not solved. On the opened problem page the stated results stop at f(1)=3, f(2)=7, Erdős's 2^{n+1}-1 ≤ f(n) ≪ n^2 2^n, and Szekeres–Szekeres's f(3)=19 and n 2^n ≪ f(n), with zero proof claims. The finite window 48 ≤ f(4) ≤ 67 is supported by sources opened outside this workspace: Reid, McRae, Hedetniemi, and Hedetniemi (2004) prove that property S_4 requires at least 48 vertices, and Graham–Spencer (1971) state that the Paley tournament on 67 vertices has the property. The claims f(4) ≥ 51, f(4) ≥ 52, and c* ≈ 0.76950321915 were not present in any source opened in this pass. They are written in this workspace. This is not a proof that those three strings occur nowhere else in the literature.",
+  "status": "computed",
+  "definitions": {
+    "published_theorem": "A statement read in a journal paper or its publisher rendering during this pass.",
+    "website_commentary": "A statement read on erdosproblems.com, OEIS, or a forum thread, not itself a journal theorem.",
+    "preprint_or_repository": "A statement read in an arXiv HTML page, a GitHub file, or a Zenodo record and its zip.",
+    "workspace_only": "A statement present in this workspace and absent from every external source opened in this pass.",
+    "UNVERIFIED": "A cited item whose text was not opened. An empty API response is not treated as absence.",
+    "f_and_S": "f(n) is the least order of a tournament in which every n-set has a common out-neighbour. Reid et al. write S_k for that property and state that it is equivalent to domination number greater than k. Graham–Spencer write P_k for the same property."
+  },
+  "argument": "The problem page, its LaTeX twin, the discussion thread, and the proof-claims thread were fetched directly. They do not mention f(4), 51, 52, or c*. Crossref confirms the 1963 and 1965 Gazette papers and Graham–Spencer 1971, but only Graham–Spencer's article text was opened. The Reid–McRae–Hedetniemi–Hedetniemi PDF was opened and contains the 48-vertex corollary together with the equivalence between S_k and domination number. Graham–Spencer's concluding remarks, in the Cambridge Core text extraction, say that T_67 has property P_4. Bozóki (2014), Jeffries's arXiv HTML, the Wilder README and order-49 note, OEIS A362137, and the Zenodo 23269759 record and zip were also opened. In those files the number 51 occurs as a group order or as an unrelated decimal, not as the lower bound f(4) ≥ 51. The constant 0.76950321915 occurs in proof/ERDOS902_PROOF.md and proof/verify_proof.py. A repeat Semantic Scholar query returned an empty response, which is not evidence of absence. The browser tool did not start; the pages above were read through WebFetch or the publisher PDF text.",
+  "evidence": [
+    {
+      "class": "website_commentary",
+      "source": "https://www.erdosproblems.com/902 and https://www.erdosproblems.com/latex/902",
+      "opened": "2026-10-23, twice for the HTML page",
+      "seen": "Statement of f(n); f(1)=3; f(2)=7; Erdős [Er63c] gives 2^{n+1}-1 ≤ f(n) ≪ n^2 2^n; Szekeres and Szekeres [SzSz65] give f(3)=19 and n 2^n ≪ f(n). Tags [Er63c] [Er82e]. Proof expositions (0). Comments (4). Proof claims (0). Formalised statement? Yes. OEIS A362137. The LaTeX bibliography names only Er63c and SzSz65. No f(4), 48, 51, 52, 67, or c*."
+    },
+    {
+      "class": "website_commentary",
+      "source": "https://www.erdosproblems.com/forum/thread/902/proof-claims",
+      "opened": "2026-10-23",
+      "seen": "The sentence 'No proof claims have been submitted yet.' The same classical bounds as the problem page. No f(4) ≥ 51, f(4) ≥ 52, or c*."
+    },
+    {
+      "class": "website_commentary",
+      "source": "https://www.erdosproblems.com/forum/thread/902",
+      "opened": "2026-10-23",
+      "seen": "Four comments. Alfaiz (14 Dec 2025) and StijnC (14 Dec 2025): Graham–Spencer [GrSp71] gives a constructive proof of a weaker bound, and the asymptotic upper and lower bounds remain a factor n apart. epassports (26 Aug 2026): Lean formalisation of 2^{n+1}-1 ≤ f(n) and f(n) ≤ n+3n^2 2^n, plus f(1)=3 and f(2)=7, at https://github.com/jaredwilder/erdos902. No f(4) ≥ 51, f(4) ≥ 52, or c*."
+    },
+    {
+      "class": "published_theorem",
+      "source": "P. Erdős, On a problem in graph theory, Math. Gazette 47 (1963) 220–223, DOI 10.2307/3613396",
+      "opened": "Crossref record and abstract only. Full article UNVERIFIED.",
+      "seen": "The abstract is the two-town question: for any two towns, a third reaches both directly. That is the S_2 case. The general bounds printed on erdosproblems.com are attributed there to this paper, and they are restated by Jeffries and by Reid et al., but they were not read in the 1963 article itself."
+    },
+    {
+      "class": "published_theorem",
+      "source": "E. Szekeres and G. Szekeres, On a problem of Schütte and Erdős, Math. Gazette 49 (1965) 290–293, DOI 10.2307/3612854",
+      "opened": "Crossref record and abstract only. Full article UNVERIFIED. DOI page timed out.",
+      "seen": "The abstract defines property S_k. It does not state f(3)=19 or the lower bound. Graham–Spencer, Reid et al., Jeffries, and Bozóki, all opened, attribute f(2)=7, f(3)=19, and a lower bound of shape (k+2)2^{k-1}-1 to this paper. Jeffries prints the bound for k>2."
+    },
+    {
+      "class": "published_theorem",
+      "source": "R. L. Graham and J. H. Spencer, A constructive solution to a tournament problem, Canad. Math. Bull. 14 (1971) 45–48, DOI 10.4153/cmb-1971-007-1",
+      "opened": "Cambridge Core HTML text extraction, 2026-10-23. Crossref metadata agrees on authors, volume, issue, and pages. Displayed formulas in the extraction are OCR-damaged.",
+      "seen": "Paley tournament T_p for p ≡ 3 (mod 4). Theorem: if p > k^2 2^{2k-2} then T_p has property P_k. Concluding remarks, page headed 47: T_7 has P_2, T_19 has P_3, and '[6] it is shown that f(2)=7 and f(3)=19'. Readable prose: 'Also, it is true that T67 has property P4. Since (2) gives f(4) > 47 it is possible that T67 is also minimal.' No 51, 52, or 0.7695. The extracted '>' in f(4) > 47 should not be preferred over a clean glyph; Reid et al. quote the same remark as f(4) ≥ 47, and (4+2)2^{3}-1 = 47."
+    },
+    {
+      "class": "published_theorem",
+      "source": "K. B. Reid, A. A. McRae, S. M. Hedetniemi, and S. T. Hedetniemi, Domination and irredundance in tournaments, Australas. J. Combin. 29 (2004) 157–172, https://ajc.maths.uq.edu.au/pdf/29/ajc_v29_p157.pdf",
+      "opened": "PDF text, 2026-10-23. Header reads Volume 29 (2004), Pages 157–172.",
+      "seen": "Defines f(k) as the least order of a tournament with property S_k. States S_k if and only if the domination number is greater than k. Quotes Szekeres–Szekeres: (k+2)2^{k-1}-1 ≤ f(k). Quotes Graham–Spencer: QRT_67 has property S_4 and the Szekeres bound gives f(4) ≥ 47. Proposition 14: domination number at least 5 implies at least 47 vertices. Corollary 7: domination number at least 5 implies at least 48 vertices, by excluding a triply regular tournament on 47 vertices and citing Reid and Brown, J. Combin. Theory 12 (1972) 332–338. That 1972 paper was not opened. Fisher is cited as a 1996 private communication that the smallest rotational tournament of domination number 5 is QRT_67. The extracted PDF contains no 0.769 and no standalone lower bound 51 or 52. Combined with the paper's own equivalence, Corollary 7 is the published statement f(4) ≥ 48."
+    },
+    {
+      "class": "published_theorem",
+      "source": "S. Bozóki, Nontransitive dice sets realizing Paley tournaments for solving Schütte's tournament problem, DOI 10.18514/mmn.2014.659",
+      "opened": "Publisher text extraction, 2026-10-23",
+      "seen": "Attributes f(1)=3, f(2)=7, f(3)=19 to Szekeres–Szekeres, p. 293. Says Graham–Spencer, p. 47, propose that P_67 has S_4, hence f(4) ≤ 67, and attributes to them the conjecture f(4)=67. The sentence actually read in Graham–Spencer is the weaker 'it is possible that T67 is also minimal.' Bozóki cites Reid et al. for Fisher's computation that P_67 is the smallest Paley tournament with S_4. The extraction does not state f(4) ≥ 48, f(4) ≥ 51, f(4) ≥ 52, or c*."
+    },
+    {
+      "class": "preprint_or_repository",
+      "source": "Joel Jeffries, Schütte's property for sets of tournaments and an application to dice games, arXiv:2604.08790",
+      "opened": "arXiv HTML, 2026-10-23",
+      "seen": "Theorem 1.1 restates f(k) ≤ (log 2 + O(1)) k^2 2^k, f(k) ≥ 2^{k+1}-1, and f(k) ≥ (k+2)2^{k-1}-1 for k>2, and says these remain the best known bounds for f(k). Section 4 says the bounds on f(k) have remained unimproved for 60 years. The HTML cites Reid et al. 2004 but does not record Corollary 7. It says, via Bozóki and Fisher, that P_67, P_331, and P_1163 are the smallest S_4, S_5, and S_6 Paley tournaments. A later 'around 0.51' is a dice probability, not c*. No f(4) ≥ 51, f(4) ≥ 52, or 0.7695."
+    },
+    {
+      "class": "preprint_or_repository",
+      "source": "https://github.com/jaredwilder/erdos902 README.md and ORDER49_MONOLITHIC_ASSAULT.md",
+      "opened": "raw GitHub files, 2026-10-23",
+      "seen": "README states the Lean theorem (n+2)2^{n-1}-1 ≤ f(n) ≤ n+3 n^2 2^n, f(1)=3, f(2)=7, and the window 48 ≤ f(4) ≤ 67, with a QR67 certificate. It says the two order-49 Cayley families are eliminated and that the unrestricted order-49 case is a separate question. ORDER49_MONOLITHIC_ASSAULT.md says no Cayley tournament on either group of order 49 has S_4, that this does not decide arbitrary tournaments, and that the unrestricted order-49 problem remains open in that artifact. Neither file states f(4) ≥ 49 as a general bound, nor f(4) ≥ 51, f(4) ≥ 52, nor c*. The forum post points at this repository for the classical bounds only."
+    },
+    {
+      "class": "preprint_or_repository",
+      "source": "ORBSEER, Cayley tournaments with Schütte's property S4 on fewer than 67 vertices, Zenodo, concept DOI 10.5281/zenodo.23269759, version DOI 10.5281/zenodo.23269760, published 2026-10-09",
+      "opened": "Zenodo API record and the zip erdos902-cayley-s4.zip (89985 bytes), searched for 0.769, f(4), 51, and 52",
+      "seen": "Metadata and README say no Cayley tournament on any of the 16 groups of odd order 47 to 65 has S_4; on the cyclic group of order 67 the only S_4 connection sets are the quadratic residues and non-residues; with f(4) ≥ 48, the Paley tournament on 67 vertices is the unique smallest Cayley tournament with S_4; the general bounds 48 ≤ f(4) ≤ 67 are unchanged. Hits on 51 are the group Z51 or hashes, not a lower bound f(4) ≥ 51. No 0.769."
+    },
+    {
+      "class": "website_commentary",
+      "source": "OEIS A362137, https://oeis.org/A362137",
+      "opened": "2026-10-23",
+      "seen": "Smallest n-paradoxical tournament built as a directed Paley graph: 1, 3, 7, 19, 67, 331, 1163. The comment says a(1), a(2), and a(3) are proved smallest for any such tournament, while a(4)=67, a(5)=331, and a(6)=1163 are smallest only among directed Paley realisations. References include Erdős 1963, Szekeres–Szekeres 1965, Graham–Spencer 1971, Reid et al. 2004, and Bloom's problem 902. No 51, 52, or c* as bounds."
+    },
+    {
+      "class": "workspace_only",
+      "source": "This workspace",
+      "opened": "local files read 2026-10-23",
+      "seen": "f(4) ≥ 51 is Theorem A of proof/ERDOS902_PROOF.md, also listed in research/LEMMAS.md. f(4) ≥ 52 and the strong triple claim are in proof/F4_GE_52_HAND_PROOF.md. c* = 0.7695032191504894326990652683098231346767 is in proof/ERDOS902_PROOF.md and proof/verify_proof.py. research/LITERATURE.md had attributed a general f(4) ≥ 49 to the Wilder repository; the README and order-49 note opened today do not make that general claim."
+    },
+    {
+      "class": "UNVERIFIED",
+      "source": "Semantic Scholar query 'Szekeres problem of Schütte and Erdős tournament'",
+      "opened": "tool call this session returned an empty response",
+      "seen": "Empty. Not evidence of absence. The same was already recorded for an earlier query in research/LITERATURE.md."
+    },
+    {
+      "class": "UNVERIFIED",
+      "source": "Bibliography tag [Er82e] on the problem page",
+      "opened": "the tag is visible; the cited work is not",
+      "seen": "The LaTeX page does not expand Er82e. No paper matching that key was opened."
+    }
+  ],
+  "weaknesses": [
+    "The full texts of Erdős 1963 and Szekeres–Szekeres 1965 were not opened. Their general bounds are website attributions plus quotations in later papers that were opened.",
+    "Reid and Brown 1972, cited for the last step of Corollary 7, was not opened. Moon 1968 was not opened. The Er82e target was not opened.",
+    "Graham–Spencer formulas in the Cambridge extraction are OCR-damaged. The prose sentence that T_67 has property P_4 was readable. The strictness of the sign in 'f(4) > 47' was not checked against a clean glyph.",
+    "Jeffries's preprint says the classical bounds remain the best known and have been unimproved for 60 years, while the 2004 paper opened here already has the stronger finite bound of 48. That is a gap in the preprint's survey, not a retraction of Corollary 7.",
+    "Bozóki attributes the conjecture f(4)=67 to Graham–Spencer. The sentence read in Graham–Spencer is that T_67 might be minimal.",
+    "Web search and the opened corpus did not surface f(4) ≥ 51, f(4) ≥ 52, or 0.76950321915. That does not prove those strings are absent from every unopened paper, repository, or paywalled scan. Semantic Scholar's empty response is not a negative search.",
+    "The Wilder Lean project was read from the README and one markdown note. It was not rebuilt, so the kernel check claimed there is UNVERIFIED.",
+    "The cursor-ide-browser server did not register. Page text comes from WebFetch and publisher extractions, not from a rendered browser snapshot.",
+    "OpenAlex's hit for the Szekeres title was Yair Caro and Adriana Hansberg, Directed domination in oriented hypergraphs (2019), not the 1965 paper. It was not used. The broad arXiv tool from the earlier session was not rerun and those unrelated papers are not cited."
+  ],
+  "references": [
+    {
+      "item": "T. F. Bloom, Erdős Problem #902",
+      "url": "https://www.erdosproblems.com/902",
+      "role": "problem statement and classical bounds as displayed",
+      "status": "opened"
+    },
+    {
+      "item": "LaTeX source for problem 902",
+      "url": "https://www.erdosproblems.com/latex/902",
+      "role": "same statement; bibliography keys Er63c and SzSz65",
+      "status": "opened"
+    },
+    {
+      "item": "Discussion thread 902",
+      "url": "https://www.erdosproblems.com/forum/thread/902",
+      "role": "four comments; Graham–Spencer and Wilder pointers",
+      "status": "opened"
+    },
+    {
+      "item": "Proof-claims thread 902",
+      "url": "https://www.erdosproblems.com/forum/thread/902/proof-claims",
+      "role": "no proof claims submitted",
+      "status": "opened"
+    },
+    {
+      "item": "Erdős 1963, Math. Gazette 47, 220–223",
+      "doi": "10.2307/3613396",
+      "role": "bibliographic existence and S_2 abstract",
+      "status": "UNVERIFIED beyond the Crossref abstract"
+    },
+    {
+      "item": "Szekeres and Szekeres 1965, Math. Gazette 49, 290–293",
+      "doi": "10.2307/3612854",
+      "role": "bibliographic existence and S_k abstract",
+      "status": "UNVERIFIED beyond the Crossref abstract"
+    },
+    {
+      "item": "Graham and Spencer 1971, Canad. Math. Bull. 14, 45–48",
+      "doi": "10.4153/cmb-1971-007-1",
+      "role": "constructive Paley bound and T_67 has P_4",
+      "status": "opened, formulas OCR-damaged"
+    },
+    {
+      "item": "Reid, McRae, Hedetniemi, and Hedetniemi 2004, Australas. J. Combin. 29, 157–172",
+      "url": "https://ajc.maths.uq.edu.au/pdf/29/ajc_v29_p157.pdf",
+      "role": "f(4) ≥ 48 via S_4 and Corollary 7; f(4) ≤ 67 quoted from Graham–Spencer",
+      "status": "opened"
+    },
+    {
+      "item": "Bozóki, DOI 10.18514/mmn.2014.659",
+      "role": "f(4) ≤ 67 and an attributed conjecture f(4)=67",
+      "status": "opened"
+    },
+    {
+      "item": "Jeffries, arXiv:2604.08790",
+      "role": "preprint restating the classical bounds as still best known for general k",
+      "status": "opened"
+    },
+    {
+      "item": "Jared Wilder, github.com/jaredwilder/erdos902",
+      "role": "Lean formalisation claim and 48 ≤ f(4) ≤ 67; order-49 result is Cayley-only",
+      "status": "README and ORDER49 note opened; build not run"
+    },
+    {
+      "item": "ORBSEER, Zenodo 10.5281/zenodo.23269759",
+      "role": "Cayley search; states that 48 ≤ f(4) ≤ 67 is unchanged",
+      "status": "API and zip opened"
+    },
+    {
+      "item": "OEIS A362137",
+      "url": "https://oeis.org/A362137",
+      "role": "smallest Paley examples; 67 is not claimed to equal f(4)",
+      "status": "opened"
+    },
+    {
+      "item": "Reid and Brown 1972; Moon 1968; Er82e",
+      "role": "cited by opened sources",
+      "status": "UNVERIFIED"
+    }
+  ],
+  "next_step": "Read the 1963 and 1965 Gazette articles and resolve the tag Er82e before quoting their theorems as checked. Keep f(4) ≥ 51, f(4) ≥ 52, and c* ≈ 0.7695 inside this workspace until a source that actually contains them is opened. Do not describe the opened Wilder files as a proof that f(4) ≥ 49.",
+  "relation_to_prior": "research/LITERATURE.md recorded a timed-out HTML fetch, an indexed snippet, and an empty Semantic Scholar response. This pass opened the problem page, the LaTeX page, the discussion thread, and the proof-claims thread, and it separates published theorems, website text, repositories, and workspace-only claims. The earlier attribution of a general f(4) ≥ 49 to the Wilder repository is not supported by the README and order-49 note opened today. Semantic Scholar was queried again and again returned an empty response.",
+  "novelty": "The new checked facts are the live page text, the empty proof-claims thread, Reid et al. Corollary 7 as the published f(4) ≥ 48, Graham–Spencer's own sentence that T_67 has property P_4, and the absence of f(4) ≥ 51, f(4) ≥ 52, and c* ≈ 0.76950321915 from every external source opened in this pass. None of this solves Erdős problem 902.",
+  "verification": "unreviewed",
+  "source": "file"
+}

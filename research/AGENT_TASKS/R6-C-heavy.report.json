@@ -1,0 +1,328 @@
+{
+  "task_id": "R6-C-heavy",
+  "agent": "C",
+  "claim": "The two heavy vertices of the J = 5, s = 4 pattern cannot sit against the recorded 5-regular tournament on vertices 0 through 10. With A, B, C, D = 0, 1, 2, 3, the zero-excess vertices are 4, 5, 6, 7, 8, 9, 10. Vertices 6 and 9 have exactly four common in-neighbours, namely 2, 4, 7, 8. The vertex of q = 11 beats nobody in the eleven, and the vertex of q = 8 beats only {0, 2, 3}, so both are out-neighbours of 6. The ten pair excesses at 6 then sum to 10 and are at least 14. The same gap holds at 9. The edge between the two heavy vertices is unused. A different tournament on eleven vertices is not excluded. f(4) >= 52 is not proved, and Erdős problem 902 is not solved.",
+  "status": "proved",
+  "definitions": "The recorded tournament is the 5-regular tournament of the R5-C report, on the vertex set {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, with the out-sets copied in the evidence. A common in-neighbour of two vertices is a third vertex of this tournament that beats both, and c is the number of common in-neighbours. The pattern under test is the surviving cell of the R4-C report: a tight pair P in an S_4 tournament on 52 vertices, with dominator set R equal to these eleven vertices, J = 5, and s = 4. Every vertex of R beats both vertices of P, and neither vertex of P beats a vertex of R. The in-degree of a vertex r of R is 25 + j_r, the four positive excesses are j(0) = 2 and j(1) = j(2) = j(3) = 1, and j = 0 on {4, 5, 6, 7, 8, 9, 10}. The outside set O has 39 vertices. For y in O, q_y is the number of vertices of R that beat y. The pattern places exactly two heavy vertices in O: X with q_X = 11, beaten by every vertex of R, and Y with q_Y = 8, beaten by R minus {0, 2, 3} and beating {0, 2, 3}. Every other vertex of O has q = 5. A dominator of a set beats every vertex of the set and lies outside the set. Property S_4 supplies (F1): every triple has at least 5 dominators. For a pair of vertices in R, the pair excess is the sum of |D| - 5 over the nine triples of R through that pair. The vertex excess Ex(r) is the same sum over the 45 triples of R that contain r.",
+  "argument": "Verdict. The two heavy vertices cannot sit against this tournament. The obstruction is the pair {6, 9}.\n\nProperty S_4 gives (F1). A set of size at most 4 is dominated, because it extends to a 4-set and a dominator of the 4-set beats the subset. For a triple Y, the dominator set D(Y) is nonempty. It is undominated. A vertex z that beat every member of D(Y) could not lie in D(Y), because z would then beat itself. It could not lie in Y, because every member of D(Y) beats every member of Y. The 4-set Y union {z} would then have a dominator w outside that 4-set. That w beats Y, so w lies in D(Y), and therefore z beats w. But w beats z. An undominated set has at least 5 vertices, so every triple has at least 5 dominators.\n\nThe links of X and Y into R are the links the pattern prescribes. Vertex 6 lies in R minus {0, 2, 3}, so 6 beats Y. Vertex 6 also beats X. The excess identity at order 52 is sum_y (q_y - 5) = 14 - J. It is the count of out-neighbours from R into O: each r has out-degree 26 - j_r, of which 7 are the two vertices of P and the five out-neighbours in R, leaving 19 - j_r out-neighbours in O, and the sum over R is 209 - J. Subtracting 5 times |O| = 195 leaves 14 - J. Here J = 5, so the excesses sum to 9. The vertices X and Y contribute 6 and 3. Every q_y is at least 5: the dominators of the triple P union {y} are the vertices of R that beat y, and that triple has at least 5 dominators. The remaining 37 excesses are therefore 0, and those 37 vertices have q = 5.\n\nThe out-sets contain 6 in exactly the lists of 2, 4, 7, 8, and 9, so the in-set of 6 is {2, 4, 7, 8, 9}. They contain 9 in exactly the lists of 2, 4, 7, 8, and 10, so the in-set of 9 is {2, 4, 7, 8, 10}. The intersection is {2, 4, 7, 8}, and c(6, 9) = 4. The same reading of intersections gives the ten counts at 6, for the opposite endpoints 0, 1, 2, 3, 4, 5, 7, 8, 9, 10, as 2, 1, 1, 3, 3, 3, 1, 1, 4, 1. The sum is 20, which is the sum forced by five in-neighbours each meeting four further vertices.\n\nThe in-degree of 6 is 25. Five in-neighbours lie in R, and 6 beats both vertices of P, so 20 vertices of O beat 6. Both X and Y are out-neighbours of 6, so all 20 lie among the 37 vertices of q = 5.\n\nThose 20 vertices and the five in-neighbours in R determine Ex(6). Each in-neighbour in R has four further out-neighbours in R and dominates C(4, 2) = 6 triples of R through 6. Each of the 20 light in-neighbours has five further out-neighbours in R and dominates C(5, 2) = 10 such triples. There are C(10, 2) = 45 triples. Thus Ex(6) = 5 * 6 + 20 * 10 - 45 * 5 = 30 + 200 - 225 = 5. Each triple through 6 sits in two pair excesses at 6, so the ten pair excesses sum to 2 * 5 = 10.\n\nFor v different from 6, let c = c(6, v) and let k be the number of vertices of O that beat both 6 and v. Every such vertex has q = 5. It has four further out-neighbours in R, and each of the c common in-neighbours has three. No vertex of q greater than 5 beats 6. The pair excess is therefore exactly 3c + 4k - 45. It is a sum of nine nonnegative terms |D| - 5, so it is nonnegative, and k is a nonnegative integer. The least nonnegative value of 4k + 3c - 45 is 3 - c when c is 0, 1, 2, or 3, because 4k + 3c - 45 is congruent to 3 - c modulo 4 and 3 - c lies in {0, 1, 2, 3}. When c = 4 the same congruence class is 3, so the least nonnegative value is 3. The ten counts 2, 1, 1, 3, 3, 3, 1, 1, 4, 1 therefore force the ten pair excesses to be at least 1, 2, 2, 0, 0, 0, 2, 2, 3, 2. The sum of these lower bounds is 14, which is greater than 10.\n\nThe count at the other end is the same size. The ten counts at 9, for opposite endpoints 0, 1, 2, 3, 4, 5, 6, 7, 8, 10, are 1, 0, 2, 2, 3, 3, 4, 2, 2, 1, and the same rule produces lower bounds summing to 14 against the same budget 10. The pair {0, 1} is the other pair with four common in-neighbours. Its endpoints have positive excess, and the pattern already requires c(0, 1) = 4. The budget that fails is the budget at a zero-excess endpoint.\n\nThe comparison uses the prescribed links from X and from Y into R, the degree excesses, and (F1). It does not use the edge between X and Y, and it leaves the 37 light vertices unassigned. This tournament admits no such pair of heavy vertices. The argument says nothing about a different 5-regular tournament on eleven vertices. f(4) >= 52 is not proved, and Erdős problem 902 is not solved.",
+  "evidence": {
+    "recorded_out_sets": {
+      "0": [
+        1,
+        2,
+        4,
+        7,
+        10
+      ],
+      "1": [
+        2,
+        4,
+        7,
+        8,
+        10
+      ],
+      "2": [
+        4,
+        5,
+        6,
+        7,
+        9
+      ],
+      "3": [
+        0,
+        1,
+        2,
+        8,
+        10
+      ],
+      "4": [
+        3,
+        5,
+        6,
+        9,
+        10
+      ],
+      "5": [
+        0,
+        1,
+        3,
+        7,
+        8
+      ],
+      "6": [
+        0,
+        1,
+        3,
+        5,
+        10
+      ],
+      "7": [
+        3,
+        4,
+        6,
+        8,
+        9
+      ],
+      "8": [
+        0,
+        2,
+        4,
+        6,
+        9
+      ],
+      "9": [
+        0,
+        1,
+        3,
+        5,
+        6
+      ],
+      "10": [
+        2,
+        5,
+        7,
+        8,
+        9
+      ]
+    },
+    "in_sets_of_the_obstruction": {
+      "6": [
+        2,
+        4,
+        7,
+        8,
+        9
+      ],
+      "9": [
+        2,
+        4,
+        7,
+        8,
+        10
+      ],
+      "common": [
+        2,
+        4,
+        7,
+        8
+      ],
+      "c": 4,
+      "direction": "9 beats 6"
+    },
+    "positive_c_recomputed": {
+      "order": [
+        "AB",
+        "AD",
+        "AC",
+        "BC",
+        "BD",
+        "CD"
+      ],
+      "values": [
+        4,
+        3,
+        2,
+        2,
+        3,
+        0
+      ],
+      "matches_R5": true
+    },
+    "pairs_with_c_equal_to_4": [
+      {
+        "pair": [
+          0,
+          1
+        ],
+        "common": [
+          3,
+          5,
+          6,
+          9
+        ],
+        "zero_excess_endpoint": false
+      },
+      {
+        "pair": [
+          6,
+          9
+        ],
+        "common": [
+          2,
+          4,
+          7,
+          8
+        ],
+        "zero_excess_endpoint": true
+      }
+    ],
+    "c_row_at_6": {
+      "opposite_endpoint": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8,
+        9,
+        10
+      ],
+      "c": [
+        2,
+        1,
+        1,
+        3,
+        3,
+        3,
+        1,
+        1,
+        4,
+        1
+      ],
+      "intersections": {
+        "0": [
+          8,
+          9
+        ],
+        "1": [
+          9
+        ],
+        "2": [
+          8
+        ],
+        "3": [
+          4,
+          7,
+          9
+        ],
+        "4": [
+          2,
+          7,
+          8
+        ],
+        "5": [
+          2,
+          4,
+          9
+        ],
+        "7": [
+          2
+        ],
+        "8": [
+          7
+        ],
+        "9": [
+          2,
+          4,
+          7,
+          8
+        ],
+        "10": [
+          4
+        ]
+      },
+      "lower_bounds": [
+        1,
+        2,
+        2,
+        0,
+        0,
+        0,
+        2,
+        2,
+        3,
+        2
+      ],
+      "sum_c": 20,
+      "sum_of_lower_bounds": 14
+    },
+    "c_row_at_9": {
+      "opposite_endpoint": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        10
+      ],
+      "c": [
+        1,
+        0,
+        2,
+        2,
+        3,
+        3,
+        4,
+        2,
+        2,
+        1
+      ],
+      "sum_c": 20,
+      "sum_of_lower_bounds": 14
+    },
+    "budget_at_a_zero_excess_vertex": {
+      "in_degree": 25,
+      "in_neighbours_in_R": 5,
+      "in_neighbours_in_O": 20,
+      "those_20_have_q": 5,
+      "X_beats_6": false,
+      "Y_beats_6": false,
+      "Y_out_set_in_R": [
+        0,
+        2,
+        3
+      ],
+      "Ex": 5,
+      "formula": "5*6 + 20*10 - 45*5",
+      "sum_of_ten_pair_excesses": 10,
+      "gap": 4
+    },
+    "excess_identity": {
+      "J": 5,
+      "sum_of_q_minus_5": 9,
+      "heavy_excesses": [
+        6,
+        3
+      ],
+      "light_vertices": 37
+    },
+    "minimum_of_4k_plus_3c_minus_45": {
+      "c": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "minimum": [
+        3,
+        2,
+        1,
+        0,
+        3
+      ]
+    },
+    "edge_between_the_heavy_vertices_used": false,
+    "light_vertices_assigned": false,
+    "other_11_vertex_tournaments_excluded": false,
+    "f4_at_least_52_proved": false,
+    "erdos_902_solved": false
+  },
+  "weaknesses": "The obstruction is special to this edge list. The pair {6, 9} was found by reading the common-in-neighbour counts on the 21 pairs inside {4, 5, 6, 7, 8, 9, 10}; the proof is the reading of the out-sets and the budget arithmetic, and the scan is not a step in that reading. The 551 isomorphism classes of 5-regular tournaments on 11 vertices were not listed. A different tournament with the positive counts 4, 3, 2, 2, 3, 0 and with every zero-excess pair at most 3 may still accept the same two heavy vertices. The degree excesses 2, 1, 1, 1 and the heavy types q = 11 and q = 8 missing {0, 2, 3} are the pattern recorded in the R4-C report. That report depends on J >= 5 and s >= 4 from earlier reports in the same agent role, and those bounds are not rebuilt here. (F1) is derived above from S_4; the rest of the order-52 case tree is not. The 37 light vertices are unassigned because the budget at 6 has already failed. f(4) >= 52 is not proved, and Erdős problem 902 is not solved.",
+  "references": [
+    "research/AGENT_TASKS/R5-C-pattern.report.json",
+    "research/AGENT_TASKS/R4-C-tight-s4.report.json",
+    "research/LEMMAS.md"
+  ],
+  "next_step": "Test another 5-regular tournament on 11 vertices against the same two heavy vertices, with positive common-in-neighbour counts 4, 3, 2, 2, 3, 0 and with every pair that meets the seven zero-excess vertices at most 3. The recorded tournament fails that last condition on {6, 9}.",
+  "relation_to_prior": "The R5-C report records this tournament, with A, B, C, D = 0, 1, 2, 3 and positive counts 4, 3, 2, 2, 3, 0, and leaves the two heavy vertices unassigned. This report places the q = 11 vertex and the q = 8 vertex missing {0, 2, 3} and finds that the pair {6, 9} inside the zero-excess set makes their triple-excess budget fail. It does not rebuild the partitions of the heavy excess 9, the case trees for s <= 3, or the bounds J >= 5 and s >= 4. The exhausted approach keys are not used.",
+  "novelty": "Relative to R5-C, which checks the 28 counts from {0, 1, 2, 3} into the other seven vertices and does not test a pair inside those seven, the new fact is that 6 and 9 have common in-neighbours {2, 4, 7, 8}. Under the prescribed heavy links that pair forces the ten pair excesses at either endpoint to sum to at least 14, while the in-degree 25 and the two heavy vertices being out-neighbours of that endpoint fix the sum at 10.",
+  "verification": "unreviewed",
+  "source": "file"
+}

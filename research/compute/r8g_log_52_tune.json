@@ -1,0 +1,389 @@
+{
+ "N": 52,
+ "args": {
+  "N": 52,
+  "seeds": "reg,qr,circ",
+  "minutes": 1.6,
+  "restart_seconds": 28.0,
+  "seed": 11,
+  "tag": "tune",
+  "lam": 1.0,
+  "stall": 1500
+ },
+ "runs": [
+  {
+   "run": 1,
+   "seed_kind": "reg",
+   "seed_meta": {},
+   "seed_cost": 20483.0,
+   "seed_undominated": 12187,
+   "best_cost": 6706.0,
+   "iters": 1039,
+   "kicks": 0,
+   "seconds": 28.0,
+   "trace": [
+    [
+     638,
+     6836.0
+    ],
+    [
+     639,
+     6811.0
+    ],
+    [
+     642,
+     6807.0
+    ],
+    [
+     646,
+     6795.0
+    ],
+    [
+     648,
+     6792.0
+    ],
+    [
+     670,
+     6790.0
+    ],
+    [
+     671,
+     6785.0
+    ],
+    [
+     672,
+     6777.0
+    ],
+    [
+     673,
+     6766.0
+    ],
+    [
+     674,
+     6762.0
+    ],
+    [
+     675,
+     6751.0
+    ],
+    [
+     676,
+     6747.0
+    ],
+    [
+     677,
+     6745.0
+    ],
+    [
+     678,
+     6725.0
+    ],
+    [
+     681,
+     6706.0
+    ]
+   ],
+   "profile": {
+    "N": 52,
+    "undominated_4sets": 3633,
+    "min_pair_dom": 10,
+    "min_triple_dom": 2,
+    "triples_below_5": 2692,
+    "triple_deficit": 3073,
+    "min_4set_dom": 0,
+    "4sets_with_1_dom": 33205,
+    "indeg_min": 24,
+    "indeg_max": 27,
+    "indeg_hist": {
+     "24": 1,
+     "25": 26,
+     "26": 23,
+     "27": 2
+    },
+    "example_undominated": [
+     0,
+     1,
+     2,
+     33
+    ],
+    "S4": false
+   }
+  },
+  {
+   "run": 2,
+   "seed_kind": "qr",
+   "seed_meta": {
+    "deleted": [
+     0,
+     6,
+     8,
+     11,
+     12,
+     14,
+     18,
+     24,
+     33,
+     36,
+     37,
+     40,
+     44,
+     64,
+     65
+    ],
+    "degree_obj": 69.0
+   },
+   "seed_cost": 8830.0,
+   "seed_undominated": 4818,
+   "best_cost": 6707.0,
+   "iters": 1107,
+   "kicks": 0,
+   "seconds": 28.0,
+   "trace": [
+    [
+     627,
+     6789.0
+    ],
+    [
+     637,
+     6788.0
+    ],
+    [
+     638,
+     6787.0
+    ],
+    [
+     640,
+     6777.0
+    ],
+    [
+     641,
+     6772.0
+    ],
+    [
+     642,
+     6762.0
+    ],
+    [
+     893,
+     6761.0
+    ],
+    [
+     894,
+     6753.0
+    ],
+    [
+     895,
+     6748.0
+    ],
+    [
+     896,
+     6739.0
+    ],
+    [
+     897,
+     6736.0
+    ],
+    [
+     898,
+     6728.0
+    ],
+    [
+     900,
+     6716.0
+    ],
+    [
+     901,
+     6714.0
+    ],
+    [
+     902,
+     6707.0
+    ]
+   ],
+   "profile": {
+    "N": 52,
+    "undominated_4sets": 3698,
+    "min_pair_dom": 10,
+    "min_triple_dom": 1,
+    "triples_below_5": 2644,
+    "triple_deficit": 3009,
+    "min_4set_dom": 0,
+    "4sets_with_1_dom": 32776,
+    "indeg_min": 24,
+    "indeg_max": 27,
+    "indeg_hist": {
+     "24": 1,
+     "25": 25,
+     "26": 25,
+     "27": 1
+    },
+    "example_undominated": [
+     0,
+     1,
+     4,
+     5
+    ],
+    "S4": false
+   }
+  },
+  {
+   "run": 3,
+   "seed_kind": "circ",
+   "seed_meta": {
+    "n": 53,
+    "S": [
+     2,
+     4,
+     5,
+     6,
+     7,
+     8,
+     11,
+     12,
+     13,
+     14,
+     18,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     33,
+     34,
+     36,
+     37,
+     38,
+     43,
+     44,
+     50,
+     52
+    ],
+    "dr_obj": 81.0
+   },
+   "seed_cost": 11286.0,
+   "seed_undominated": 6275,
+   "best_cost": 6722.0,
+   "iters": 1104,
+   "kicks": 0,
+   "seconds": 28.0,
+   "trace": [
+    [
+     765,
+     6802.0
+    ],
+    [
+     766,
+     6796.0
+    ],
+    [
+     767,
+     6794.0
+    ],
+    [
+     768,
+     6792.0
+    ],
+    [
+     769,
+     6789.0
+    ],
+    [
+     941,
+     6788.0
+    ],
+    [
+     942,
+     6774.0
+    ],
+    [
+     943,
+     6770.0
+    ],
+    [
+     944,
+     6766.0
+    ],
+    [
+     945,
+     6754.0
+    ],
+    [
+     946,
+     6748.0
+    ],
+    [
+     947,
+     6740.0
+    ],
+    [
+     948,
+     6734.0
+    ],
+    [
+     951,
+     6724.0
+    ],
+    [
+     952,
+     6722.0
+    ]
+   ],
+   "profile": {
+    "N": 52,
+    "undominated_4sets": 3656,
+    "min_pair_dom": 10,
+    "min_triple_dom": 2,
+    "triples_below_5": 2686,
+    "triple_deficit": 3066,
+    "min_4set_dom": 0,
+    "4sets_with_1_dom": 33459,
+    "indeg_min": 25,
+    "indeg_max": 26,
+    "indeg_hist": {
+     "25": 26,
+     "26": 26
+    },
+    "example_undominated": [
+     0,
+     1,
+     5,
+     24
+    ],
+    "S4": false
+   }
+  }
+ ],
+ "best": {
+  "undominated_4sets": 3633,
+  "cost": 6706.0,
+  "run": 1,
+  "seed_kind": "reg",
+  "profile": {
+   "N": 52,
+   "undominated_4sets": 3633,
+   "min_pair_dom": 10,
+   "min_triple_dom": 2,
+   "triples_below_5": 2692,
+   "triple_deficit": 3073,
+   "min_4set_dom": 0,
+   "4sets_with_1_dom": 33205,
+   "indeg_min": 24,
+   "indeg_max": 27,
+   "indeg_hist": {
+    "24": 1,
+    "25": 26,
+    "26": 23,
+    "27": 2
+   },
+   "example_undominated": [
+    0,
+    1,
+    2,
+    33
+   ],
+   "S4": false
+  }
+ },
+ "elapsed_seconds": 87.5
+}

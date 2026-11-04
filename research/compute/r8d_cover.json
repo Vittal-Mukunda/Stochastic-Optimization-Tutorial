@@ -1,0 +1,943 @@
+[
+ {
+  "J": 6,
+  "j": [
+   2,
+   2,
+   1,
+   1
+  ],
+  "unmodified": "OPTIMAL",
+  "unmodified_secs": 0.2,
+  "unmodified_heavy": [
+   [
+    6,
+    [],
+    1
+   ],
+   [
+    2,
+    [
+     0,
+     1,
+     2,
+     3
+    ],
+    1
+   ]
+  ],
+  "no_cover": "INFEASIBLE",
+  "no_cover_secs": 0.2
+ },
+ {
+  "J": 6,
+  "j": [
+   2,
+   1,
+   1,
+   1,
+   1
+  ],
+  "unmodified": "OPTIMAL",
+  "unmodified_secs": 0.2,
+  "unmodified_heavy": [
+   [
+    6,
+    [],
+    1
+   ],
+   [
+    1,
+    [
+     0,
+     1,
+     2,
+     3,
+     4
+    ],
+    2
+   ]
+  ],
+  "no_cover": "INFEASIBLE",
+  "no_cover_secs": 0.2
+ },
+ {
+  "J": 6,
+  "j": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "unmodified": "OPTIMAL",
+  "unmodified_secs": 0.2,
+  "unmodified_heavy": [
+   [
+    6,
+    [],
+    1
+   ],
+   [
+    2,
+    [
+     0,
+     1,
+     2,
+     4
+    ],
+    1
+   ]
+  ],
+  "no_cover": "INFEASIBLE",
+  "no_cover_secs": 1.2
+ },
+ {
+  "J": 7,
+  "j": [
+   3,
+   2,
+   1,
+   1
+  ],
+  "unmodified": "OPTIMAL",
+  "unmodified_secs": 0.2,
+  "unmodified_heavy": [
+   [
+    5,
+    [
+     0
+    ],
+    1
+   ],
+   [
+    2,
+    [
+     0,
+     1,
+     2,
+     3
+    ],
+    1
+   ]
+  ],
+  "no_cover": "OPTIMAL",
+  "no_cover_secs": 0.2,
+  "no_cover_heavy": [
+   [
+    5,
+    [
+     0
+    ],
+    1
+   ],
+   [
+    2,
+    [
+     0,
+     1,
+     2,
+     3
+    ],
+    1
+   ]
+  ]
+ },
+ {
+  "J": 7,
+  "j": [
+   3,
+   1,
+   1,
+   1,
+   1
+  ],
+  "unmodified": "OPTIMAL",
+  "unmodified_secs": 0.2,
+  "unmodified_heavy": [
+   [
+    5,
+    [
+     0
+    ],
+    1
+   ],
+   [
+    2,
+    [
+     0,
+     1,
+     2,
+     3
+    ],
+    1
+   ]
+  ],
+  "no_cover": "OPTIMAL",
+  "no_cover_secs": 0.2,
+  "no_cover_heavy": [
+   [
+    5,
+    [
+     0
+    ],
+    1
+   ],
+   [
+    2,
+    [
+     0,
+     2,
+     3,
+     4
+    ],
+    1
+   ]
+  ]
+ },
+ {
+  "J": 7,
+  "j": [
+   2,
+   2,
+   2,
+   1
+  ],
+  "unmodified": "OPTIMAL",
+  "unmodified_secs": 0.2,
+  "unmodified_heavy": [
+   [
+    5,
+    [
+     2
+    ],
+    1
+   ],
+   [
+    2,
+    [
+     0,
+     1,
+     2,
+     3
+    ],
+    1
+   ]
+  ],
+  "no_cover": "OPTIMAL",
+  "no_cover_secs": 0.2,
+  "no_cover_heavy": [
+   [
+    5,
+    [
+     2
+    ],
+    1
+   ],
+   [
+    2,
+    [
+     0,
+     1,
+     2,
+     3
+    ],
+    1
+   ]
+  ]
+ },
+ {
+  "J": 7,
+  "j": [
+   2,
+   2,
+   1,
+   1,
+   1
+  ],
+  "unmodified": "OPTIMAL",
+  "unmodified_secs": 0.2,
+  "unmodified_heavy": [
+   [
+    6,
+    [],
+    1
+   ],
+   [
+    1,
+    [
+     0,
+     1,
+     2,
+     3,
+     4
+    ],
+    1
+   ]
+  ],
+  "no_cover": "OPTIMAL",
+  "no_cover_secs": 0.2,
+  "no_cover_heavy": [
+   [
+    5,
+    [
+     1
+    ],
+    1
+   ],
+   [
+    1,
+    [
+     0,
+     1,
+     2,
+     3,
+     4
+    ],
+    2
+   ]
+  ]
+ },
+ {
+  "J": 7,
+  "j": [
+   2,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "unmodified": "OPTIMAL",
+  "unmodified_secs": 0.3,
+  "unmodified_heavy": [
+   [
+    6,
+    [],
+    1
+   ],
+   [
+    1,
+    [
+     1,
+     2,
+     3,
+     4,
+     5
+    ],
+    1
+   ]
+  ],
+  "no_cover": "OPTIMAL",
+  "no_cover_secs": 0.2,
+  "no_cover_heavy": [
+   [
+    5,
+    [
+     0
+    ],
+    1
+   ],
+   [
+    1,
+    [
+     0,
+     1,
+     2,
+     4,
+     5
+    ],
+    1
+   ],
+   [
+    1,
+    [
+     0,
+     1,
+     3,
+     4,
+     5
+    ],
+    1
+   ]
+  ]
+ },
+ {
+  "J": 7,
+  "j": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "unmodified": "OPTIMAL",
+  "unmodified_secs": 1.0,
+  "unmodified_heavy": [
+   [
+    5,
+    [
+     6
+    ],
+    1
+   ],
+   [
+    1,
+    [
+     0,
+     1,
+     3,
+     4,
+     5
+    ],
+    1
+   ],
+   [
+    1,
+    [
+     1,
+     2,
+     3,
+     4,
+     5
+    ],
+    1
+   ]
+  ],
+  "no_cover": "OPTIMAL",
+  "no_cover_secs": 0.4,
+  "no_cover_heavy": [
+   [
+    5,
+    [
+     0
+    ],
+    1
+   ],
+   [
+    1,
+    [
+     1,
+     2,
+     3,
+     5,
+     6
+    ],
+    1
+   ],
+   [
+    1,
+    [
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    1
+   ]
+  ]
+ },
+ {
+  "J": 8,
+  "j": [
+   3,
+   3,
+   1,
+   1
+  ],
+  "unmodified": "OPTIMAL",
+  "unmodified_secs": 0.2,
+  "unmodified_heavy": [
+   [
+    4,
+    [
+     0,
+     1
+    ],
+    1
+   ],
+   [
+    2,
+    [
+     0,
+     1,
+     2,
+     3
+    ],
+    1
+   ]
+  ],
+  "no_cover": "OPTIMAL",
+  "no_cover_secs": 0.2,
+  "no_cover_heavy": [
+   [
+    4,
+    [
+     0,
+     1
+    ],
+    1
+   ],
+   [
+    2,
+    [
+     0,
+     1,
+     2,
+     3
+    ],
+    1
+   ]
+  ]
+ },
+ {
+  "J": 8,
+  "j": [
+   3,
+   2,
+   2,
+   1
+  ],
+  "unmodified": "OPTIMAL",
+  "unmodified_secs": 0.2,
+  "unmodified_heavy": [
+   [
+    4,
+    [
+     0,
+     1
+    ],
+    1
+   ],
+   [
+    2,
+    [
+     0,
+     1,
+     2,
+     3
+    ],
+    1
+   ]
+  ],
+  "no_cover": "OPTIMAL",
+  "no_cover_secs": 0.2,
+  "no_cover_heavy": [
+   [
+    3,
+    [
+     0,
+     1,
+     2
+    ],
+    2
+   ]
+  ]
+ },
+ {
+  "J": 8,
+  "j": [
+   3,
+   2,
+   1,
+   1,
+   1
+  ],
+  "unmodified": "OPTIMAL",
+  "unmodified_secs": 0.2,
+  "unmodified_heavy": [
+   [
+    5,
+    [
+     0
+    ],
+    1
+   ],
+   [
+    1,
+    [
+     0,
+     1,
+     2,
+     3,
+     4
+    ],
+    1
+   ]
+  ],
+  "no_cover": "OPTIMAL",
+  "no_cover_secs": 0.2,
+  "no_cover_heavy": [
+   [
+    5,
+    [
+     0
+    ],
+    1
+   ],
+   [
+    1,
+    [
+     0,
+     1,
+     2,
+     3,
+     4
+    ],
+    1
+   ]
+  ]
+ },
+ {
+  "J": 8,
+  "j": [
+   3,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "unmodified": "OPTIMAL",
+  "unmodified_secs": 0.2,
+  "unmodified_heavy": [
+   [
+    5,
+    [
+     0
+    ],
+    1
+   ],
+   [
+    1,
+    [
+     1,
+     2,
+     3,
+     4,
+     5
+    ],
+    1
+   ]
+  ],
+  "no_cover": "OPTIMAL",
+  "no_cover_secs": 0.2,
+  "no_cover_heavy": [
+   [
+    5,
+    [
+     0
+    ],
+    1
+   ],
+   [
+    1,
+    [
+     1,
+     2,
+     3,
+     4,
+     5
+    ],
+    1
+   ]
+  ]
+ },
+ {
+  "J": 8,
+  "j": [
+   2,
+   2,
+   2,
+   2
+  ],
+  "unmodified": "OPTIMAL",
+  "unmodified_secs": 0.2,
+  "unmodified_heavy": [
+   [
+    2,
+    [
+     0,
+     1,
+     2,
+     3
+    ],
+    3
+   ]
+  ],
+  "no_cover": "OPTIMAL",
+  "no_cover_secs": 0.2,
+  "no_cover_heavy": [
+   [
+    4,
+    [
+     2,
+     3
+    ],
+    1
+   ],
+   [
+    2,
+    [
+     0,
+     1,
+     2,
+     3
+    ],
+    1
+   ]
+  ]
+ },
+ {
+  "J": 8,
+  "j": [
+   2,
+   2,
+   2,
+   1,
+   1
+  ],
+  "unmodified": "OPTIMAL",
+  "unmodified_secs": 0.2,
+  "unmodified_heavy": [
+   [
+    5,
+    [
+     2
+    ],
+    1
+   ],
+   [
+    1,
+    [
+     0,
+     1,
+     2,
+     3,
+     4
+    ],
+    1
+   ]
+  ],
+  "no_cover": "OPTIMAL",
+  "no_cover_secs": 0.2,
+  "no_cover_heavy": [
+   [
+    5,
+    [
+     2
+    ],
+    1
+   ],
+   [
+    1,
+    [
+     0,
+     1,
+     2,
+     3,
+     4
+    ],
+    1
+   ]
+  ]
+ },
+ {
+  "J": 8,
+  "j": [
+   2,
+   2,
+   1,
+   1,
+   1,
+   1
+  ],
+  "unmodified": "OPTIMAL",
+  "unmodified_secs": 0.2,
+  "unmodified_heavy": [
+   [
+    5,
+    [
+     1
+    ],
+    1
+   ],
+   [
+    1,
+    [
+     1,
+     2,
+     3,
+     4,
+     5
+    ],
+    1
+   ]
+  ],
+  "no_cover": "OPTIMAL",
+  "no_cover_secs": 0.3,
+  "no_cover_heavy": [
+   [
+    5,
+    [
+     3
+    ],
+    1
+   ],
+   [
+    1,
+    [
+     0,
+     1,
+     2,
+     4,
+     5
+    ],
+    1
+   ]
+  ]
+ },
+ {
+  "J": 8,
+  "j": [
+   2,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "unmodified": "OPTIMAL",
+  "unmodified_secs": 0.4,
+  "unmodified_heavy": [
+   [
+    4,
+    [
+     3,
+     4
+    ],
+    1
+   ],
+   [
+    1,
+    [
+     0,
+     1,
+     2,
+     5,
+     6
+    ],
+    2
+   ]
+  ],
+  "no_cover": "OPTIMAL",
+  "no_cover_secs": 0.5,
+  "no_cover_heavy": [
+   [
+    4,
+    [
+     1,
+     3
+    ],
+    1
+   ],
+   [
+    1,
+    [
+     0,
+     2,
+     4,
+     5,
+     6
+    ],
+    2
+   ]
+  ]
+ },
+ {
+  "J": 8,
+  "j": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "unmodified": "OPTIMAL",
+  "unmodified_secs": 0.7,
+  "unmodified_heavy": [
+   [
+    4,
+    [
+     3,
+     5
+    ],
+    1
+   ],
+   [
+    1,
+    [
+     0,
+     2,
+     4,
+     6,
+     7
+    ],
+    1
+   ],
+   [
+    1,
+    [
+     1,
+     2,
+     4,
+     6,
+     7
+    ],
+    1
+   ]
+  ],
+  "no_cover": "OPTIMAL",
+  "no_cover_secs": 0.8,
+  "no_cover_heavy": [
+   [
+    4,
+    [
+     0,
+     2
+    ],
+    1
+   ],
+   [
+    1,
+    [
+     1,
+     3,
+     5,
+     6,
+     7
+    ],
+    1
+   ],
+   [
+    1,
+    [
+     1,
+     4,
+     5,
+     6,
+     7
+    ],
+    1
+   ]
+  ]
+ }
+]

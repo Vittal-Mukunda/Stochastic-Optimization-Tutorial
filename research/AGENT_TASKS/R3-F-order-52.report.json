@@ -1,0 +1,74 @@
+{
+  "task_id": "R3-F-order-52",
+  "agent": "F",
+  "claim": "Rerunning at order 52 the argument that an S_4 tournament on 51 vertices is doubly regular, the first bound that becomes inconclusive is Σ_{a in A} e(a) ≤ 2 in Corollary 2 of proof/F4_GE_52_HAND_PROOF.md. At order 51 the arcs from the in-neighbourhood of a vertex of in-degree 23 force that sum to be at most 2, and 2 contradicts J ≥ 3. At order 52 the same count forces the sum to be at most 14, and 14 does not contradict J ≥ 3. The two numbers are 2 and 14. Erdős problem 902 is not solved.",
+  "status": "proved",
+  "definitions": "T is a tournament on N vertices: one directed edge on every pair of distinct vertices. D(X) is the set of vertices outside X that beat every vertex of X. S_4 means D(X) is nonempty for every 4-set. A pair P is tight when |D(P)| = 11. For r in D(P), j_r = d^-(r) - 25 and J(P) is the sum of those j_r. Write e(v) = d^-(v) - 25. In Corollary 2, v is a vertex with d^-(v) = 23, A = N^-(v), B = N^+(v), and E = Σ_{a in A} e(a). (F3) is the bound d^-(v) ≥ 23. Lemma T is the bound d^-(r) ≥ 25 for every dominator r of a tight pair. Lemma J is the bound J(P) ≥ 3 for every tight pair in every S_4 tournament. The argument transported from order 51 is section 3 of proof/F4_GE_52_HAND_PROOF.md: each count is recomputed from its definition at the new order, and a printed bound fails when the recomputed count no longer yields the printed conclusion.",
+  "argument": "The inputs that Corollary 2 uses survive the change of order, so the failure is inside the corollary. By (F3) the in-neighbourhood of any vertex induces a tournament of minimum in-degree at least 11, hence has at least 2·11 + 1 = 23 vertices. Lemma T is the count 225 ≤ 30 + 10(d^-(r) - 5) on the 45 triples through one dominator of a tight pair, which forces d^-(r) ≥ 25 and does not use N. Lemma J supplies J ≥ 3 at every order, including 52. Claim Q is not used in Corollary 2.\n\nThe opening line of section 3 says that the in-degrees add up to C(51, 2) = 51·25, so the average is 25. The general identity is C(N, 2) = N(N - 1)/2. At N = 52 this is 1326, the average is 51/2, and 52·25 = 1300. The transported line is the true equality C(52, 2) = 1326. With e(v) = d^-(v) - 25, the sum of e over all vertices is 26. That replacement is made before any bound of Corollary 2 is tested, and the argument continues.\n\nAssume d^-(v) = 23. Then |A| = 23 and |B| = N - 24. The in-degree of a in T[A] equals |D({a, v})|, which is at least 11. These in-degrees sum to C(23, 2) = 253 = 23·11, so each equals 11, T[A] is 11-regular, and every pair {a, v} is tight. Lemma T gives e ≥ 0 on A. The dominators of {a, v} lie in A, so J({a, v}) ≤ E.\n\nEach vertex of B has at least 11 in-neighbours in A, so there are at least 11(N - 24) arcs from A to B. Each a beats v and 11 vertices of A, so it beats d^+(a) - 12 vertices of B. Since d^+(a) = N - 1 - d^-(a) and d^-(a) = 25 + e(a), that number is N - 38 - e(a). The number of arcs is therefore 23(N - 38) - E. Comparing the two counts gives E ≤ 23(N - 38) - 11(N - 24) = 12N - 610.\n\nAt N = 51 the right side is 12·51 - 610 = 2, and |B| = 27, the arc counts are 23·13 - E = 299 - E and at least 11·27 = 297. Then J({a, v}) ≤ E ≤ 2, which contradicts J ≥ 3. This is the printed contradiction. At N = 52 the right side is 12·52 - 610 = 14, and |B| = 28, the arc counts are 23·14 - E = 322 - E and at least 11·28 = 308. Then J({a, v}) ≤ E ≤ 14. Every integer J with 3 ≤ J ≤ 14 meets both J ≥ 3 and J ≤ E ≤ 14. The contradiction does not survive. The bound Σ_{a in A} e(a) ≤ 2 is the first printed relation in the transported argument with that defect. The two numbers are 2 and 14.\n\nThe same upper bound 14 also sits strictly above 5, so the stronger input J ≥ 5 from the order-52 tight-pair analysis does not restore a contradiction. Lemma 2.2 of proof/ERDOS902_PROOF.md is the inequality 12N ≥ 610 and concludes only that in-degree 23 forces N ≥ 51. At N = 50 the slack 12N - 610 equals -10, which is impossible for E ≥ 0. At N = 52 the slack is positive and Lemma 2.2 is silent.\n\nThe count that T[A] is a doubly regular tournament of order 23, and the later comparison 14 ≤ 12 in proof/N52_ATTEMPT.md, is a different argument. It was not used. Corollaries 3 and 4 stand after this bound in the written reduction. Their conclusion that every in-degree equals 25 would require the degree sum to be 1300, while the degree sum is 1326, but that comparison is later than the failure named here. Erdős problem 902 is not solved, and this comparison does not decide whether an S_4 tournament on 52 vertices exists.",
+  "evidence": {
+    "first_failure": "Corollary 2 bound E = sum_{a in A} e(a) <= 2",
+    "two_numbers": [
+      2,
+      14
+    ],
+    "order_51": {
+      "B": 27,
+      "lower_arcs": 297,
+      "exact_arcs": "299 - E",
+      "slack_12N_minus_610": 2,
+      "contradicts_J_at_least_3": true
+    },
+    "order_52": {
+      "B": 28,
+      "lower_arcs": 308,
+      "exact_arcs": "322 - E",
+      "slack_12N_minus_610": 14,
+      "contradicts_J_at_least_3": false,
+      "contradicts_J_at_least_5": false
+    },
+    "slack_formula": "E <= 23(N - 38) - 11(N - 24) = 12N - 610",
+    "slack_at_50_51_52": [
+      -10,
+      2,
+      14
+    ],
+    "handshaking_updated_before_the_bound": {
+      "role": "transported opening line, true at both orders after evaluating (N - 1)/2",
+      "order_51_binom_and_N_times_25": [
+        1275,
+        1275
+      ],
+      "order_52_binom_and_N_times_25": [
+        1326,
+        1300
+      ],
+      "sum_of_e_at_52": 26
+    },
+    "regular_block_on_23_vertices": {
+      "C_23_2": 253,
+      "23_times_11": 253
+    },
+    "inputs_still_in_force": [
+      "(F3) d^- >= 23",
+      "Lemma T",
+      "Lemma J: J >= 3"
+    ],
+    "S3_recurrence_used": false,
+    "corollaries_3_and_4_reached": false,
+    "erdos_902_solved": false,
+    "decides_existence_at_52": false
+  },
+  "weaknesses": "The status proved applies to the location of the first transported failure and to the two slack values 2 and 14. It does not disprove minimum in-degree 24 at order 52: the design argument in proof/N52_ATTEMPT.md was left unread beyond its statement that it continues from E ≤ 14, and it was not checked. Lemma J is an input from research/LEMMAS.md and from R1-G; this report does not re-prove J ≥ 3. The comparison with J ≥ 5 uses that bound only as a number, without reopening its case analysis. Corollaries 3 and 4 were not rerun. No tournament was enumerated. Erdős problem 902 is not solved, and f(4) is not evaluated.",
+  "references": [
+    "proof/F4_GE_52_HAND_PROOF.md",
+    "proof/ERDOS902_PROOF.md",
+    "proof/N52_ATTEMPT.md",
+    "research/LEMMAS.md",
+    "research/AGENT_TASKS/R1-G-audit-every-n.report.json"
+  ],
+  "next_step": "Leave the Corollary 2 contradiction at order 52 as inconclusive on the numbers 2 and 14, and do not revive it by the order-23 design count inside this approach. If a separate argument supplies minimum in-degree 24, the next identity to test is the case split Σ_{x not in Z} e(x) = |Z|: at order 51 the sum of e is 0, and at order 52 it is 26, so the transported right side is 26 + |Z|.",
+  "relation_to_prior": "This moves the order-51 reduction in section 3 of the hand proof up by one vertex. It does not repeat the S_3 recurrence. Lemma J is used as an input and is not re-proved. The exhausted approach keys were not used.",
+  "novelty": "The slack 12N - 610 is the room in Lemma 2.2. Evaluated on the two orders it is 2 and 14. The new point is that 14 is the first bound in the transported doubly regular reduction which no longer contradicts J ≥ 3. The handshaking gap 1326 - 1300 = 26 updates the average before that bound and is not the stopping step.",
+  "verification": "unreviewed",
+  "source": "file"
+}

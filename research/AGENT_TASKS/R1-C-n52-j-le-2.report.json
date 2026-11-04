@@ -1,0 +1,122 @@
+{
+  "task_id": "R1-C-n52-j-le-2",
+  "agent": "C",
+  "claim": "In an S_4 tournament on 52 vertices, every tight pair P satisfies J(P) >= 5. Lemma J supplies J >= 3, and the case analysis below excludes J = 3 and J = 4. Sections 3 and 4 of proof/N52_TIGHT_PAIRS.md are not the proof: the first case that does not follow as printed is section 4, s = 3, which treats partitions of 11 and gives no argument for the partition 5+5 of the excess 10. The bound J >= 5 is the conclusion of the corrected analysis in this report. A tight pair with J >= 5 is still open, f(4) >= 52 is not proved, and Erdős problem 902 is not solved.",
+  "status": "proved",
+  "definitions": "T is an S_4 tournament on N = 52 vertices: every 4-set has a dominator outside itself. D(X) is the set of vertices outside X that beat every member of X. A pair P is tight when |D(P)| = 11. Write R = D(P), O = V \\ (P union R), so |O| = 39, and Q_y = R intersect N^-(y), q_y = |Q_y|. For r in R write d^-(r) = 25 + j_r with j_r >= 0 and J = J(P) = sum j_r. A vertex y in O is heavy when q_y >= 6 and a 5-vertex when q_y = 5. V_0 = {r in R : j_r = 0}, V_+ = R \\ V_0, and s = |V_+|. For u, v in R, c(u, v) is the number of vertices of R that beat both, E_both(u, v) is the sum of (q_y - 5) over y in O that beat both, and the triple-excess s(u, v) is the sum of |D({u, v, w})| - 5 over the nine vertices w in R \\ {u, v}. Ex(r) is the sum of |D(U)| - 5 over the 45 triples U inside R that contain r. lambda(q) = 10 - C(10 - q, 2), with the binomial coefficient read as 0 when 10 - q < 2. tau_u is the sum of (q_y - 5) over y in O that beat u. Lemma J is the input that J >= 3 in every S_4 tournament, at every order; its proof is not repeated.",
+  "argument": "Verdict. Lemma J gives J >= 3. At N = 52 the excess identity forces the heavy excess to be 14 - J, so the two remaining obstacles to J >= 5 are J = 3 (excess 11) and J = 4 (excess 10). Both are impossible, by the case analysis that follows. The printed sections 3 and 4 reach the same conclusion, but section 4, case s = 3, does not follow as written, and three rows of the s = 4 table state a dominator count or a pigeonhole that the pair-sum does not force. Those passages are replaced below. No corrected case survives.\n\nIdentities used, re-derived. Property S_4 is used only through the standing fact that every triple has at least 5 dominators. A tight pair then has T[R] 5-regular, every q_y >= 5, and every j_r >= 0. The vertices of P beat nobody in R, because every vertex of R beats both of them. Thus for u, v in R the dominators of {u, v} lie in (R \\ {u, v}) union O.\n\nIn-degree 5 gives c(u, v) <= 4. Whichever way the edge between u and v points, the beater is one of the five in-neighbours of the beaten vertex, and the beater is not a common in-neighbour. At most four vertices of R beat both.\n\nEach r in R has 20 + j_r in-neighbours in O. Summing the opposite incidences gives sum_y (q_y - 5) = 14 - J. Call the left side the heavy excess. It is a sum of nonnegative integers, so J <= 14. Under Lemma J the heavy excess is an integer in {0, ..., 11}.\n\nThe 45 triples inside R through r have dominator-incidence sum 30 + sum C(10 - q_y, 2), the sum running over the 20 + j_r vertices y that beat r, and the 30 coming from the five in-neighbours of r in R. Since C(10 - q, 2) = 10 - lambda(q), the excess is Ex(r) = 5 + 10 j_r - sum lambda(q_y) >= 0, hence sum lambda <= 5 + 10 j_r. The values are lambda(5) = 0, lambda(6) = 4, lambda(7) = 7, lambda(8) = 9, lambda(9) = lambda(10) = 10. A vertex with q_y = 11 beats nobody in R and does not appear in the sum.\n\nPair-sum. sum_{v != u} c(u, v) = 20. A vertex y that beats u beats 10 - q_y further vertices of R, and 10 - q_y = 5 - (q_y - 5). There are 20 + j_u such y, so sum_{v != u} |D({u, v})| = 120 + 5 j_u - tau_u.\n\nTriple-excess formula. A common in-neighbour in R beats exactly three further vertices of R, and a vertex y that beats both u and v beats exactly 4 - (q_y - 5) further vertices of R. Writing K for the number of such y, |D({u, v})| = c + K and s(u, v) = 3c + 4K - E_both - 45 = 4 |D({u, v})| - c - 45 - E_both. In particular s(u, v) >= 0 and c, E_both >= 0 give 4 |D({u, v})| >= 45, so every pair inside R has at least 12 dominators. The nine triples through {u, v} sit among the 45 triples through u, and every summand is nonnegative, so s(u, v) <= Ex(u) and s(u, v) <= Ex(v).\n\nLemma A, rechecked. If j_u = 0, then sum lambda <= 5. One vertex with q >= 7 that beats u contributes at least 7, and two vertices with q = 6 contribute at least 8. So no vertex with q >= 7 beats u, and at most one vertex with q = 6 does. Let beta in {0, 1} record that vertex, and let m(v) = 1 when it beats both u and v. It beats four further vertices of R, so sum_v m(v) = 4 beta. Every other y that beats u is a 5-vertex and contributes 0 to E_both, so E_both(u, v) = m(v) and s(u, v) ≡ 3 - c(u, v) - m(v) (mod 4). A nonnegative integer in that class is at least 3 - c - m when c + m <= 3, and at least 7 - c - m when c + m >= 4. Summing over the ten partners, sum s(u, v) >= 10 - 4 beta + 4 N_4, where N_4 counts partners with c + m >= 4. The same sum equals 2 Ex(u) = 10 - 8 beta. Therefore beta = N_4 = 0. Every y that beats u is a 5-vertex, sum s = 10 = sum (3 - c), and the termwise lower bound forces s(u, v) = 3 - c(u, v) with c <= 3. The triple-excess formula with E_both = 0 then gives |D({u, v})| = 12 for every v != u. Equivalently, u lies in Q_y whenever q_y >= 6.\n\nConsequence for heavy vertices. Every heavy y beats only vertices of V_+. If it beats t of them, then t <= s and its excess q_y - 5 equals 6 - t, hence lies in {6 - s, ..., 6}. Also sum_{V_+} j_r = J and s <= J, because each vertex of V_+ has j >= 1. Pairs from a vertex of V_+ into V_0 all have 12 dominators. The pair-sum at a vertex u in V_+ therefore says that the sum of |D| over the s - 1 partners inside V_+ equals 12(s - 1) + 5 j_u - tau_u. Here tau_u is the sum of the excesses of the heavy vertices that beat u, since 5-vertices contribute 0.\n\nCase J = 3. The heavy excess is 11 and s <= 3, so every heavy excess lies in {3, 4, 5, 6}.\n\ns = 1. The single positive vertex s_* has j = 3, and excesses lie in {5, 6}. The only such partition of 11 is 6 + 5: one vertex of q = 11 and one of q = 10. The latter beats s_* and nothing else in R, so tau = 5. The pair-sum is 120 + 15 - 5 = 130, while the ten pairs into V_0 contribute 120. This case is impossible. The printed arithmetic agrees.\n\ns = 2. The positive vertices s1, s2 have {j} = {2, 1}, and excesses lie in {4, 5, 6}. The only partition of 11 is 6 + 5. The q = 10 vertex beats exactly one of s1, s2, so one of tau_1, tau_2 is 5 and the other is 0. The pair between them has |D| = 12 + 5 j_i - tau_i from either endpoint. Putting tau = 5 on the vertex of j = 1 gives 12 from that side and 22 from the side of j = 2. The printed sentence says 17 and 12; the value 17 is the slip, and 12 != 22 still kills the assignment. Putting tau = 5 on the vertex of j = 2 gives 17 from both sides, which is the printed evaluation and is correct. No heavy vertex beats both endpoints, so E_both = 0 and the triple-excess is 4*17 - c - 45 = 23 - c >= 19. The endpoint of j = 2 is beaten by the q = 10 vertex only, so Ex = 5 + 20 - 10 = 15. Since 19 > 15, this assignment dies as well.\n\ns = 3. Each of the three positive vertices has j = 1, and excesses lie in {3, 4, 5, 6}. The partitions of 11 are exactly 6 + 5, 5 + 3 + 3 and 4 + 4 + 3. Two vertices of q = 8 beat all three positive vertices, so 5 + 3 + 3 puts lambda >= 9 + 9 = 18 on each of them, above the budget 15. For 4 + 4 + 3 the q = 8 contributes 9 everywhere in V_+ and each q = 9 contributes 10 on two of the three, so those two have lambda >= 19 > 15. For 6 + 5 the q = 10 beats a single vertex s1. Then tau_s1 = 5 and the other two positive vertices have tau = 0. Against the eight vertices of V_0 the pair-sums are D_12 + D_13 = 24, D_12 + D_23 = 29 and D_13 + D_23 = 29, hence D_12 = D_13 = 12 and D_23 = 17. The heavy vertices miss the pair {s2, s3}, so its triple-excess is 23 - c >= 19, while Ex(s2) = 15. All three partitions fail. Thus J != 3. Apart from the numeral 17 in the inconsistent s = 2 assignment, section 3 follows.\n\nCase J = 4. The heavy excess is 10 and s <= 4.\n\ns = 1. Excesses lie in {5, 6}, so the only partition of 10 is 5 + 5. Both q = 10 vertices beat the unique positive vertex, tau = 10, and the pair-sum is 120 + 20 - 10 = 130 against 10*12 = 120.\n\ns = 2. Excesses lie in {4, 5, 6}, so the partitions of 10 are 6 + 4 and 5 + 5. The j-values are (3, 1) or (2, 2). The single pair has |D| = 12 + 5 j_i - tau_i from both ends, so 5 j_1 - tau_1 = 5 j_2 - tau_2.\n\nFor excesses 6 and 4 and j = (2, 2), the q = 9 beats both positive vertices, tau_1 = tau_2 = 4 and |D| = 18. Then E_both = 4 and the triple-excess is 4*18 - c - 45 - 4 = 23 - c >= 19, while each endpoint has Ex = 5 + 20 - 10 = 15. For excesses 5 and 5 and j = (2, 2), equality of the tau values forces each endpoint to be beaten by one q = 10. Then |D| = 17, E_both = 0, the triple-excess is at least 19, and Ex = 15 again. For excesses 5 and 5 and j = (3, 1), the tau difference must be 10, so both q = 10 vertices beat the vertex of j = 3 and tau is 0 on the vertex of j = 1. Then |D| = 17, E_both = 0, the triple-excess is at least 19, and Ex at the vertex of j = 3 is 5 + 30 - 20 = 15. For excesses 6 and 4 the two tau values are equal to 4, so their difference is 0 and they cannot meet the difference 10 required by j = (3, 1). All four branches fail. Section 4, s = 2, follows, including the incompatibility of (6, 4) with j = (3, 1).\n\ns = 3, the first printed case that does not follow. Excesses lie in {3, 4, 5, 6} and the only j-shape is (2, 1, 1). The partitions of 10 are 6 + 4, 5 + 5 and 4 + 3 + 3. The printed bullets instead discuss 5 + 3 + 3, which sums to 11, and they describe 4 + 3 + 3 as if it contained two vertices of q = 9. The partition 5 + 5 is named in the sentence above the bullets and then omitted. Write s1 for the vertex of j = 2 and s2, s3 for the vertices of j = 1. The two pairs out of si into V_+ sum to 24 + 5 j_i - tau_i.\n\nPartition 4 + 3 + 3. The two vertices of q = 8 beat all three positive vertices, so each positive vertex has lambda >= 18. Each vertex of j = 1 has budget 15. This partition dies. The printed appeal to two vertices of q = 9 is the wrong configuration; the two vertices of q = 8 are enough.\n\nPartition 6 + 4. One vertex of q = 9 beats two of the three positive vertices. If it beats s2 and s3, the pair-sums give |D({s2, s3})| = 8. That pair has E_both = 4, so its triple-excess is 4*8 - c - 45 - 4 = -17 - c < 0. If it beats s1 and s2, the pair-sums give |D({s1, s3})| = 17. The q = 9 does not beat both ends of that pair, so E_both = 0, the triple-excess is 23 - c >= 19, and the untouched vertex s3 has Ex = 15. The symmetric choice s1 and s3 is the same. The printed count 8 is right; the contradiction is the negative triple-excess, which is what makes a count below 12 illegal.\n\nPartition 5 + 5, supplied here. Two vertices of q = 10 each beat one positive vertex. If both beat s1, then |D({s2, s3})| = 17, E_both = 0 and the triple-excess is at least 19, while Ex(s2) = 15. If both beat s2, then |D({s2, s3})| = 7 and E_both = 0, so the triple-excess is 4*7 - c - 45 < 0. If they beat s2 and s3, one each, then |D({s2, s3})| = 7 and the same negative excess appears. If they beat s1 and s3, one each, then |D({s1, s2})| = 17 with E_both = 0, and the untouched vertex s2 has Ex = 15 against a triple-excess of at least 19. Every placement fails. Thus s = 3 is impossible.\n\ns = 4. Four vertices of j = 1, and excesses lie in {2, 3, 4, 5, 6}. The partitions of 10 into those parts are exactly nine: 6+4, 5+5, 6+2+2, 5+3+2, 4+4+2, 4+3+3, 4+2+2+2, 3+3+2+2, and 2+2+2+2+2. This list is the case split on the largest part. Largest part 6 leaves 4, hence 6+4 or 6+2+2. Largest part 5 leaves either another 5, or 3+2. Largest part 4 leaves 4+2, or else 3+3, or else 2+2+2. Largest part 3 leaves 3+2+2, and the all-twos partition is the last. A remainder of 1 or an odd remainder against only twos does not occur. For each positive vertex the three pairs into V_+ sum to 41 - tau_i. In the two rows where the printed reason names a single dominator count, the four equations determine only a difference, and the argument uses that difference together with the bound of 12 dominators and the budget Ex <= 15.\n\n6+4. A vertex of q = 11 beats nobody and a vertex of q = 9 beats exactly two positive vertices, A and B, leaving C and D untouched. Then tau_A = tau_B = 4 and tau_C = tau_D = 0, and the pair-sums give |D({C, D})| = |D({A, B})| + 4. Since every pair inside R has at least 12 dominators, |D({C, D})| >= 16. The q = 9 contributes E_both = 4 on {A, B} and E_both = 0 on {C, D}. Each of C and D has Ex = 15. If |D({C, D})| >= 17, its triple-excess is at least 4*17 - 4 - 45 = 19 > 15. If |D({C, D})| = 16, then |D({A, B})| = 12 and the triple-excess of {A, B} is 4*12 - c - 45 - 4 = -1 - c < 0. The printed sentence that the untouched pair has 17 dominators is the first of these two branches only. Both branches fail.\n\n5+5. If both vertices of q = 10 beat the same positive vertex, that vertex has lambda = 20 > 15. If they beat two distinct vertices A and B, leaving C and D untouched, the pair-sums give |D({C, D})| = |D({A, B})| + 5 >= 17. Then E_both on {C, D} is 0 and the triple-excess is at least 19, against Ex = 15 at C and at D. The printed value 11 is not a solution of the pair-sum. Every solution is at least 17, and every such solution exceeds the budget.\n\n6+2+2. Two vertices of q = 7 beat all four positive vertices, and the vertex of q = 11 beats none. Each q = 7 contributes 8 to sum tau, so sum tau = 16 and the six pair-dominator counts inside V_+ sum to 82 - 8 = 74. Some pair therefore has at most 12 dominators. Every pair is beaten at both ends by both q = 7 vertices, so E_both = 4, and a pair with at most 12 dominators has triple-excess at most 4*12 - 45 - 4 = -1. This row follows as printed, once 'at most 12' replaces the assertion that the small count equals 12.\n\n5+3+2. The vertex of q = 7 contributes lambda = 7 on all four positive vertices, and the vertex of q = 8 contributes lambda = 9 on three of them. Those three have lambda >= 16 > 15. This row follows.\n\n4+4+2. The vertex of q = 7 contributes lambda = 7 everywhere, and each vertex of q = 9 contributes lambda = 10 on the two positive vertices it beats. Any positive vertex beaten by a q = 9 therefore has lambda >= 17 > 15, and each q = 9 beats two. This covers complementary miss-sets, which the printed pigeonhole excludes: those miss-sets are disjoint, and the lambda bound still applies to all four vertices. The row dies for that reason.\n\n4+3+3. Two 3-subsets of a 4-set meet in at least two vertices. The two vertices of q = 8 therefore put lambda >= 18 on at least two positive vertices. This row follows.\n\n4+2+2+2. Three vertices of q = 7 put lambda >= 21 on every positive vertex. This row follows.\n\n3+3+2+2. The two vertices of q = 8 share at least two missed vertices, and those have lambda >= 18. This row follows.\n\n2+2+2+2+2. Five vertices of q = 7 put lambda >= 35 on every positive vertex. This row follows.\n\nEvery partition at s = 4 fails, so J != 4.\n\nConclusion. Lemma J excludes J <= 2 at every order. The two cases at N = 52 exclude J = 3 and J = 4. Therefore every tight pair in an S_4 tournament on 52 vertices has J >= 5. The second assertion of the theorem in the note, that at least four vertices of D(P) have in-degree greater than 25, is the content of sections 5 and 9 and is not part of this conclusion. A tight pair with J >= 5 remains possible on the strength of this argument. The order of f(4) is untouched, and Erdős problem 902 is not solved.",
+  "evidence": {
+    "printed_section_3": "follows after one corrected numeral: in s = 2 the inconsistent assignment gives |D| = 12 and |D| = 22, where the note prints 17 and 12; the two sides still disagree. The consistent assignment |D| = 17 and the three partitions at s = 3 match the note.",
+    "first_printed_case_that_does_not_follow": "Section 4, s = 3. The bullets analyse 5+3+3, which sums to 11, describe 4+3+3 as though it had two vertices of q = 9, and never treat the partition 5+5 of the excess 10.",
+    "section_4_s_3_repaired": {
+      "4+3+3": "two q = 8 vertices force lambda >= 18 on every positive vertex, above the j = 1 budget 15",
+      "6+4_misses_both_j_1": "|D| = 8 and E_both = 4, triple-excess = -17 - c",
+      "6+4_misses_j_2_and_one_j_1": "|D| = 17 on the link to the untouched j = 1, triple-excess >= 19, Ex = 15",
+      "5+5_both_on_j_2": "|D| = 17 on the opposite pair, triple-excess >= 19, Ex = 15",
+      "5+5_both_on_a_j_1": "|D| = 7 on a pair with E_both = 0, triple-excess negative",
+      "5+5_one_each_on_the_two_j_1": "|D| = 7, triple-excess negative",
+      "5+5_split_across_j_2_and_one_j_1": "|D| = 17 against the untouched vertex, triple-excess >= 19, Ex = 15"
+    },
+    "section_4_s_4_rows": {
+      "6+4": "pair-sum gives |D(untouched)| = |D(missed pair)| + 4; the branch >= 17 exceeds Ex = 15, and the branch 16 puts triple-excess -1 - c on the missed pair",
+      "5+5": "a repeated miss gives lambda = 20; distinct misses give |D(untouched)| = |D(missed pair)| + 5 >= 17 and triple-excess >= 19",
+      "6+2+2": "six pair counts sum to 74, so some pair has at most 12 dominators and E_both = 4, hence negative triple-excess",
+      "5+3+2": "lambda >= 16 on three vertices",
+      "4+4+2": "lambda >= 17 on every vertex beaten by a q = 9, including complementary miss-sets",
+      "4+3+3": "lambda >= 18 on the intersection of the two 3-subsets",
+      "4+2+2+2": "lambda >= 21 everywhere",
+      "3+3+2+2": "lambda >= 18 on the intersection",
+      "2+2+2+2+2": "lambda >= 35 everywhere"
+    },
+    "integer_checks": {
+      "J3_s2_inconsistent": [
+        12,
+        22
+      ],
+      "J3_s2_consistent": [
+        17,
+        17
+      ],
+      "J3_s3_6_plus_5": [
+        12,
+        12,
+        17
+      ],
+      "J4_s2_6_4_both_j_2": [
+        18,
+        18
+      ],
+      "J4_s2_5_5_both_j_2": [
+        17,
+        17
+      ],
+      "J4_s2_5_5_j_3_1": [
+        17,
+        17
+      ],
+      "J4_s3_6_4": {
+        "miss_both_j1": [
+          17,
+          17,
+          8
+        ],
+        "miss_j2_and_j1": [
+          13,
+          17,
+          12
+        ]
+      },
+      "J4_s3_5_5": {
+        "both_on_j2": [
+          12,
+          12,
+          17
+        ],
+        "both_on_j1": [
+          12,
+          22,
+          7
+        ],
+        "untouched_j2": [
+          17,
+          17,
+          7
+        ],
+        "untouched_j1": [
+          17,
+          12,
+          12
+        ]
+      },
+      "lambda": {
+        "5": 0,
+        "6": 4,
+        "7": 7,
+        "8": 9,
+        "9": 10,
+        "10": 10
+      },
+      "s4_families_with_nonnegative_triple_excess_inside_budget": 0
+    },
+    "c_at_most_4_used": true,
+    "lemma_J_used_as_input": true,
+    "lemma_J_rewritten": false,
+    "computer_search_of_tournaments": false,
+    "erdos_902_solved": false,
+    "f4_at_least_52_proved": false,
+    "tight_pair_excluded": false
+  },
+  "weaknesses": "The status proved belongs to the case analysis written here. The printed section 4, s = 3, does not establish its exclusion, and the s = 4 rows 6+4, 5+5 and 4+4+2 do not follow from the reasons printed beside them. Section 3 follows once 17 is replaced by 22 in the inconsistent s = 2 assignment. Lemma J is an input from the G report and from research/LEMMAS.md; that argument is one author and one checker, and this report does not re-prove J >= 3. Lemma A was rechecked because every appeal to 12 dominators on a pair into V_0 uses it. The comparison J >= 5 does not force four vertices of positive excess: a single vertex of excess 5 meets J = 5 with s = 1, and sections 5 and 9, which treat that shape, were not audited. No tournament was enumerated. A tight pair at order 52 remains open, f(4) >= 52 is not proved, and Erdős problem 902 is not solved.",
+  "references": [
+    "proof/N52_TIGHT_PAIRS.md",
+    "research/LEMMAS.md",
+    "research/AGENT_TASKS/R1-G-audit-every-n.report.json",
+    "proof/ERDOS902_PROOF.md",
+    "proof/F4_GE_52_HAND_PROOF.md"
+  ],
+  "next_step": "Audit section 5 of proof/N52_TIGHT_PAIRS.md, the claim that J = 5 forces s >= 4, and then section 9, the claim that s <= 3 is impossible for J >= 6. Those two sections are what turn J >= 5 into the stronger statement that at least four dominators have in-degree greater than 25. A second reading of the corrected J = 3 and J = 4 split is the check this report still needs.",
+  "relation_to_prior": "Lemma J is an input, taken from research/LEMMAS.md and from research/AGENT_TASKS/R1-G-audit-every-n.report.json. That report stops before sections 3 and 4 and says so. This audit starts there. It does not rewrite the proof that J >= 3, and it does not use the exhausted approach keys, including the local MILP classification of tournaments on 11 vertices. Lemma I supplies the same excess identity that the note writes as (E); the N = 52 evaluation 14 - J was recomputed from the in-neighbour count. The note's theorem also asserts that four dominators have in-degree greater than 25. That half sits in sections 5 and 9 and is left untouched.",
+  "novelty": "The new work relative to G is the exclusion of J = 3 and J = 4 at N = 52. Inside that exclusion, the parts that the printed case list does not contain are: the value 22 on the inconsistent s = 2 assignment at J = 3; a complete placement analysis of the partition 5+5 at s = 3, J = 4; and, at s = 4, the difference relations |D(untouched)| = |D(missed pair)| + 4 for excesses 6+4 and +5 for excesses 5+5, together with the separate boundary in which the missed pair has exactly 12 dominators. The lambda bound on complementary 2-subsets in the row 4+4+2 is also supplied here, in place of the printed pigeonhole.",
+  "verification": "unreviewed",
+  "source": "file"
+}

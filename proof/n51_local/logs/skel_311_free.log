@@ -1,0 +1,3 @@
+skeleton 0 / 57 nodes 1 0.1
+skeleton 50 / 57 nodes 1217 82.8
+{"cl": 311, "mode": "free", "status": "INF", "nodes": 1291, "leaves": 674, "sec": 91.3, "method": "skel", "sym": 5, "strong": 0}

@@ -1,0 +1,171 @@
+{
+ "classfile": "C:\\Users\\vitta\\OneDrive\\Desktop\\stochastic optimization\\proof\\n51_local\\reg11_S2.txt",
+ "tag": "S2",
+ "Jmin": 0,
+ "Jmax": 5,
+ "n_classes": 551,
+ "workers": 3,
+ "secs": 348.9,
+ "summary": {
+  "": {
+   "placements": 551,
+   "orbits": 551,
+   "lemmaA_excluded": 272,
+   "infeasible": 279,
+   "feasible": 0,
+   "classes_with_feasible": 0
+  },
+  "1": {
+   "placements": 6061,
+   "orbits": 5981,
+   "lemmaA_excluded": 2990,
+   "infeasible": 2991,
+   "feasible": 0,
+   "classes_with_feasible": 0
+  },
+  "2": {
+   "placements": 6061,
+   "orbits": 5981,
+   "lemmaA_excluded": 2990,
+   "infeasible": 2991,
+   "feasible": 0,
+   "classes_with_feasible": 0
+  },
+  "1,1": {
+   "placements": 30305,
+   "orbits": 29869,
+   "lemmaA_excluded": 14776,
+   "infeasible": 15093,
+   "feasible": 0,
+   "classes_with_feasible": 0
+  },
+  "3": {
+   "placements": 6061,
+   "orbits": 5981,
+   "lemmaA_excluded": 2990,
+   "infeasible": 2991,
+   "feasible": 0,
+   "classes_with_feasible": 0
+  },
+  "2,1": {
+   "placements": 60610,
+   "orbits": 59738,
+   "lemmaA_excluded": 29552,
+   "infeasible": 30186,
+   "feasible": 0,
+   "classes_with_feasible": 0
+  },
+  "1,1,1": {
+   "placements": 90915,
+   "orbits": 89589,
+   "lemmaA_excluded": 43309,
+   "infeasible": 46280,
+   "feasible": 0,
+   "classes_with_feasible": 0
+  },
+  "4": {
+   "placements": 6061,
+   "orbits": 5981,
+   "lemmaA_excluded": 2990,
+   "infeasible": 2991,
+   "feasible": 0,
+   "classes_with_feasible": 0
+  },
+  "3,1": {
+   "placements": 60610,
+   "orbits": 59738,
+   "lemmaA_excluded": 29552,
+   "infeasible": 30186,
+   "feasible": 0,
+   "classes_with_feasible": 0
+  },
+  "2,2": {
+   "placements": 30305,
+   "orbits": 29869,
+   "lemmaA_excluded": 14776,
+   "infeasible": 15093,
+   "feasible": 0,
+   "classes_with_feasible": 0
+  },
+  "2,1,1": {
+   "placements": 272745,
+   "orbits": 268765,
+   "lemmaA_excluded": 129925,
+   "infeasible": 138840,
+   "feasible": 0,
+   "classes_with_feasible": 0
+  },
+  "1,1,1,1": {
+   "placements": 181830,
+   "orbits": 179154,
+   "lemmaA_excluded": 83503,
+   "infeasible": 95651,
+   "feasible": 0,
+   "classes_with_feasible": 0
+  },
+  "5": {
+   "placements": 6061,
+   "orbits": 5981,
+   "lemmaA_excluded": 2990,
+   "infeasible": 2991,
+   "feasible": 0,
+   "classes_with_feasible": 0
+  },
+  "4,1": {
+   "placements": 60610,
+   "orbits": 59738,
+   "lemmaA_excluded": 29552,
+   "infeasible": 30186,
+   "feasible": 0,
+   "classes_with_feasible": 0
+  },
+  "3,2": {
+   "placements": 60610,
+   "orbits": 59738,
+   "lemmaA_excluded": 29552,
+   "infeasible": 30186,
+   "feasible": 0,
+   "classes_with_feasible": 0
+  },
+  "3,1,1": {
+   "placements": 272745,
+   "orbits": 268765,
+   "lemmaA_excluded": 129925,
+   "infeasible": 138840,
+   "feasible": 0,
+   "classes_with_feasible": 0
+  },
+  "2,2,1": {
+   "placements": 272745,
+   "orbits": 268765,
+   "lemmaA_excluded": 129925,
+   "infeasible": 138840,
+   "feasible": 0,
+   "classes_with_feasible": 0
+  },
+  "2,1,1,1": {
+   "placements": 727320,
+   "orbits": 716600,
+   "lemmaA_excluded": 333996,
+   "infeasible": 382604,
+   "feasible": 0,
+   "classes_with_feasible": 0
+  },
+  "1,1,1,1,1": {
+   "placements": 254562,
+   "orbits": 250810,
+   "lemmaA_excluded": 110815,
+   "infeasible": 139995,
+   "feasible": 0,
+   "classes_with_feasible": 0
+  }
+ },
+ "total_orbits": 2371594,
+ "total_feasible": 0,
+ "n_p3_entries": 926391,
+ "n_p3_feasible_entries": 0,
+ "max_tree_size": 1,
+ "witnesses": [],
+ "n_witnesses_recorded": 0,
+ "witness_full_check_all_clean": true
+}

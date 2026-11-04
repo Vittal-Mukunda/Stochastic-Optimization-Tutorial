@@ -1,0 +1,3858 @@
+{
+  "task_id": "R4-D-upper",
+  "agent": "D",
+  "claim": "For every n from 52 through 66, the forward circular tournaments C_n^+ and C_n^- fail S_4. The undominated 4-set is {0, m, 2m, 3m} with m = floor(n/4). For odd n the two diametral rules define the same tournament; for even n both orientations fail, with this same witness. That half of the claim is a proof. A finite census shows that the Paley tournament of order 67 has no induced subtournament with S_4 on 50 through 66 vertices, the Paley tournament of order 71 has none on 52 through 70 vertices, and the Paley tournament of order 79 has none on 52 through 78 vertices. The Paley tournament of order 83 has none on 52 through 66 vertices. The power-interval tournaments of orders 53, 59, and 61, the cyclotomic tournaments of orders 53 and 61 in each of the two admissible pairs of residue classes, the Jacobi tournaments of orders 55 and 63, thirteen lexicographic products of orders 52 through 66, and all 64 majority products of a tournament on 4 vertices, fail S_4. An undominated 4-set for each of them is recorded in the evidence. The Paley tournament of order 67 has S_4, and this search found no example on fewer vertices, so the upper bound supplied by these families remains f(4) <= 67. Erdős problem 902 remains open.",
+  "status": "computed",
+  "definitions": "A tournament and the dominator set D(X) are as in research/PROBLEM.md: w lies in D(X) when w is outside X and w beats every vertex of X. The tournament has S_4 when D(X) is nonempty for every 4-element set. f(4) is the least order of a tournament with S_4. For 52 <= n <= 66, h = floor((n-1)/2) and L = floor(n/2). The forward circular tournament has vertex set Z/nZ, labelled 0, 1, ..., n-1. There is an edge i -> j when d = (j-i) mod n lies in {1, ..., h}. If n is even and d = n/2, C_n^+ orients the edge from the smaller label to the larger, and C_n^- orients it from the larger label to the smaller. If n is odd there is no such d, and the two names denote one tournament. The Paley tournament QR_p, for a prime p congruent to 3 mod 4, has vertex set Z/pZ and i -> j exactly when j-i is a nonzero quadratic residue. This is the orientation in proof/verify_proof.py. An induced subtournament is the tournament on a vertex subset with those same edges. It has S_4 when every 4-subset has a dominator inside the subset. The power-interval tournament on a prime p uses a primitive root g and the connection set of the k = (p-1)/2 powers g^0, ..., g^{k-1}. A cyclotomic tournament on a prime p congruent to 5 mod 8 uses the residues whose discrete logarithms lie in one of the pairs of classes {0,1} or {0,3} modulo 4. The Jacobi tournament on odd n sends i -> j when d = (j-i) mod n, taken in {1, ..., n-1}, has Jacobi symbol 1, or has Jacobi symbol 0 and d < n/2. The lexicographic product G[H] has a vertex g*|H|+h for each vertex g of G and h of H, and (g,h) beats (g',h') when g beats g' in G, or g = g' and h beats h' in H. In the products below, C_n means C_n^+ and QR_p means the Paley tournament. The majority product of a tournament B on {0,1,2,3} has vertices x*16+y*4+z. Vertex a beats vertex b when a wins in more coordinates than b under B; if the win counts are equal, the least coordinate where they differ decides, using B.",
+  "argument": "The circular half is a proof. The Paley half is a census. Erdős problem 902 remains open, and the upper bound these families support is still f(4) <= 67, from QR_67.\n\nCircular tournaments. Fix n with 52 <= n <= 66, and write h = floor((n-1)/2) and L = floor(n/2). The vertex set is Z/nZ. Put an edge i -> j when d = (j-i) mod n lies in {1, ..., h}. If n is even and d = n/2, C_n^+ sends the edge from the smaller label to the larger, and C_n^- sends it from the larger to the smaller. Labels are the integers 0, 1, ..., n-1. For odd n the two rules are the same tournament.\n\nEach rule is a tournament. If d is not n/2, then d and n-d are distinct positive residues summing to n, so exactly one of them is at most h. If n is even and d = n/2, the labels differ, so exactly one of i < j and i > j holds.\n\nEvery out-set is contained in some interval of L consecutive vertices. If n is odd, the out-set of w is {w+1, ..., w+h} and h = L. If n is even, then L = n/2 and h = L-1, and the diametral label of w is (w+L) mod n. In C_n^+ that arc is present exactly when w is strictly smaller than the diametral label. For w < L the label is w+L, the arc is present, and the out-set is the interval {w+1, ..., w+L} of length L. For w >= L the label is w-L, the arc is absent, and the out-set is {w+1, ..., w+h} modulo n, an interval of length L-1. In C_n^- the arc is present exactly when w is strictly larger than the diametral label. For w < L the arc is absent and the out-set has length L-1. For w >= L the arc is present, and {w+1, ..., w+h} together with w-L is the wrapped interval from w+1 through w-L. That interval has L vertices: n-w-1 of them run from w+1 through n-1, and w-L+1 of them run from 0 through w-L, and (n-w-1)+(w-L+1) = n-L = L. An interval of length L-1 is contained in an interval of length L, so in every case the out-set sits inside some L consecutive vertices.\n\nLet m = floor(n/4) and X = {0, m, 2m, 3m}. Then 3m <= 3n/4 < n, so the four points are distinct and in increasing order. The circular gaps are m, m, m, and n-3m. Since 4m <= n, the last gap is at least m and is the largest; call it G. A finite set lies in some interval of L consecutive vertices if and only if one of its circular gaps is at least n-L+1. A gap of g between two cyclically consecutive points leaves the other points on a complementary arc of n-g+1 vertices, counting both ends, and n-g+1 <= L is the same as g >= n-L+1. Here n-L+1 = ceil(n/2)+1. The value of G is below that threshold: if n = 4t then G = t and the threshold is 2t+1; if n = 4t+1 then G = t+1 and the threshold is 2t+2; if n = 4t+2 then G = t+2 and the threshold is 2t+2; if n = 4t+3 then G = t+3 and the threshold is 2t+3. In the range, t >= 13, so each comparison is strict. Thus X lies in no L-interval, hence in no out-set, and D(X) is empty. When n is even, both diametral orientations fail, with this witness. When n is odd, the single circular tournament fails, with this witness.\n\nThe edge lists were checked for every order from 52 through 66 and both rules, thirty lists in all: each list is a tournament, each out-set sits in an L-interval, and a pass over the vertices finds no dominator of X. For n = 59 the connection set {1, ..., 29} is not the set of nonzero quadratic residues, so this tournament is not QR_59.\n\nPaley tournaments. In QR_p the edge i -> j is present exactly when j-i is a nonzero quadratic residue. One four-set in the recorded data was recomputed as an orientation check, not as a new census: D({0,1,3,38}) is empty in QR_47, D({0,1,7,19}) is empty in QR_59, |D({0,1,7})| = 5 in QR_59, and |D({0,1,6})| = 6 in QR_67.\n\nIn QR_67 the out-set of 0 is the set Q of 33 nonzero quadratic residues, and the in-set is the complementary set of 33 nonresidues. The vertex 0 dominates a four-set exactly when that four-set lies in Q. Intersecting in-neighbourhood masks and testing residuosity of differences produced the same 330 four-subsets of Q with no dominator besides 0. The lexicographically first is {1,4,6,54}. Each of 1, 4, 6, and 54 lies in Q, so 0 dominates the set. For each of the other 62 vertices the residuosity scan stores one member of the set that the vertex fails to beat. Two of those failures are readable from Q: 2 fails on 1 because 1-2 ≡ 66 ≡ -1 (mod 67), and -1 is a nonresidue because 67 ≡ 3 (mod 4); 3 fails on 6 because 6-3 = 3 and 3 is not in Q.\n\nThe census of all C(67,4) = 766480 four-sets has dominator counts 1 through 7 on 22110, 110550, 219626, 267531, 112761, 31691, and 2211 sets. The counts sum to 766480. The weighted sum of the dominator numbers is 2741640 = 67*C(33,4), the double count of a vertex against a four-subset of its out-set. The minimum is 1, so QR_67 has S_4. Also 22110 = 67*330, in agreement with translations: each vertex is the unique dominator of 330 four-sets. The same seven counts are the distribution stated for this tournament on https://erdosproblemaday.com/report/902 in the text returned by a search on 23 October 2026. The census here was computed first and then compared with that text.\n\nLet H be the 4-uniform hypergraph on Q with those 330 edges. Its independence number is 16. The set I = {6, 9, 14, 15, 19, 21, 22, 24, 26, 29, 40, 54, 59, 60, 64, 65} contains none of the edges. The complement of I in Q is {1, 4, 10, 16, 17, 23, 25, 33, 35, 36, 37, 39, 47, 49, 55, 56, 62}, and it meets every edge. There is no independent set of size 17. CP-SAT returns optimal value 16 and reports that size at least 17 is infeasible. CBC does the same. CaDiCaL reports that size at least 17 is unsatisfiable. A separate backtrack finds a 16-set and no 17-set.\n\nSuppose U induces S_4 and omits 0. Then U contains no edge of H, so |U intersect Q| <= 16. Every other vertex of U is one of the 33 nonresidues, so |U| <= 49. A set of order 50 through 66 omits some vertex. Translation x -> x+b is an automorphism of QR_67. It carries an omitted vertex to 0 and preserves both the order and S_4. The image would be an S_4 set of that order omitting 0, and the bound allows no such set. Therefore QR_67 has no induced subtournament with S_4 on 50 through 66 vertices. The full tournament, on 67 vertices, has S_4.\n\nOrders 71 and 79 were censused in the same way. Both have minimum four-set dominator count 1, so both have S_4, and in both the weighted dominator sum equals p*C((p-1)/2, 4). At order 71 the out-set of 0 has 35 vertices and 210 critical four-sets, and the full census has 14910 = 71*210 four-sets of dominator count 1. The independence number is 17, by CP-SAT, CBC, CaDiCaL, and a backtrack that finds a 17-set and no 18-set. A set U that omits 0 and induces S_4 therefore has order at most 35+17 = 52. Equality holds only when U contains every nonresidue and a 17-vertex independent set of the critical hypergraph. That equality case is unsatisfiable in CP-SAT and in CaDiCaL. The instance has the 210 independence clauses and 82425 further clauses, one for each four-set whose dominators all lie in {0} union the out-set of 0. On one concrete 17-set, namely {2, 5, 6, 8, 9, 12, 15, 19, 20, 25, 27, 32, 36, 50, 54, 57, 60}, the 52-vertex tournament has 5374 undominated four-sets. The first is {2, 5, 7, 67}. That same set violates exactly 5374 of the further clauses, so the clause list matches a direct scan there. Hence no S_4 set omitting 0 has 52 or more vertices. Translation moves any omitted vertex to 0. QR_71 has no induced subtournament with S_4 on 52 through 70 vertices.\n\nAt order 79 the out-set of 0 has 39 vertices and 195 critical four-sets. The independence number is 22. CP-SAT, CBC, and CaDiCaL agree, and a backtrack on 233856224 nodes finds no independent set of size 23. A set that omits 0 and induces S_4 has order at most 39+22 = 61. Equality requires a 22-vertex independent set together with every nonresidue. That case is unsatisfiable in CP-SAT and in CaDiCaL. One such 22-set produces 4387 undominated four-sets, the first being {2, 3, 12, 50}, and it violates 4387 clauses. Orders 62 through 78 are therefore impossible. Orders 52 through 60 were encoded directly. Vertex 0 is omitted, the order is constrained to lie between 52 and 60, and each of the C(78,4) = 1426425 four-sets in {1, ..., 78} contributes the clause that says either one of its vertices is omitted or one of its dominators is kept. CP-SAT reports the instance infeasible. CaDiCaL reports it unsatisfiable. The cardinality constraints with the domination clauses removed are satisfiable, so the unsatisfiable answer is not an artefact of the order bounds. Translation covers every set of order 52 through 60. Together with the bound, QR_79 has no induced subtournament with S_4 on 52 through 78 vertices.\n\nAt order 83 the critical hypergraph on the 41 quadratic residues has 82 edges, and its independence number is 27 by CP-SAT, CBC, and CaDiCaL. The unique-dominator bound is then 41+27 = 68, which still allows orders 52 through 66, so that bound is not the exclusion used below. The direct encoding with vertex 0 omitted, order between 52 and 66, and one clause for each of the C(82,4) = 1749060 four-sets in {1, ..., 82} is infeasible in CP-SAT and unsatisfiable in CaDiCaL. The cardinality constraints alone are satisfiable. None of those 1749060 four-sets has an empty dominator set. Four-sets that contain 0 were not in the count, so this run does not decide whether QR_83 itself has S_4. Translation covers every set of order 52 through 66. QR_83 has no induced subtournament with S_4 on 52 through 66 vertices.\n\nThe remaining families are explicit and were scanned by the same dominator masks. Each returned a four-set with dominator count 0. The power-interval tournament on a prime p uses the primitive root g = 2, which passes the test that g^{(p-1)/q} is not 1 mod p for every prime q dividing p-1, at p = 53, 59, and 61. The connection set is {g^0, ..., g^{k-1}} with k = (p-1)/2. None of the three connection sets equals the quadratic residues. The undominated four-sets are {0,1,3,26}, {0,1,2,17}, and {0,1,9,40}. The cyclotomic tournaments on 53 and 61 use exponent classes {0,1} and {0,3} modulo 4 relative to the same root. Their witnesses are {0,1,2,13}, {0,1,5,7}, {0,1,2,5}, and {0,1,7,40}. The Jacobi tournaments on 55 and 63 were checked to send exactly one direction along each difference. Their witnesses are {0,1,2,31} and {0,1,2,33}.\n\nThe lexicographic products of order 52 through 66, each with an undominated four-set, are QR_19[C_3] on 57 with {0,3,6,24}; C_3[QR_19] on 57 with {0,1,19,38}; QR_7[C_8] on 56 with {0,1,8,40}; C_8[QR_7] on 56 with {0,1,2,21}; QR_7[C_9] on 63 with {0,1,9,45}; C_9[QR_7] on 63 with {0,1,2,28}; QR_11[C_5] on 55 with {0,2,5,15}; C_5[QR_11] on 55 with {0,1,3,22}; C_5[C_13] on 65 with {0,1,6,26}; C_13[C_5] on 65 with {0,1,2,30}; C_4[C_13] on 52 with {0,1,6,13}; C_13[C_4] on 52 with {0,1,2,24}; and C_3[C_3[QR_7]] on 63 with {0,1,21,42}.\n\nThe majority construction was run for all 64 orientations of the six edges on four vertices. Each product has 64 vertices and an undominated four-set. In 32 bases some vertex k has out-degree 3, and then the constant vertex (k,k,k) beats every other vertex of the product, so that product fails S_1. For the base in which every edge points toward the larger index, k = 3 and the witness {0,1,2,63} contains (3,3,3). The other 32 bases have maximum out-degree 2, and their products still fail S_4. The sixty-four witnesses are in the evidence.\n\nNo tournament with S_4 on 52 through 66 vertices appears in these families. QR_67 has S_4, so the upper bound they support remains f(4) <= 67. Erdős problem 902 remains open.\n",
+  "evidence": {
+    "orientation_checks": {
+      "paley47_known_undominated": 0,
+      "paley59_known_undominated": 0,
+      "paley59_known_triple": 5,
+      "paley67_known_triple_0_1_6": 6
+    },
+    "circular": {
+      "gap_table": [
+        {
+          "n": 52,
+          "m": 13,
+          "witness": [
+            0,
+            13,
+            26,
+            39
+          ],
+          "gaps": [
+            13,
+            13,
+            13,
+            13
+          ],
+          "max_gap": 13,
+          "window": 26,
+          "gap_needed_to_fit_in_a_window": 27
+        },
+        {
+          "n": 53,
+          "m": 13,
+          "witness": [
+            0,
+            13,
+            26,
+            39
+          ],
+          "gaps": [
+            13,
+            13,
+            13,
+            14
+          ],
+          "max_gap": 14,
+          "window": 26,
+          "gap_needed_to_fit_in_a_window": 28
+        },
+        {
+          "n": 54,
+          "m": 13,
+          "witness": [
+            0,
+            13,
+            26,
+            39
+          ],
+          "gaps": [
+            13,
+            13,
+            13,
+            15
+          ],
+          "max_gap": 15,
+          "window": 27,
+          "gap_needed_to_fit_in_a_window": 28
+        },
+        {
+          "n": 55,
+          "m": 13,
+          "witness": [
+            0,
+            13,
+            26,
+            39
+          ],
+          "gaps": [
+            13,
+            13,
+            13,
+            16
+          ],
+          "max_gap": 16,
+          "window": 27,
+          "gap_needed_to_fit_in_a_window": 29
+        },
+        {
+          "n": 56,
+          "m": 14,
+          "witness": [
+            0,
+            14,
+            28,
+            42
+          ],
+          "gaps": [
+            14,
+            14,
+            14,
+            14
+          ],
+          "max_gap": 14,
+          "window": 28,
+          "gap_needed_to_fit_in_a_window": 29
+        },
+        {
+          "n": 57,
+          "m": 14,
+          "witness": [
+            0,
+            14,
+            28,
+            42
+          ],
+          "gaps": [
+            14,
+            14,
+            14,
+            15
+          ],
+          "max_gap": 15,
+          "window": 28,
+          "gap_needed_to_fit_in_a_window": 30
+        },
+        {
+          "n": 58,
+          "m": 14,
+          "witness": [
+            0,
+            14,
+            28,
+            42
+          ],
+          "gaps": [
+            14,
+            14,
+            14,
+            16
+          ],
+          "max_gap": 16,
+          "window": 29,
+          "gap_needed_to_fit_in_a_window": 30
+        },
+        {
+          "n": 59,
+          "m": 14,
+          "witness": [
+            0,
+            14,
+            28,
+            42
+          ],
+          "gaps": [
+            14,
+            14,
+            14,
+            17
+          ],
+          "max_gap": 17,
+          "window": 29,
+          "gap_needed_to_fit_in_a_window": 31
+        },
+        {
+          "n": 60,
+          "m": 15,
+          "witness": [
+            0,
+            15,
+            30,
+            45
+          ],
+          "gaps": [
+            15,
+            15,
+            15,
+            15
+          ],
+          "max_gap": 15,
+          "window": 30,
+          "gap_needed_to_fit_in_a_window": 31
+        },
+        {
+          "n": 61,
+          "m": 15,
+          "witness": [
+            0,
+            15,
+            30,
+            45
+          ],
+          "gaps": [
+            15,
+            15,
+            15,
+            16
+          ],
+          "max_gap": 16,
+          "window": 30,
+          "gap_needed_to_fit_in_a_window": 32
+        },
+        {
+          "n": 62,
+          "m": 15,
+          "witness": [
+            0,
+            15,
+            30,
+            45
+          ],
+          "gaps": [
+            15,
+            15,
+            15,
+            17
+          ],
+          "max_gap": 17,
+          "window": 31,
+          "gap_needed_to_fit_in_a_window": 32
+        },
+        {
+          "n": 63,
+          "m": 15,
+          "witness": [
+            0,
+            15,
+            30,
+            45
+          ],
+          "gaps": [
+            15,
+            15,
+            15,
+            18
+          ],
+          "max_gap": 18,
+          "window": 31,
+          "gap_needed_to_fit_in_a_window": 33
+        },
+        {
+          "n": 64,
+          "m": 16,
+          "witness": [
+            0,
+            16,
+            32,
+            48
+          ],
+          "gaps": [
+            16,
+            16,
+            16,
+            16
+          ],
+          "max_gap": 16,
+          "window": 32,
+          "gap_needed_to_fit_in_a_window": 33
+        },
+        {
+          "n": 65,
+          "m": 16,
+          "witness": [
+            0,
+            16,
+            32,
+            48
+          ],
+          "gaps": [
+            16,
+            16,
+            16,
+            17
+          ],
+          "max_gap": 17,
+          "window": 32,
+          "gap_needed_to_fit_in_a_window": 34
+        },
+        {
+          "n": 66,
+          "m": 16,
+          "witness": [
+            0,
+            16,
+            32,
+            48
+          ],
+          "gaps": [
+            16,
+            16,
+            16,
+            18
+          ],
+          "max_gap": 18,
+          "window": 33,
+          "gap_needed_to_fit_in_a_window": 34
+        }
+      ],
+      "lists_checked": 30,
+      "all_dominator_counts_zero": true,
+      "all_window_lemmas": true,
+      "order_59_interval_equals_quadratic_residues": false
+    },
+    "paley_67": {
+      "quadratic_residues": [
+        1,
+        4,
+        6,
+        9,
+        10,
+        14,
+        15,
+        16,
+        17,
+        19,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        29,
+        33,
+        35,
+        36,
+        37,
+        39,
+        40,
+        47,
+        49,
+        54,
+        55,
+        56,
+        59,
+        60,
+        62,
+        64,
+        65
+      ],
+      "histogram": {
+        "nonzero": {
+          "1": 22110,
+          "2": 110550,
+          "3": 219626,
+          "4": 267531,
+          "5": 112761,
+          "6": 31691,
+          "7": 2211
+        },
+        "four_sets": 766480,
+        "binom": 766480,
+        "weighted": 2741640,
+        "identity": 2741640,
+        "unique_dominator_four_sets": 22110,
+        "per_vertex_if_regular": 330
+      },
+      "critical_four_sets_of_0": [
+        [
+          1,
+          4,
+          6,
+          54
+        ],
+        [
+          1,
+          4,
+          14,
+          23
+        ],
+        [
+          1,
+          6,
+          9,
+          59
+        ],
+        [
+          1,
+          6,
+          19,
+          54
+        ],
+        [
+          1,
+          6,
+          21,
+          35
+        ],
+        [
+          1,
+          6,
+          26,
+          29
+        ],
+        [
+          1,
+          6,
+          54,
+          64
+        ],
+        [
+          1,
+          9,
+          14,
+          26
+        ],
+        [
+          1,
+          9,
+          15,
+          55
+        ],
+        [
+          1,
+          9,
+          23,
+          56
+        ],
+        [
+          1,
+          9,
+          33,
+          56
+        ],
+        [
+          1,
+          9,
+          56,
+          59
+        ],
+        [
+          1,
+          10,
+          15,
+          36
+        ],
+        [
+          1,
+          10,
+          37,
+          55
+        ],
+        [
+          1,
+          14,
+          15,
+          23
+        ],
+        [
+          1,
+          14,
+          15,
+          36
+        ],
+        [
+          1,
+          14,
+          26,
+          49
+        ],
+        [
+          1,
+          14,
+          36,
+          64
+        ],
+        [
+          1,
+          15,
+          21,
+          24
+        ],
+        [
+          1,
+          15,
+          26,
+          36
+        ],
+        [
+          1,
+          16,
+          21,
+          40
+        ],
+        [
+          1,
+          16,
+          24,
+          25
+        ],
+        [
+          1,
+          16,
+          24,
+          29
+        ],
+        [
+          1,
+          16,
+          37,
+          55
+        ],
+        [
+          1,
+          16,
+          39,
+          49
+        ],
+        [
+          1,
+          16,
+          49,
+          56
+        ],
+        [
+          1,
+          17,
+          35,
+          47
+        ],
+        [
+          1,
+          17,
+          37,
+          56
+        ],
+        [
+          1,
+          19,
+          39,
+          54
+        ],
+        [
+          1,
+          21,
+          24,
+          37
+        ],
+        [
+          1,
+          21,
+          35,
+          56
+        ],
+        [
+          1,
+          21,
+          36,
+          39
+        ],
+        [
+          1,
+          22,
+          29,
+          54
+        ],
+        [
+          1,
+          22,
+          40,
+          55
+        ],
+        [
+          1,
+          22,
+          49,
+          65
+        ],
+        [
+          1,
+          24,
+          25,
+          60
+        ],
+        [
+          1,
+          24,
+          60,
+          62
+        ],
+        [
+          1,
+          29,
+          54,
+          62
+        ],
+        [
+          1,
+          36,
+          39,
+          55
+        ],
+        [
+          1,
+          39,
+          47,
+          64
+        ],
+        [
+          4,
+          6,
+          17,
+          23
+        ],
+        [
+          4,
+          6,
+          17,
+          24
+        ],
+        [
+          4,
+          9,
+          15,
+          22
+        ],
+        [
+          4,
+          9,
+          15,
+          24
+        ],
+        [
+          4,
+          10,
+          17,
+          22
+        ],
+        [
+          4,
+          10,
+          19,
+          22
+        ],
+        [
+          4,
+          10,
+          37,
+          60
+        ],
+        [
+          4,
+          10,
+          40,
+          60
+        ],
+        [
+          4,
+          10,
+          55,
+          56
+        ],
+        [
+          4,
+          10,
+          56,
+          60
+        ],
+        [
+          4,
+          14,
+          17,
+          29
+        ],
+        [
+          4,
+          14,
+          19,
+          40
+        ],
+        [
+          4,
+          14,
+          19,
+          64
+        ],
+        [
+          4,
+          15,
+          16,
+          24
+        ],
+        [
+          4,
+          15,
+          21,
+          49
+        ],
+        [
+          4,
+          15,
+          24,
+          55
+        ],
+        [
+          4,
+          15,
+          47,
+          49
+        ],
+        [
+          4,
+          16,
+          25,
+          56
+        ],
+        [
+          4,
+          17,
+          26,
+          64
+        ],
+        [
+          4,
+          17,
+          29,
+          60
+        ],
+        [
+          4,
+          19,
+          21,
+          26
+        ],
+        [
+          4,
+          19,
+          36,
+          60
+        ],
+        [
+          4,
+          21,
+          59,
+          62
+        ],
+        [
+          4,
+          22,
+          54,
+          55
+        ],
+        [
+          4,
+          22,
+          62,
+          64
+        ],
+        [
+          4,
+          23,
+          25,
+          36
+        ],
+        [
+          4,
+          23,
+          35,
+          36
+        ],
+        [
+          4,
+          23,
+          36,
+          65
+        ],
+        [
+          4,
+          23,
+          62,
+          64
+        ],
+        [
+          4,
+          24,
+          35,
+          36
+        ],
+        [
+          4,
+          24,
+          37,
+          49
+        ],
+        [
+          4,
+          25,
+          56,
+          60
+        ],
+        [
+          4,
+          29,
+          33,
+          39
+        ],
+        [
+          4,
+          29,
+          33,
+          64
+        ],
+        [
+          4,
+          29,
+          39,
+          47
+        ],
+        [
+          4,
+          29,
+          49,
+          64
+        ],
+        [
+          4,
+          36,
+          37,
+          56
+        ],
+        [
+          4,
+          37,
+          56,
+          62
+        ],
+        [
+          6,
+          9,
+          14,
+          35
+        ],
+        [
+          6,
+          9,
+          36,
+          59
+        ],
+        [
+          6,
+          10,
+          16,
+          25
+        ],
+        [
+          6,
+          10,
+          16,
+          29
+        ],
+        [
+          6,
+          10,
+          21,
+          59
+        ],
+        [
+          6,
+          10,
+          23,
+          59
+        ],
+        [
+          6,
+          10,
+          25,
+          37
+        ],
+        [
+          6,
+          10,
+          29,
+          40
+        ],
+        [
+          6,
+          14,
+          33,
+          49
+        ],
+        [
+          6,
+          15,
+          17,
+          23
+        ],
+        [
+          6,
+          15,
+          17,
+          49
+        ],
+        [
+          6,
+          15,
+          22,
+          23
+        ],
+        [
+          6,
+          15,
+          23,
+          60
+        ],
+        [
+          6,
+          15,
+          33,
+          59
+        ],
+        [
+          6,
+          15,
+          33,
+          62
+        ],
+        [
+          6,
+          17,
+          22,
+          26
+        ],
+        [
+          6,
+          17,
+          22,
+          54
+        ],
+        [
+          6,
+          19,
+          36,
+          54
+        ],
+        [
+          6,
+          21,
+          29,
+          62
+        ],
+        [
+          6,
+          21,
+          60,
+          62
+        ],
+        [
+          6,
+          22,
+          36,
+          40
+        ],
+        [
+          6,
+          23,
+          54,
+          62
+        ],
+        [
+          6,
+          24,
+          36,
+          56
+        ],
+        [
+          6,
+          26,
+          29,
+          33
+        ],
+        [
+          6,
+          26,
+          55,
+          65
+        ],
+        [
+          6,
+          29,
+          39,
+          59
+        ],
+        [
+          6,
+          33,
+          47,
+          56
+        ],
+        [
+          6,
+          36,
+          47,
+          56
+        ],
+        [
+          6,
+          36,
+          49,
+          56
+        ],
+        [
+          6,
+          37,
+          40,
+          56
+        ],
+        [
+          6,
+          39,
+          62,
+          65
+        ],
+        [
+          6,
+          40,
+          56,
+          65
+        ],
+        [
+          9,
+          10,
+          15,
+          24
+        ],
+        [
+          9,
+          10,
+          15,
+          60
+        ],
+        [
+          9,
+          10,
+          16,
+          39
+        ],
+        [
+          9,
+          10,
+          25,
+          55
+        ],
+        [
+          9,
+          10,
+          26,
+          65
+        ],
+        [
+          9,
+          10,
+          35,
+          39
+        ],
+        [
+          9,
+          14,
+          29,
+          35
+        ],
+        [
+          9,
+          14,
+          33,
+          59
+        ],
+        [
+          9,
+          14,
+          35,
+          62
+        ],
+        [
+          9,
+          14,
+          54,
+          62
+        ],
+        [
+          9,
+          15,
+          55,
+          65
+        ],
+        [
+          9,
+          16,
+          17,
+          37
+        ],
+        [
+          9,
+          16,
+          21,
+          40
+        ],
+        [
+          9,
+          16,
+          26,
+          56
+        ],
+        [
+          9,
+          16,
+          55,
+          56
+        ],
+        [
+          9,
+          17,
+          22,
+          60
+        ],
+        [
+          9,
+          17,
+          36,
+          54
+        ],
+        [
+          9,
+          17,
+          37,
+          54
+        ],
+        [
+          9,
+          17,
+          40,
+          54
+        ],
+        [
+          9,
+          17,
+          60,
+          64
+        ],
+        [
+          9,
+          19,
+          21,
+          47
+        ],
+        [
+          9,
+          19,
+          35,
+          65
+        ],
+        [
+          9,
+          23,
+          26,
+          65
+        ],
+        [
+          9,
+          25,
+          26,
+          64
+        ],
+        [
+          9,
+          33,
+          39,
+          59
+        ],
+        [
+          9,
+          33,
+          54,
+          60
+        ],
+        [
+          9,
+          35,
+          47,
+          55
+        ],
+        [
+          9,
+          39,
+          49,
+          64
+        ],
+        [
+          9,
+          40,
+          56,
+          59
+        ],
+        [
+          9,
+          47,
+          54,
+          55
+        ],
+        [
+          10,
+          14,
+          16,
+          23
+        ],
+        [
+          10,
+          14,
+          19,
+          65
+        ],
+        [
+          10,
+          14,
+          25,
+          55
+        ],
+        [
+          10,
+          14,
+          26,
+          35
+        ],
+        [
+          10,
+          14,
+          33,
+          35
+        ],
+        [
+          10,
+          16,
+          25,
+          33
+        ],
+        [
+          10,
+          16,
+          25,
+          59
+        ],
+        [
+          10,
+          17,
+          39,
+          64
+        ],
+        [
+          10,
+          19,
+          21,
+          47
+        ],
+        [
+          10,
+          21,
+          24,
+          26
+        ],
+        [
+          10,
+          21,
+          26,
+          55
+        ],
+        [
+          10,
+          22,
+          26,
+          39
+        ],
+        [
+          10,
+          22,
+          59,
+          60
+        ],
+        [
+          10,
+          23,
+          24,
+          29
+        ],
+        [
+          10,
+          23,
+          24,
+          54
+        ],
+        [
+          10,
+          23,
+          24,
+          62
+        ],
+        [
+          10,
+          23,
+          54,
+          60
+        ],
+        [
+          10,
+          24,
+          35,
+          36
+        ],
+        [
+          10,
+          26,
+          39,
+          49
+        ],
+        [
+          10,
+          39,
+          49,
+          64
+        ],
+        [
+          14,
+          16,
+          23,
+          47
+        ],
+        [
+          14,
+          16,
+          29,
+          62
+        ],
+        [
+          14,
+          16,
+          39,
+          40
+        ],
+        [
+          14,
+          17,
+          19,
+          25
+        ],
+        [
+          14,
+          17,
+          19,
+          56
+        ],
+        [
+          14,
+          17,
+          19,
+          65
+        ],
+        [
+          14,
+          17,
+          21,
+          26
+        ],
+        [
+          14,
+          17,
+          22,
+          59
+        ],
+        [
+          14,
+          21,
+          26,
+          47
+        ],
+        [
+          14,
+          21,
+          37,
+          55
+        ],
+        [
+          14,
+          22,
+          47,
+          59
+        ],
+        [
+          14,
+          23,
+          24,
+          26
+        ],
+        [
+          14,
+          23,
+          33,
+          49
+        ],
+        [
+          14,
+          24,
+          33,
+          40
+        ],
+        [
+          14,
+          25,
+          35,
+          62
+        ],
+        [
+          14,
+          29,
+          59,
+          62
+        ],
+        [
+          14,
+          37,
+          47,
+          49
+        ],
+        [
+          14,
+          47,
+          54,
+          59
+        ],
+        [
+          14,
+          47,
+          59,
+          60
+        ],
+        [
+          14,
+          54,
+          56,
+          62
+        ],
+        [
+          15,
+          16,
+          19,
+          21
+        ],
+        [
+          15,
+          19,
+          21,
+          39
+        ],
+        [
+          15,
+          19,
+          25,
+          47
+        ],
+        [
+          15,
+          19,
+          36,
+          54
+        ],
+        [
+          15,
+          21,
+          62,
+          64
+        ],
+        [
+          15,
+          22,
+          35,
+          49
+        ],
+        [
+          15,
+          23,
+          33,
+          55
+        ],
+        [
+          15,
+          23,
+          47,
+          56
+        ],
+        [
+          15,
+          24,
+          25,
+          47
+        ],
+        [
+          15,
+          25,
+          29,
+          40
+        ],
+        [
+          15,
+          25,
+          29,
+          59
+        ],
+        [
+          15,
+          25,
+          33,
+          39
+        ],
+        [
+          15,
+          25,
+          39,
+          40
+        ],
+        [
+          15,
+          35,
+          54,
+          56
+        ],
+        [
+          15,
+          36,
+          39,
+          65
+        ],
+        [
+          15,
+          36,
+          47,
+          56
+        ],
+        [
+          15,
+          37,
+          62,
+          65
+        ],
+        [
+          15,
+          39,
+          47,
+          64
+        ],
+        [
+          15,
+          39,
+          49,
+          65
+        ],
+        [
+          16,
+          17,
+          35,
+          47
+        ],
+        [
+          16,
+          17,
+          60,
+          62
+        ],
+        [
+          16,
+          19,
+          23,
+          40
+        ],
+        [
+          16,
+          19,
+          29,
+          60
+        ],
+        [
+          16,
+          21,
+          36,
+          60
+        ],
+        [
+          16,
+          21,
+          47,
+          55
+        ],
+        [
+          16,
+          22,
+          49,
+          54
+        ],
+        [
+          16,
+          22,
+          49,
+          65
+        ],
+        [
+          16,
+          23,
+          33,
+          39
+        ],
+        [
+          16,
+          23,
+          33,
+          64
+        ],
+        [
+          16,
+          23,
+          39,
+          40
+        ],
+        [
+          16,
+          25,
+          47,
+          55
+        ],
+        [
+          16,
+          26,
+          39,
+          40
+        ],
+        [
+          16,
+          29,
+          36,
+          60
+        ],
+        [
+          16,
+          29,
+          60,
+          64
+        ],
+        [
+          16,
+          49,
+          55,
+          62
+        ],
+        [
+          16,
+          49,
+          55,
+          65
+        ],
+        [
+          16,
+          54,
+          60,
+          62
+        ],
+        [
+          17,
+          19,
+          35,
+          65
+        ],
+        [
+          17,
+          19,
+          37,
+          40
+        ],
+        [
+          17,
+          19,
+          54,
+          64
+        ],
+        [
+          17,
+          21,
+          59,
+          62
+        ],
+        [
+          17,
+          22,
+          35,
+          59
+        ],
+        [
+          17,
+          24,
+          35,
+          40
+        ],
+        [
+          17,
+          24,
+          39,
+          47
+        ],
+        [
+          17,
+          24,
+          47,
+          49
+        ],
+        [
+          17,
+          26,
+          36,
+          64
+        ],
+        [
+          17,
+          29,
+          33,
+          39
+        ],
+        [
+          17,
+          29,
+          37,
+          40
+        ],
+        [
+          17,
+          35,
+          47,
+          55
+        ],
+        [
+          17,
+          37,
+          54,
+          56
+        ],
+        [
+          17,
+          47,
+          55,
+          60
+        ],
+        [
+          19,
+          21,
+          26,
+          47
+        ],
+        [
+          19,
+          22,
+          55,
+          62
+        ],
+        [
+          19,
+          23,
+          36,
+          64
+        ],
+        [
+          19,
+          24,
+          37,
+          59
+        ],
+        [
+          19,
+          25,
+          37,
+          65
+        ],
+        [
+          19,
+          25,
+          60,
+          65
+        ],
+        [
+          19,
+          33,
+          36,
+          40
+        ],
+        [
+          19,
+          33,
+          40,
+          56
+        ],
+        [
+          19,
+          33,
+          54,
+          64
+        ],
+        [
+          19,
+          33,
+          55,
+          59
+        ],
+        [
+          19,
+          35,
+          37,
+          59
+        ],
+        [
+          19,
+          36,
+          59,
+          60
+        ],
+        [
+          19,
+          37,
+          47,
+          49
+        ],
+        [
+          19,
+          37,
+          49,
+          59
+        ],
+        [
+          19,
+          47,
+          62,
+          64
+        ],
+        [
+          19,
+          59,
+          62,
+          64
+        ],
+        [
+          21,
+          22,
+          37,
+          40
+        ],
+        [
+          21,
+          22,
+          49,
+          65
+        ],
+        [
+          21,
+          23,
+          37,
+          55
+        ],
+        [
+          21,
+          24,
+          25,
+          60
+        ],
+        [
+          21,
+          29,
+          35,
+          54
+        ],
+        [
+          21,
+          33,
+          37,
+          55
+        ],
+        [
+          21,
+          33,
+          55,
+          59
+        ],
+        [
+          21,
+          35,
+          39,
+          40
+        ],
+        [
+          21,
+          35,
+          39,
+          47
+        ],
+        [
+          21,
+          35,
+          54,
+          56
+        ],
+        [
+          21,
+          37,
+          39,
+          65
+        ],
+        [
+          21,
+          39,
+          59,
+          65
+        ],
+        [
+          21,
+          59,
+          62,
+          64
+        ],
+        [
+          22,
+          24,
+          35,
+          49
+        ],
+        [
+          22,
+          24,
+          47,
+          59
+        ],
+        [
+          22,
+          25,
+          26,
+          64
+        ],
+        [
+          22,
+          25,
+          64,
+          65
+        ],
+        [
+          22,
+          26,
+          33,
+          60
+        ],
+        [
+          22,
+          26,
+          37,
+          64
+        ],
+        [
+          22,
+          26,
+          56,
+          64
+        ],
+        [
+          22,
+          29,
+          33,
+          39
+        ],
+        [
+          22,
+          33,
+          60,
+          65
+        ],
+        [
+          22,
+          35,
+          36,
+          65
+        ],
+        [
+          22,
+          36,
+          40,
+          64
+        ],
+        [
+          22,
+          36,
+          55,
+          62
+        ],
+        [
+          22,
+          37,
+          40,
+          62
+        ],
+        [
+          22,
+          40,
+          55,
+          62
+        ],
+        [
+          22,
+          54,
+          55,
+          60
+        ],
+        [
+          22,
+          59,
+          60,
+          62
+        ],
+        [
+          23,
+          24,
+          26,
+          59
+        ],
+        [
+          23,
+          24,
+          54,
+          65
+        ],
+        [
+          23,
+          25,
+          54,
+          60
+        ],
+        [
+          23,
+          26,
+          33,
+          55
+        ],
+        [
+          23,
+          26,
+          35,
+          36
+        ],
+        [
+          23,
+          29,
+          47,
+          59
+        ],
+        [
+          23,
+          33,
+          47,
+          59
+        ],
+        [
+          23,
+          36,
+          37,
+          64
+        ],
+        [
+          23,
+          37,
+          49,
+          59
+        ],
+        [
+          23,
+          54,
+          55,
+          62
+        ],
+        [
+          24,
+          25,
+          35,
+          40
+        ],
+        [
+          24,
+          25,
+          39,
+          60
+        ],
+        [
+          24,
+          26,
+          40,
+          49
+        ],
+        [
+          24,
+          33,
+          40,
+          64
+        ],
+        [
+          24,
+          35,
+          60,
+          65
+        ],
+        [
+          24,
+          37,
+          49,
+          65
+        ],
+        [
+          24,
+          40,
+          49,
+          64
+        ],
+        [
+          24,
+          47,
+          60,
+          65
+        ],
+        [
+          24,
+          56,
+          62,
+          65
+        ],
+        [
+          25,
+          29,
+          35,
+          37
+        ],
+        [
+          25,
+          29,
+          37,
+          56
+        ],
+        [
+          25,
+          29,
+          40,
+          47
+        ],
+        [
+          25,
+          29,
+          40,
+          49
+        ],
+        [
+          25,
+          35,
+          49,
+          54
+        ],
+        [
+          25,
+          35,
+          54,
+          65
+        ],
+        [
+          25,
+          36,
+          37,
+          59
+        ],
+        [
+          25,
+          40,
+          56,
+          64
+        ],
+        [
+          25,
+          54,
+          56,
+          64
+        ],
+        [
+          25,
+          55,
+          64,
+          65
+        ],
+        [
+          25,
+          56,
+          62,
+          65
+        ],
+        [
+          26,
+          29,
+          37,
+          62
+        ],
+        [
+          26,
+          29,
+          55,
+          62
+        ],
+        [
+          26,
+          29,
+          55,
+          65
+        ],
+        [
+          26,
+          29,
+          56,
+          65
+        ],
+        [
+          26,
+          33,
+          49,
+          54
+        ],
+        [
+          26,
+          33,
+          49,
+          60
+        ],
+        [
+          26,
+          33,
+          49,
+          62
+        ],
+        [
+          26,
+          55,
+          59,
+          65
+        ],
+        [
+          29,
+          33,
+          54,
+          60
+        ],
+        [
+          29,
+          36,
+          40,
+          60
+        ],
+        [
+          29,
+          39,
+          54,
+          59
+        ],
+        [
+          33,
+          35,
+          40,
+          64
+        ],
+        [
+          33,
+          35,
+          49,
+          60
+        ],
+        [
+          33,
+          36,
+          37,
+          55
+        ],
+        [
+          33,
+          40,
+          64,
+          65
+        ],
+        [
+          35,
+          36,
+          56,
+          65
+        ],
+        [
+          35,
+          39,
+          54,
+          56
+        ],
+        [
+          35,
+          47,
+          49,
+          56
+        ],
+        [
+          36,
+          37,
+          40,
+          59
+        ],
+        [
+          36,
+          39,
+          40,
+          60
+        ],
+        [
+          37,
+          39,
+          62,
+          65
+        ],
+        [
+          37,
+          47,
+          62,
+          65
+        ],
+        [
+          39,
+          49,
+          55,
+          64
+        ],
+        [
+          47,
+          49,
+          56,
+          64
+        ]
+      ],
+      "lex_first_critical": [
+        1,
+        4,
+        6,
+        54
+      ],
+      "failures_showing_no_other_dominator": [
+        {
+          "beats_attempt_from": 2,
+          "fails_on": 1,
+          "difference": 66
+        },
+        {
+          "beats_attempt_from": 3,
+          "fails_on": 6,
+          "difference": 3
+        },
+        {
+          "beats_attempt_from": 5,
+          "fails_on": 1,
+          "difference": 63
+        },
+        {
+          "beats_attempt_from": 7,
+          "fails_on": 1,
+          "difference": 61
+        },
+        {
+          "beats_attempt_from": 8,
+          "fails_on": 4,
+          "difference": 63
+        },
+        {
+          "beats_attempt_from": 9,
+          "fails_on": 54,
+          "difference": 45
+        },
+        {
+          "beats_attempt_from": 10,
+          "fails_on": 1,
+          "difference": 58
+        },
+        {
+          "beats_attempt_from": 11,
+          "fails_on": 1,
+          "difference": 57
+        },
+        {
+          "beats_attempt_from": 12,
+          "fails_on": 6,
+          "difference": 61
+        },
+        {
+          "beats_attempt_from": 13,
+          "fails_on": 4,
+          "difference": 58
+        },
+        {
+          "beats_attempt_from": 14,
+          "fails_on": 4,
+          "difference": 57
+        },
+        {
+          "beats_attempt_from": 15,
+          "fails_on": 1,
+          "difference": 53
+        },
+        {
+          "beats_attempt_from": 16,
+          "fails_on": 1,
+          "difference": 52
+        },
+        {
+          "beats_attempt_from": 17,
+          "fails_on": 1,
+          "difference": 51
+        },
+        {
+          "beats_attempt_from": 18,
+          "fails_on": 1,
+          "difference": 50
+        },
+        {
+          "beats_attempt_from": 19,
+          "fails_on": 4,
+          "difference": 52
+        },
+        {
+          "beats_attempt_from": 20,
+          "fails_on": 1,
+          "difference": 48
+        },
+        {
+          "beats_attempt_from": 21,
+          "fails_on": 4,
+          "difference": 50
+        },
+        {
+          "beats_attempt_from": 22,
+          "fails_on": 1,
+          "difference": 46
+        },
+        {
+          "beats_attempt_from": 23,
+          "fails_on": 1,
+          "difference": 45
+        },
+        {
+          "beats_attempt_from": 24,
+          "fails_on": 1,
+          "difference": 44
+        },
+        {
+          "beats_attempt_from": 25,
+          "fails_on": 1,
+          "difference": 43
+        },
+        {
+          "beats_attempt_from": 26,
+          "fails_on": 1,
+          "difference": 42
+        },
+        {
+          "beats_attempt_from": 27,
+          "fails_on": 1,
+          "difference": 41
+        },
+        {
+          "beats_attempt_from": 28,
+          "fails_on": 4,
+          "difference": 43
+        },
+        {
+          "beats_attempt_from": 29,
+          "fails_on": 4,
+          "difference": 42
+        },
+        {
+          "beats_attempt_from": 30,
+          "fails_on": 1,
+          "difference": 38
+        },
+        {
+          "beats_attempt_from": 31,
+          "fails_on": 6,
+          "difference": 42
+        },
+        {
+          "beats_attempt_from": 32,
+          "fails_on": 6,
+          "difference": 41
+        },
+        {
+          "beats_attempt_from": 33,
+          "fails_on": 4,
+          "difference": 38
+        },
+        {
+          "beats_attempt_from": 34,
+          "fails_on": 1,
+          "difference": 34
+        },
+        {
+          "beats_attempt_from": 35,
+          "fails_on": 6,
+          "difference": 38
+        },
+        {
+          "beats_attempt_from": 36,
+          "fails_on": 1,
+          "difference": 32
+        },
+        {
+          "beats_attempt_from": 37,
+          "fails_on": 1,
+          "difference": 31
+        },
+        {
+          "beats_attempt_from": 38,
+          "fails_on": 1,
+          "difference": 30
+        },
+        {
+          "beats_attempt_from": 39,
+          "fails_on": 4,
+          "difference": 32
+        },
+        {
+          "beats_attempt_from": 40,
+          "fails_on": 1,
+          "difference": 28
+        },
+        {
+          "beats_attempt_from": 41,
+          "fails_on": 1,
+          "difference": 27
+        },
+        {
+          "beats_attempt_from": 42,
+          "fails_on": 6,
+          "difference": 31
+        },
+        {
+          "beats_attempt_from": 43,
+          "fails_on": 4,
+          "difference": 28
+        },
+        {
+          "beats_attempt_from": 44,
+          "fails_on": 4,
+          "difference": 27
+        },
+        {
+          "beats_attempt_from": 45,
+          "fails_on": 6,
+          "difference": 28
+        },
+        {
+          "beats_attempt_from": 46,
+          "fails_on": 6,
+          "difference": 27
+        },
+        {
+          "beats_attempt_from": 47,
+          "fails_on": 54,
+          "difference": 7
+        },
+        {
+          "beats_attempt_from": 48,
+          "fails_on": 1,
+          "difference": 20
+        },
+        {
+          "beats_attempt_from": 49,
+          "fails_on": 54,
+          "difference": 5
+        },
+        {
+          "beats_attempt_from": 50,
+          "fails_on": 1,
+          "difference": 18
+        },
+        {
+          "beats_attempt_from": 51,
+          "fails_on": 4,
+          "difference": 20
+        },
+        {
+          "beats_attempt_from": 52,
+          "fails_on": 54,
+          "difference": 2
+        },
+        {
+          "beats_attempt_from": 53,
+          "fails_on": 4,
+          "difference": 18
+        },
+        {
+          "beats_attempt_from": 55,
+          "fails_on": 1,
+          "difference": 13
+        },
+        {
+          "beats_attempt_from": 56,
+          "fails_on": 1,
+          "difference": 12
+        },
+        {
+          "beats_attempt_from": 57,
+          "fails_on": 1,
+          "difference": 11
+        },
+        {
+          "beats_attempt_from": 58,
+          "fails_on": 4,
+          "difference": 13
+        },
+        {
+          "beats_attempt_from": 59,
+          "fails_on": 4,
+          "difference": 12
+        },
+        {
+          "beats_attempt_from": 60,
+          "fails_on": 1,
+          "difference": 8
+        },
+        {
+          "beats_attempt_from": 61,
+          "fails_on": 1,
+          "difference": 7
+        },
+        {
+          "beats_attempt_from": 62,
+          "fails_on": 6,
+          "difference": 11
+        },
+        {
+          "beats_attempt_from": 63,
+          "fails_on": 1,
+          "difference": 5
+        },
+        {
+          "beats_attempt_from": 64,
+          "fails_on": 4,
+          "difference": 7
+        },
+        {
+          "beats_attempt_from": 65,
+          "fails_on": 1,
+          "difference": 3
+        },
+        {
+          "beats_attempt_from": 66,
+          "fails_on": 1,
+          "difference": 2
+        }
+      ],
+      "independent_set": [
+        6,
+        9,
+        14,
+        15,
+        19,
+        21,
+        22,
+        24,
+        26,
+        29,
+        40,
+        54,
+        59,
+        60,
+        64,
+        65
+      ],
+      "hitting_set": [
+        1,
+        4,
+        10,
+        16,
+        17,
+        23,
+        25,
+        33,
+        35,
+        36,
+        37,
+        39,
+        47,
+        49,
+        55,
+        56,
+        62
+      ],
+      "alpha": 16,
+      "proper_induced_S4_order_at_most": 49,
+      "solvers": {
+        "cp_sat": "OPTIMAL",
+        "cp_sat_size": 16,
+        "cp_sat_alpha_plus_one": "INFEASIBLE",
+        "cbc": "Optimal",
+        "cbc_size": 16,
+        "cbc_alpha_plus_one": "Infeasible",
+        "cbc_set_contains_an_edge": 0,
+        "pysat_alpha_plus_one": "UNSAT",
+        "cp_and_cbc_chosen_equal": false
+      },
+      "backtrack_finds_16": true,
+      "backtrack_finds_17": false,
+      "backtrack_seconds": {
+        "size_16": 1.259,
+        "size_17": 11.066
+      }
+    },
+    "paley_71": {
+      "histogram_nonzero": {
+        "1": 14910,
+        "2": 106855,
+        "3": 263410,
+        "4": 313110,
+        "5": 201285,
+        "6": 64610,
+        "7": 7455
+      },
+      "identity_holds": true,
+      "has_S4": true,
+      "min_4set_dominators": 1,
+      "critical_four_sets_of_0": 210,
+      "alpha": 17,
+      "unique_dominator_bound": 52,
+      "equality_case": {
+        "cp_sat": "INFEASIBLE",
+        "cp_sat_seconds": 0.082,
+        "cadical": "UNSAT",
+        "cadical_seconds": 0.002,
+        "extra_clauses": 82425,
+        "sample_independent_set": [
+          2,
+          5,
+          6,
+          8,
+          9,
+          12,
+          15,
+          19,
+          20,
+          25,
+          27,
+          32,
+          36,
+          50,
+          54,
+          57,
+          60
+        ],
+        "sample_undominated_four_sets": 5374,
+        "sample_violated_clauses": 5374,
+        "sample_witness": [
+          2,
+          5,
+          7,
+          67
+        ]
+      },
+      "backtrack_finds_17": true,
+      "backtrack_finds_18": false,
+      "backtrack_seconds": {
+        "size_17": 0.61,
+        "size_18": 45.67
+      },
+      "no_induced_S4_from_order": 52,
+      "no_induced_S4_through_order": 70
+    },
+    "paley_79": {
+      "histogram_nonzero": {
+        "1": 15405,
+        "2": 80106,
+        "3": 275236,
+        "4": 471393,
+        "5": 406692,
+        "6": 201292,
+        "7": 49296,
+        "8": 3081
+      },
+      "identity_holds": true,
+      "has_S4": true,
+      "min_4set_dominators": 1,
+      "critical_four_sets_of_0": 195,
+      "alpha": 22,
+      "unique_dominator_bound": 61,
+      "equality_case_order_61": {
+        "cp_sat": "INFEASIBLE",
+        "cadical": "UNSAT",
+        "sample_independent_set": [
+          2,
+          5,
+          8,
+          9,
+          11,
+          13,
+          18,
+          19,
+          20,
+          21,
+          23,
+          26,
+          31,
+          40,
+          44,
+          50,
+          62,
+          65,
+          67,
+          72,
+          73,
+          76
+        ],
+        "sample_undominated_four_sets": 4387,
+        "sample_violated_clauses": 4387,
+        "sample_witness": [
+          2,
+          3,
+          12,
+          50
+        ]
+      },
+      "orders_52_through_60": {
+        "four_sets_encoded": 1426425,
+        "cp_sat": "INFEASIBLE",
+        "cp_sat_build_seconds": 27.55,
+        "cp_sat_solve_seconds": 115.61,
+        "cadical": "UNSAT",
+        "cadical_build_seconds": 5.08,
+        "cadical_solve_seconds": 48.55,
+        "cardinality_constraints_alone": "SAT"
+      },
+      "backtrack_finds_23": false,
+      "backtrack_nodes": 233856224,
+      "backtrack_seconds": 142.37,
+      "no_induced_S4_from_order": 52,
+      "no_induced_S4_through_order": 78
+    },
+    "paley_83": {
+      "critical_four_sets_of_0": 82,
+      "out_degree": 41,
+      "alpha_three_solvers": 27,
+      "alpha_backtrack": "not run",
+      "unique_dominator_bound": 68,
+      "bound_excludes_52_through_66": false,
+      "orders_52_through_66": {
+        "four_sets_encoded": 1749060,
+        "empty_dominator_four_sets_among_those_avoiding_0": 0,
+        "cp_sat": "INFEASIBLE",
+        "cp_sat_build_seconds": 34.77,
+        "cp_sat_solve_seconds": 144.31,
+        "cadical": "UNSAT",
+        "cadical_build_seconds": 5.75,
+        "cadical_solve_seconds": 83.83,
+        "cardinality_constraints_alone": "SAT"
+      },
+      "full_tournament_S4_decided": false,
+      "orders_67_and_68": "not searched"
+    },
+    "power_interval_and_cyclotomic_and_jacobi": [
+      {
+        "name": "primitive_root_power_interval",
+        "order": 53,
+        "connection_size": 26,
+        "has_S4": false,
+        "witness": [
+          0,
+          1,
+          3,
+          26
+        ],
+        "seconds": 0.0,
+        "primitive_root": 2,
+        "equals_quadratic_residues": false
+      },
+      {
+        "name": "primitive_root_power_interval",
+        "order": 59,
+        "connection_size": 29,
+        "has_S4": false,
+        "witness": [
+          0,
+          1,
+          2,
+          17
+        ],
+        "seconds": 0.0,
+        "primitive_root": 2,
+        "equals_quadratic_residues": false
+      },
+      {
+        "name": "primitive_root_power_interval",
+        "order": 61,
+        "connection_size": 30,
+        "has_S4": false,
+        "witness": [
+          0,
+          1,
+          9,
+          40
+        ],
+        "seconds": 0.0,
+        "primitive_root": 2,
+        "equals_quadratic_residues": false
+      },
+      {
+        "name": "cyclotomic_two_classes",
+        "order": 53,
+        "connection_size": 26,
+        "has_S4": false,
+        "witness": [
+          0,
+          1,
+          2,
+          13
+        ],
+        "seconds": 0.0,
+        "primitive_root": 2,
+        "classes_mod_4": [
+          0,
+          1
+        ]
+      },
+      {
+        "name": "cyclotomic_two_classes",
+        "order": 53,
+        "connection_size": 26,
+        "has_S4": false,
+        "witness": [
+          0,
+          1,
+          5,
+          7
+        ],
+        "seconds": 0.0,
+        "primitive_root": 2,
+        "classes_mod_4": [
+          0,
+          3
+        ]
+      },
+      {
+        "name": "cyclotomic_two_classes",
+        "order": 61,
+        "connection_size": 30,
+        "has_S4": false,
+        "witness": [
+          0,
+          1,
+          2,
+          5
+        ],
+        "seconds": 0.0,
+        "primitive_root": 2,
+        "classes_mod_4": [
+          0,
+          1
+        ]
+      },
+      {
+        "name": "cyclotomic_two_classes",
+        "order": 61,
+        "connection_size": 30,
+        "has_S4": false,
+        "witness": [
+          0,
+          1,
+          7,
+          40
+        ],
+        "seconds": 0.001,
+        "primitive_root": 2,
+        "classes_mod_4": [
+          0,
+          3
+        ]
+      },
+      {
+        "name": "jacobi_with_half_rule_on_zero",
+        "order": 55,
+        "connection_size": 27,
+        "has_S4": false,
+        "witness": [
+          0,
+          1,
+          2,
+          31
+        ],
+        "seconds": 0.0
+      },
+      {
+        "name": "jacobi_with_half_rule_on_zero",
+        "order": 63,
+        "connection_size": 31,
+        "has_S4": false,
+        "witness": [
+          0,
+          1,
+          2,
+          33
+        ],
+        "seconds": 0.0
+      }
+    ],
+    "lexicographic_products_in_52_through_66": [
+      {
+        "outer": "QR19",
+        "inner": "C3",
+        "order": 57,
+        "has_S4": false,
+        "witness": [
+          0,
+          3,
+          6,
+          24
+        ]
+      },
+      {
+        "outer": "C3",
+        "inner": "QR19",
+        "order": 57,
+        "has_S4": false,
+        "witness": [
+          0,
+          1,
+          19,
+          38
+        ]
+      },
+      {
+        "outer": "QR7",
+        "inner": "C8",
+        "order": 56,
+        "has_S4": false,
+        "witness": [
+          0,
+          1,
+          8,
+          40
+        ]
+      },
+      {
+        "outer": "C8",
+        "inner": "QR7",
+        "order": 56,
+        "has_S4": false,
+        "witness": [
+          0,
+          1,
+          2,
+          21
+        ]
+      },
+      {
+        "outer": "QR7",
+        "inner": "C9",
+        "order": 63,
+        "has_S4": false,
+        "witness": [
+          0,
+          1,
+          9,
+          45
+        ]
+      },
+      {
+        "outer": "C9",
+        "inner": "QR7",
+        "order": 63,
+        "has_S4": false,
+        "witness": [
+          0,
+          1,
+          2,
+          28
+        ]
+      },
+      {
+        "outer": "QR11",
+        "inner": "C5",
+        "order": 55,
+        "has_S4": false,
+        "witness": [
+          0,
+          2,
+          5,
+          15
+        ]
+      },
+      {
+        "outer": "C5",
+        "inner": "QR11",
+        "order": 55,
+        "has_S4": false,
+        "witness": [
+          0,
+          1,
+          3,
+          22
+        ]
+      },
+      {
+        "outer": "C5",
+        "inner": "C13",
+        "order": 65,
+        "has_S4": false,
+        "witness": [
+          0,
+          1,
+          6,
+          26
+        ]
+      },
+      {
+        "outer": "C13",
+        "inner": "C5",
+        "order": 65,
+        "has_S4": false,
+        "witness": [
+          0,
+          1,
+          2,
+          30
+        ]
+      },
+      {
+        "outer": "C4",
+        "inner": "C13",
+        "order": 52,
+        "has_S4": false,
+        "witness": [
+          0,
+          1,
+          6,
+          13
+        ]
+      },
+      {
+        "outer": "C13",
+        "inner": "C4",
+        "order": 52,
+        "has_S4": false,
+        "witness": [
+          0,
+          1,
+          2,
+          24
+        ]
+      },
+      {
+        "outer": "C3",
+        "inner": "C3[QR7]",
+        "order": 63,
+        "has_S4": false,
+        "witness": [
+          0,
+          1,
+          21,
+          42
+        ]
+      }
+    ],
+    "lexicographic_products_outside_the_window": [
+      {
+        "outer": "C3",
+        "inner": "C13",
+        "order": 39,
+        "has_S4": false,
+        "witness": [
+          0,
+          1,
+          6,
+          13
+        ]
+      },
+      {
+        "outer": "C13",
+        "inner": "C3",
+        "order": 39,
+        "has_S4": false,
+        "witness": [
+          0,
+          1,
+          2,
+          18
+        ]
+      }
+    ],
+    "majority_products_order_64": {
+      "count": 64,
+      "any_has_S4": false,
+      "bases_with_a_vertex_of_out_degree_3": 32,
+      "rows": [
+        {
+          "base_edge_bits": 0,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            2,
+            63
+          ]
+        },
+        {
+          "base_edge_bits": 1,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            2,
+            63
+          ]
+        },
+        {
+          "base_edge_bits": 2,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            2,
+            63
+          ]
+        },
+        {
+          "base_edge_bits": 3,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            2,
+            63
+          ]
+        },
+        {
+          "base_edge_bits": 4,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            12,
+            59
+          ]
+        },
+        {
+          "base_edge_bits": 5,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            32,
+            63
+          ]
+        },
+        {
+          "base_edge_bits": 6,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            8,
+            33
+          ]
+        },
+        {
+          "base_edge_bits": 7,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "base_edge_bits": 8,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            2,
+            63
+          ]
+        },
+        {
+          "base_edge_bits": 9,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            2,
+            63
+          ]
+        },
+        {
+          "base_edge_bits": 10,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            2,
+            63
+          ]
+        },
+        {
+          "base_edge_bits": 11,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            2,
+            63
+          ]
+        },
+        {
+          "base_edge_bits": 12,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            12,
+            49
+          ]
+        },
+        {
+          "base_edge_bits": 13,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            4,
+            18
+          ]
+        },
+        {
+          "base_edge_bits": 14,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            12,
+            49
+          ]
+        },
+        {
+          "base_edge_bits": 15,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "base_edge_bits": 16,
+          "has_S4": false,
+          "witness": [
+            0,
+            20,
+            37,
+            63
+          ]
+        },
+        {
+          "base_edge_bits": 17,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            20,
+            63
+          ]
+        },
+        {
+          "base_edge_bits": 18,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            20,
+            25
+          ]
+        },
+        {
+          "base_edge_bits": 19,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            4,
+            19
+          ]
+        },
+        {
+          "base_edge_bits": 20,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            42,
+            58
+          ]
+        },
+        {
+          "base_edge_bits": 21,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            32,
+            63
+          ]
+        },
+        {
+          "base_edge_bits": 22,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            8,
+            33
+          ]
+        },
+        {
+          "base_edge_bits": 23,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "base_edge_bits": 24,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            2,
+            21
+          ]
+        },
+        {
+          "base_edge_bits": 25,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            4,
+            19
+          ]
+        },
+        {
+          "base_edge_bits": 26,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            2,
+            21
+          ]
+        },
+        {
+          "base_edge_bits": 27,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            4,
+            19
+          ]
+        },
+        {
+          "base_edge_bits": 28,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            2,
+            21
+          ]
+        },
+        {
+          "base_edge_bits": 29,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            4,
+            18
+          ]
+        },
+        {
+          "base_edge_bits": 30,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            2,
+            21
+          ]
+        },
+        {
+          "base_edge_bits": 31,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "base_edge_bits": 32,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            2,
+            42
+          ]
+        },
+        {
+          "base_edge_bits": 33,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            2,
+            42
+          ]
+        },
+        {
+          "base_edge_bits": 34,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            8,
+            46
+          ]
+        },
+        {
+          "base_edge_bits": 35,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            32,
+            58
+          ]
+        },
+        {
+          "base_edge_bits": 36,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            2,
+            42
+          ]
+        },
+        {
+          "base_edge_bits": 37,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            2,
+            42
+          ]
+        },
+        {
+          "base_edge_bits": 38,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            8,
+            33
+          ]
+        },
+        {
+          "base_edge_bits": 39,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "base_edge_bits": 40,
+          "has_S4": false,
+          "witness": [
+            0,
+            20,
+            40,
+            60
+          ]
+        },
+        {
+          "base_edge_bits": 41,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            20,
+            42
+          ]
+        },
+        {
+          "base_edge_bits": 42,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            46,
+            57
+          ]
+        },
+        {
+          "base_edge_bits": 43,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            32,
+            58
+          ]
+        },
+        {
+          "base_edge_bits": 44,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            20,
+            29
+          ]
+        },
+        {
+          "base_edge_bits": 45,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            4,
+            18
+          ]
+        },
+        {
+          "base_edge_bits": 46,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            12,
+            49
+          ]
+        },
+        {
+          "base_edge_bits": 47,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "base_edge_bits": 48,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            2,
+            42
+          ]
+        },
+        {
+          "base_edge_bits": 49,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            2,
+            42
+          ]
+        },
+        {
+          "base_edge_bits": 50,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            8,
+            33
+          ]
+        },
+        {
+          "base_edge_bits": 51,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            4,
+            19
+          ]
+        },
+        {
+          "base_edge_bits": 52,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            2,
+            42
+          ]
+        },
+        {
+          "base_edge_bits": 53,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            2,
+            42
+          ]
+        },
+        {
+          "base_edge_bits": 54,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            8,
+            33
+          ]
+        },
+        {
+          "base_edge_bits": 55,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "base_edge_bits": 56,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            2,
+            21
+          ]
+        },
+        {
+          "base_edge_bits": 57,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            4,
+            18
+          ]
+        },
+        {
+          "base_edge_bits": 58,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            2,
+            21
+          ]
+        },
+        {
+          "base_edge_bits": 59,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            4,
+            19
+          ]
+        },
+        {
+          "base_edge_bits": 60,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            2,
+            21
+          ]
+        },
+        {
+          "base_edge_bits": 61,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            4,
+            18
+          ]
+        },
+        {
+          "base_edge_bits": 62,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            2,
+            21
+          ]
+        },
+        {
+          "base_edge_bits": 63,
+          "has_S4": false,
+          "witness": [
+            0,
+            1,
+            2,
+            3
+          ]
+        }
+      ]
+    }
+  },
+  "weaknesses": "The circular failure is a written proof, and the edge list of each order was checked against it. The argument is special to this connection set. The Paley statements are enumerations. At orders 67, 71, and 79 the independence numbers in the unique-dominator bounds were recomputed by CP-SAT, CBC, CaDiCaL, and a separate backtrack. The equality cases at orders 71 and 79 were rejected by CP-SAT and CaDiCaL, and on one sample set the number of violated clauses equalled a direct count of undominated four-sets. Orders 52 through 60 in QR_79, and orders 52 through 66 in QR_83, are full four-set encodings. Both CP-SAT and CaDiCaL reject them, and the cardinality constraints alone are satisfiable. The independence number 27 at order 83 was not recomputed by the backtrack. The exclusion of orders 52 through 66 in QR_83 does not use that number; the unique-dominator bound there is 68 and does not reach those orders. Orders 67 and 68 inside QR_83 were not searched. The run does not decide whether QR_83 has S_4, because four-sets containing 0 were not part of the empty-dominator count. The caps 49, 51, and 51 at orders 67, 71, and 79 are upper bounds on a proper induced subtournament with S_4. No example of those orders was built. The products C_3[C_13] and C_13[C_3] have order 39, fail S_4, and lie outside the window. Thirty-two of the sixty-four majority bases have a vertex of out-degree 3, and the constant copy of that vertex has in-degree 0 in the product. The other thirty-two bases have maximum out-degree 2 and their products still fail S_4. The abstract at doi 10.5281/zenodo.23269759 describes a Cayley search on the odd-order groups from 47 through 65 and states that the bounds 48 <= f(4) <= 67 are unchanged. That dataset was not executed. The odd-order circular tournaments are single Cayley connection sets, settled here by the gap argument. Even-order circular tournaments and induced Paley subtournaments lie outside that Cayley statement. Paley orders 47 and 59 were not re-censused. One recorded set in each was used to check the edge orientation. The lower bound f(4) >= 52 is an input of the task and is not re-proved. Tournaments outside the families named here were not searched. Re-running the censuses requires a short program; the counts, witnesses, independent sets, and solver outcomes are the record of the run.",
+  "references": [
+    "research/PROBLEM.md",
+    "proof/verify_proof.py",
+    "research/compute/paley59_result.json",
+    "research/AGENT_TASKS/R1-E-checks.report.json",
+    "https://erdosproblemaday.com/report/902",
+    "https://doi.org/10.5281/zenodo.23269759"
+  ],
+  "next_step": "Run the same four-set census on subsets of 52 through 66 vertices in the Paley tournament of order 103, the next prime congruent to 3 mod 4 after 83. Orders 67 and 68 inside QR_83 are undecided; both sit at or above the upper bound f(4) <= 67 already given by QR_67.",
+  "relation_to_prior": "Paley 47 and Paley 59 are already computed and are not re-censused. One recorded set in each was used only to check the edge orientation. At order 59 the circular connection set is {1, ..., 29}, which is not the set of quadratic residues, so that tournament is a different family. Induced subtournaments of QR_67, QR_71, QR_79, and QR_83 are a different family from the Paley tournament of order 59. The search stays inside explicit families on 52 through 66 vertices and does not reopen the exhausted approach keys.",
+  "novelty": "The gap argument supplies one undominated 4-set for every forward circular tournament of order 52 through 66, including both diametral orientations at even order. The censuses exclude every induced subtournament with S_4 on 52 through 66 vertices inside the Paley tournaments of orders 67, 71, 79, and 83, and they exclude a longer initial segment of orders at 67, 71, and 79. No example with S_4 on fewer than 67 vertices was found, so f(4) <= 67 is unchanged. Erdős problem 902 remains open.",
+  "verification": "unreviewed",
+  "source": "file"
+}

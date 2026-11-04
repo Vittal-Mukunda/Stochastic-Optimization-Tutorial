@@ -1,0 +1,232 @@
+{
+  "task_id": "R4-C-tight-s4",
+  "agent": "C",
+  "claim": "Assume a tight pair in an S_4 tournament on 52 vertices with J = 5 and s = 4. Those two bounds are conditional inputs and are not rebuilt. The degree excesses on the four positive dominators are then 2, 1, 1, 1, and the heavy excess is 9. Lemma A, the pair-sum, the triple-excess formula, and c <= 4 exclude every excess partition of 9 other than 6+3. They also exclude 6+3 unless the vertex of q = 8 misses the degree-2 dominator and exactly two of the degree-1 dominators. Name the degree-2 vertex A, the untouched degree-1 vertex B, and the missed degree-1 vertices C and D so that |D({B,C})| = 13. The six dominator counts inside the positive set are then forced: |D({A,B})| = 16, |D({A,D})| = 14, |D({A,C})| = 13, |D({B,C})| = 13, |D({B,D})| = 12, and |D({C,D})| = 12. The same identities force c(A,B) = 4 and c(C,D) = 0, and they admit an explicit common-in-neighbour tuple on the other four pairs. A tight pair with J = 5 and s = 4 remains compatible with these identities. f(4) >= 52 is not proved, and Erdős problem 902 is not solved.",
+  "status": "conditional",
+  "definitions": "T is an S_4 tournament on N = 52 vertices, used only through the standing fact that every triple has at least 5 dominators. P is a tight pair, R = D(P) has 11 vertices, and T[R] is 5-regular. O = V \\ (P union R) has 39 vertices. For y in O, q_y = |R intersect N^-(y)| >= 5 and the excess of y is q_y - 5. A vertex is heavy when q_y >= 6. For r in R, d^-(r) = 25 + j_r with j_r >= 0 and J = sum j_r. V_0 = {r in R : j_r = 0}, V_+ = R \\ V_0, and s = |V_+|. The heavy excess is E = sum_y (q_y - 5) = 14 - J. For u in R, tau_u is the sum of (q_y - 5) over heavy y that beat u. lambda(5) = 0, lambda(6) = 4, lambda(7) = 7, lambda(8) = 9, lambda(9) = lambda(10) = lambda(11) = 10. Ex(u) = 5 + 10 j_u - sum lambda(q_y), the sum running over y that beat u, and Ex(u) >= 0. For a pair of vertices in R, c is the number of vertices of R that beat both, E_both is the sum of (q_y - 5) over y that beat both, and D is the number of dominators of the pair. The triple excess of the pair is 4D - c - 45 - E_both. Lemma A is an input, rechecked in the R1-C report and not re-proved here: a vertex of excess 0 lies in every heavy in-neighbourhood, and every pair from it into the rest of R has 12 dominators and common-in-neighbour count at most 3. Consequently every heavy vertex beats only vertices of V_+. A heavy vertex of excess e beats exactly t = 6 - e vertices of R, so at s = 4 the excess lies in {2, 3, 4, 5, 6}. The inputs J >= 5 and s >= 4 are taken from the R1-C and R3-C reports. This report uses them only at the cell J = 5, s = 4.",
+  "argument": "Verdict. Under the inputs J = 5 and s = 4, the identities force one integer pattern, and that pattern satisfies them. The degree excesses are 2, 1, 1, 1, because four positive integers summing to 5 have that shape. The heavy excess is E = 9. Write A for the vertex of degree excess 2 and B, C, D for the vertices of degree excess 1.\n\nTools, stated once. The winner of the edge between two vertices of R occupies one of the five in-neighbour slots of the loser, so c <= 4. The triple excess is 4D - c - 45 - E_both. It is nonnegative, and it is at most Ex at each endpoint. In particular 4D - 45 >= 0, so every pair inside R has at least 12 dominators. For u in V_+, the seven pairs from u into V_0 have 12 dominators each, so the three pairs from u into the other positive vertices sum to 36 + 5 j_u - tau_u. That sum is 46 - tau at A and 41 - tau at each degree-1 vertex. Three integers at least 12 sum to at least 36, so tau_A <= 10 and each degree-1 tau is at most 5. A heavy vertex of excess e contributes e to the tau of each of the 6 - e positive vertices it beats, and it contributes lambda(5 + e) to each of them. The sum of all four tau values equals sum e(6 - e). Each of the five in-neighbours of u in R beats four further vertices of R, so the ten common-in-neighbour counts at u sum to 20. On each of the seven edges into V_0, Lemma A gives c <= 3.\n\nThe partitions of 9 into parts in {2, 3, 4, 5, 6} are 6+3, 5+4, 5+2+2, 4+3+2, 3+3+3, and 3+2+2+2. The value e(6 - e) is 0, 5, 8, 9, 8 for excesses 6, 5, 4, 3, 2.\n\nPartition 3+3+3. Three vertices of excess 3 contribute 9 + 9 + 9 = 27 to the sum of the tau values. The tau bounds allow at most 10 + 5 + 5 + 5 = 25. This partition dies.\n\nPartition 3+2+2+2. Three vertices of excess 2 contribute 2 to every positive tau, and the vertex of excess 3 contributes 3 to three of them. Every positive tau is therefore at least 6. Each degree-1 vertex has room for at most 5. This partition dies.\n\nPartition 4+3+2. The excess-2 vertex contributes 2 to every positive tau. The excess-3 vertex misses a 3-subset of V_+. If that 3-subset is {B, C, D}, the tau values before the excess-4 vertex are 2 at A and 5 at B, C, and D. Every 2-subset of V_+ meets {B, C, D}, so the excess-4 vertex raises some degree-1 tau from 5 to 9. If the 3-subset contains A and misses one degree-1 vertex, say D, the tau values before the excess-4 vertex are 5, 5, 5, 2. Each of the six possible pairs then raises a degree-1 tau to at least 6: a pair inside {A, B, C} raises one of B or C from 5 to 9, and a pair through D raises D from 2 to 6. The three degree-1 vertices are symmetric, so every placement puts tau at least 6 on a degree-1 vertex. This partition dies.\n\nPartition 5+2+2. Each excess-2 vertex misses all four positive vertices, contributing 4 to every tau and lambda 14 to every positive vertex. The excess-5 vertex contributes 5 and lambda 10 to one vertex. Placed on a degree-1 vertex, that tau becomes 9, above the bound 5. Placed on A, the tau values are 9, 4, 4, 4 and the lambda sums are 24, 14, 14, 14. The budgets hold, with Ex = 1 at every positive vertex. The three-pair sums are 37, 37, 37, 37, so the six positive pairs have dominator counts summing to 74. Both excess-2 vertices beat both ends of every positive pair, so E_both = 4 on every such pair, and the excess-5 vertex meets no pair. A pair with 12 dominators has triple excess -1 - c, which is negative. A pair with 14 or more dominators has triple excess at least 4*14 - 4 - 45 - 4 = 3, above Ex = 1. A pair with 13 dominators can meet the budget, but 74 = 6*12 + 2, so at least four of the six counts equal 12. Those four are negative. This partition dies.\n\nPartition 5+4. Each of these vertices contributes lambda 10. A degree-1 vertex missed by both has lambda 20, above its budget 15. The miss-sets are therefore disjoint, or they meet only at A.\n\nIf both miss A, the excess-5 vertex misses only A and the excess-4 vertex misses A and one degree-1 vertex, say B. The tau values are 9, 4, 0, 0 and the lambda sums are 20, 10, 0, 0, so Ex is 5, 5, 15, 15. The three-pair sums are 37, 37, 41, 41. E_both equals 4 on {A, B} and equals 0 on every other positive pair. The pair equations give |D({C, D})| = |D({A, B})| + 4, with |D({A, C})| = |D({B, D})| and |D({A, D})| = |D({B, C})|. The triangle opposite A sums to 41. Combined with the difference 4 and the lower bound 12, the only integer possibilities are 16 dominators on {C, D} with 12 on {A, B}, or 17 on {C, D} with 13 on {A, B}. The first has E_both = 4 and triple excess -1 - c. The second forces the four crossing counts to equal 12, and {C, D} then has triple excess at least 4*17 - 4 - 45 = 19, above Ex = 15 at C and at D.\n\nIf the miss-sets are disjoint, one vertex X receives the excess 5, two vertices Y and Z receive the excess 4, and one vertex W is untouched. All four tau values are at most 5, so the degree-2 vertex may sit in any of the four roles. E_both equals 4 on {Y, Z} and equals 0 elsewhere.\n\nIf A = X, set W = B, Y = C, and Z = D. The three-pair sums are 41, 41, 37, 37. Then |D({A, B})| = |D({C, D})| + 4, and the triangle opposite A sums to 37, so |D({C, D})| is 12 or 13. The value 12 makes the triple excess of {C, D} negative. The value 13 forces |D({A, B})| = 17 and the four crossing counts equal to 12. The pair {A, B} has E_both = 0 and triple excess at least 19, while Ex(A) = Ex(B) = 15.\n\nIf A is an endpoint of the excess-4 pair, set A = Y, C = Z, B = X, and D = W. The three-pair sum at B is 36, so every pair out of B has 12 dominators. The remaining equations give 17 dominators on {A, D}, 13 on {A, C}, and 12 on {C, D}. The pair {A, D} is missed by neither heavy vertex, so E_both = 0 and its triple excess is at least 19, while Ex(A) = Ex(D) = 15.\n\nIf A = W, the three degree-1 vertices are X, Y, and Z. The three-pair sum at X is 36, so every pair out of X has 12 dominators. The pair {Y, Z} then has 8 dominators, below 12.\n\nEvery placement of 5+4 dies.\n\nPartition 6+3. The excess-6 vertex beats nobody in R. It contributes nothing to tau, to lambda, or to E_both. The excess-3 vertex misses a 3-subset, contributes tau 3 and lambda 9 on that subset, and contributes E_both = 3 on each of its three pairs.\n\nIf the untouched vertex is A, the tau values are 0, 3, 3, 3 and the three-pair sums are 46, 38, 38, 38. The triangle on the three degree-1 vertices sums to 34, below 36. This placement dies.\n\nIf the untouched vertex is a degree-1 vertex, call it B, so the missed vertices are A, C, and D. The tau values are 3, 0, 3, 3. The lambda sums are 9, 0, 9, 9. The budgets are Ex(A) = 16, Ex(B) = 15, and Ex(C) = Ex(D) = 6. The three-pair sums are 43, 41, 38, 38. E_both equals 3 on {A, C}, {A, D}, and {C, D}, and equals 0 on {A, B}, {B, C}, and {B, D}. The pair equations are |D({A, B})| = |D({C, D})| + 4, |D({A, C})| = |D({B, D})| + 1, and |D({A, D})| = |D({B, C})| + 1, with |D({B, C})| + |D({B, D})| + |D({C, D})| = 37. Three integers at least 12 summing to 37 are a permutation of 13, 12, 12.\n\nIf |D({C, D})| = 13, then |D({A, B})| = 17 and the two pairs from B to {C, D} equal 12. The pair {A, B} has E_both = 0 and triple excess at least 19, above Ex(B) = 15 and above Ex(A) = 16. This branch dies.\n\nThe remaining solutions swap C and D. The representative with |D({B, C})| = 13 and |D({B, D})| = 12 is |D({A, B})| = 16, |D({A, C})| = 13, |D({A, D})| = 14, |D({B, C})| = 13, |D({B, D})| = 12, and |D({C, D})| = 12. The c-windows are as follows. On {A, B}, the triple excess is 19 - c and the budget is 15, so c = 4 and the triple excess is 15. On {C, D}, the triple excess is -c, so c = 0 and the triple excess is 0. On {A, C} every c in {0, 1, 2, 3, 4} works. On {A, D} the window is {2, 3, 4}. On {B, C} the window is {1, 2, 3, 4}. On {B, D} the window is {0, 1, 2, 3}.\n\nThe tuple c(A,B), c(A,C), c(A,D), c(B,C), c(B,D), c(C,D) = 4, 2, 2, 2, 1, 0 lies in these windows. The six triple excesses are 15, 2, 6, 5, 2, 0, and each is at most the smaller endpoint budget. Because the ten common-in-neighbour counts at a vertex sum to 20, the seven counts from A, B, C, and D into V_0 must sum to 12, 13, 16, and 17 respectively. Each of those sums is a sum of seven integers in {0, 1, 2, 3}. Thus each vertex separately admits such a list. With this tuple, the 37 vertices of O that are not heavy also admit nonnegative intersection numbers on V_+: the number of them beating both ends is 12, 10, 11, 11, 11, 11 on the six positive pairs in the order above, and one solution of the subset counts is recorded in the evidence.\n\nThe same arithmetic with C and D exchanged is the same pattern. No other solution of the pair-sum survives. Therefore J = 5 and s = 4 is compatible with the identities, and the compatibility is exactly this pattern. The order of f(4) is unchanged. Erdős problem 902 is not solved.",
+  "evidence": {
+    "input": "J >= 5 from research/AGENT_TASKS/R1-C-n52-j-le-2.report.json and s >= 4 from research/AGENT_TASKS/R3-C-four-positive.report.json. Lemma A, the pair-sum, the triple-excess formula, c <= 4, and E = 14 - J are the tools rechecked in those reports. Sections 3, 4, and the s <= 3 trees in sections 5 and 9 were not rebuilt.",
+    "degree_shape": "The only composition of 5 into four positive parts is (2, 1, 1, 1).",
+    "partitions_of_9": [
+      "6+3",
+      "5+4",
+      "5+2+2",
+      "4+3+2",
+      "3+3+3",
+      "3+2+2+2"
+    ],
+    "excluded": {
+      "3+3+3": "Sum of tau equals 27, above 10+5+5+5.",
+      "3+2+2+2": "Every degree-1 tau is at least 6.",
+      "4+3+2": "Every placement of the 3-subset and the 2-subset puts tau at least 6 on a degree-1 vertex.",
+      "5+2+2": "The excess 5 must sit on the degree-2 vertex. The six dominator counts sum to 74 and every E_both equals 4, so some count equals 12 and its triple excess equals -1 - c.",
+      "5+4_meet_at_A": "The untouched degree-1 pair has 17 dominators and triple excess at least 19, or the pair missed by the excess-4 vertex has 12 dominators and triple excess -1 - c.",
+      "5+4_disjoint_5_on_A": "The pair from A to the untouched degree-1 vertex has 17 dominators and triple excess at least 19, against Ex = 15.",
+      "5+4_disjoint_4_on_A": "The pair from A to the untouched degree-1 vertex has 17 dominators and triple excess at least 19, against Ex = 15.",
+      "5+4_disjoint_neither_on_A": "The pair missed by the excess-4 vertex has 8 dominators.",
+      "6+3_untouched_degree_2": "The triangle on the three degree-1 vertices sums to 34.",
+      "6+3_opposite_pair_13": "The pair from the degree-2 vertex to the untouched degree-1 vertex has 17 dominators and triple excess at least 19, against Ex = 15 at the degree-1 end and Ex = 16 at the degree-2 end."
+    },
+    "survivor": {
+      "heavy_vertices": "One vertex of q = 11 and one vertex of q = 8.",
+      "miss_set_of_q8": [
+        "A",
+        "C",
+        "D"
+      ],
+      "degrees": {
+        "A": 2,
+        "B": 1,
+        "C": 1,
+        "D": 1
+      },
+      "tau": {
+        "A": 3,
+        "B": 0,
+        "C": 3,
+        "D": 3
+      },
+      "lambda_sum": {
+        "A": 9,
+        "B": 0,
+        "C": 9,
+        "D": 9
+      },
+      "Ex": {
+        "A": 16,
+        "B": 15,
+        "C": 6,
+        "D": 6
+      },
+      "dominators": {
+        "AB": 16,
+        "AD": 14,
+        "AC": 13,
+        "BC": 13,
+        "BD": 12,
+        "CD": 12
+      },
+      "E_both": {
+        "AB": 0,
+        "AD": 3,
+        "AC": 3,
+        "BC": 0,
+        "BD": 0,
+        "CD": 3
+      },
+      "forced_c": {
+        "AB": 4,
+        "CD": 0
+      },
+      "c_windows": {
+        "AC": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "AD": [
+          2,
+          3,
+          4
+        ],
+        "BC": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "BD": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "witness_c": {
+        "AB": 4,
+        "AC": 2,
+        "AD": 2,
+        "BC": 2,
+        "BD": 1,
+        "CD": 0
+      },
+      "witness_triple_excess": {
+        "AB": 15,
+        "AC": 2,
+        "AD": 6,
+        "BC": 5,
+        "BD": 2,
+        "CD": 0
+      },
+      "c_sums_into_V0": {
+        "A": 12,
+        "B": 13,
+        "C": 16,
+        "D": 17
+      },
+      "light_pair_counts_for_witness": {
+        "AB": 12,
+        "AC": 10,
+        "AD": 11,
+        "BC": 11,
+        "BD": 11,
+        "CD": 11
+      },
+      "one_nonnegative_subset_solution_on_Vplus": {
+        "empty": 3,
+        "A": 0,
+        "B": 0,
+        "C": 1,
+        "D": 3,
+        "AB": 5,
+        "AC": 3,
+        "AD": 1,
+        "BC": 3,
+        "BD": 0,
+        "CD": 0,
+        "ABC": 2,
+        "ABD": 5,
+        "ACD": 5,
+        "BCD": 6,
+        "ABCD": 0
+      }
+    },
+    "integer_checks": {
+      "tau_cap": {
+        "degree_2": 10,
+        "degree_1": 5,
+        "sum_cap": 25
+      },
+      "three_plus_three_plus_three_tau_sum": 27,
+      "five_plus_two_plus_two": {
+        "dominator_sum": 74,
+        "E_both": 4,
+        "triple_excess_at_12": -1
+      },
+      "five_plus_four_seventeen": {
+        "triple_excess_at_least": 19,
+        "Ex": 15
+      },
+      "six_plus_three_triangle_when_A_untouched": 34,
+      "six_plus_three_survivor_sum_of_six_counts": 80,
+      "witness_matches_Ex": {
+        "AB": [
+          15,
+          15
+        ],
+        "AD": [
+          6,
+          6
+        ]
+      }
+    },
+    "labeled_enumeration": {
+      "description": "Every partition of 9 into parts in {2, 3, 4, 5, 6}, every assignment of miss-sets of size 6 - e inside the four positive vertices, and every placement of the unique degree excess 2. A placement survives only when every Ex is nonnegative, every three-pair sum is at least 36, the pair-sum produces integer dominator counts of at least 12, and each positive pair has an integer c in {0, 1, 2, 3, 4} whose triple excess lies between 0 and the smaller endpoint budget.",
+      "placements": {
+        "6+3": 16,
+        "5+4": 96,
+        "5+2+2": 16,
+        "4+3+2": 96,
+        "3+3+3": 80,
+        "3+2+2+2": 16
+      },
+      "placements_total": 320,
+      "surviving_placements": {
+        "6+3": 12,
+        "5+4": 0,
+        "5+2+2": 0,
+        "4+3+2": 0,
+        "3+3+3": 0,
+        "3+2+2+2": 0
+      },
+      "labeled_dominator_solutions": 24,
+      "orbits": 1
+    },
+    "c_at_most_4_used": true,
+    "lemma_A_used_as_input": true,
+    "lemma_A_rewritten": false,
+    "J_at_least_5_used_as_input": true,
+    "s_at_least_4_used_as_input": true,
+    "J_equals_3_and_4_rebuilt": false,
+    "sections_5_and_9_s_at_most_3_rebuilt": false,
+    "computer_search_of_tournaments": false,
+    "erdos_902_solved": false,
+    "f4_at_least_52_proved": false,
+    "tight_pair_excluded": false
+  },
+  "weaknesses": "The status conditional belongs to the dependence on J >= 5 and s >= 4. The first is the R1-C report and the second is the R3-C report. Both were written in the same agent role, both are unreviewed, and neither is re-proved here. Lemma A is an input from the same source: every pair into V_0 is given 12 dominators and c <= 3 by that lemma. The case analysis excludes the other patterns at J = 5 and s = 4, and it exhibits one pattern that meets the pair-sum, the triple-excess formula, and the per-vertex sum of common-in-neighbour counts. The seven counts from each positive vertex into V_0 were checked only as a list of seven integers at that vertex. They were not realized together inside one 5-regular tournament on 11 vertices. The nonnegative subset counts in the evidence account for the 37 light vertices on V_+ for one common-in-neighbour tuple. They do not assign those vertices inside V_0, and they do not build the tournament. The labeled enumeration is a check that the same inequalities admit no second orbit. It is not a search of tournaments, and it uses the same identities as the case analysis. A tight pair with this pattern, or with J = 5 and s = 5, or with J > 5, remains possible. f(4) >= 52 is not proved, and Erdős problem 902 is not solved.",
+  "references": [
+    "proof/N52_TIGHT_PAIRS.md",
+    "research/AGENT_TASKS/R3-C-four-positive.report.json",
+    "research/AGENT_TASKS/R1-C-n52-j-le-2.report.json",
+    "research/LEMMAS.md"
+  ],
+  "next_step": "Test this one pattern against a 5-regular tournament on the eleven dominators, with c(A,B) = 4 and c(C,D) = 0, and against an assignment of the 37 light vertices in O. The same identities at J = 5 and s = 5 have not been run.",
+  "relation_to_prior": "Sections 5 and 9, repaired in research/AGENT_TASKS/R3-C-four-positive.report.json, supply J >= 5 and s >= 4. This report starts at the cell J = 5, s = 4 and does not rebuild the s <= 3 trees or the printed gaps in those sections. Lemma A and the excess identity are the tools rechecked in research/AGENT_TASKS/R1-C-n52-j-le-2.report.json. The exhausted approach keys are not used.",
+  "novelty": "Relative to R3-C, which stops once s >= 4, the new work is the classification at J = 5 and s = 4. The identities leave a single pattern: heavy excess 6+3, the q = 8 vertex missing the degree-2 dominator and two degree-1 dominators, and positive dominator counts 16, 14, 13, 13, 12, 12 with c = 4 on the count 16 and c = 0 on the opposite count 12. Every other excess partition of 9 at these parameters contradicts the same identities.",
+  "verification": "unreviewed",
+  "source": "file"
+}

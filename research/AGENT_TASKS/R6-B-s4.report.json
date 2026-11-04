@@ -1,0 +1,74 @@
+{
+  "task_id": "R6-B-s4",
+  "agent": "B",
+  "claim": "Property S_4 on 52 vertices is not contradicted by the identities recorded in research/LEMMAS.md or the round-4 and round-5 reports. The missing identity is sum_{|X|=4} |D(X)| = sum_v C(d^+(v), 4). Erdős problem 902 is not solved.",
+  "status": "inconclusive",
+  "definitions": "A tournament has one directed edge between every two distinct vertices. For a set X, D(X) is the set of vertices outside X that beat every vertex of X. The tournament has property S_4 when D(X) is nonempty for every 4-element set. f(4) is the least order of a tournament with S_4. The excess is e(v) = d^-(v) - 25, so d^+(v) = 26 - e(v) on 52 vertices. A pair is tight when it has exactly 11 dominators. For a triple Y, k(Y) = |D(Y)| and ν(Y) is the number of common out-neighbours of Y. For a pair {u, v}, μ({u, v}) = |N^+(u) ∩ N^+(v)|. The triple hypothesis is the lower bound k(Y) ≥ 5 for every triple. The margin (26, 338, 5) is the equality case of Lemma S1 together with the recorded pair-excess pattern of R4-B: twenty-six excesses 0, twenty-six excesses 1, pair excesses summing to 338, and triple dominator counts tested at 5. Erdős problem 902 asks for the order of f(n); this report does not determine it.",
+  "argument": "The recorded identities do not contradict S_4 at order 52. They constrain pairs and triples. Property S_4 asks for a dominator of every 4-set, and no equation in research/LEMMAS.md or the round-4 and round-5 reports counts those dominators.\n\nWhat is recorded. Lemma S1 gives sum_P |D(P)| = sum_v C(d^+(v), 2) = 16237 + (1/2) sum e(v)^2 ≥ 16250, with equality exactly for twenty-six in-degrees 25 and twenty-six in-degrees 26. Its proof records that a vertex dominates a pair exactly when the pair lies in the out-set of that vertex. R4-B, R4-G, and R5-G record the triple form of the same count, sum_Y k(Y) = sum_v C(d^+(v), 3), together with sum_Y C(k(Y), 2) = sum_P C(μ(P), 3), the level relation between k and ν, and the symmetry sum C(k, 3) = sum C(ν, 3). On the margin, R4-B gives an integer solution with every k at least 5, and proves that every solution of those equations has some triple with at most 5 dominators. R5-B keeps that solution after the out-neighbourhood count: the transitive dominator sum is 91572, and a replacement set of rows meets it with every k at least 5. R4-G proves that the triple hypothesis forces some triple to have at least 7 dominators, and states that the comparison does not decide whether an S_4 tournament on 52 vertices exists. R5-G gives another integer solution, on the extreme score sequence, in which every triple level is at least 5, and states that the solution does not decide S_4. The unmatched equations named there are sum C(ν, 2) = sum C(λ, 3) and sum C(k, 3) = sum C(ν, 3). Both are triple equations. On the margin, R4-B and R5-B already match the corresponding triple moments, with common value 314028 and third-moment difference 0. R4-C, under the conditional bounds J = 5 and s = 4, leaves one tight-pair pattern compatible with the pair-sum and the triple-excess formula. R5-C realises the common-in-neighbour numbers of that pattern in a 5-regular tournament on 11 vertices and stops at those eleven vertices. R4-D shows that named families of orders 52 through 66 fail S_4 and that the Paley tournament of order 67 has S_4, so the upper bound supplied by those families remains f(4) ≤ 67. R5-F concerns the coefficient of log2 log2 N in an asymptotic count and is not used here.\n\nS_4 implies the triple hypothesis, by the standing fact recorded for order 52 in R4-C and by the sentence in research/LEMMAS.md that S_4 implies the triple condition. Every consequence of the triple hypothesis therefore applies to an S_4 tournament: no in-degree equals 23, some triple has at least 7 dominators, and, on the margin, some triple has at most 5 dominators. An S_4 tournament in the equality degree pattern would have a triple with exactly 5 dominators. None of these statements is the statement that some 4-set has an empty dominator set. The Paley tournament of order 59, recorded in research/LEMMAS.md, has triple minimum 5 and an undominated 4-set {0, 1, 7, 19}, so a triple minimum of 5 does not force S_4. That separation runs from the triple hypothesis to S_4. It does not run back, and it is not an identity at order 52.\n\nThe four-set equation is the same double count one binomial degree higher, and it is not in the record. A vertex dominates a 4-set exactly when the 4-set lies in its out-set, so sum_{|X|=4} |D(X)| = sum_v C(d^+(v), 4) holds for every tournament. The binomial coefficient C(n, 4) is convex for nonnegative integers, because its forward difference is C(n, 3). For out-degrees summing to C(52, 2) = 1326, the sum is minimized when the out-degrees are twenty-six 25s and twenty-six 26s, the equality case of Lemma S1. There C(26, 4) = 14950 and C(25, 4) = 12650, so the minimum is 26 · 27600 = 717600. The number of 4-sets is C(52, 4) = 270725. Since 717600 > 270725, every tournament on 52 vertices satisfies the numerical condition that would follow from giving every 4-set at least one dominator. The missing identity does not force an undominated 4-set.\n\nThe next double count is likewise absent from the record: sum_{|X|=4} C(|D(X)|, 2) = sum_P C(μ(P), 4). On the equality score sequence, sum μ = 16250, and the convex minimum of the right-hand side is the recorded package of 338 thirteens and 988 twelves, with value 338 · C(13, 4) + 988 · C(12, 4) = 338 · 715 + 988 · 495 = 730730. Any other common-out pattern with the same sum is at least this large. The minimum of sum C(d, 2) over nonnegative integers d(X) ≥ 1 with sum d(X) = 717600 is 623025, attained when 94575 four-sets have two dominators and 176150 have three. The value 730730 lies above that floor. An explicit solution with every four-set dominated at least twice is: 182650 four-sets with 2 dominators, 19630 with 3, 48815 with 4, and 19630 with 5. These counts add to 270725, the dominator sum is 717600, and the sum of C(|D|, 2) is 730730. On the extreme score sequence of R5-G, the recorded common-out table sums to 16480 and gives sum C(c, 4) = 978202, while sum C(d^+, 4) = 761040 and the floor for minimum 1 is 709905. Both recorded patterns survive the second-moment comparison. The comparison is not an identity in the earlier reports, and it assigns integers to four-set counts. It does not build the arcs.\n\nThe equation that remains unresolved is sum_{|X|=4} C(|D(X)|, 3) = sum_Y C(ν(Y), 4). The recorded triple moments fix sum ν, sum C(ν, 2), and, on the margin, sum C(ν, 3). They do not fix sum C(ν, 4), and R5-B's rows are one integer point of those moments, not a forced distribution of ν. No step above repeats the three-level deletion. Erdős problem 902 is not solved, and f(4) is not evaluated.",
+  "evidence": {
+    "recorded_equations_stop_at_triples": true,
+    "s4_contradicted_by_recorded_identities": false,
+    "four_set_first_moment": {
+      "identity": "sum_{|X|=4} |D(X)| = sum_v C(d^+(v), 4)",
+      "recorded_in_lemmas_or_round_4_or_5": false,
+      "minimum_on_52_vertices": 717600,
+      "number_of_4_sets": 270725,
+      "minimum_minus_number_of_4_sets": 446875,
+      "forces_an_undominated_4_set": false,
+      "equality_out_degrees": {
+        "25": 26,
+        "26": 26
+      },
+      "C(26,4)": 14950,
+      "C(25,4)": 12650
+    },
+    "four_set_second_moment_on_the_equality_margin": {
+      "identity": "sum_{|X|=4} C(|D(X)|, 2) = sum_P C(μ(P), 4)",
+      "recorded_in_lemmas_or_round_4_or_5": false,
+      "convex_minimum_of_the_right_hand_side": 730730,
+      "mu_package": {
+        "12": 988,
+        "13": 338
+      },
+      "floor_of_the_left_hand_side_when_every_4_set_has_a_dominator": 623025,
+      "explicit_solution_with_minimum_2": {
+        "2": 182650,
+        "3": 19630,
+        "4": 48815,
+        "5": 19630
+      },
+      "solution_sums": {
+        "four_sets": 270725,
+        "dominators": 717600,
+        "C_of_dominators_2": 730730
+      }
+    },
+    "extreme_score_second_moment": {
+      "sum_C_d_plus_4": 761040,
+      "sum_C_c_4_from_the_R5_G_table": 978202,
+      "floor_when_every_4_set_has_a_dominator": 709905,
+      "slack": 268297
+    },
+    "branches_left_open": [
+      "margin (26, 338, 5) with every triple at least 5 dominators",
+      "tight pair with J = 5 and s = 4, stopped at 11 vertices in R5-C"
+    ]
+  },
+  "weaknesses": "The status inconclusive belongs to the decision that the recorded identities do not contradict S_4, together with the naming of the missing four-set equation. It is not a construction of an S_4 tournament on 52 vertices, and it is not a proof that no such tournament exists. The comparison 717600 > 270725 uses the double count in the proof of Lemma S1 one binomial degree higher; that four-set sentence is not written in research/LEMMAS.md or the round-4 and round-5 reports. The explicit four-set solution for 730730 assigns nonnegative integers. It does not specify arcs, and it does not use the R5-B rows. The convex lower bound 730730 is the minimum of sum C(μ, 4) for the equality score sequence; other score sequences were checked only at the extreme common-out table of R5-G. The equation sum C(|D(X)|, 3) = sum C(ν(Y), 4) is not decided. R4-C remains conditional on J = 5 and s = 4, and R5-C stops at eleven vertices. R4-D excludes named families only. The upper bound f(4) ≤ 67 was not re-proved. Three-level deletion was not used. Erdős problem 902 is not solved, and f(4) is not evaluated.",
+  "references": [
+    "research/LEMMAS.md, Lemma S1: sum_P |D(P)| = sum_v C(d^+(v), 2) ≥ 16250, and the sentence that a vertex dominates a pair exactly when the pair lies in its out-set",
+    "research/LEMMAS.md: S_4 implies the triple condition; the Paley tournament of order 59 has triple minimum 5 and the undominated 4-set {0, 1, 7, 19}; the weight bound does not decide an S_4 tournament on 52 vertices",
+    "research/AGENT_TASKS/R4-B-no-tight.report.json: the margin (26, 338, 5), the package of 338 thirteens and 988 twelves, and the proof that some triple has at most 5 dominators",
+    "research/AGENT_TASKS/R5-B-outsets.report.json: the out-neighbourhood sum 91572 still admits every triple at least 5 dominators",
+    "research/AGENT_TASKS/R4-G-degree-24.report.json: under the triple hypothesis some triple has at least 7 dominators, and the comparison does not decide S_4",
+    "research/AGENT_TASKS/R5-G-push.report.json: the extreme score sequence admits triple levels at least 5, and the unmatched equations named there are triple equations",
+    "research/AGENT_TASKS/R4-C-tight-s4.report.json and research/AGENT_TASKS/R5-C-pattern.report.json: the conditional pattern J = 5, s = 4 survives the recorded pair and triple identities and stops at 11 vertices",
+    "research/AGENT_TASKS/R4-D-upper.report.json: named families of orders 52 through 66 fail S_4, and the Paley tournament of order 67 has S_4",
+    "research/PROBLEM.md: the definitions of D(X) and S_4"
+  ],
+  "next_step": "Keep the equation sum_{|X|=4} |D(X)| = sum_v C(d^+(v), 4), which is at least 717600 against 270725 four-sets and does not forbid S_4. Impose sum_{|X|=4} C(|D(X)|, 2) = sum_P C(μ(P), 4) on the surviving (k, ν) rows; on the equality margin the right-hand side is at least 730730 and still allows every four-set at least two dominators. The identity that those two comparisons leave open is sum_{|X|=4} C(|D(X)|, 3) = sum_Y C(ν(Y), 4). Do not return to three-level deletion.",
+  "relation_to_prior": "The triple hypothesis survives the moment equations. S_4 is the stronger property. Lemma S1, R4-B, R5-B, R4-G, and R5-G constrain pairs and triples and still allow every triple at least 5 dominators. This report asks whether those identities already forbid a dominator of every 4-set. They do not. The argument uses the equality case of Lemma S1 and the recorded common-out packages. It does not repeat a single-pair link, one-level counting past c*, two-stage averaging, three-level deletion, a random Cayley tournament, the order-51 local certificates, or a covering argument run in the wrong direction.",
+  "novelty": "The new statement is negative and local to order 52: the recorded pair and triple identities do not contradict S_4. The missing equation is the four-set double count sum_{|X|=4} |D(X)| = sum_v C(d^+(v), 4). Evaluated on the out-degree sum 1326, its minimum is 717600, which is larger than C(52, 4) = 270725, so the equation does not force an undominated 4-set. On the equality margin the unrecorded second-moment companion is at least 730730 and still admits minimum 2. That is a constraint on the recorded counting equations. It is not a new estimate of f(n).",
+  "verification": "unreviewed",
+  "source": "file"
+}

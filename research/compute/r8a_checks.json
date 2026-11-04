@@ -1,0 +1,670 @@
+{
+ "s5_filter": [
+  {
+   "partition": [
+    6,
+    3
+   ],
+   "sum_e(6-e)": 9,
+   "tau<=5 placement exists": true
+  },
+  {
+   "partition": [
+    6,
+    2,
+    1
+   ],
+   "sum_e(6-e)": 13,
+   "tau<=5 placement exists": true
+  },
+  {
+   "partition": [
+    6,
+    1,
+    1,
+    1
+   ],
+   "sum_e(6-e)": 15,
+   "tau<=5 placement exists": true
+  },
+  {
+   "partition": [
+    5,
+    4
+   ],
+   "sum_e(6-e)": 13,
+   "tau<=5 placement exists": true
+  },
+  {
+   "partition": [
+    5,
+    3,
+    1
+   ],
+   "sum_e(6-e)": 19,
+   "tau<=5 placement exists": false
+  },
+  {
+   "partition": [
+    5,
+    2,
+    2
+   ],
+   "sum_e(6-e)": 21,
+   "tau<=5 placement exists": true
+  },
+  {
+   "partition": [
+    5,
+    2,
+    1,
+    1
+   ],
+   "sum_e(6-e)": 23,
+   "tau<=5 placement exists": false
+  },
+  {
+   "partition": [
+    5,
+    1,
+    1,
+    1,
+    1
+   ],
+   "sum_e(6-e)": 25,
+   "tau<=5 placement exists": false
+  },
+  {
+   "partition": [
+    4,
+    4,
+    1
+   ],
+   "sum_e(6-e)": 21,
+   "tau<=5 placement exists": true
+  },
+  {
+   "partition": [
+    4,
+    3,
+    2
+   ],
+   "sum_e(6-e)": 25,
+   "tau<=5 placement exists": false
+  },
+  {
+   "partition": [
+    4,
+    3,
+    1,
+    1
+   ],
+   "sum_e(6-e)": 27,
+   "tau<=5 placement exists": false
+  },
+  {
+   "partition": [
+    4,
+    2,
+    2,
+    1
+   ],
+   "sum_e(6-e)": 29,
+   "tau<=5 placement exists": false
+  },
+  {
+   "partition": [
+    4,
+    2,
+    1,
+    1,
+    1
+   ],
+   "sum_e(6-e)": 31,
+   "tau<=5 placement exists": false
+  },
+  {
+   "partition": [
+    4,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "sum_e(6-e)": 33,
+   "tau<=5 placement exists": false
+  },
+  {
+   "partition": [
+    3,
+    3,
+    3
+   ],
+   "sum_e(6-e)": 27,
+   "tau<=5 placement exists": false
+  },
+  {
+   "partition": [
+    3,
+    3,
+    2,
+    1
+   ],
+   "sum_e(6-e)": 31,
+   "tau<=5 placement exists": false
+  },
+  {
+   "partition": [
+    3,
+    3,
+    1,
+    1,
+    1
+   ],
+   "sum_e(6-e)": 33,
+   "tau<=5 placement exists": false
+  },
+  {
+   "partition": [
+    3,
+    2,
+    2,
+    2
+   ],
+   "sum_e(6-e)": 33,
+   "tau<=5 placement exists": false
+  },
+  {
+   "partition": [
+    3,
+    2,
+    2,
+    1,
+    1
+   ],
+   "sum_e(6-e)": 35,
+   "tau<=5 placement exists": false
+  },
+  {
+   "partition": [
+    3,
+    2,
+    1,
+    1,
+    1,
+    1
+   ],
+   "sum_e(6-e)": 37,
+   "tau<=5 placement exists": false
+  },
+  {
+   "partition": [
+    3,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "sum_e(6-e)": 39,
+   "tau<=5 placement exists": false
+  },
+  {
+   "partition": [
+    2,
+    2,
+    2,
+    2,
+    1
+   ],
+   "sum_e(6-e)": 37,
+   "tau<=5 placement exists": false
+  },
+  {
+   "partition": [
+    2,
+    2,
+    2,
+    1,
+    1,
+    1
+   ],
+   "sum_e(6-e)": 39,
+   "tau<=5 placement exists": false
+  },
+  {
+   "partition": [
+    2,
+    2,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "sum_e(6-e)": 41,
+   "tau<=5 placement exists": false
+  },
+  {
+   "partition": [
+    2,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "sum_e(6-e)": 43,
+   "tau<=5 placement exists": false
+  },
+  {
+   "partition": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "sum_e(6-e)": 45,
+   "tau<=5 placement exists": false
+  }
+ ],
+ "c0_survivors_[2, 1, 1, 1]": {
+  "6+3": 3
+ },
+ "c0_survivors_[1, 1, 1, 1, 1]": {
+  "6+3": 10,
+  "6+2+1": 5,
+  "6+1+1+1": 1
+ },
+ "cpsat_rerun": [
+  {
+   "c_min": 1,
+   "J": 0,
+   "j": [],
+   "status": "INFEASIBLE"
+  },
+  {
+   "c_min": 1,
+   "J": 1,
+   "j": [
+    1
+   ],
+   "status": "INFEASIBLE"
+  },
+  {
+   "c_min": 1,
+   "J": 2,
+   "j": [
+    2
+   ],
+   "status": "INFEASIBLE"
+  },
+  {
+   "c_min": 1,
+   "J": 2,
+   "j": [
+    1,
+    1
+   ],
+   "status": "INFEASIBLE"
+  },
+  {
+   "c_min": 1,
+   "J": 3,
+   "j": [
+    3
+   ],
+   "status": "INFEASIBLE"
+  },
+  {
+   "c_min": 1,
+   "J": 3,
+   "j": [
+    2,
+    1
+   ],
+   "status": "INFEASIBLE"
+  },
+  {
+   "c_min": 1,
+   "J": 3,
+   "j": [
+    1,
+    1,
+    1
+   ],
+   "status": "INFEASIBLE"
+  },
+  {
+   "c_min": 1,
+   "J": 4,
+   "j": [
+    4
+   ],
+   "status": "INFEASIBLE"
+  },
+  {
+   "c_min": 1,
+   "J": 4,
+   "j": [
+    3,
+    1
+   ],
+   "status": "INFEASIBLE"
+  },
+  {
+   "c_min": 1,
+   "J": 4,
+   "j": [
+    2,
+    2
+   ],
+   "status": "INFEASIBLE"
+  },
+  {
+   "c_min": 1,
+   "J": 4,
+   "j": [
+    2,
+    1,
+    1
+   ],
+   "status": "INFEASIBLE"
+  },
+  {
+   "c_min": 1,
+   "J": 4,
+   "j": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "status": "INFEASIBLE"
+  },
+  {
+   "c_min": 1,
+   "J": 5,
+   "j": [
+    5
+   ],
+   "status": "INFEASIBLE"
+  },
+  {
+   "c_min": 1,
+   "J": 5,
+   "j": [
+    4,
+    1
+   ],
+   "status": "INFEASIBLE"
+  },
+  {
+   "c_min": 1,
+   "J": 5,
+   "j": [
+    3,
+    2
+   ],
+   "status": "INFEASIBLE"
+  },
+  {
+   "c_min": 1,
+   "J": 5,
+   "j": [
+    3,
+    1,
+    1
+   ],
+   "status": "INFEASIBLE"
+  },
+  {
+   "c_min": 1,
+   "J": 5,
+   "j": [
+    2,
+    2,
+    1
+   ],
+   "status": "INFEASIBLE"
+  },
+  {
+   "c_min": 1,
+   "J": 5,
+   "j": [
+    2,
+    1,
+    1,
+    1
+   ],
+   "status": "INFEASIBLE"
+  },
+  {
+   "c_min": 1,
+   "J": 5,
+   "j": [
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "status": "INFEASIBLE"
+  },
+  {
+   "c_min": 0,
+   "J": 0,
+   "j": [],
+   "status": "INFEASIBLE"
+  },
+  {
+   "c_min": 0,
+   "J": 1,
+   "j": [
+    1
+   ],
+   "status": "INFEASIBLE"
+  },
+  {
+   "c_min": 0,
+   "J": 2,
+   "j": [
+    2
+   ],
+   "status": "INFEASIBLE"
+  },
+  {
+   "c_min": 0,
+   "J": 2,
+   "j": [
+    1,
+    1
+   ],
+   "status": "INFEASIBLE"
+  },
+  {
+   "c_min": 0,
+   "J": 3,
+   "j": [
+    3
+   ],
+   "status": "INFEASIBLE"
+  },
+  {
+   "c_min": 0,
+   "J": 3,
+   "j": [
+    2,
+    1
+   ],
+   "status": "INFEASIBLE"
+  },
+  {
+   "c_min": 0,
+   "J": 3,
+   "j": [
+    1,
+    1,
+    1
+   ],
+   "status": "INFEASIBLE"
+  },
+  {
+   "c_min": 0,
+   "J": 4,
+   "j": [
+    4
+   ],
+   "status": "INFEASIBLE"
+  },
+  {
+   "c_min": 0,
+   "J": 4,
+   "j": [
+    3,
+    1
+   ],
+   "status": "INFEASIBLE"
+  },
+  {
+   "c_min": 0,
+   "J": 4,
+   "j": [
+    2,
+    2
+   ],
+   "status": "INFEASIBLE"
+  },
+  {
+   "c_min": 0,
+   "J": 4,
+   "j": [
+    2,
+    1,
+    1
+   ],
+   "status": "INFEASIBLE"
+  },
+  {
+   "c_min": 0,
+   "J": 4,
+   "j": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "status": "INFEASIBLE"
+  },
+  {
+   "c_min": 0,
+   "J": 5,
+   "j": [
+    5
+   ],
+   "status": "INFEASIBLE"
+  },
+  {
+   "c_min": 0,
+   "J": 5,
+   "j": [
+    4,
+    1
+   ],
+   "status": "INFEASIBLE"
+  },
+  {
+   "c_min": 0,
+   "J": 5,
+   "j": [
+    3,
+    2
+   ],
+   "status": "INFEASIBLE"
+  },
+  {
+   "c_min": 0,
+   "J": 5,
+   "j": [
+    3,
+    1,
+    1
+   ],
+   "status": "INFEASIBLE"
+  },
+  {
+   "c_min": 0,
+   "J": 5,
+   "j": [
+    2,
+    2,
+    1
+   ],
+   "status": "INFEASIBLE"
+  },
+  {
+   "c_min": 0,
+   "J": 5,
+   "j": [
+    2,
+    1,
+    1,
+    1
+   ],
+   "status": "OPTIMAL",
+   "heavy": [
+    [
+     6,
+     [],
+     1
+    ],
+    [
+     3,
+     [
+      0,
+      2,
+      3
+     ],
+     1
+    ]
+   ]
+  },
+  {
+   "c_min": 0,
+   "J": 5,
+   "j": [
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "status": "OPTIMAL",
+   "heavy": [
+    [
+     6,
+     [],
+     1
+    ],
+    [
+     3,
+     [
+      1,
+      2,
+      3
+     ],
+     1
+    ]
+   ]
+  }
+ ]
+}

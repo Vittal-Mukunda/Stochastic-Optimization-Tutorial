@@ -1,0 +1,31 @@
+{
+  "task_id": "R7-C-avoid",
+  "agent": "C",
+  "claim": "No 5-regular tournament on 11 vertices can carry the J = 5, s = 4 pattern of R4-C, because that pattern forces c(C, D) = 0 while T[R] has property S_2, so every pair of R has at least one common in-neighbour in R. The cell J = 5, s = 4 is empty. The tournament of R5-C has c(2, 3) = 0, is not S_2, and cannot be T[R]. Together with a hand treatment of J = 5, s = 5, every tight pair in an S_4 tournament on 52 vertices has J >= 6. Erdős problem 902 is not solved.",
+  "status": "proved",
+  "definitions": "T has S_4 on 52 vertices, P = {a, b} is a tight pair, R = D(P) with |R| = 11, c(u, v) = |N^-(u) ∩ N^-(v) ∩ R|. The J = 5, s = 4 pattern is the survivor recorded in research/AGENT_TASKS/R4-C-tight-s4.report.json: degree excesses A = 2, B = C = D = 1, heavy vertices of q = 11 and q = 8 (missing A, C, D), dominator counts |D(A,B)| = 16, |D(A,D)| = 14, |D(A,C)| = 13, |D(B,C)| = 13, |D(B,D)| = 12, |D(C,D)| = 12.",
+  "argument": "For u, v in R the 4-set {a, b, u, v} has a dominator w by S_4. Since w beats a and b, w lies in D(P) = R, and w beats u and v. So c(u, v) >= 1 for every pair of R, i.e. T[R] has S_2. In the R4-C survivor the pair {C, D} has 12 dominators and E_both(C, D) = 3, so its triple excess is 4*12 - c(C, D) - 45 - 3 = -c(C, D). Triple excess is a sum of nonnegative terms, so c(C, D) = 0, contradicting c >= 1. The task's target object (a 5-regular tournament keeping the counts 4, 3, 2, 2, 3, 0) therefore never occurs as T[R]: the count 0 on {C, D} is itself excluded. In the R5-C tournament N^-(2) = {0, 1, 3, 8, 10} and N^-(3) = {4, 5, 6, 7, 9} are disjoint, so it is not S_2. The s = 5 shape at J = 5 is excluded by hand in research/N52_TIGHT_J_GE_6.md section 2: the pair bound |D| >= ceil((46 + E_both)/4), which uses c >= 1, kills the heavy patterns 6+3, 6+2+1, 6+1+1+1, and pair-sum arithmetic kills 5+4, 5+2+2, 4+4+1; the other partitions of 9 fail tau <= 5 or sum e(6-e) <= 25.",
+  "evidence": {
+    "r7c_filter": "research/compute/r7c_filter.py: 0 of the 551 S_2 classes has a labelling (A, B, C, D) meeting R4-C's c-windows with c <= 3 at V_0.",
+    "r5c_tournament_c_2_3": 0,
+    "pair_level_cpsat": "research/compute/n52_pairlevel.py with T[R] as variables: all 19 partitions with J <= 5 infeasible; J = 6 leaves (2,2,1,1), (2,1,1,1,1), (1,1,1,1,1,1); 206 of 482 partitions with 6 <= J <= 14 feasible. Results in research/compute/n52_pairlevel_0_5.json and n52_pairlevel_6_14.json.",
+    "cross_check_c_ge_0": "With c >= 0 the same model gives J <= 4 infeasible and at J = 5 exactly (2,1,1,1) and (1,1,1,1,1) feasible, reproducing R1-C, R4-C and the open R8-C cell.",
+    "s5_patterns": "research/compute/n52_s5_patterns.py: 83 heavy patterns up to symmetry; with c >= 0 only 6+3, 6+2+1, 6+1+1+1 survive; with c >= 1 none.",
+    "erdos_902_solved": false,
+    "f4_at_least_53_proved": false
+  },
+  "weaknesses": "J >= 6 uses R1-C (J >= 5) for s <= 3 and the R4-C case tree for s = 4 as hand inputs; both are independently reproduced by the CP-SAT pair-level model, which is one implementation by one author. Lemma A is used; its proof (rounding modulo 4 at a vertex with j = 0) was re-read for N = 52. The CP-SAT verdicts are solver outputs without exported certificates. Tight pairs with 6 <= J <= 14 are not excluded, and the no-tight branch at order 52 is untouched. f(4) >= 53 is not proved and Erdős problem 902 is not solved.",
+  "references": [
+    "research/AGENT_TASKS/R4-C-tight-s4.report.json",
+    "research/AGENT_TASKS/R5-C-pattern.report.json",
+    "research/AGENT_TASKS/R6-C-heavy.report.json",
+    "research/AGENT_TASKS/R1-C-n52-j-le-2.report.json",
+    "proof/F4_GE_52_HAND_PROOF.md",
+    "research/N52_TIGHT_J_GE_6.md"
+  ],
+  "next_step": "Drop R8-C (J = 5, s = 5 is closed). Attack the three J = 6 survivors, all with heavy pattern 6+2, with the full local model (outside vertices individually, triple and 4-set rows) or by hand, and look for a global argument that turns J >= 6 into a contradiction with the order-52 degree budget.",
+  "relation_to_prior": "Approach key n52-zero-excess-pairs-c-at-most-3. The task asked for a tournament avoiding the pair {6, 9}; the answer is that the whole pattern is excluded by S_2 of T[R], a constraint the earlier order-52 reports did not use. None of the exhausted approach keys is repeated.",
+  "novelty": "The constraint c >= 1 on T[R] at order 52, the resulting emptiness of J = 5, and the bound J >= 6 for every tight pair.",
+  "verification": "unreviewed",
+  "source": "file"
+}

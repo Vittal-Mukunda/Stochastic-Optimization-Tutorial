@@ -1,0 +1,113 @@
+{
+  "task_id": "R4-B-no-tight",
+  "agent": "B",
+  "claim": "These hypotheses do not force a triple with fewer than 5 dominators. The handshaking identities admit the integer margin (26, 338, 5): the degree excesses are twenty-six 0s and twenty-six 1s, the pair excesses sum to 338, and every triple in the solution has at least 5 dominators. For this same margin the lower bound is sharp, because the identities also force some triple to have at most 5 dominators. Erdős problem 902 is not solved.",
+  "status": "proved",
+  "definitions": "A tournament on a vertex set V has exactly one directed edge between every two distinct vertices. For X subset of V, D(X) is the set of vertices outside X that beat every vertex of X, and D+(X) is the set of vertices outside X beaten by every vertex of X. Write k(Y)=|D(Y)| and ν(Y)=|D+(Y)| for a triple Y, and λ(P)=|D(P)| for a pair P. The excess of a vertex is e(v)=d^-(v)-25, so d^+(v)=26-e(v) on 52 vertices. The excess of a pair is ε(P)=λ(P)-12. A triple is transitive when one vertex beats the other two, and cyclic when its three edges form a cycle; σ(Y)=1 in the transitive case and σ(Y)=0 in the cyclic case. The integer margin is the ordered triple (degree pattern, pair-excess pattern, triple-dominator lower bound) = (26, 338, 5), where 26 is the sum of squares of the vertex excesses, 338 is the sum of the pair excesses, and 5 is the greatest integer m such that the identities below still have a solution with k(Y)≥m for every triple.",
+  "argument": "The sum of the vertex excesses on 52 vertices is 26 for every tournament: the in-degrees sum to C(52,2)=1326, and 1326-25·52=26. Lemma S1 then gives Σ_P(|D(P)|-12)=325+(1/2)Σ e(v)^2≥338, with equality exactly when the excesses are twenty-six 0s and twenty-six 1s. The order-51 moment argument is the case in which every excess is 0 and every pair excess is 0, so that k(Y)+ν(Y) equals 11 or 12 according to σ(Y). That constancy is what pins the dominator counts and then contradicts the second moment. It is not available here. The calculation below keeps the same handshaking identities and lets the excesses vary. Assume every pair excess is nonnegative, and test whether k(Y)≥5 can survive.\n\nDegree pattern. Let A be a set of 26 vertices with e=0, hence in-degree 25 and out-degree 26, and let B be the complementary set of 26 vertices with e=1, hence in-degree 26 and out-degree 25. Then Σ e^2=26 and the pair-excess total is 338. The number of transitive triples is Σ_v C(d^+(v),2)=26·C(26,2)+26·C(25,2)=26·(325+300)=16250, so there are 22100-16250=5850 cyclic triples. The dominator sum is Σ_Y k(Y)=Σ_v C(d^+(v),3)=26·C(26,3)+26·C(25,3)=26·(2600+2300)=127400.\n\nPair-excess pattern. Put ε=1 on every pair inside B, ε=1 on a matching of 13 pairs with one end in A and one end in B, and ε=0 on every other pair. The total is C(26,2)+13=325+13=338. The common-out-neighbour count of a pair with ends u,v is μ=λ+1-e(u)-e(v). This produces μ=13 on the 325 pairs inside A and on the 13 matching edges, and μ=12 on the other 988 pairs. The dominator counts λ are 13 on the 325 pairs inside B and on the 13 matching edges, and 12 on the other 988 pairs. Thus λ and μ have the same multiset, 338 thirteens and 988 twelves. Therefore Σ_Y C(k(Y),2)=Σ_P C(μ(P),3) and Σ_Y C(ν(Y),2)=Σ_P C(λ(P),3) are equal. Each equals 338·C(13,3)+988·C(12,3)=338·286+988·220=96668+217360=314028.\n\nThese excesses meet the vertex form of the pair handshaking identity. For each vertex u, Σ_{v≠u} λ({u,v})=Σ_{w→u}(d^+(w)-1), which rearranges to Σ_{v≠u} ε({u,v})=13+25 e(u)-Σ_{w→u} e(w). Inside A and inside B, take the tournament score sequence of thirteen 12s and thirteen 13s. It sums to 325=C(26,2). Landau's condition holds: the k smallest scores sum to 12k for k≤13 and to 13(k-1) for 14≤k≤26, and both quantities are at least C(k,2), with equality at k=26. For a vertex a in A the in-neighbours in A contribute nothing to the excess sum, and its 25 in-neighbours are split between A and B, so the identity says that the cut excess at a equals its internal in-degree minus 12. For a vertex b in B the 25 pairs from b into the rest of B already contribute excess 25, and the same identity says that the cut excess at b equals 13 minus its internal in-degree. The chosen score sequences therefore put cut excess 1 on the 13 vertices of internal in-degree 13 in A and on the 13 vertices of internal in-degree 12 in B, and cut excess 0 elsewhere. A bijection between those two 13-sets is the matching above. For every pair type, both orientations split the other 50 vertices into four nonnegative blocks. On an edge inside A the blocks are 12,13,13,12; inside B they are 13,12,13,12; on a matching edge they are 13,13,12,12 or 13,13,13,11 according to its direction; on an ordinary cut edge they are 12,12,13,13 or 12,12,14,12.\n\nTriple level. For a triple Y, inclusion-exclusion on the 49 vertices outside Y gives k(Y)+ν(Y)=13-σ(Y)+Δ(Y), where Δ(Y) is the sum of the three pair excesses minus the sum of the three vertex excesses. Because the positive cut excesses form a matching, no triple contains two of them. Every triple therefore has Δ equal to 0 or -1: the 2600 triples inside A and the 2600 triples inside B have Δ=0; of the 8450 triples with two vertices in A, 8125 have Δ=-1 and 325 have Δ=0; the 8450 triples with two vertices in B split the same way. Hence 16250 triples have Δ=-1 and 5850 have Δ=0. Combined with σ∈{0,1}, every triple has k+ν∈{11,12,13}. The transitive count forces at least 10400 of the Δ=-1 triples to be transitive, since the Δ=0 class has only 5850 triples, so at least 10400 triples have k+ν=11. Summing the formula gives Σ(k+ν)=13·22100-16250+Σ Δ. Each pair lies in 50 triples and each vertex lies in C(51,2)=1275 triples, so Σ Δ=50·338-1275·26=16900-33150=-16250. Thus Σ(k+ν)=287300-32500=254800. With Σ k=127400 one gets Σ ν=127400 as well. The third-moment identity Σ C(k,3)=Σ C(ν,3) is the usual double count of pairs of triples in which one beats the other; it is not special to equal degrees.\n\nA solution with every k at least 5. Declare 12692 of the Δ=-1 triples transitive and the other 3558 cyclic, and declare 3558 of the Δ=0 triples transitive and the other 2292 cyclic. The transitive total is 12692+3558=16250. The resulting level sizes are 12692 triples with k+ν=11, 7116 with k+ν=12, and 2292 with k+ν=13. Assign the dominator counts as follows. On level 11: 11272 triples with (k,ν)=(5,6), 1402 with (7,4), 4 with (10,1), and 14 with (11,0). On level 12: 240 triples with (6,6) and 6876 with (7,5). On level 13: 2292 triples with (5,8). Every value of k is at least 5 and every value of ν is nonnegative. The class sizes add to 12692, 7116 and 2292, and those add to 22100. The dominator sum is 5·11272+7·1402+10·4+11·14+6·240+7·6876+5·2292=56360+9814+40+154+1440+48132+11460=127400. The common-out sum is 6·11272+4·1402+1·4+0·14+6·240+5·6876+8·2292=67632+5608+4+1440+34380+18336=127400. The pair moment of k is 10·11272+21·1402+45·4+55·14+15·240+21·6876+10·2292=112720+29442+180+770+3600+144396+22920=314028. The pair moment of ν is 15·11272+6·1402+0·4+0·14+15·240+10·6876+28·2292=169080+8412+3600+68760+64176=314028. The third-moment difference is -10·11272+31·1402+120·4+165·14+0·240+25·6876-46·2292=-112720+43462+480+2310+171900-105432=0. All five handshaking equations hold, and the minimum dominator count in the solution is 5. In particular the identities do not force a triple below 5. The same second moment is larger than the maximum 305500 available from counts in {5,6} only, since 5200·10+16900·15=305500 and 314028-305500=8528, so the solution has to use values above 6. It does: 8296 of its triples have k≥7. That is the constraint already recorded for the balanced score sequence. It is compatible with a minimum of 5.\n\nThe lower bound 5 is sharp for this margin. Suppose, for a contradiction, that this same degree pattern and pair-excess pattern admitted a solution with k(Y)≥6 for every triple. Equality of the two first moments and of the two pair moments gives Σ(k-ν)=0 and Σ(k^2-ν^2)=0. The second factors as Σ(k-ν)(k+ν)=Σ(k-ν)L=0, where L=k+ν. Subtracting 11 times the first identity yields Σ(k-ν)(L-11)=0. On a triple with L=11 and k≥6 one has ν=11-k≤5, so k-ν≥1. On a triple with L=12 and k≥6 one has k-ν=2k-12≥0. Write d=k-ν and group the identity Σ d(L-11)=0 by levels. The level-12 contribution plus twice the level-13 contribution is 0, so the level-12 sum of d equals -2 times the level-13 sum. Substitute into Σ d=0. The level-13 terms cancel and the level-12 sum of d equals -2 times the level-11 sum of d. The level-11 sum is at least the number of level-11 triples, which is at least 10400, hence positive. The level-12 sum would be negative. That is impossible, because every level-12 summand is nonnegative. So some triple has at most 5 dominators. Combined with the solution above, 5 is the exact triple-dominator lower bound compatible with the margin (26, 338, 5).\n\nThe hypotheses therefore do not force a triple below 5. Inside this margin every solution of the identities has some triple with at most 5 dominators. If every triple also has at least 5, the second moment lies above the maximum attainable on {5,6}, so some triple has at least 7. The solution above meets both constraints. Neither statement produces a tournament, and neither evaluates f(4). Erdős problem 902 is not solved.",
+  "evidence": {
+    "integer_margin": [
+      26,
+      338,
+      5
+    ],
+    "degree_pattern": {
+      "in_degree_25": 26,
+      "in_degree_26": 26,
+      "sum_e": 26,
+      "sum_e_squared": 26
+    },
+    "pair_excess_pattern": {
+      "excess_1_inside_the_in_degree_26_set": 325,
+      "excess_1_on_a_cut_matching": 13,
+      "excess_0_on_all_other_pairs": 988,
+      "sum_epsilon": 338,
+      "mu_and_lambda_multiset": {
+        "12": 988,
+        "13": 338
+      }
+    },
+    "moments": {
+      "triples": 22100,
+      "transitive_triples": 16250,
+      "cyclic_triples": 5850,
+      "sum_k": 127400,
+      "sum_nu": 127400,
+      "sum_C_k_2": 314028,
+      "sum_C_nu_2": 314028,
+      "sum_C_k_3_minus_C_nu_3": 0,
+      "maximum_sum_C_k_2_on_counts_5_and_6": 305500,
+      "gap_above_that_maximum": 8528
+    },
+    "level_sizes_in_the_solution": {
+      "11": 12692,
+      "12": 7116,
+      "13": 2292
+    },
+    "dominator_pairs_(k, nu, count)": [
+      [
+        5,
+        6,
+        11272
+      ],
+      [
+        7,
+        4,
+        1402
+      ],
+      [
+        10,
+        1,
+        4
+      ],
+      [
+        11,
+        0,
+        14
+      ],
+      [
+        6,
+        6,
+        240
+      ],
+      [
+        7,
+        5,
+        6876
+      ],
+      [
+        5,
+        8,
+        2292
+      ]
+    ],
+    "sharpness": {
+      "solution_with_every_k_at_least_5": true,
+      "solution_with_every_k_at_least_6": false,
+      "obstruction": "If k≥6, then Σ(k-ν)(L-11)=0 forces the level-12 sum of (k-ν) to equal -2 times a positive level-11 sum, while every level-12 summand is nonnegative."
+    },
+    "hand_checks": [
+      "26·625=16250 and 22100-16250=5850",
+      "26·4900=127400",
+      "12·1326=15912 and 16250-15912=338",
+      "338·286+988·220=96668+217360=314028",
+      "50·338-1275·26=16900-33150=-16250",
+      "13·22100-16250-16250=254800",
+      "5200·10+16900·15=305500 and 314028-305500=8528",
+      "The seven listed pairs (k,ν) reproduce 22100, 127400, 127400, 314028, 314028 and third-moment difference 0"
+    ]
+  },
+  "weaknesses": "The status proved applies to the integer margin (26, 338, 5) and to the sign obstruction that makes 5 sharp for that margin. The solution assigns nonnegative integers to the double-counting equations. It does not construct the arcs of a tournament, so it does not show that a tournament on 52 vertices can have every pair at least 12 dominators and every triple at least 5. The transitive triples were distributed between the two excess classes only so that their number equals 16250; a tournament would have to realise that split inside the out-sets. Other degree sequences, with Σ e^2>26, were not needed: one consistent margin is enough to show that the identities do not force a triple below 5, and it says nothing about those other sequences. The lower bound of 7 dominators on some triple is the balanced-score remark already in proof/N52_TIGHT_PAIRS.md §7; the new comparison is that the same second moment still fits next to a minimum of 5. No appeal is made to a tight pair, to J, or to S_4 beyond the numerical lower bounds in the hypotheses. Erdős problem 902 is not solved, and f(4) is not evaluated. The classical upper bound f(4)≤67 was not re-proved.",
+  "references": [
+    "research/LEMMAS.md, Lemma S1: Σ(|D(P)|-12)≥338, with equality exactly for twenty-six in-degrees 25 and twenty-six in-degrees 26",
+    "proof/F4_GE_52_HAND_PROOF.md, section 4, identities (M0)–(M4): the order-51 argument in which every degree is 25 and every pair excess is 0",
+    "proof/N52_TIGHT_PAIRS.md, section 7: under the balanced score sequence, Σ C(k,2)≥314028, so some triple has at least 7 dominators",
+    "proof/swarm/BRIEF.md, section 4: the order-52 formula for k(Y)+|D+(Y)| and the pair formula for |N+(w)∩N+(w')|",
+    "research/PROBLEM.md, definitions of a tournament, D(X), and S_n"
+  ],
+  "next_step": "Either realise the margin (26, 338, 5) by a tournament, or find a counting identity stricter than the two pair moments and the third-moment symmetry. Those equations allow every triple to have at least 5 dominators and forbid every triple from having at least 6. A pair with 11 dominators is a different branch.",
+  "relation_to_prior": "The order-51 doubly regular moment argument assumed every degree is 25, so every vertex excess is 0 and k+ν depends only on the cyclic or transitive type. Here the excesses sum to 26. The equality case of Lemma S1 is twenty-six excesses 0 and twenty-six excesses 1, and the pair excesses then sum to 338 rather than to 0. The argument uses those two numbers. It does not repeat a single-pair link, one-level counting past c*, two-stage averaging, a random Cayley tournament, the order-51 local certificates, or a covering argument run in the wrong direction.",
+  "novelty": "The new statement is the margin (26, 338, 5). The second-moment floor 314028 was already known to force some triple to have at least 7 dominators. What had not been settled is the other end: the same degree pattern and pair-excess pattern satisfy every listed handshaking identity with no triple below 5, and the sign of k-ν forbids a solution in which every triple has at least 6. That is a constraint on one integer pattern at order 52. It is not a new estimate of f(n).",
+  "verification": "unreviewed",
+  "source": "file"
+}

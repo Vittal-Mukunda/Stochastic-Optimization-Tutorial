@@ -1,0 +1,7 @@
+skeleton 0 / 265 nodes 1 0.1
+skeleton 50 / 265 nodes 147 8.2
+skeleton 100 / 265 nodes 347 23.2
+skeleton 150 / 265 nodes 545 36.1
+skeleton 200 / 265 nodes 1077 76.1
+skeleton 250 / 265 nodes 2551 245.4
+{"cl": 343, "mode": "free", "status": "INF", "nodes": 3097, "leaves": 1681, "sec": 333.2, "method": "skel", "sym": 1, "strong": 0}

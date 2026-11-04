@@ -1,0 +1,14 @@
+{
+ "QR67_single_reversal": {
+  "min_delta": 40.0,
+  "max_delta": 40.0,
+  "mean": 40.0
+ },
+ "QR67_minus_v_single_reversal": {
+  "cost": 330.0,
+  "min_delta": 29.0,
+  "n_arcs_min": 33,
+  "mean": 45.58461538461538
+ },
+ "QR67_4sets_with_unique_dominator": 22110
+}

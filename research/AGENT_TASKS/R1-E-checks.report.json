@@ -1,0 +1,168 @@
+{
+  "task_id": "R1-E-checks",
+  "agent": "E",
+  "claim": "Lemma S1 and Lemma I match the arithmetic in LEMMAS.md, the printed numbers in F4_GE_52 section 6 match, and the Paley profiles of orders 7, 19 and 67 match the profiles previously computed by proof/verify_proof.py. In the Paley tournament of order 47 the minimum of |D(Y)| over triples Y is 4, attained, and the minimum over 4-sets is 0. The sentence 'every tournament on at most 51 vertices has a triple with at most 3 dominators' is therefore false. The strong claim with 4 in place of 3 survives this example, and this tournament does not have S_4.",
+  "status": "computed",
+  "definitions": "Tournament, dominator set, and Paley quadratic-residue tournament, as in research/PROBLEM.md.",
+  "argument": "The script checks Lemma S1, Lemma I, the printed arithmetic, and exact Paley scans. The proofs of S1 and I are in research/LEMMAS.md; the script does not replace those proofs.",
+  "evidence": {
+    "ok": true,
+    "claim": "Lemma S1 and Lemma I match the arithmetic in LEMMAS.md, the printed numbers in F4_GE_52 section 6 match, and the Paley profiles of orders 7, 19 and 67 match the profiles previously computed by proof/verify_proof.py. In the Paley tournament of order 47 the minimum of |D(Y)| over triples Y is 4, attained, and the minimum over 4-sets is 0. The sentence 'every tournament on at most 51 vertices has a triple with at most 3 dominators' is therefore false. The strong claim with 4 in place of 3 survives this example, and this tournament does not have S_4.",
+    "failures": [],
+    "lemma_s1": {
+      "lower_bound": 16250,
+      "excess_over_12": 338
+    },
+    "paley": {
+      "profiles": {
+        "7": {
+          "min_dominators_by_set_size": [
+            7,
+            3,
+            1,
+            0
+          ],
+          "witness_for_minimum_triple": [
+            0,
+            1,
+            2
+          ],
+          "has_S4": null
+        },
+        "11": {
+          "min_dominators_by_set_size": [
+            11,
+            5,
+            2,
+            0
+          ],
+          "witness_for_minimum_triple": [
+            0,
+            1,
+            3
+          ],
+          "has_S4": null
+        },
+        "19": {
+          "min_dominators_by_set_size": [
+            19,
+            9,
+            4,
+            1,
+            0
+          ],
+          "witness_for_minimum_triple": [
+            0,
+            1,
+            6
+          ],
+          "has_S4": false
+        },
+        "23": {
+          "min_dominators_by_set_size": [
+            23,
+            11,
+            5,
+            1,
+            0
+          ],
+          "witness_for_minimum_triple": [
+            0,
+            1,
+            9
+          ],
+          "has_S4": false
+        },
+        "31": {
+          "min_dominators_by_set_size": [
+            31,
+            15,
+            7,
+            2,
+            0
+          ],
+          "witness_for_minimum_triple": [
+            0,
+            1,
+            4
+          ],
+          "has_S4": false
+        },
+        "43": {
+          "min_dominators_by_set_size": [
+            43,
+            21,
+            10,
+            3,
+            0
+          ],
+          "witness_for_minimum_triple": [
+            0,
+            1,
+            10
+          ],
+          "has_S4": false
+        },
+        "47": {
+          "min_dominators_by_set_size": [
+            47,
+            23,
+            11,
+            4,
+            0
+          ],
+          "witness_for_minimum_triple": [
+            0,
+            1,
+            3
+          ],
+          "has_S4": false
+        },
+        "67": {
+          "min_dominators_by_set_size": [
+            67,
+            33,
+            16,
+            6,
+            1
+          ],
+          "witness_for_minimum_triple": [
+            0,
+            1,
+            6
+          ],
+          "has_S4": true
+        }
+      },
+      "strong_claim_paley_candidates": []
+    },
+    "counterexample_candidate": null,
+    "finite_theorem": {
+      "statement": "In the Paley tournament of order 47 the minimum of |D(Y)| over triples Y is 4, attained, and the minimum over 4-sets is 0. The sentence 'every tournament on at most 51 vertices has a triple with at most 3 dominators' is therefore false. The strong claim with 4 in place of 3 survives this example, and this tournament does not have S_4.",
+      "min_dominators_by_set_size": [
+        47,
+        23,
+        11,
+        4,
+        0
+      ],
+      "witness_triple": [
+        0,
+        1,
+        3
+      ]
+    },
+    "runtime_seconds": 0.375,
+    "coverage": "All Paley tournaments of orders 7, 11, 19, 23, 31, 43, 47 and 67 were scanned exactly. This is not a search over all tournaments of those orders. Orders below 47 cannot meet the triple condition for S_4, by the Szekeres bound, so a Paley counterexample to the strong claim would have to be order 47."
+  },
+  "weaknesses": "All Paley tournaments of orders 7, 11, 19, 23, 31, 43, 47 and 67 were scanned exactly. This is not a search over all tournaments of those orders. Orders below 47 cannot meet the triple condition for S_4, by the Szekeres bound, so a Paley counterexample to the strong claim would have to be order 47.",
+  "references": [
+    "research/compute/exact_checks.py",
+    "research/LEMMAS.md"
+  ],
+  "next_step": "If a Paley candidate exists, verify that witness by hand. Otherwise use the profiles as negative Paley evidence only.",
+  "relation_to_prior": "Recomputes Lemma S1, Lemma I, the printed arithmetic of the 20 October note, and Paley profiles, independently of proof/verify_proof.py.",
+  "novelty": "Independent of proof/verify_proof.py, and it records orders 43 and 47, which that script does not profile.",
+  "verification": "reproduced_by_orchestrator",
+  "source": "compute"
+}

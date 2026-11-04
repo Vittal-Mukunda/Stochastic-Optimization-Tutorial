@@ -1,0 +1,21 @@
+{
+  "candidate_counterexample": null,
+  "events": [],
+  "exhausted_approaches": [
+    "claim-L-single-pair-link",
+    "one-level-counting-past-cstar",
+    "two-stage-averaging-second-log",
+    "random-cayley-beat-erdos-upper",
+    "n51-local-milp-certificates",
+    "wrong-direction-covering-local48"
+  ],
+  "problem_id": "erdos-902",
+  "round": 0,
+  "solved": false,
+  "tasks": {},
+  "usage": {
+    "date": "2026-10-23",
+    "rounds_started": 0
+  },
+  "version": 1
+}

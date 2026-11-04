@@ -1,0 +1,462 @@
+{
+  "task_id": "R5-G-push",
+  "agent": "G",
+  "claim": "The weight equations do not force a triple with at most 4 dominators. On the extreme score sequence of five in-degrees 24, forty-five in-degrees 25, one in-degree 40 and one in-degree 41, the handshaking identities admit an explicit integer solution in which every triple level is at least 5 and the dominator counts are 16717 fives, 16 sixes, 2702 sevens and 2665 elevens. The common-out cubic moment is 370727, which is 42677 above the value attainable by counts in {5, 6}, and that excess is carried by the sevens and the elevens. Erdős problem 902 is not solved.",
+  "status": "proved",
+  "definitions": "T is a tournament on 52 vertices. D(X) is the set of vertices outside X that beat every vertex of X, and D+(X) is the set beaten by every vertex of X. For a triple Y, k(Y)=|D(Y)| and nu(Y)=|D+(Y)|. For a pair P, lambda(P)=|D(P)| and c(P) is the number of common out-neighbours. The excess is e(v)=d^-(v)-25, so d^+(v)=26-e(v). The extreme score sequence has five vertices Z of excess -1, forty-five vertices O of excess 0, one vertex h of excess 16 and one vertex g of excess 15. The set O is partitioned into H, G and N of sizes 9, 11 and 25. A triple is transitive when sigma=1 and cyclic when sigma=0. Its level is L=c_12+c_13+c_23+e_1+e_2+e_3-26-sigma, and the tournament identity is k+nu=L. The moment equations are the ones in the weight argument: sum e=26, sum_P c(P)=16237+S/2, sum_Y k(Y)=sum_v C(d^+(v),3), and sum_Y C(k,2)=sum_P C(c,3), together with c=lambda+1-e(u)-e(v), the per-vertex star sum for lambda, and L>=k>=5. Erdős problem 902 asks for the order of f(n); this report does not determine it.",
+  "argument": "The weight argument shows that if every triple has at least 5 dominators, then some triple has at least 7. The excess identity behind that statement is sum_Y (k-5)(k-6)/2 = sum_P C(c,3) - (5T-331500). Both k<=4 and k>=7 make the left side positive, since (k-5)(k-6)/2 is 0 only at 5 and 6. The convex lower bound on the right side is at least 1158, and it equals 1158 on the extreme score sequence. That lower bound is an input. It forbids every dominator count from lying in {5, 6}. It does not say which way the counts must leave that set. The one step past the statement is to test the extreme sequence, where the convex gap is smallest and the out-degrees are most uneven, and to decide whether the same equations then force some level below 5.\n\nScore sequence, taken from the weight minimum and not re-minimised. The excesses are five -1, forty-five 0, one 15 and one 16. Their sum is -5+31=26. The sum of squares is 5+225+256=486. The out-degrees are 27, 26, 11 and 10, and T=5*C(27,3)+45*C(26,3)+C(11,3)+C(10,3)=5*2925+45*2600+165+120=131910. Lemma S1 gives sum_P lambda(P)=16237+243=16480, and the same number is the sum of the common-out counts. There are C(52,3)=22100 triples. If every k lay in {5, 6}, then sum C(k,2) would equal 5*131910-15*22100=659550-331500=328050. The convex package that meets sum c=16480 with values in {12, 13} uses 758 twelves and 568 thirteens and gives sum C(c,3)=329208, which is 1158 above 328050. That package is not available here: d^+(h)=10 and d^+(g)=11, so every common-out count on the star of h is at most 10 and every one on the star of g is at most 11.\n\nOrientation used to fix the in-neighbour excesses. The vertex h beats g and beats 9 vertices of O, called H. The other 36 vertices of O beat h, and all 5 vertices of Z beat h. The vertex g beats 11 vertices of O, called G. Every vertex of Z beats g. The remaining 25 vertices of O, called N, beat both h and g. Inside Z each vertex has out-degree 2, as in the cyclic tournament on 5 vertices. Inside O each vertex has out-degree 22, as in a regular tournament on 45 vertices. Each vertex of H beats 3 vertices of Z, each vertex of G beats 3, and each vertex of N beats 2. Each vertex of Z then beats 23 vertices of O. The bipartite degree sequence exists: in the Z-to-O direction the row sums are 23 and the column sums are twenty 2s and twenty-five 3s. The conjugate of those column sums is 45, 45, 25. The partial sums 23, 46, 69, 92, 115 sit under 45, 90, 115, 115, 115, with equality at the end, so Gale-Ryser applies. These pieces orient every pair once, so the degree sequence and the cut types are realizable. The common-out numbers below are constant on the cuts. They are not claimed to be the intersection sizes of that tournament.\n\nThe star sums are then determined. For each vertex u, the sum of lambda over the other 51 vertices equals 625+25*e(u)-I(u), where I(u) is the sum of the excesses of the in-neighbours. This is the identity used for the balanced margin, applied to the cuts above. The in-set of h is the 5 vertices of Z and the 36 vertices in G union N, so I(h)=-5 and the star sum is 625+400+5=1030. The in-set of g is h, all of Z, and the 34 vertices in H union N, so I(g)=11 and the star sum is 625+375-11=989. Each z has two in-neighbours in Z and 22 in O, so I(z)=-2 and the star sum is 600+2=602. Each vertex of H is beaten by h and by 2 vertices of Z, so I=14 and the star sum is 611. Each vertex of G is beaten by g and by 2 vertices of Z, so I=13 and the star sum is 612. Each vertex of N is beaten by 3 vertices of Z, so I=-3 and the star sum is 628.\n\nPair values. Write lambda, then c=lambda+1-e(u)-e(v). One pair hg has lambda 34 and c 4. Five pairs hZ have lambda 24 and c 10. Nine pairs hH have lambda 18 and c 3. Eleven pairs hG have lambda 24 and c 9. Twenty-five pairs hN have lambda 18 and c 3. Five pairs gZ have lambda 17 and c 4. Nine pairs gH have lambda 25 and c 11. Eleven pairs gG have lambda 20 and c 6. Twenty-five pairs gN have lambda 17 and c 3. Ten pairs ZZ have lambda 19 and c 22. Forty-five pairs ZH have lambda 8 and c 10. Fifty-five pairs ZG have lambda 8 and c 10. One hundred twenty-five pairs ZN have lambda 13 and c 15. All 990 pairs inside O have lambda 12 and c 13. Every c is nonnegative and respects the out-degree cap: the star of h is at most 10, the star of g is at most 11, and the remaining values are at most 22. The pair count is 1+5+9+11+25+5+9+11+25+10+45+55+125+990=1326.\n\nThe six star sums hold. For h: 34+5*24+9*18+11*24+25*18=34+120+162+264+450=1030. For g: 34+5*17+9*25+11*20+25*17=34+85+225+220+425=989. For each z: 24+17+4*19+9*8+11*8+25*13=41+76+72+88+325=602. For each vertex of H: 18+25+5*8+44*12=83+528=611. For each vertex of G: 24+20+40+528=612. For each vertex of N: 18+17+5*13+528=100+528=628.\n\nCommon-out total. The star of h sums to 4+50+27+99+75=255, which is 250-I(h). The rest of the star of g sums to 20+99+66+75=260, so the full star of g is 264, which is 275-I(g). The ten ZZ pairs contribute 220. The Z-O pairs contribute 450+550+1875=2875. The 990 pairs inside O contribute 990*13=12870. The total is 255+260+220+2875+12870=16480.\n\nCommon-out cubic moment. The contributions C(c,3) are: c=4 once gives 4; five copies of C(10,3)=120 give 600; nine copies of C(3,3)=1 give 9; eleven copies of C(9,3)=84 give 924; twenty-five copies of 1 give 25; five copies of C(4,3)=4 give 20; nine copies of C(11,3)=165 give 1485; eleven copies of C(6,3)=20 give 220; twenty-five copies of 1 give 25; ten copies of C(22,3)=1540 give 15400; forty-five copies of 120 give 5400; fifty-five copies of 120 give 6600; one hundred twenty-five copies of C(15,3)=455 give 56875; and 990 copies of C(13,3)=286 give 283140. The sum is 4+600+9+924+25+20+1485+220+25+15400+5400+6600+56875+283140=370727. This is the value that sum_Y C(k,2) must match. It lies 370727-329208=41519 above the convex lower bound, and 370727-328050=42677 above the {5, 6} ceiling.\n\nTriple levels. For a triple, L=c_12+c_13+c_23+e_1+e_2+e_3-26-sigma. The direct form 52-(d1+d2+d3)+(lambda_12+lambda_13+lambda_23)-sigma agrees with it, because lambda=c-1+e(u)+e(v) and the three degrees are 75+e_1+e_2+e_3. Summing L over all triples gives 50*16480+26*C(51,2)-26*22100-16480=824000+33150-574600-16480=266070, once exactly 16480 triples are transitive. That is the transitive count sum_v C(d^+(v),2)=5*C(27,2)+45*C(26,2)+C(11,2)+C(10,2)=5*351+45*325+55+45=16480, so there are 5620 cyclic triples. The same total 266070 equals T+sum_v C(d^-(v),3). The in-degree side is 5*C(24,3)+45*C(25,3)+C(40,3)+C(41,3)=5*2024+45*2300+9880+10660=134160, and 131910+134160=266070.\n\nEvery class signature was evaluated from the pair table. The only transitive levels equal to 5 are the 950 triples consisting of one vertex of Z and two vertices from H union G: ZHH has 180 triples, ZGG has 275, and ZHG has 495. Each has common-out sum 10+10+13=33 and excess sum -1, so the transitive level is 33-1-26-1=5 and the cyclic level is 6. The next values are 7, on gNN (300 triples: common-out sum 3+3+13 and excess sum 15) and on gZG (55 triples: common-out sum 4+6+10 and excess sum 14). Every other signature has transitive level at least 8. The full list is in the evidence. In particular no triple has level below 5, whether it is cyclic or transitive. The 5620 cyclic triples are taken from signatures whose transitive level is 12: all 3300 triples GNN, all 2300 triples NNN, and 20 of the 2700 triples HNN. Their level rises from 12 to 13. Every other triple is transitive.\n\nDominator counts inside those levels. Assign k=11 on 2665 triples, k=7 on 2702 triples, k=6 on 16 triples, and k=5 on the remaining 16717 triples. The class count is 2665+2702+16+16717=22100. The dominator sum is 11*2665+7*2702+6*16+5*16717=29315+18914+96+83585=131910. The excess over 5 is 6*2665+2*2702+1*16=15990+5404+16=21410, and 5*22100+21410=131910. The quadratic excess is 15*2665+1*2702=39975+2702=42677. Hence sum C(k,2)=328050+42677=370727, matching the common-out side. Directly: 55*2665+21*2702+15*16+10*16717=146575+56742+240+167170=370727.\n\nThese counts fit under the levels. There are 17334 triples of transitive level at least 11, and the cyclic promotion only raises levels, so 2665 elevens fit. After they are placed, 21150-2665=18485 triples of level at least 7 remain, which covers 2702 sevens and 16 sixes. The 16717 fives cover the 950 triples of level 5. On a level-5 triple the only solution of k+nu=5 with k>=5 is k=5 and nu=0. On every other triple the assigned k is at most the level, so nu=L-k is a nonnegative integer. The resulting sum of nu is 266070-131910=134160.\n\nConclusion. The integer solution has every triple level at least 5, every dominator count in {5, 6, 7, 11}, and sum C(k,2)=sum C(c,3). The sevens and the elevens are exactly the excess that the weight comparison demanded, and they do not push any other triple down to 4 dominators. The triple hypothesis does not die on this step. The solution assigns integers to the handshaking equations. It does not construct the common-out sets, it does not match sum C(nu,2) to sum C(lambda,3)=388592, and it does not decide whether an S_4 tournament on 52 vertices exists. Erdős problem 902 is not solved.",
+  "evidence": {
+    "extreme_score": {
+      "in_degree_24": 5,
+      "in_degree_25": 45,
+      "in_degree_40": 1,
+      "in_degree_41": 1,
+      "sum_e": 26,
+      "sum_e_squared": 486,
+      "sum_c": 16480,
+      "T": 131910,
+      "five_six_ceiling": 328050,
+      "convex_lower_bound_not_used": 329208,
+      "convex_gap_input": 1158
+    },
+    "orientation": {
+      "h_beats": [
+        "g",
+        "nine vertices H of O"
+      ],
+      "g_beats": [
+        "eleven vertices G of O"
+      ],
+      "Z_beats": [
+        "h",
+        "g"
+      ],
+      "N_beats": [
+        "h",
+        "g"
+      ],
+      "inside_Z": "each out-degree 2",
+      "inside_O": "each out-degree 22",
+      "Z_to_O_row_sum": 23,
+      "gale_ryser": "column sums twenty 2s and twenty-five 3s; conjugate 45,45,25; row partials 23,46,69,92,115"
+    },
+    "star_sums_of_lambda": {
+      "h": 1030,
+      "g": 989,
+      "each_Z": 602,
+      "each_H": 611,
+      "each_G": 612,
+      "each_N": 628
+    },
+    "pairs_(type, count, c, lambda)": [
+      [
+        "hg",
+        1,
+        4,
+        34
+      ],
+      [
+        "hZ",
+        5,
+        10,
+        24
+      ],
+      [
+        "hH",
+        9,
+        3,
+        18
+      ],
+      [
+        "hG",
+        11,
+        9,
+        24
+      ],
+      [
+        "hN",
+        25,
+        3,
+        18
+      ],
+      [
+        "gZ",
+        5,
+        4,
+        17
+      ],
+      [
+        "gH",
+        9,
+        11,
+        25
+      ],
+      [
+        "gG",
+        11,
+        6,
+        20
+      ],
+      [
+        "gN",
+        25,
+        3,
+        17
+      ],
+      [
+        "ZZ",
+        10,
+        22,
+        19
+      ],
+      [
+        "ZH",
+        45,
+        10,
+        8
+      ],
+      [
+        "ZG",
+        55,
+        10,
+        8
+      ],
+      [
+        "ZN",
+        125,
+        15,
+        13
+      ],
+      [
+        "OO",
+        990,
+        13,
+        12
+      ]
+    ],
+    "moments": {
+      "sum_c": 16480,
+      "sum_C_c_3": 370727,
+      "sum_C_lambda_3_unmatched": 388592,
+      "sum_k": 131910,
+      "sum_C_k_2": 370727,
+      "excess_above_five_six_ceiling": 42677,
+      "amount_above_convex_bound": 41519,
+      "transitive_triples": 16480,
+      "cyclic_triples": 5620,
+      "sum_nu": 134160,
+      "sum_levels": 266070
+    },
+    "cyclic_triples": {
+      "GNN": 3300,
+      "NNN": 2300,
+      "HNN": 20,
+      "total": 5620,
+      "their_transitive_level": 12,
+      "their_cyclic_level": 13
+    },
+    "dominator_counts_(k, count)": [
+      [
+        5,
+        16717
+      ],
+      [
+        6,
+        16
+      ],
+      [
+        7,
+        2702
+      ],
+      [
+        11,
+        2665
+      ]
+    ],
+    "level_capacities_transitive": {
+      "level_at_least_11": 17334,
+      "level_at_least_7": 21150,
+      "level_equal_to_5": 950
+    },
+    "minimum_level_types_(name, count, common_out_sum, excess_sum, transitive_level)": [
+      [
+        "ZGG",
+        275,
+        33,
+        -1,
+        5
+      ],
+      [
+        "ZHG",
+        495,
+        33,
+        -1,
+        5
+      ],
+      [
+        "ZHH",
+        180,
+        33,
+        -1,
+        5
+      ],
+      [
+        "gNN",
+        300,
+        19,
+        15,
+        7
+      ],
+      [
+        "gZG",
+        55,
+        20,
+        14,
+        7
+      ]
+    ],
+    "all_class_triples_(name, count, transitive_level)": [
+      [
+        "ZGG",
+        275,
+        5
+      ],
+      [
+        "ZHG",
+        495,
+        5
+      ],
+      [
+        "ZHH",
+        180,
+        5
+      ],
+      [
+        "gNN",
+        300,
+        7
+      ],
+      [
+        "gZG",
+        55,
+        7
+      ],
+      [
+        "hNN",
+        300,
+        8
+      ],
+      [
+        "hHN",
+        225,
+        8
+      ],
+      [
+        "hHH",
+        36,
+        8
+      ],
+      [
+        "gZN",
+        125,
+        9
+      ],
+      [
+        "ZGN",
+        1375,
+        10
+      ],
+      [
+        "ZHN",
+        1125,
+        10
+      ],
+      [
+        "gGN",
+        275,
+        10
+      ],
+      [
+        "hZH",
+        45,
+        11
+      ],
+      [
+        "NNN",
+        2300,
+        12
+      ],
+      [
+        "GNN",
+        3300,
+        12
+      ],
+      [
+        "GGN",
+        1375,
+        12
+      ],
+      [
+        "GGG",
+        165,
+        12
+      ],
+      [
+        "HNN",
+        2700,
+        12
+      ],
+      [
+        "HGN",
+        2475,
+        12
+      ],
+      [
+        "HGG",
+        495,
+        12
+      ],
+      [
+        "HHN",
+        900,
+        12
+      ],
+      [
+        "HHG",
+        396,
+        12
+      ],
+      [
+        "HHH",
+        84,
+        12
+      ],
+      [
+        "gZH",
+        45,
+        12
+      ],
+      [
+        "ZZG",
+        110,
+        13
+      ],
+      [
+        "ZZH",
+        90,
+        13
+      ],
+      [
+        "gGG",
+        55,
+        13
+      ],
+      [
+        "hGN",
+        275,
+        14
+      ],
+      [
+        "hHG",
+        99,
+        14
+      ],
+      [
+        "hgN",
+        25,
+        14
+      ],
+      [
+        "ZNN",
+        1500,
+        15
+      ],
+      [
+        "gHN",
+        225,
+        15
+      ],
+      [
+        "gZZ",
+        10,
+        16
+      ],
+      [
+        "hZN",
+        125,
+        16
+      ],
+      [
+        "hZG",
+        55,
+        17
+      ],
+      [
+        "gHG",
+        99,
+        18
+      ],
+      [
+        "hGG",
+        55,
+        20
+      ],
+      [
+        "hgZ",
+        5,
+        21
+      ],
+      [
+        "hgH",
+        9,
+        22
+      ],
+      [
+        "ZZN",
+        250,
+        23
+      ],
+      [
+        "gHH",
+        36,
+        23
+      ],
+      [
+        "hgG",
+        11,
+        23
+      ],
+      [
+        "hZZ",
+        10,
+        29
+      ],
+      [
+        "ZZZ",
+        10,
+        36
+      ]
+    ],
+    "every_k_at_least_5": true,
+    "some_k_at_least_7": true,
+    "some_k_at_most_4": false,
+    "tournament_realized": false,
+    "erdos_902_solved": false,
+    "f4_determined": false,
+    "weight_minimum_rebuilt": false,
+    "J_3_4_tree_rebuilt": false
+  },
+  "weaknesses": "The status proved applies to one integer solution of the star sums, the level formula, and the second-moment identity on the extreme score sequence. The common-out numbers are constant on the cuts of a realizable degree pattern. They are not shown to be the intersection sizes of the out-sets, so the solution is not a tournament. The dominated-side moment sum C(nu,2) is required to equal sum C(lambda,3)=388592, and the third-moment symmetry sum C(k,3)=sum C(nu,3) is required as well. Neither identity is solved here. A failure of those two identities would be a later step; it is not a proof that some triple has at most 4 dominators. The convex gap 1158 is used only as the input lower bound. This solution sits 41519 above the convex value 329208, because the stars of the in-degrees 40 and 41 cannot carry common-out counts 12 and 13. The balanced margin (26, 338, 5) is not rebuilt. No appeal is made to a tight pair or to the J=3, 4 tree. Erdős problem 902 is not solved, and f(4) is not evaluated.",
+  "references": [
+    "research/AGENT_TASKS/R4-G-degree-24.report.json",
+    "research/AGENT_TASKS/R4-B-no-tight.report.json",
+    "research/LEMMAS.md, order-52 seven-dominator paragraph and Lemma S1",
+    "proof/N52_TIGHT_PAIRS.md, section 7",
+    "proof/swarm/BRIEF.md, section 4"
+  ],
+  "next_step": "On this same pair table, decide whether nonnegative nu=L-k can satisfy sum C(nu,2)=388592 and sum C(k,3)=sum C(nu,3). If they can, record the rows. If they cannot, the obstruction is that identity, not a return to the weight minimum. Do not reopen the J=3, 4 tree, and do not treat the present solution as a tournament.",
+  "relation_to_prior": "The weight minimum is an input, including the six gaps and the extreme value 1158. That comparison already forces some triple to have at least 7 dominators whenever every triple has at least 5. The balanced margin in research/AGENT_TASKS/R4-B-no-tight.report.json meets the same second-moment equations with every triple at least 5 when the convex gap is 8528. The new test is the extreme score, where the out-degrees 10 and 11 make the convex package impossible and the star sums are no longer the balanced ones. Those star sums and the level formula still leave an integer solution with every level at least 5. The exhausted approach keys are not used.",
+  "novelty": "The new object is the cut table on the extreme score sequence: common-out counts 4, 10, 3, 9, 3 on the star of the in-degree 41, counts 4, 11, 6, 3 on the rest of the star of the in-degree 40, count 22 inside the five in-degrees 24, counts 10, 10, 15 from those five vertices into the three ordinary classes, and count 13 on the other ordinary pairs. With 5620 cyclic triples taken from GNN, NNN and HNN, the dominator counts 16717, 16, 2702 and 2665 meet sum C(k,2)=370727 and keep every level at least 5. The gap 42677 is the excess carried by 2702 sevens and 2665 elevens. It is not the convex gap 1158, and it is not a new bound on f(n).",
+  "verification": "unreviewed",
+  "source": "file"
+}

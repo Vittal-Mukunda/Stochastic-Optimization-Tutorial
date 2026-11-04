@@ -1,0 +1,42 @@
+{"event": "init", "time": "2026-10-23T16:36:20.344427+00:00"}
+{"event": "init-complete", "seeds": true, "time": "2026-10-23T16:36:20.438789+00:00"}
+{"event": "ingest", "task": "R1-E-checks", "status": "computed", "verification": "reproduced_by_orchestrator", "time": "2026-10-23T16:36:21.181926+00:00"}
+{"event": "plan", "dispatched": ["R1-A-literature", "R1-B-theorem5", "R1-D-counterexample", "R1-G-audit-every-n"], "compute": ["R1-E-checks"], "round": 1, "time": "2026-10-23T16:36:21.202973+00:00"}
+{"event": "ingest", "task": "R1-A-literature", "status": "computed", "verification": "unreviewed", "time": "2026-10-23T16:49:51.077337+00:00"}
+{"event": "ingest", "task": "R1-B-theorem5", "status": "proved", "verification": "unreviewed", "time": "2026-10-23T16:49:51.102299+00:00"}
+{"event": "ingest", "task": "R1-D-counterexample", "status": "disproved", "verification": "unreviewed", "time": "2026-10-23T16:49:51.124141+00:00"}
+{"event": "ingest", "task": "R1-G-audit-every-n", "status": "proved", "verification": "unreviewed", "time": "2026-10-23T16:49:51.145248+00:00"}
+{"event": "resume", "expired": [], "time": "2026-10-23T16:49:51.151579+00:00"}
+{"event": "plan", "dispatched": ["R1-C-n52-j-le-2", "R1-F-reformulation", "R1-H-strategy"], "compute": [], "round": 2, "time": "2026-10-23T16:51:34.406751+00:00"}
+{"event": "ingest", "task": "R1-C-n52-j-le-2", "status": "proved", "verification": "unreviewed", "time": "2026-10-23T17:26:36.535339+00:00"}
+{"event": "ingest", "task": "R1-F-reformulation", "status": "proved", "verification": "unreviewed", "time": "2026-10-23T17:26:36.557339+00:00"}
+{"event": "ingest", "task": "R1-H-strategy", "status": "inconclusive", "verification": "unreviewed", "time": "2026-10-23T17:26:36.579336+00:00"}
+{"event": "resume", "expired": [], "time": "2026-10-23T17:26:36.585341+00:00"}
+{"event": "plan", "dispatched": ["R3-C-four-positive", "R3-D-case-I", "R3-F-order-52", "R3-G-break-52"], "compute": [], "round": 3, "time": "2026-10-23T17:32:10.831862+00:00"}
+{"event": "ingest", "task": "R3-C-four-positive", "status": "conditional", "verification": "unreviewed", "time": "2026-10-23T17:56:54.554776+00:00"}
+{"event": "ingest", "task": "R3-D-case-I", "status": "proved", "verification": "unreviewed", "time": "2026-10-23T17:56:54.578327+00:00"}
+{"event": "ingest", "task": "R3-F-order-52", "status": "proved", "verification": "unreviewed", "time": "2026-10-23T17:56:54.600381+00:00"}
+{"event": "ingest", "task": "R3-G-break-52", "status": "proved", "verification": "unreviewed", "time": "2026-10-23T17:56:54.622411+00:00"}
+{"event": "resume", "expired": [], "time": "2026-10-23T17:56:54.628638+00:00"}
+{"event": "plan", "dispatched": ["R4-B-no-tight", "R4-C-tight-s4", "R4-D-upper", "R4-G-degree-24"], "compute": [], "round": 4, "time": "2026-10-23T17:58:15.865918+00:00"}
+{"event": "ingest", "task": "R4-B-no-tight", "status": "proved", "verification": "unreviewed", "time": "2026-10-23T19:04:37.705355+00:00"}
+{"event": "ingest", "task": "R4-C-tight-s4", "status": "conditional", "verification": "unreviewed", "time": "2026-10-23T19:04:37.731354+00:00"}
+{"event": "ingest", "task": "R4-D-upper", "status": "computed", "verification": "unreviewed", "time": "2026-10-23T19:04:37.759358+00:00"}
+{"event": "ingest", "task": "R4-G-degree-24", "status": "proved", "verification": "unreviewed", "time": "2026-10-23T19:04:37.784366+00:00"}
+{"event": "resume", "expired": [], "time": "2026-10-23T19:04:37.791428+00:00"}
+{"event": "plan", "dispatched": ["R5-B-outsets", "R5-C-pattern", "R5-F-three", "R5-G-push"], "compute": [], "round": 5, "time": "2026-10-23T19:05:14.718764+00:00"}
+{"event": "ingest", "task": "R5-B-outsets", "status": "proved", "verification": "unreviewed", "time": "2026-10-24T02:41:56.864352+00:00"}
+{"event": "ingest", "task": "R5-C-pattern", "status": "proved", "verification": "unreviewed", "time": "2026-10-24T02:41:56.901683+00:00"}
+{"event": "ingest", "task": "R5-F-three", "status": "proved", "verification": "unreviewed", "time": "2026-10-24T02:41:56.930344+00:00"}
+{"event": "ingest", "task": "R5-G-push", "status": "proved", "verification": "unreviewed", "time": "2026-10-24T02:41:56.962352+00:00"}
+{"event": "resume", "expired": [], "time": "2026-10-24T02:41:56.973471+00:00"}
+{"event": "plan", "dispatched": ["R6-B-s4", "R6-C-heavy", "R6-G-nu", "R6-H-strategy"], "compute": [], "round": 6, "time": "2026-10-24T02:42:20.825139+00:00"}
+{"event": "ingest", "task": "R6-B-s4", "status": "inconclusive", "verification": "unreviewed", "time": "2026-10-24T03:11:10.079548+00:00"}
+{"event": "ingest", "task": "R6-C-heavy", "status": "proved", "verification": "unreviewed", "time": "2026-10-24T03:11:10.105063+00:00"}
+{"event": "ingest", "task": "R6-G-nu", "status": "proved", "verification": "unreviewed", "time": "2026-10-24T03:11:10.133073+00:00"}
+{"event": "ingest", "task": "R6-H-strategy", "status": "inconclusive", "verification": "unreviewed", "time": "2026-10-24T03:11:10.160062+00:00"}
+{"event": "plan", "dispatched": ["R7-B-cubic", "R7-C-avoid"], "compute": [], "round": 7, "time": "2026-10-24T03:11:10.195111+00:00"}
+{"event": "ingest", "task": "R7-C-avoid", "status": "proved", "verification": "unreviewed", "time": "2026-10-24T04:12:50.376665+00:00"}
+{"event": "failure", "task": "R7-B-cubic", "status": "pending", "error": "dispatch timed out before a report arrived", "time": "2026-10-24T04:12:50.411028+00:00"}
+{"event": "resume", "expired": ["R7-B-cubic"], "time": "2026-10-24T04:12:50.414021+00:00"}
+{"event": "plan", "dispatched": ["R8-A-audit-j5", "R8-B-no-tight", "R8-D-spectral", "R8-E-independent", "R8-F-asymptotic", "R8-G-construct"], "compute": [], "round": 8, "time": "2026-10-24T04:14:24.835421+00:00"}

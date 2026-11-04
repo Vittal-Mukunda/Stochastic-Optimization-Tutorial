@@ -1,0 +1,20 @@
+{
+ "N": 47,
+ "status": "infeasible",
+ "scipy_status": 2,
+ "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+ "wall_seconds": 0.135,
+ "time_limit_seconds": 600.0,
+ "rows": 6845,
+ "vars": 6838,
+ "e_filter": true,
+ "support_exact": true,
+ "tag": "main",
+ "n_pair_classes": 6739,
+ "env": {
+  "python": "3.12.10",
+  "numpy": "2.5.2",
+  "scipy": "1.18.0",
+  "platform": "Windows-11-10.0.26200-SP0"
+ }
+}

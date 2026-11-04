@@ -1,0 +1,9 @@
+labelled regular tournaments on 11 vertices: 48251508480
+reg11.txt lines: 1223  sum 11!/|Aut| = 48251508480  equal: True
+distinct canonical forms in reg11.txt: 1223
+S_2 among reg11.txt: 551  reg11_S2.txt lines: 551  distinct: 551  all S_2: True  same set: True
+Aut orders in reg11_S2.txt: [1, 3, 5, 11, 55]
+
+real	0m12.088s
+user	0m0.015s
+sys	0m0.031s

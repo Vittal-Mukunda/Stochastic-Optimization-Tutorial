@@ -1,0 +1,152 @@
+{
+ "N": 52,
+ "args": {
+  "N": 52,
+  "seeds": "qr47",
+  "minutes": 2.3,
+  "restart_seconds": 130.0,
+  "seed": 401,
+  "tag": "q47a",
+  "lam": 1.0,
+  "stall": 1500
+ },
+ "runs": [
+  {
+   "run": 1,
+   "seed_kind": "qr47",
+   "seed_meta": {
+    "base": "QR_47",
+    "added": 5
+   },
+   "seed_cost": 7099.0,
+   "seed_undominated": 3327,
+   "best_cost": 5465.0,
+   "iters": 3426,
+   "kicks": 0,
+   "seconds": 130.0,
+   "trace": [
+    [
+     215,
+     5498.0
+    ],
+    [
+     371,
+     5495.0
+    ],
+    [
+     372,
+     5491.0
+    ],
+    [
+     373,
+     5487.0
+    ],
+    [
+     374,
+     5485.0
+    ],
+    [
+     375,
+     5483.0
+    ],
+    [
+     1205,
+     5482.0
+    ],
+    [
+     1206,
+     5481.0
+    ],
+    [
+     1207,
+     5475.0
+    ],
+    [
+     1390,
+     5474.0
+    ],
+    [
+     2682,
+     5472.0
+    ],
+    [
+     2684,
+     5471.0
+    ],
+    [
+     2686,
+     5470.0
+    ],
+    [
+     2689,
+     5466.0
+    ],
+    [
+     2690,
+     5465.0
+    ]
+   ],
+   "profile": {
+    "N": 52,
+    "undominated_4sets": 2408,
+    "min_pair_dom": 11,
+    "min_triple_dom": 3,
+    "triples_below_5": 3036,
+    "triple_deficit": 3057,
+    "min_4set_dom": 0,
+    "4sets_with_1_dom": 34523,
+    "indeg_min": 24,
+    "indeg_max": 29,
+    "indeg_hist": {
+     "24": 6,
+     "25": 28,
+     "26": 10,
+     "27": 3,
+     "28": 4,
+     "29": 1
+    },
+    "example_undominated": [
+     0,
+     1,
+     3,
+     38
+    ],
+    "S4": false
+   }
+  }
+ ],
+ "best": {
+  "undominated_4sets": 2408,
+  "cost": 5465.0,
+  "run": 1,
+  "seed_kind": "qr47",
+  "profile": {
+   "N": 52,
+   "undominated_4sets": 2408,
+   "min_pair_dom": 11,
+   "min_triple_dom": 3,
+   "triples_below_5": 3036,
+   "triple_deficit": 3057,
+   "min_4set_dom": 0,
+   "4sets_with_1_dom": 34523,
+   "indeg_min": 24,
+   "indeg_max": 29,
+   "indeg_hist": {
+    "24": 6,
+    "25": 28,
+    "26": 10,
+    "27": 3,
+    "28": 4,
+    "29": 1
+   },
+   "example_undominated": [
+    0,
+    1,
+    3,
+    38
+   ],
+   "S4": false
+  }
+ },
+ "elapsed_seconds": 130.6
+}

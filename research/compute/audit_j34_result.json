@@ -1,0 +1,21 @@
+{
+  "3": {
+    "examined": 18,
+    "survivors": 0,
+    "reasons": {
+      "pair-sum": 1,
+      "exceeds-Ex": 5,
+      "lambda": 12
+    }
+  },
+  "4": {
+    "examined": 220,
+    "survivors": 0,
+    "reasons": {
+      "pair-sum": 1,
+      "exceeds-Ex": 19,
+      "lambda": 181,
+      "below-12": 19
+    }
+  }
+}

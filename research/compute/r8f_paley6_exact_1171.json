@@ -1,0 +1,16 @@
+{
+ "p": 1171,
+ "has_S6": false,
+ "nu_6": 0,
+ "witness": [
+  0,
+  1,
+  21,
+  450,
+  536,
+  1128
+ ],
+ "pairs_ab_processed": 22412,
+ "seconds": 351.17814803123474,
+ "number_of_6sets_through_01_attaining_min": null
+}

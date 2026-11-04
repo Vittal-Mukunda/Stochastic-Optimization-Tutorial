@@ -1,0 +1,138 @@
+{
+  "task_id": "R1-H-strategy",
+  "agent": "H",
+  "claim": "The obstacles that block a proof, in the order they should be worked, are: Corollaries 2–4 at order 51, which are what would let the re-derived Theorem 5 forbid an S_4 tournament on 51 vertices; Theorem A, which is what would then exclude orders 49 and 50 and give f(4) ≥ 52; the order-52 branch in which every pair has at least 12 dominators, which is what blocks a proof that no S_4 tournament has 52 vertices; and sections 5 and 9 of the order-52 note, which are what would turn a tight pair into four dominators of in-degree greater than 25. The J = 3 and J = 4 audit is already written in R1-C and stays in progress until an independent check finishes. Erdős problem 902 is not solved.",
+  "status": "inconclusive",
+  "definitions": "S_4 means every 4-set has a dominator outside itself. f(4) is the least order of a tournament with S_4. A pair is tight when it has exactly 11 dominators. For a tight pair, J is the sum of (in-degree minus 25) over those 11 dominators, and s is the number of those dominators whose in-degree is greater than 25. The strong claim is the sentence that every tournament on at most 51 vertices has a triple with at most 4 dominators. Lemma J is the bound J ≥ 3 for every tight pair in every S_4 tournament. Theorem 5 is the bound that every doubly regular tournament on 51 vertices has a triple with at most 4 dominators. Theorem A is the workspace argument that no S_4 tournament has at most 50 vertices. An obstacle blocks a proof when the written implication to f(4) ≥ 52, or to the absence of an S_4 tournament on 52 vertices, cites it and no ingested report has checked it. An obstacle blocks a counterexample when a tournament meeting the hypotheses and violating the conclusion would have to be built there. A strategy is a ranking and a task list, not a theorem.",
+  "argument": "Rank 1. Corollaries 2, 3 and 4 of proof/F4_GE_52_HAND_PROOF.md. They are the reduction from an arbitrary S_4 tournament on 51 vertices to a doubly regular tournament. R1-B re-derived Theorem 5 and stopped at the doubly regular parameters. Lemma J supplies the bound J ≥ 3 that Corollary 2 and the J = 0 step of Corollary 4 invoke. The unread piece is Corollary 3, the case of a vertex of in-degree 24, together with the appeal to Claim Q. Until that reduction is checked, Theorem 5 does not forbid an S_4 tournament on 51 vertices, and the strong claim at order 51 is unchecked. This is the most direct block on a proof.\n\nRank 2. Theorem A in proof/ERDOS902_PROOF.md §2, specifically Lemma 2.2, Claim Q, and the five-line passage from |Z| ≤ 5 to the exclusion of orders 49 and 50. The published window opened by R1-A is 48 ≤ f(4) ≤ 67. An order-51 contradiction leaves 49 and 50 in that window. The numerical rerun checked other inequalities; it did not read this logic. Lemma T, the in-degree bound on a tight dominator set, was re-derived inside the Lemma J argument and may be cited after its hypotheses are matched. This is the other gate on the written proof of f(4) ≥ 52.\n\nRank 3. The order-52 branch in which every pair has at least 12 dominators. Lemma S1 gives sum |D(P)| ≥ 16250, so the excess over 12 · 1326 = 15912 is at least 338, and that excess need not sit on 338 pairs of size 13. A tight pair is the case |D(P)| = 11. The whole of R1-C, R1-G, and the order-52 note studies that case. R1-F's equivalence, S_4 on the tournament if and only if S_3 on every induced in-neighbourhood, leaves the same branch: f(3) = 19 removes only a vertex of in-degree at most 18, and every in-neighbourhood of order at least 19 can carry S_3. A proof that no S_4 tournament has 52 vertices has to decide this branch. The second-moment remark in section 7 of the note forces some triple to have at least 7 dominators when the degrees are 25 and 26 and one assumes only 5 or 6; that pushes the minimum up, so it is not the test of this branch.\n\nRank 4. Sections 5 and 9 of proof/N52_TIGHT_PAIRS.md. They claim that J = 5 forces s ≥ 4 and that s ≤ 3 is impossible for J ≥ 6, and together they are the claim that at least four dominators have in-degree greater than 25. R1-C proved a corrected exclusion of J = 3 and J = 4 and then said, explicitly, that a single vertex of excess 5 meets J = 5 with s = 1, and that sections 5 and 9 were not read. Those two sections block that structural sentence. They do not by themselves exclude a tight pair, and they do not prove there is no S_4 tournament on 52 vertices. They sit below rank 3 because the minimum-12 branch remains even if they hold.\n\nIn progress, not assigned. The audit of J = 3 and J = 4 is the argument in research/AGENT_TASKS/R1-C-n52-j-le-2.report.json. Its status in that file is proved, and the controller has not recorded an independent check. A local enumeration of the same numerical constraints, research/compute/audit_j34.py, examined 18 configurations at J = 3 and 220 at J = 4 and found no survivor. That run is not the independent check: the script relaxes the common-in-neighbour count to an interval of length 4, and this strategy did not match its kills to the repaired branches. Lemma A, the structural fact for a dominator of in-degree 25, was rechecked inside the same C report, which is where the paragraph at lines 213–218 of the 20 October note still waits. The outstanding check of R1-C should include Lemma A. Assigning the J = 3 and J = 4 split again would treat that report as if it had not been written.\n\nRank 5, reserve, not in this round. Section 8 of the same note, the claim that no in-degree equals 23. It blocks the first sentence of the printed order-52 theorem. It becomes the next tight-pair task if a slot is free after the four below. The design count on the 23-vertex subtournament is the approach, and it is distinct from the J = 3 and J = 4 partition list.\n\nRank 6, not in this round. A counterexample to the strong claim would be a tournament on 47, 48, 49, 50 or 51 vertices in which every triple has at least 5 dominators. The Paley tournament of order 47 has minimum 4, on the triple {0, 1, 3}, and is closed. R1-D examined no other construction. Ranks 1 and 2 are the direct test of that claim, because the 20 October note says the counting uses the triple lower bound alone. A false step in Corollary 3 or in Theorem A is the place a counterexample would be built. A search with no named construction is not a task.\n\nRank 7, not in this round. Quotation of Erdős 1963, Szekeres–Szekeres 1965, Reid–Brown 1972, and the tag Er82e. R1-A left each of them unopened. Reid–McRae–Hedetniemi–Hedetniemi 2004 was opened and states the published bound f(4) ≥ 48. These gaps block a citation, not the workspace chain.\n\nRank 8, not in this round. The order of f(n), between n·2^n and n^2·2^n. The one-level count stops at c*, two-stage averaging leaves the coefficient of the second logarithm unchanged, and a random Cayley upper bound stays closed until a new construction is specified. proof/FN_GAP_ATTEMPT.md §4 names the missing step as a tail bound, and it shows that two moments do not force an undominated set once the mean exceeds 1. This round does not reopen those three attacks, and it does not spend a slot on an unspecified tail bound. The finite gates above are the ones that can confirm or break a written proof.\n\nRound 2 has four tasks, one per concurrent slot. They can run together. The corollary task re-derives the one sentence of Claim Q it uses, and the Theorem A task re-derives Claim Q in full, so neither waits on the other. The order-52 tasks treat J ≥ 5 as conditional on the in-progress C report. None of the four declares f(4) ≥ 52, and none declares Erdős problem 902 solved. The uningested sketches proof/swarm/r1_AUDIT-51.md and proof/swarm/r1_AUDIT-52-B.md are not lemmas.",
+  "evidence": {
+    "erdos_902_solved": false,
+    "f4_at_least_52_proved": false,
+    "ranking": [
+      {
+        "rank": 1,
+        "obstacle": "Corollaries 2–4 at order 51, the reduction to a doubly regular tournament",
+        "blocks": "A proof that no S_4 tournament has 51 vertices, and the strong claim at that order",
+        "disposition": "Round 2 task R2-B-n51-reduction"
+      },
+      {
+        "rank": 2,
+        "obstacle": "Theorem A at orders 49 and 50",
+        "blocks": "The step from no S_4 tournament on 51 vertices to f(4) ≥ 52",
+        "disposition": "Round 2 task R2-G-theorem-a"
+      },
+      {
+        "rank": 3,
+        "obstacle": "Order 52 with every pair having at least 12 dominators, excess at least 338",
+        "blocks": "A proof that no S_4 tournament has 52 vertices",
+        "disposition": "Round 2 task R2-F-min-12"
+      },
+      {
+        "rank": 4,
+        "obstacle": "Sections 5 and 9, four dominators of in-degree greater than 25",
+        "blocks": "The second sentence of the printed order-52 tight-pair theorem",
+        "disposition": "Round 2 task R2-I-four-positive"
+      },
+      {
+        "rank": 5,
+        "obstacle": "J = 3 and J = 4 at order 52, together with Lemma A",
+        "blocks": "Use of J ≥ 5, until an independent check of the C report",
+        "disposition": "In progress. Not assigned."
+      },
+      {
+        "rank": 6,
+        "obstacle": "Section 8, no in-degree 23 at order 52",
+        "blocks": "The first sentence of the printed order-52 theorem",
+        "disposition": "Reserve. Not in this round."
+      },
+      {
+        "rank": 7,
+        "obstacle": "A non-Paley tournament on 47–51 vertices with every triple dominated at least five times",
+        "blocks": "A counterexample to the strong claim",
+        "disposition": "Paley order 47 is closed. No separate search this round."
+      },
+      {
+        "rank": 8,
+        "obstacle": "Unopened classical sources and the factor-n gap",
+        "blocks": "Checked quotation, and a complete estimate of f(n)",
+        "disposition": "Not in this round. The three asymptotic attacks stay closed."
+      }
+    ],
+    "j34_enumeration_not_the_independent_check": {
+      "script": "research/compute/audit_j34.py",
+      "J3_examined": 18,
+      "J4_examined": 220,
+      "survivors": 0,
+      "why_it_does_not_close_the_audit": "The run was not ingested, the common-in-neighbour count is relaxed to an interval of length 4, and the kills were not matched to the repaired branches of R1-C."
+    },
+    "round_2_tasks": [
+      {
+        "id": "R2-B-n51-reduction",
+        "role": "B",
+        "approach_key": "n51-corollaries-2-4-from-lemma-J",
+        "target": "Re-derive Corollaries 2, 3 and 4 of proof/F4_GE_52_HAND_PROOF.md. Lemma J is an input: do not rewrite the proof that J ≥ 3. Theorem 5 is an input: do not rewrite the third-moment comparison. Re-derive the sentence of Claim Q that Corollary 3 uses. If a step does not follow, name that step and stop. A repair is the auditor's argument and is not a claim that the printed text was complete.",
+        "does_not_repeat": "This does not repeat rederive-drt51-third-moment, which assumes the doubly regular parameters and never derives them, and it does not repeat the Lemma J write-up.",
+        "blocks": "Rank 1"
+      },
+      {
+        "id": "R2-G-theorem-a",
+        "role": "G",
+        "approach_key": "theorem-a-orders-49-and-50",
+        "target": "Read Lemma 2.2, Claim Q, and Theorem A in proof/ERDOS902_PROOF.md §2 line by line, and decide whether they exclude an S_4 tournament on 49 vertices and on 50 vertices. Lemma T may be cited from the Lemma J argument after its hypotheses are matched. Record the first unjustified inference if there is one.",
+        "does_not_repeat": "This does not repeat exact-identities-and-paley-profiles: those checks match printed numbers and Paley profiles, and they do not read the counting that excludes orders 49 and 50.",
+        "blocks": "Rank 2"
+      },
+      {
+        "id": "R2-F-min-12",
+        "role": "F",
+        "approach_key": "n52-excess-338-minimum-12-pairs",
+        "target": "Assume a tournament on 52 vertices in which every triple has at least 5 dominators and every pair has at least 12 dominators. Derive the triple inclusion-exclusion at this order from the definitions. Using Lemma S1's excess of at least 338 over 12 dominators per pair, decide whether some triple is forced below 5 dominators, or write an integer margin for the degrees and the pair excesses that meets the constraints with every triple at least 5, or name the identity that fails to force either conclusion. The hypothesis of this task is that there is no tight pair.",
+        "does_not_repeat": "This does not repeat rederive-drt51-third-moment, where every degree is 25, every pair has exactly 12 dominators, and k plus the common out-neighbour count is constant on each triple class, and it does not repeat one-level-counting-past-cstar.",
+        "blocks": "Rank 3"
+      },
+      {
+        "id": "R2-I-four-positive",
+        "role": "I",
+        "approach_key": "n52-net-excess-invariant-four-positive",
+        "target": "Decide whether every tight pair in an S_4 tournament on 52 vertices has at least four dominators of in-degree greater than 25. Audit sections 5 and 9 of proof/N52_TIGHT_PAIRS.md. The primary method is a net-excess invariant, nu_u equal to j_u minus the number of heavy outside vertices that beat u, and the relation for the sum of nu_u that follows from the excess identity 14 - J. Derive that relation; the sketch in proof/swarm/r1_AUDIT-52-B.md §4 is not a lemma. Treat J ≥ 5 as conditional on R1-C, whose independent check is still outstanding. If the invariant fails, name the first case in section 5 or section 9 that does not follow. Do not write another analysis of the partitions of the heavy excess 11 or of the heavy excess 10.",
+        "does_not_repeat": "This does not repeat the J = 3 and J = 4 partition audit in R1-C: that audit is already written, its printed section 4 failed by treating a partition of 11 while the excess was 10, and this task does not repair that split.",
+        "blocks": "Rank 4"
+      }
+    ],
+    "not_assigned": [
+      "Claim L",
+      "one-level counting past c*",
+      "two-stage averaging",
+      "a random Cayley upper bound",
+      "another classification of the 551 regular tournaments on 11 vertices",
+      "a second audit of J = 3 and J = 4",
+      "a second proof of Lemma J",
+      "the Paley tournament of order 47",
+      "a restatement of the S_3 recurrence proved in R1-F"
+    ]
+  },
+  "weaknesses": "This is a strategy. It proves no bound and it exhibits no tournament. J ≥ 5 remains conditional until someone other than the author of R1-C checks that report, including its Lemma A; the enumeration with 18 and 220 configurations is not that check. The two swarm files under proof/swarm/ are uningested sketches. Tasks R2-F-min-12 and R2-I-four-positive can return inconclusive without touching the order-51 gates. Section 8, the classical unopened papers, and the factor-n gap are left out of this round on purpose: the first is the reserve behind rank 4, and the other two block citation and the asymptotic estimate rather than the written finite implications. Erdős problem 902 is not solved, and f(4) ≥ 52 is not proved.",
+  "references": [
+    "research/LEDGER.md",
+    "research/LEMMAS.md",
+    "research/STATE.md",
+    "research/COUNTEREXAMPLES.md",
+    "research/AGENT_TASKS/R1-A-literature.report.json",
+    "research/AGENT_TASKS/R1-B-theorem5.report.json",
+    "research/AGENT_TASKS/R1-C-n52-j-le-2.report.json",
+    "research/AGENT_TASKS/R1-D-counterexample.report.json",
+    "research/AGENT_TASKS/R1-E-checks.report.json",
+    "research/AGENT_TASKS/R1-F-reformulation.report.json",
+    "research/AGENT_TASKS/R1-G-audit-every-n.report.json",
+    "proof/F4_GE_52_HAND_PROOF.md",
+    "proof/N52_TIGHT_PAIRS.md",
+    "proof/ERDOS902_PROOF.md",
+    "proof/FN_GAP_ATTEMPT.md",
+    "research/compute/audit_j34.py"
+  ],
+  "next_step": "Dispatch the four round-2 tasks and leave the J = 3 and J = 4 audit in progress. R2-B-n51-reduction, approach key n51-corollaries-2-4-from-lemma-J: re-derive Corollaries 2–4 from Lemma J. This does not repeat rederive-drt51-third-moment, which assumes the doubly regular parameters and never derives them. R2-G-theorem-a, approach key theorem-a-orders-49-and-50: read Theorem A at orders 49 and 50. This does not repeat exact-identities-and-paley-profiles, which matched numbers and did not read that counting. R2-F-min-12, approach key n52-excess-338-minimum-12-pairs: decide the order-52 branch in which every pair has at least 12 dominators. This does not repeat rederive-drt51-third-moment, where k plus the common out-neighbour count is constant. R2-I-four-positive, approach key n52-net-excess-invariant-four-positive: decide the four-positive-dominator claim from the net-excess invariant and sections 5 and 9. This does not repeat the J = 3 and J = 4 partition audit already written in R1-C.",
+  "relation_to_prior": "Approach key strategy-after-round1-batch. This ranking was made after every round-1 report, including R1-C and R1-F. It uses Lemma J, Theorem 5, the Paley order-47 minimum 4, and the S_3 recurrence as finished inputs of those reports. It does not reopen claim-L-single-pair-link, one-level-counting-past-cstar, two-stage-averaging-second-log, random-cayley-beat-erdos-upper, n51-local-milp-certificates, or wrong-direction-covering-local48.",
+  "novelty": "The new judgment is the order of the four gates after R1-C and R1-F: the order-51 reduction and Theorem A block f(4) ≥ 52, the minimum-12 branch blocks an order-52 nonexistence proof, and sections 5 and 9 block only the four-positive sentence. The J = 3 and J = 4 write-up is treated as work already done and still unchecked, which is why it is not given a new approach key.",
+  "verification": "unreviewed",
+  "source": "file"
+}

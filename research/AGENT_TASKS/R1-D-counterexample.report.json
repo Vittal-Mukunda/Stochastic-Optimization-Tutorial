@@ -1,0 +1,122 @@
+{
+  "task_id": "R1-D-counterexample",
+  "agent": "D",
+  "claim": "The sentence 'every tournament on at most 51 vertices has a triple with at most 3 dominators' is false. The Paley tournament of order 47 is a counterexample: the minimum of |D(Y)| over its 16215 triples is 4, attained by {0,1,3}, whose dominators are 23, 41, 44 and 46. The strong claim in proof/F4_GE_52_HAND_PROOF.md, whose bound is 4 rather than 3, is consistent with this tournament, because that triple has exactly 4 dominators. The same tournament has undominated 4-sets, including {0,1,3,38}, so it does not have S_4 and does not decide whether f(4) >= 52.",
+  "status": "disproved",
+  "definitions": "Vertices of the Paley tournament of order 47 are the residue classes modulo 47. There is an edge i -> j exactly when j - i is a nonzero quadratic residue modulo 47. Since 47 is prime and 47 ≡ 3 (mod 4), -1 is a nonresidue, so exactly one of d and -d is a residue and the relation is a tournament. For X subset of the vertex set, D(X) is the set of vertices outside X that beat every member of X, as in research/PROBLEM.md. The tournament has S_4 when D(X) is nonempty for every 4-element set. The strong claim is the sentence in proof/F4_GE_52_HAND_PROOF.md that every tournament on at most 51 vertices has a triple with at most 4 dominators. The sentence disproved here is that same sentence with 3 in place of 4.",
+  "argument": "The nonzero quadratic residues modulo 47 are the squares 1^2, ..., 23^2, reduced: 1, 2, 3, 4, 6, 7, 8, 9, 12, 14, 16, 17, 18, 21, 24, 25, 27, 28, 32, 34, 36, 37, 42. There are 23 of them. The missing classes include 5, 10, 11, 13, 15, 19, 20, 22, 26, 29, 30, 31, 33, 35, 38, 39, 40, 43, 44, 45 and 46. In particular 46 ≡ -1 is a nonresidue. A vertex w dominates {0,1,3} exactly when -w, 1-w and 3-w are all residues and w is not 0, 1 or 3. Setting t ≡ -w, this asks for a residue t such that t, t+1 and t+3 are all residues. Checking the 23 residues: t = 1 gives 1, 2, 4; t = 3 gives 3, 4, 6; t = 6 gives 6, 7, 9; t = 24 gives 24, 25, 27. Every other residue fails because t+1 or t+3 is a nonresidue. The corresponding w are 46, 44, 41 and 23. Direct differences: 23 beats the triple by residues 24, 25, 27; 41 by 6, 7, 9; 44 by 3, 4, 6; 46 by 1, 2, 4. Thus |D({0,1,3})| = 4. This one triple already shows that the Paley tournament of order 47 does not falsify the strong claim. An independent enumeration of all C(47,3) = 16215 triples, done twice (once from the edge relation, once from intersections of in-neighbourhood bit masks), gives the same minimum 4, on the same lexicographically first triple {0,1,3}. The counts are 4324 triples with 4 dominators, 6486 with 5, 4324 with 6, and 1081 with 7, summing to 16215. No triple has fewer than 4 dominators, so the sentence with 3 is false. The same two enumerations find 2162 undominated 4-sets out of C(47,4) = 178365. The lexicographically first is {0,1,3,38}: the differences from 38 to 0, 1, 3 are 9, 10, 12, and 10 is a nonresidue, so 38 itself does not dominate the triple, and the common in-neighbourhood of the four vertices is empty. The tournament therefore does not have S_4. The profiles in R1-E-checks.report.json list no Paley order at most 51 whose minimum triple-dominator count is at least 5. Orders 48, 49, 50 and 51 have no Paley tournament.",
+  "evidence": {
+    "orientation": "i -> j iff (j - i) mod 47 is a nonzero quadratic residue",
+    "quadratic_residues_mod_47": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      7,
+      8,
+      9,
+      12,
+      14,
+      16,
+      17,
+      18,
+      21,
+      24,
+      25,
+      27,
+      28,
+      32,
+      34,
+      36,
+      37,
+      42
+    ],
+    "named_triple": [
+      0,
+      1,
+      3
+    ],
+    "dominators": [
+      23,
+      41,
+      44,
+      46
+    ],
+    "residue_differences_x_minus_w": {
+      "23": [
+        24,
+        25,
+        27
+      ],
+      "41": [
+        6,
+        7,
+        9
+      ],
+      "44": [
+        3,
+        4,
+        6
+      ],
+      "46": [
+        1,
+        2,
+        4
+      ]
+    },
+    "dominator_count": 4,
+    "hand_check_agrees_with_both_programs": true,
+    "triples_enumerated": 16215,
+    "min_triple_dominators": 4,
+    "lex_first_minimum_triple": [
+      0,
+      1,
+      3
+    ],
+    "triple_dominator_histogram": {
+      "4": 4324,
+      "5": 6486,
+      "6": 4324,
+      "7": 1081
+    },
+    "four_sets_enumerated": 178365,
+    "undominated_four_sets": 2162,
+    "lex_first_undominated_four_set": [
+      0,
+      1,
+      3,
+      38
+    ],
+    "has_S4": false,
+    "falsifies_strong_claim_at_most_4": false,
+    "falsifies_f4_at_least_52": false,
+    "counterexample_candidate": null,
+    "paley_orders_read_from_R1_E_checks_and_not_reenumerated": {
+      "7": 0,
+      "11": 0,
+      "19": 1,
+      "23": 1,
+      "31": 2,
+      "43": 3,
+      "67": 6
+    },
+    "paley_orders_in_47_to_51": [
+      47
+    ],
+    "orders_48_to_51_paley_tournament": "none; 48 and 50 are not prime powers, 51 = 3*17 is not a prime power, and 49 = 7^2 ≡ 1 (mod 4)"
+  },
+  "weaknesses": "This kills the strengthening with 3. It leaves the strong claim with 4 untouched: 4324 triples in this tournament have exactly 4 dominators, so the tournament is not a counterexample to that claim, and a failed search is not evidence that the strong claim is true. The count over all triples is a machine enumeration, repeated with two implementations that agreed; the four dominators of {0,1,3} were also listed by hand from the residues. The Paley profiles of orders 7, 11, 19, 23, 31, 43 and 67 were taken from research/AGENT_TASKS/R1-E-checks.report.json and were not re-enumerated. In that report their minimum numbers of triple dominators are 0, 0, 1, 1, 2, 3 and 6, so none of the orders at most 51 meets the condition that every triple has at least 5 dominators. Orders 48, 49, 50 and 51 have no Paley tournament. No other construction on 47-51 vertices was examined. The optional search for an integer pattern of (q_y) and (j_r) at N = 52 with J <= 2 was not carried out. Claim L was not reopened.",
+  "references": [
+    "research/PROBLEM.md",
+    "proof/F4_GE_52_HAND_PROOF.md",
+    "research/AGENT_TASKS/R1-E-checks.report.json",
+    "research/compute/exact_checks.py",
+    "research/COUNTEREXAMPLES.md"
+  ],
+  "next_step": "A counterexample to the strong claim would be a tournament on 47, 48, 49, 50 or 51 vertices, other than the Paley tournament of order 47, in which every triple has at least 5 dominators. It would falsify f(4) >= 52 only if that same tournament also had S_4. Paley order 47 is closed for this purpose.",
+  "relation_to_prior": "Claim L, approach key claim-L-single-pair-link, concerns one pair and 37 subsets in a doubly regular tournament of order 51. It is already false and was not reopened. R1-E-checks reported that the Paley tournament of order 47 has minimum triple-dominator count 4 on the witness {0,1,3}, and that no profiled Paley tournament is a counterexample to the strong claim. This report recomputes that witness from the quadratic residues and repeats the enumeration of all triples.",
+  "novelty": "The dominators 23, 41, 44 and 46, with residue differences 24,25,27; 6,7,9; 3,4,6; and 1,2,4, are a hand-checkable certificate, computed independently of proof/verify_proof.py and without calling research/compute/exact_checks.py. The conclusion that the sentence with 3 is false agrees with R1-E-checks. The histogram 4324, 6486, 4324, 1081 for 4, 5, 6 and 7 dominators is additional. Nothing here falsifies the strong claim or the inequality f(4) >= 52.",
+  "verification": "unreviewed",
+  "source": "file"
+}

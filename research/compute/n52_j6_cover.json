@@ -1,0 +1,83 @@
+{
+ "first": {
+  "class": 0,
+  "j": [
+   1,
+   2,
+   2,
+   0,
+   1,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "M": [
+   0,
+   1,
+   2,
+   4
+  ],
+  "lights": 396,
+  "status": "UNKNOWN",
+  "secs": 90.5
+ },
+ "sample": [
+  {
+   "class": 1,
+   "status": "UNKNOWN",
+   "secs": 45.6,
+   "lights": 397
+  },
+  {
+   "class": 2,
+   "status": "UNKNOWN",
+   "secs": 45.6,
+   "lights": 397
+  },
+  {
+   "class": 5,
+   "status": "UNKNOWN",
+   "secs": 45.6,
+   "lights": 398
+  },
+  {
+   "class": 10,
+   "status": "UNKNOWN",
+   "secs": 45.6,
+   "lights": 398
+  },
+  {
+   "class": 20,
+   "status": "UNKNOWN",
+   "secs": 45.6,
+   "lights": 398
+  },
+  {
+   "class": 50,
+   "status": "UNKNOWN",
+   "secs": 45.6,
+   "lights": 397
+  },
+  {
+   "class": 100,
+   "status": "INFEASIBLE",
+   "secs": 36.2,
+   "lights": 397
+  },
+  {
+   "class": 200,
+   "status": "INFEASIBLE",
+   "secs": 2.8,
+   "lights": 397
+  },
+  {
+   "class": 400,
+   "status": "UNKNOWN",
+   "secs": 45.6,
+   "lights": 396
+  }
+ ]
+}

@@ -1,0 +1,98 @@
+{
+  "task_id": "R3-D-case-I",
+  "agent": "D",
+  "claim": "At order 51, no integer parameters meet the identities used in Corollary 3 of proof/F4_GE_52_HAND_PROOF.md in case (I) while every tight pair has J at least 3. The identity that blocks the search is sum_z h_z = 26 + |N^-(v) intersect Z| - W(v). Under those hypotheses the right-hand side is at most 25, while the Gram matrix forces at least 26 indices z with h_z at least 1. Erdős problem 902 is not solved, and this comparison does not prove f(4) >= 52.",
+  "status": "proved",
+  "definitions": "A tournament has one directed edge on every pair of distinct vertices. N = 51. For a vertex v, d^-(v) is its in-degree and e(v) = d^-(v) - 25. Z is the set of vertices with d^-(v) = 24, so e(v) = -1 on Z. Case (I) is the range 1 <= |Z| <= 5, with every in-degree at least 24. For v in Z, A = N^-(v) has 24 vertices, k = |A intersect Z|, and W(v) is the sum of max(e(x), 0) over x in A. A pair P is tight when |D(P)| = 11. For r in D(P), j_r = d^-(r) - 25 and J(P) is the sum of those j_r. For each of the 50 vertices z other than v, D_z = D({v, z}) and h_z = |D_z| - 11. The symbol n_t is the number of those z with h_z >= 1. G is the 50 by 50 Gram matrix of the indicator vectors of the sets D_z in R^A, and M = G - 5E, where E is the all-ones matrix. These are the quantities named in Corollary 3 and in the identities (I1) and (I2) of the same note.",
+  "argument": "The constraints imposed are exactly the hypotheses Corollary 3 cites, together with J(P) >= 3 for every tight pair. Every in-degree is at least 24. Claim Q gives 1 <= |Z| <= 5, k <= 2, and at least one vertex a in A for which {a, v} is tight. (F2) gives h_z >= 0 and, on a tight pair, a 5-regular tournament on its 11 dominators. (F1) gives every triple at least 5 dominators. Lemma T gives j_r >= 0 on every tight dominator set, so those dominators lie in A and outside Z. The sum of all in-degrees is C(51, 2) = 1275 = 51 * 25, so the sum of e(v) is 0. The negative part of that sum is -|Z| and the positive part is |Z|. Therefore W(v) <= |Z|. The dominator set R of the tight pair {a, v} is contained in A, every e(r) for r in R is nonnegative, and J({a, v}) is the sum of those e(r), so J({a, v}) <= W(v) <= |Z|. Keeping J >= 3 forces |Z| >= 3 and W(v) >= 3. The range |Z| <= 2 is empty before any spectral count: the handshaking identity sum_{x not in Z} e(x) = |Z| already yields J <= |Z| <= 2. For the remaining range, fix v in Z. Each x in A beats v, so x beats d^+(x) - 1 of the other 50 vertices. Double counting pairs (x, z) with x in A and x beating z gives sum_z |D_z| = sum_{x in A} (d^+(x) - 1). Since d^+(x) = 50 - d^-(x), the right-hand side is sum_{x in A} (49 - d^-(x)) = 24 * 49 - sum_A d^- = 1176 - sum_A d^-. Subtracting 50 * 11 = 550 gives sum_z h_z = 626 - sum_A d^-. On A there are k vertices of in-degree 24 and 24 - k vertices of in-degree 25 + e(x) with e(x) >= 0, and those positive parts sum to W(v). Hence sum_A d^- = 24k + 25(24 - k) + W(v) = 600 - k + W(v), and the identity is sum_z h_z = 26 + k - W(v). Nonnegativity of the h_z, from (F2), gives n_t <= sum_z h_z. With k <= 2 and W(v) >= 3 this is n_t <= 26 + k - W(v) <= 25. The opposite bound comes from the Gram matrix. The sets D_z are subsets of the 24-element set A, so G is positive semidefinite of rank at most 24 and its eigenvalues in decreasing order satisfy lambda_i(G) = 0 for i = 25, ..., 50. The all-ones matrix E is positive semidefinite, so G - M = 5E is positive semidefinite: G is at least M in the Loewner order. Ordered eigenvalues are monotone for that order, so lambda_i(M) <= lambda_i(G). Thus lambda_i(M) <= 0 for 26 indices and M has at most 24 positive eigenvalues. It remains to produce more positive eigenvalues than that once J >= 3. Let z be tight, so h_z = 0, M_zz = 6, and R = D_z. The other 49 indices split into the 11 vertices of R and the 38 vertices of O = V \\ ({v, z} union R). For z' in R, the dominators of {v, z, z'} are the 5 in-neighbours of z' inside the 5-regular tournament on R, so the corresponding entry of M is 0. For y in O, that entry is q_y - 5, where q_y = |R intersect N^-(y)|. (F2) gives q_y >= 5. Each r in R beats both vertices of {v, z} and 5 vertices of R, so it has 18 - j_r out-neighbours in O. Summing, sum_y q_y = 198 - J and sum_y (q_y - 5) = 8 - J. The off-diagonal entries of row z are therefore nonnegative and add to 8 - J. Theorem 1's bound J >= 3, which is being kept for every tight pair, gives 8 - J <= 5 < 6. The same comparison holds for the principal submatrix on the tight indices, because its off-diagonal row sums are sums of a subset of those nonnegative entries. A real symmetric matrix with positive diagonal entries and a_ii strictly larger than the sum of the absolute values of the other entries in its row is positive definite: a nonpositive eigenvalue would give, at a coordinate of maximum absolute value, a strict inequality between a_ii and that row sum. The tight principal submatrix is therefore positive definite of order m = 50 - n_t. Its quadratic form is positive on an m-dimensional coordinate subspace, so M has at least m positive eigenvalues. Combined with the rank bound, m <= 24, hence n_t >= 26. That contradicts n_t <= 25. The same one-unit gap is visible at the most permissive corner. There k = 2 and W = 3, so sum_z h_z = 25, while n_t >= 26. Raising some h_z above 1 only lowers n_t further below the sum and makes the principal submatrix larger. The finite box of integers |Z| in {3, 4, 5}, k in {0, 1, 2} with k <= |Z| - 1, and 3 <= J <= W <= |Z| contains 30 tuples. Each has sum_z h_z <= 25. The value 25 is attained only at (|Z|, k, W, J) = (3, 2, 3, 3), (4, 2, 3, 3) and (5, 2, 3, 3). No tuple meets every cited identity. The identity that blocks the search is sum_z h_z = 26 + |N^-(v) intersect Z| - W(v).",
+  "evidence": {
+    "blocking_identity": "sum_z h_z = 26 + |N^-(v) intersect Z| - W(v)",
+    "why_it_blocks": "J >= 3 forces W >= 3, and Claim Q forces k <= 2, so the identity returns at most 25. Nonnegative h_z then give n_t <= 25. The 50 by 50 Gram matrix has rank at most 24, so once every tight row is strictly diagonally dominant, n_t >= 26.",
+    "feasible_tuples": 0,
+    "tuples_with_J_at_least_3_inside_the_excess_budget": 30,
+    "maximum_sum_h_on_those_tuples": 25,
+    "minimum_shortfall_against_26": 1,
+    "maximum_shortfall_against_26": 5,
+    "corners_where_the_shortfall_is_1": [
+      {
+        "Z": 3,
+        "k": 2,
+        "W": 3,
+        "J": 3,
+        "sum_h": 25
+      },
+      {
+        "Z": 4,
+        "k": 2,
+        "W": 3,
+        "J": 3,
+        "sum_h": 25
+      },
+      {
+        "Z": 5,
+        "k": 2,
+        "W": 3,
+        "J": 3,
+        "sum_h": 25
+      }
+    ],
+    "range_Z_at_most_2": "J <= W <= |Z| <= 2, so this range contributes no tuple with J >= 3. The blocking comparison there is the handshaking identity sum of positive excess = |Z|, before the Gram count is used.",
+    "arithmetic": {
+      "sum_of_in_degrees": 1275,
+      "sum_of_e": 0,
+      "24_times_49": 1176,
+      "50_times_11": 550,
+      "sum_h_before_substituting_degrees": "626 - sum_A d^-",
+      "sum_A_d_minus": "600 - k + W",
+      "sum_h": "26 + k - W",
+      "gram_order": 50,
+      "ambient_dimension": 24,
+      "nullity_at_least": 26,
+      "positive_eigenvalues_at_most": 24,
+      "tight_row_diagonal": 6,
+      "tight_row_off_diagonal_sum": "8 - J",
+      "off_diagonal_sum_when_J_equals_3": 5
+    },
+    "arc_count_check": {
+      "identity": "sum_z |D_z| = sum_{x in A} (d^+(x) - 1)",
+      "random_tournaments": [
+        {
+          "n": 7,
+          "tournaments": 30,
+          "max_abs_gap": 0
+        },
+        {
+          "n": 51,
+          "tournaments": 8,
+          "max_abs_gap": 0
+        }
+      ],
+      "mismatches": 0,
+      "seed": 20261023
+    },
+    "hypothetical_outside_Claim_Q": {
+      "admitted": false,
+      "k": 3,
+      "W": 3,
+      "J": 3,
+      "sum_h": 26,
+      "note": "This point meets n_t = 26 and a positive definite block of order 24. It is excluded by Claim Q, which keeps k <= 2, and it was not counted as a solution."
+    },
+    "counterexample_candidate": null,
+    "solves_erdos_902": false,
+    "proves_f4_at_least_52": false
+  },
+  "weaknesses": "The status proved applies to the emptiness of this integer box under the hypotheses Corollary 3 cites and under J >= 3 on every tight pair. Claim Q, Lemma T, (F1), (F2), and the minimum in-degree 24 are used as constraints, not re-proved. The load-bearing unit is k <= 2 against nullity 26: the excluded point k = 3, W = 3, J = 3 would give sum_z h_z = 26. No tournament was built, and the 551 isomorphism classes of 5-regular tournaments on 11 vertices were not searched. Case (R), the doubly regular moment argument, and orders other than 51 are outside the box. The random check of the arc count covers 8 tournaments of order 51 and 30 of order 7; the identity itself is the double count in the argument. Erdős problem 902 is not solved, and f(4) >= 52 is not a conclusion of this report.",
+  "references": [
+    "proof/F4_GE_52_HAND_PROOF.md",
+    "proof/ERDOS902_PROOF.md",
+    "proof/N51_local_claim.md",
+    "research/PROBLEM.md",
+    "research/LEMMAS.md"
+  ],
+  "next_step": "The case (I) integer box is closed under these hypotheses. An independent check can recompute only 26 + k - W at k = 2 and W = 3 against the nullity 50 - 24. The remaining order-51 branch is case (R), which is a different degree pattern.",
+  "relation_to_prior": "This tries to meet the Corollary 3 hypotheses while keeping J >= 3 on every tight pair. It does not repeat the Paley tournament of order 47. It does not reopen the exhausted approaches claim-L-single-pair-link, one-level-counting-past-cstar, two-stage-averaging-second-log, random-cayley-beat-erdos-upper, n51-local-milp-certificates, or wrong-direction-covering-local48.",
+  "novelty": "Corollary 3 already concludes that W <= 2 and hence that some tight pair has J <= 2. The search adds the full integer box: 30 tuples satisfy the excess budget, k <= 2, and J >= 3, and every one of them fails sum_z h_z = 26 + k - W by at least one and by exactly one at the three corners (3, 2, 3, 3), (4, 2, 3, 3) and (5, 2, 3, 3). No second family of integer parameters meets the cited identities and escapes the contradiction.",
+  "verification": "unreviewed",
+  "source": "file"
+}

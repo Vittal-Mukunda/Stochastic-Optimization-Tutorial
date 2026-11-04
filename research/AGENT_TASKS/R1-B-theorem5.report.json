@@ -1,0 +1,104 @@
+{
+  "task_id": "R1-B-theorem5",
+  "agent": "B",
+  "claim": "Every doubly regular tournament on 51 vertices has some triple with at most 4 dominators. Here doubly regular means that every in-degree and every out-degree is 25, and every two distinct vertices have exactly 12 common in-neighbours.",
+  "status": "proved",
+  "definitions": "A tournament has exactly one directed edge between every two distinct vertices. For X a set of vertices, D(X) is the set of vertices outside X that beat every vertex of X, and D+(X) is the set of vertices outside X that lose to every vertex of X. Write k(Y)=|D(Y)| and ν(Y)=|D+(Y)| for a triple Y. The triple is transitive when its three edges form a ranking, and cyclic when they form a 3-cycle. Put σ(Y)=1 in the transitive case and σ(Y)=0 in the cyclic case. The integer 12 is the common in-neighbour count in the given definition; it is not taken from a Hadamard matrix.",
+  "argument": "The identities below were derived from the degree hypotheses before the comparison in section 4 was used as a checklist. Let T be a tournament on 51 vertices in which every in-degree and every out-degree is 25 and every two distinct vertices have exactly 12 common in-neighbours. If u beats w, the 25 in-neighbours of w are u, the 12 common in-neighbours of {u,w}, and 12 further vertices. Those 12 are out-neighbours of u that beat w, so the other 12 of the 24 out-neighbours of u besides w are beaten by w. Thus every pair has exactly 12 common out-neighbours. The same split gives |N+(u)∩N-(w)|=12 and |N-(u)∩N+(w)|=13 whenever u beats w. For a triple Y={y1,y2,y3}, inclusion-exclusion on the 48 vertices outside Y gives ν(Y)=48−Σ|N-(yi)\\Y|+Σ|D({yi,yj})\\Y|−k(Y). The first sum equals 3·25−3=72, because the three edges inside Y contribute three in-arcs. Each pair has 12 dominators, and the third vertex of Y is one of them for exactly σ(Y) of the three pairs: for none of them in a 3-cycle, and for the unique bottom pair in a transitive triple. The middle sum is therefore 36−σ(Y), and ν(Y)=12−σ(Y)−k(Y). So k+ν equals 11 on a transitive triple and 12 on a cyclic triple. Every transitive triple has exactly one vertex that beats the other two, so the number of transitive triples is Σ_v C(25,2)=51·300=15300. The number of triples is C(51,3)=20825, so there are 5525 cyclic triples. For fixed w, each x in N+(w) has exactly 12 out-neighbours inside N+(w), namely the common out-neighbours of w and x. Thus T[N+(w)] is a 12-regular tournament on 25 vertices. It contains 25·C(12,2)=1650 transitive triples and C(25,3)−1650=650 cyclic triples. Summing over w, Σ k = 84150 on the transitive triples and Σ k = 33150 on the cyclic triples. The means are 84150/15300=11/2 and 33150/5525=6. A pair of distinct vertices has C(12,3) common dominated triples, so Σ_Y C(k(Y),2)=C(51,2)·C(12,3)=1275·220=280500. Both Σ_Y C(k(Y),3) and Σ_Y C(ν(Y),3) count the pairs (Y,W) of triples in which every vertex of W beats every vertex of Y, so Σ_Y C(k(Y),3)=Σ_Y C(12−σ(Y)−k(Y),3). Assume, for a contradiction, that k(Y)≥5 for every triple. Set u(Y)=k(Y)−11/2 on transitive triples and u(Y)=k(Y)−6 on cyclic triples. Each class has sum of u equal to 0. Let L be 11 or 12 according to the class, write u=k−L/2 and a=L/2−1, and let f(x)=(x−1)x(x+1)=x^3−x. Then 6·C(k,3)=f(k−1)=f(u+a) and 6·C(L−k,3)=f(a−u)=−f(u−a), because f is odd. Hence C(k,3)−C(L−k,3)=(f(u+a)+f(u−a))/6=(u^3+(3a^2−1)u)/3. Summing over all triples, the left side vanishes by the cubic identity. On each class a is constant and the sum of u is 0, so the linear terms drop and the sum of u^3 over transitive triples plus the sum of u^3 over cyclic triples is 0. Under k≥5 one has u∈{−1/2,1/2,3/2,…} on transitive triples and u∈{−1,0,1,2,…} on cyclic triples. Then u^3−u/4=u(u−1/2)(u+1/2) is nonnegative on the transitive set, and zero only at u=±1/2, while u^3−u=(u−1)u(u+1) is nonnegative on the cyclic set, and zero only at u∈{−1,0,1}. The sum of (u^3−u/4) over transitive triples plus the sum of (u^3−u) over cyclic triples equals the sum of all the cubes u^3, hence equals 0. Every summand is nonnegative, so every summand is 0. Every transitive triple therefore has 5 or 6 dominators, and every cyclic triple has 5, 6 or 7. The transitive mean 11/2 forces 7650 triples of each kind. The cyclic mean 6 forces equally many triples with 5 dominators and with 7 dominators, say p of each, and 5525−2p with 6. Then Σ C(k,2)=7650·10+7650·15+10p+15(5525−2p)+21p=274125+p. This equals 280500, so p=6375. But p and the number of cyclic triples with 7 dominators are equal nonnegative integers summing with the rest to 5525, so 2p≤5525. Since 2·6375=12750>5525, the assumption is false. Some triple has at most 4 dominators. The same conclusion implies that no such tournament has property S_4, once one uses the Szekeres fact that S_4 forces every triple to have at least 5 dominators: a dominator of the dominator set of a triple would leave a set of size at most 4 with no dominator. That fact is Lemma 1.2 of proof/ERDOS902_PROOF.md; it is not needed for the triple bound itself. This argument does not use Theorem 1, Corollary 4, or any MILP certificate. It also does not use existence of a tournament with these parameters: the counting applies to every tournament that has them.",
+  "evidence": {
+    "independent_identities": {
+      "common_out_neighbours": 12,
+      "k_plus_nu_transitive": 11,
+      "k_plus_nu_cyclic": 12,
+      "transitive_triples": 15300,
+      "cyclic_triples": 5525,
+      "sum_k_transitive": 84150,
+      "sum_k_cyclic": 33150,
+      "mean_k_transitive": "11/2",
+      "mean_k_cyclic": 6,
+      "sum_C_k_2": 280500,
+      "sum_k": 117300,
+      "sum_k_squared": 678300,
+      "variance_of_k": "2028/2401"
+    },
+    "contradiction_arithmetic": {
+      "forced_transitive_5": 7650,
+      "forced_transitive_6": 7650,
+      "sum_C_k_2_on_the_pinned_support": "274125+p",
+      "required_p": 6375,
+      "maximum_p": 2762,
+      "maximum_sum_C_k_2_on_the_support": 276887,
+      "variance_at_that_maximum": 0.49766126858906645
+    },
+    "section_4_audit": [
+      {
+        "step": "M0, transitive and cyclic counts",
+        "verdict": "justified"
+      },
+      {
+        "step": "M1, k+ν=12−σ, including the count of internal pair-dominators",
+        "verdict": "justified"
+      },
+      {
+        "step": "derivation that every pair has 12 common out-neighbours",
+        "verdict": "justified from the given in-neighbour hypothesis; the one-sentence split after Corollary 4 is this derivation and does not need Theorem 1"
+      },
+      {
+        "step": "M2, out-neighbourhood is 12-regular of order 25, and the two means",
+        "verdict": "justified"
+      },
+      {
+        "step": "M3, sum of C(k,2)",
+        "verdict": "justified"
+      },
+      {
+        "step": "M4, equality of the two third moments",
+        "verdict": "justified"
+      },
+      {
+        "step": "centering, odd function f, and reduction of M4 to the sum of cubes of u",
+        "verdict": "justified; spot checks C(5,3)−C(6,3)=−10 and C(7,3)−C(5,3)=25 match the cubic polynomial"
+      },
+      {
+        "step": "nonnegativity of u^3−u/4 and of u^3−u on the range k≥5, and the conclusion that those expressions vanish",
+        "verdict": "justified"
+      },
+      {
+        "step": "exact support {5,6} on transitive triples and {5,6,7} on cyclic triples, then p=6375>2762",
+        "verdict": "justified"
+      },
+      {
+        "step": "remark that the fixed variance is about 0.845 and the pinned support has variance at most about 0.498",
+        "verdict": "justified: the variance is 2028/2401 and the support maximum is about 0.4977"
+      },
+      {
+        "step": "remark giving the means (t−1)/2 and t/2 in a doubly regular tournament of order 4t+3",
+        "verdict": "justified by the same counting"
+      },
+      {
+        "step": "QR_19 sanity check: p=57, two orbits of size 57 and one of size 171",
+        "verdict": "justified by enumerating the Paley tournament of order 19. All 285 cyclic triples were listed. The dominator counts are 57, 171 and 57 for k=1, 2 and 3. The 114 triples invariant under x↦7x+c are exactly the two orbits of size 57, with constant k equal to 1 and 3. The remaining orbit has size 171 and constant k equal to 2. M1 and M4 hold on this tournament with t=4."
+      },
+      {
+        "step": "remark that this is consistent with the Paley tournament of order 67 having S_4",
+        "verdict": "not justified in this pass. The means 15/2 and 8 for t=16 follow from the counting, and the same nonnegativity fails for the bound k≥5 because the transitive centre is 7.5 rather than 5.5. The assertion that the Paley tournament of order 67 has S_4 was not recomputed here, and the contradiction does not use it."
+      }
+    ],
+    "steps_not_justified": [
+      "Section 4 remark, final clause: that the Paley tournament of order 67 has S_4. Not a premise of the contradiction."
+    ]
+  },
+  "weaknesses": "The proved statement stops at the doubly regular parameters. It does not show that every tournament on 51 vertices has a triple with at most 4 dominators, and it does not show f(4)≥52. In the hand proof those conclusions use Theorem 1 and Corollary 4, which were not re-derived. Erdős problem 902 is not solved: the order of f(n) is untouched, and so is the upper bound f(4)≤67. The argument also does not decide whether a tournament with these parameters exists, and it does not name the exact minimum, only that the minimum is at most 4.",
+  "references": [
+    "proof/F4_GE_52_HAND_PROOF.md, section 4 (Theorem 5, identities (M0)–(M4), and the remarks) and the common-out-neighbour sentence at the end of section 3",
+    "proof/F4_GE_52_HAND_PROOF.md, section 6, the arithmetic lines for section 4",
+    "proof/ERDOS902_PROOF.md, Lemma 1.1 and Lemma 1.2, used only for the additional sentence that no such tournament has S_4",
+    "research/PROBLEM.md, definitions of tournament, dominator set, and S_n",
+    "Paley tournament of order 19, enumerated in this pass as a check of the sanity-check remark"
+  ],
+  "next_step": "Re-derive Theorem 1 and Corollary 4, the reduction from an arbitrary S_4 tournament on 51 vertices to the doubly regular parameters. Until that reduction is checked, the triple bound in Theorem 5 does not give f(4)≥52.",
+  "relation_to_prior": "Theorem 5 is the step that turns a doubly regular tournament of order 51 into the strong claim that every tournament on at most 51 vertices has a triple with at most 4 dominators, but only after Corollary 4 has forced those parameters. The verifier does not read Theorem 5. This report re-derives Theorem 5 only. It does not use the exhausted approaches: a single-pair link, one-level counting past c*, two-stage averaging, a random Cayley tournament, the order-51 MILP certificates, or a covering argument aimed the wrong way.",
+  "novelty": "No new identity. The third-moment comparison already written in section 4 is complete, and the re-derivation found no false step in the contradiction. The result is a workspace claim about one parameter set. It is not a new estimate of f(n).",
+  "verification": "unreviewed",
+  "source": "file"
+}

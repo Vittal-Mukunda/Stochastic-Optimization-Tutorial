@@ -1,0 +1,176 @@
+[
+ {
+  "J": 0,
+  "j": [],
+  "status": "INFEASIBLE",
+  "secs": 0.0
+ },
+ {
+  "J": 1,
+  "j": [
+   1
+  ],
+  "status": "INFEASIBLE",
+  "secs": 0.0
+ },
+ {
+  "J": 2,
+  "j": [
+   2
+  ],
+  "status": "INFEASIBLE",
+  "secs": 0.0
+ },
+ {
+  "J": 2,
+  "j": [
+   1,
+   1
+  ],
+  "status": "INFEASIBLE",
+  "secs": 0.0
+ },
+ {
+  "J": 3,
+  "j": [
+   3
+  ],
+  "status": "INFEASIBLE",
+  "secs": 0.0
+ },
+ {
+  "J": 3,
+  "j": [
+   2,
+   1
+  ],
+  "status": "INFEASIBLE",
+  "secs": 0.0
+ },
+ {
+  "J": 3,
+  "j": [
+   1,
+   1,
+   1
+  ],
+  "status": "INFEASIBLE",
+  "secs": 0.0
+ },
+ {
+  "J": 4,
+  "j": [
+   4
+  ],
+  "status": "INFEASIBLE",
+  "secs": 0.0
+ },
+ {
+  "J": 4,
+  "j": [
+   3,
+   1
+  ],
+  "status": "INFEASIBLE",
+  "secs": 0.0
+ },
+ {
+  "J": 4,
+  "j": [
+   2,
+   2
+  ],
+  "status": "INFEASIBLE",
+  "secs": 0.0
+ },
+ {
+  "J": 4,
+  "j": [
+   2,
+   1,
+   1
+  ],
+  "status": "INFEASIBLE",
+  "secs": 0.0
+ },
+ {
+  "J": 4,
+  "j": [
+   1,
+   1,
+   1,
+   1
+  ],
+  "status": "INFEASIBLE",
+  "secs": 0.1
+ },
+ {
+  "J": 5,
+  "j": [
+   5
+  ],
+  "status": "INFEASIBLE",
+  "secs": 0.0
+ },
+ {
+  "J": 5,
+  "j": [
+   4,
+   1
+  ],
+  "status": "INFEASIBLE",
+  "secs": 0.0
+ },
+ {
+  "J": 5,
+  "j": [
+   3,
+   2
+  ],
+  "status": "INFEASIBLE",
+  "secs": 0.0
+ },
+ {
+  "J": 5,
+  "j": [
+   3,
+   1,
+   1
+  ],
+  "status": "INFEASIBLE",
+  "secs": 0.0
+ },
+ {
+  "J": 5,
+  "j": [
+   2,
+   2,
+   1
+  ],
+  "status": "INFEASIBLE",
+  "secs": 0.0
+ },
+ {
+  "J": 5,
+  "j": [
+   2,
+   1,
+   1,
+   1
+  ],
+  "status": "INFEASIBLE",
+  "secs": 0.1
+ },
+ {
+  "J": 5,
+  "j": [
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "status": "INFEASIBLE",
+  "secs": 0.2
+ }
+]

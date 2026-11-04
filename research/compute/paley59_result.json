@@ -1,0 +1,17 @@
+{
+  "order": 59,
+  "min_triple": 5,
+  "triple_witness": [
+    0,
+    1,
+    7
+  ],
+  "min_4set": 0,
+  "witness4": [
+    0,
+    1,
+    7,
+    19
+  ],
+  "seconds": 0.011
+}

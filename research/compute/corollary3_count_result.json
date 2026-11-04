@@ -1,0 +1,18 @@
+{
+  "ok": true,
+  "runs": [
+    {
+      "n": 7,
+      "samples": 20,
+      "min_gap_versus_printed": 0,
+      "max_gap_versus_printed": 6
+    },
+    {
+      "n": 51,
+      "samples": 5,
+      "min_gap_versus_printed": 16,
+      "max_gap_versus_printed": 33
+    }
+  ],
+  "claim": "Each x in N^-(v) spends one out-arc on v, so sum_z |D_z| = sum_x (d^+(x)-1) = sum_x ((n-2)-d^-(x)). On 51 vertices this is the printed 49-count."
+}

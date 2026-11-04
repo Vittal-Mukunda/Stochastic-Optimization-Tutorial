@@ -1,0 +1,54 @@
+{
+ "N": 52,
+ "model": "v2",
+ "status": "feasible",
+ "scipy_status": 0,
+ "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+ "wall_seconds": 88.439,
+ "time_limit_seconds": 1800.0,
+ "rows": 21520,
+ "vars": 10861,
+ "n_pair_classes": 10647,
+ "e_filter": true,
+ "env": {
+  "python": "3.12.10",
+  "numpy": "2.5.2",
+  "scipy": "1.18.0",
+  "platform": "Windows-11-10.0.26200-SP0"
+ },
+ "max_row_violation": 7.275957614183426e-12,
+ "max_bound_violation": 0.0,
+ "max_integrality_violation": 4.873257353210647e-11,
+ "relaxation_point_verified": true,
+ "relaxation_point_summary": {
+  "degree_histogram": {
+   "24": 5,
+   "25": 35,
+   "27": 10,
+   "29": 1,
+   "32": 1
+  },
+  "D_histogram": {
+   "11": 644,
+   "13": 637,
+   "15": 26,
+   "17": 1,
+   "20": 3,
+   "21": 4,
+   "22": 1,
+   "23": 2,
+   "27": 4,
+   "50": 4
+  },
+  "triple_dominator_histogram": {
+   "5": 16938,
+   "6": 20,
+   "8": 5074,
+   "10": 1,
+   "11": 2,
+   "12": 2,
+   "46": 54,
+   "48": 9
+  }
+ }
+}

@@ -1,0 +1,130 @@
+{
+  "task_id": "R5-B-outsets",
+  "agent": "B",
+  "claim": "The margin survives the out-neighbourhood count. The out-set of a vertex of out-degree 26 is a tournament on 26 vertices with score sequence thirteen 12s and thirteen 13s, so it contains 1872 transitive triples. With the 12-regular out-sets of the vertices of out-degree 25, the sum of the dominator counts over transitive triples is 91572. The seven recorded rows fall short of that sum by 298. The same degree pattern and pair-excess pattern still admit an integer solution in which every triple has at least 5 dominators and the transitive sum is 91572. Erdős problem 902 stays open.",
+  "status": "proved",
+  "definitions": "A tournament on a vertex set V has exactly one directed edge between every two distinct vertices. For X subset of V, D(X) is the set of vertices outside X that beat every vertex of X, and D+(X) is the set of vertices outside X beaten by every vertex of X. Write k(Y)=|D(Y)| and ν(Y)=|D+(Y)| for a triple Y. The excess of a vertex is e(v)=d^-(v)-25, so d^+(v)=26-e(v) on 52 vertices. The excess of a pair is ε(P)=|D(P)|-12. A triple is transitive when one vertex beats the other two, and cyclic when its three edges form a cycle; σ(Y)=1 in the transitive case and σ(Y)=0 in the cyclic case. The margin is the integer pattern (26, 338, 5) from the recorded solution: the vertex excesses are twenty-six 0s and twenty-six 1s, the pair excesses sum to 338, and 5 is the triple-dominator lower bound tested against the handshaking identities. A is the set of 26 vertices of excess 0, and B is the complementary set of 26 vertices of excess 1. The common-out-neighbour number of a pair is μ(P)=|N+(u)∩N+(v)|.",
+  "argument": "The recorded pair-excess pattern puts ε=1 on every pair inside B and on a matching of 13 edges with one end in A and one end in B, and ε=0 on every other pair. Then μ=13 on every pair inside A and on each matching edge, and μ=12 on every other pair. Let v be a vertex of out-degree 26, so v lies in A, and let U=N+(v). For x in U the out-degree of x in the induced tournament on U is μ({v,x}). The sum of those out-degrees equals the number of edges in a tournament on 26 vertices, C(26,2)=325.\n\nSumming μ({v,x}) over all x other than v counts the pairs (x,w) with w in U and x→w. For fixed w in U the vertex v is an in-neighbour of w, so the number of such x is d^-(w)-1. Vertices of A have in-degree 25 and vertices of B have in-degree 26, so if U contains α vertices of A then the sum is 24α+25(26-α)=650-α. The pair pattern gives the same sum directly: the 25 other vertices of A contribute 25*13=325, and the 26 vertices of B contribute 313 when v is matched and 312 otherwise. The totals are 638 and 637, so α=12 when v is matched and α=13 when v is unmatched.\n\nIf v is unmatched, U contains 13 vertices of A and 13 of B. Their scores are 13 and 12 respectively, and 13*13+13*12=325. If v is matched, U contains 12 vertices of A. The edge count 325 forces the matching partner into U: those 12 vertices contribute 12*13=156, and the partner together with 13 ordinary out-neighbours in B contributes 13+13*12=169. The partner as an in-neighbour would leave 14 ordinary out-neighbours in B and the sum 156+168=324. Thus every out-set of an out-degree-26 vertex has score sequence thirteen 12s and thirteen 13s. The sequence meets Landau's condition. The sum of all scores is 325. For k≤13 the k smallest scores sum to 12k, and 12k≥C(k,2) because k-1≤24. For 14≤k≤26 the sum of the k smallest is 13(k-1), and 13(k-1)≥C(k,2) because k≤26, with equality at k=26.\n\nIn any tournament the transitive triples are counted by the sum of C(s,2) over the out-scores s. Here that sum is 13*C(12,2)+13*C(13,2)=13*66+13*78=1872. There are C(26,3)=2600 triples in U, so U contains 728 cyclic triples. The number 1872 is fixed by the score sequence. The seven global moment equations fix the sum of k(Y), the two pair moments, and the symmetry of the third moment. The split of the dominator sum into transitive and cyclic triples is the additional count.\n\nThe same pattern fixes the out-sets of out-degree 25. Such a vertex b lies in B, and its out-set has C(25,2)=300 edges. Every other vertex of B has μ=12 with b. Summing μ over the other 51 vertices gives 612 when b is unmatched and 613 when b is matched. The in-degree form of the same sum is 625-α, where α is the number of out-neighbours of b in A, so α=13 or 12 in those two cases. Every induced score is then 12. In the matched case this holds because the partner lies in the in-set: including it would make the score sum 301, while excluding it makes the sum 12*12+13*12=300. That orientation agrees with the orientation already required at the A-endpoint of the same matching edge. A 12-regular tournament on 25 vertices has 25*C(12,2)=1650 transitive triples.\n\nA triple lies in N+(w) exactly when w dominates the triple. Summing over vertices, the sum of k(Y) over transitive triples equals 26*1872+26*1650=48672+42900=91572. The degree pattern gives the sum of k(Y) over all triples as 26*C(26,3)+26*C(25,3)=127400, so the cyclic dominator sum is 35828.\n\nThe seven recorded rows miss 91572. They place 12692 triples on level k+ν=11, 7116 on level 12, and 2292 on level 13. For this pair pattern, k+ν=13-σ+Δ with Δ in {0,-1}, the level-11 triples are transitive, and the level-13 triples are cyclic. There are 16250 triples with Δ=-1 and 5850 with Δ=0, so level 12 splits into 3558 transitive triples and 3558 cyclic triples. The level-11 rows contribute 5*11272+7*1402+10*4+11*14=66368. The remaining 25204 would have to be carried by 3558 level-12 triples whose dominator counts in the recorded rows are 6 or 7. Their maximum sum is 7*3558=24906, which is 298 below 25204.\n\nThe margin has another solution of the same equations. Let 2261 of the Δ=0 triples be cyclic of level 13. Then 12661 triples are transitive of level 11, and level 12 has 3589 transitive triples and 3589 cyclic triples. Assign the dominator counts as follows. Level 11, transitive: (5,6) on 11186 triples and (7,4) on 1475 triples. Level 12, transitive: (7,5) on 3492 triples and (9,3) on 97 triples. Level 12, cyclic: (6,6) on 611 triples and (7,5) on 2978 triples. Level 13, cyclic: (5,8) on 2251 triples, (6,7) on 9 triples, and (7,6) on 1 triple. Every value of k is at least 5, and every value of ν is nonnegative. The class sizes add to 12661+3589+3589+2261=22100. The transitive dominator sum is 5*11186+7*1475+7*3492+9*97=66255+25317=91572. The cyclic dominator sum is 6*611+7*2978+5*2251+6*9+7*1=24512+11316=35828. The pair moment of k expands to 10*11186+21*1475+21*3492+36*97+15*611+21*2978+10*2251+15*9+21*1=314028. The pair moment of ν expands to 15*11186+6*1475+10*3492+3*97+15*611+10*2978+28*2251+21*9+15*1=314028. The third-moment difference expands to -10*11186+31*1475+25*3492+83*97+25*2978-46*2251-15*9+15*1=0. These are the handshaking equations of the margin, and the out-neighbourhood sum 91572 holds.\n\nThe count 1872 is therefore compatible with every triple having at least 5 dominators. The margin survives, and the task stops at that count. The sign comparison already recorded for this degree pattern and pair-excess pattern still excludes a solution in which every triple has at least 6 dominators, so the lower bound in the margin remains 5. The repaired rows are an integer point of the counting equations. Erdős problem 902 stays open.",
+  "evidence": {
+    "count_inside_the_out_set": {
+      "order": 26,
+      "score_sequence": {
+        "12": 13,
+        "13": 13
+      },
+      "transitive_triples": 1872,
+      "cyclic_triples": 728,
+      "landau_holds": true
+    },
+    "out_degree_25_out_sets": {
+      "order": 25,
+      "score": 12,
+      "transitive_triples": 1650,
+      "cyclic_triples": 650
+    },
+    "forced_dominator_sums": {
+      "transitive": 91572,
+      "cyclic": 35828,
+      "all_triples": 127400
+    },
+    "recorded_seven_rows": {
+      "level_11_dominator_sum": 66368,
+      "level_12_transitive_triples": 3558,
+      "maximum_level_12_transitive_dominator_sum": 24906,
+      "required_level_12_transitive_dominator_sum": 25204,
+      "shortfall": 298
+    },
+    "surviving_rows_(class, k, nu, count)": [
+      [
+        "transitive_level_11",
+        5,
+        6,
+        11186
+      ],
+      [
+        "transitive_level_11",
+        7,
+        4,
+        1475
+      ],
+      [
+        "transitive_level_12",
+        7,
+        5,
+        3492
+      ],
+      [
+        "transitive_level_12",
+        9,
+        3,
+        97
+      ],
+      [
+        "cyclic_level_12",
+        6,
+        6,
+        611
+      ],
+      [
+        "cyclic_level_12",
+        7,
+        5,
+        2978
+      ],
+      [
+        "cyclic_level_13",
+        5,
+        8,
+        2251
+      ],
+      [
+        "cyclic_level_13",
+        6,
+        7,
+        9
+      ],
+      [
+        "cyclic_level_13",
+        7,
+        6,
+        1
+      ]
+    ],
+    "surviving_moments": {
+      "triples": 22100,
+      "transitive_triples": 16250,
+      "cyclic_triples": 5850,
+      "sum_k_transitive": 91572,
+      "sum_k_cyclic": 35828,
+      "sum_C_k_2": 314028,
+      "sum_C_nu_2": 314028,
+      "sum_C_k_3_minus_C_nu_3": 0,
+      "minimum_k": 5
+    },
+    "hand_checks": [
+      "13*66+13*78=858+1014=1872 and 2600-1872=728",
+      "25*66=1650 and 2300-1650=650",
+      "26*1872=48672 and 26*1650=42900 and 48672+42900=91572",
+      "5*11272+7*1402+40+154=66368 and 91572-66368=25204 and 7*3558=24906 and 25204-24906=298",
+      "5*11186+7*1475=55930+10325=66255 and 7*3492+9*97=24444+873=25317 and 66255+25317=91572",
+      "6*611+7*2978=3666+20846=24512 and 5*2251+54+7=11316 and 24512+11316=35828",
+      "C(k,2) blocks 142835+76824+71703+22666=314028",
+      "C(nu,2) blocks 176640+35211+38945+63232=314028",
+      "Third-moment running sum -66135+95351+74450-103666=0",
+      "11*12661+12*7178+13*2261=139271+86136+29393=254800"
+    ]
+  },
+  "weaknesses": "The status proved applies to the counting equations of the margin (26, 338, 5) after the out-neighbourhood sum is imposed. The repaired rows assign nonnegative integers to those equations, and every triple in them has at least 5 dominators. They do not specify the arcs of a tournament, and they do not place a particular set of 1872 transitive triples inside one named out-set. The seven rows of the previous report remain incompatible with the sum 91572; survival uses the replacement above. The sign comparison that forbids minimum 6 is the one already written for this degree pattern and pair-excess pattern. Degree sequences with square-sum greater than 26 stay outside the argument. Erdős problem 902 stays open, and f(4) is not evaluated.",
+  "references": [
+    "research/AGENT_TASKS/R4-B-no-tight.report.json: the margin (26, 338, 5), the matching pair-excess pattern, and the seven (k, nu) rows",
+    "research/LEMMAS.md, Lemma S1: the equality case of twenty-six excesses 0 and twenty-six excesses 1",
+    "proof/F4_GE_52_HAND_PROOF.md, section 4, identity (M2): the out-neighbourhood count of transitive and cyclic triples in the order-51 regular case",
+    "proof/swarm/BRIEF.md, section 4: the relation of common out-neighbours to dominator numbers and degrees",
+    "research/PROBLEM.md: the definitions of a tournament, D(X), and an out-set"
+  ],
+  "next_step": "Stop. The out-neighbourhood count is compatible with minimum 5, so it does not remove the margin. An arc realization would still have to carry a tournament of score sequence thirteen 12s and thirteen 13s in each out-set of an out-degree-26 vertex.",
+  "relation_to_prior": "The moments of the margin were recomputed. This adds the out-neighbourhood count they do not include. The seven recorded rows meet the moments and miss the transitive dominator sum 91572 by 298. The replacement rows meet the moments and the out-neighbourhood sum together. The argument uses the equality case of Lemma S1 and the recorded matching. It does not repeat a single-pair link, one-level counting past c*, two-stage averaging, a random Cayley tournament, the order-51 local certificates, or a covering argument run in the wrong direction.",
+  "novelty": "The new count is the 1872 transitive triples in the out-set of a vertex of out-degree 26. Summed over the degree pattern, it forces the transitive dominator sum 91572. The recorded witness misses that sum. The margin still has an explicit integer solution with every triple at least 5 dominators. That is a constraint on the same pattern at order 52. It is not a new estimate of f(n).",
+  "verification": "unreviewed",
+  "source": "file"
+}

@@ -1,0 +1,42 @@
+V1  basic lemmas, brute force
+  QR_7 (N=7), property S_2
+    nu_0..nu_2 = [7, 3, 1]
+    checked 8 sets A (|A| <= 1), 16 direct pair counts, 0.0s
+  QR_19 (N=19), property S_3
+    nu_0..nu_3 = [19, 9, 4, 1]
+    checked 191 sets A (|A| <= 2), 573 direct pair counts, 0.0s
+  QR_67 (N=67), property S_4
+    nu_0..nu_4 = [67, 33, 16, 6, 1]
+    checked 50184 sets A (|A| <= 3), 200600 direct pair counts, 20.3s
+  thin_S4_N70 (N=70), property S_4
+    nu_0..nu_4 = [70, 33, 16, 5, 1]
+    checked 57226 sets A (|A| <= 3), 228551 direct pair counts, 28.2s
+V2  generic Lemma T
+    QR_7: generic Lemma T (k=2, threshold d^- >= 3): 1 tight 0-sets, 7 dominators attain the bound with equality
+    QR_19: generic Lemma T (k=3, threshold d^- >= 9): 19 tight 1-sets, 171 dominators attain the bound with equality
+    QR_67: generic Lemma T (k=4, threshold d^- >= 25): 0 tight 2-sets, 0 dominators attain the bound with equality
+    thin_S4_N70: generic Lemma T (k=4, threshold d^- >= 25): 0 tight 2-sets, 0 dominators attain the bound with equality
+V3  Theorem A arithmetic
+    all inequalities of Theorem A verified (Lemma T, Cor. 1, Claim Q, final count)
+V4  Theorem B
+    Theorem B inequality holds for 5 <= n <= 2000 and fails at n = 4
+V5  Theorem C
+    a_2..a_6 = ['2.56218', '5.64874', '11.8085', '24.1224', '48.7474']
+    c* = 0.7695032191504894326990652683098231346767
+    integral comparison checked on 27760 triples (n,m,h); min slack 0.0019486
+V6  Theorem D (sharpened recursion)
+    n= 2: every N <= 6 ruled out, N = 7 not ruled out (0.0s)
+    n= 3: every N <= 18 ruled out, N = 19 not ruled out (0.0s)
+    n= 4: every N <= 48 ruled out, N = 49 not ruled out (0.0s)
+    n= 5: every N <= 120 ruled out, N = 121 not ruled out (0.0s)
+    n= 6: every N <= 280 ruled out, N = 281 not ruled out (0.0s)
+    n= 7: every N <= 664 ruled out, N = 665 not ruled out (0.0s)
+    n= 8: every N <= 1484 ruled out, N = 1485 not ruled out (0.0s)
+    n= 9: every N <= 3387 ruled out, N = 3388 not ruled out (0.0s)
+    n=10: every N <= 7397 ruled out, N = 7398 not ruled out (0.0s)
+    n=11: every N <= 16568 ruled out, N = 16569 not ruled out (0.0s)
+    n=12: every N <= 35654 ruled out, N = 35655 not ruled out (0.1s)
+V7  Claim L realisation
+    Claim L realisation verified: all of (i)-(v) and the exact Gram matrix hold (row sizes [5, 6, 8, 9], identity total 1596)
+
+Total time 67s.  Failures: 0
