@@ -321,3 +321,15 @@ Next: Drop R8-C (J = 5, s = 5 is closed). Attack the three J = 6 survivors, all 
 Attempt 1 of 3. Status: pending.
 
 dispatch timed out before a report arrived
+
+## 2026-11-04 — hand session: regular twin family (target 1 of proof/N52_SESSION_2026-11-02.md S9)
+
+Source: proof/N52_SESSION_2026-11-04.md. Scripts: research/compute/n52_twin_certificate.py (log .log, data .json; every check exact, summary all OK) and research/compute/n52_twin_lp.py (log .log, data .json; floating-point LP, model ansatz only).
+
+Proved. Lemma C': in every regular tournament on 51 vertices, if all triples have k >= 4 and the triples with k = 4 lie inside S, then sum u^2 + (4/3)(K_S - 4C(s,3)) <= sum_{Y not in S} lambda(L_Y) + sum_{Y in S} pi(L_Y). Here u = (k - l)/2, sum u^2 = 16575 - Gamma2/4 + Gamma3/3, lambda(L) = s^3/3 - 3s^2/4 + 2s/3 and pi(L) = lambda(L) + s^2 + 3 with s = L - 10. The right side is computable from pair data, and the case Gamma2 = 0 is Lemma C. Applied to the regular twin family (RTF), survival requires 44.5 Gamma2 + 13 Gamma3 + 2 Theta - 2 Lambda + 2 Psi_C >= 4625/3. Lemma R: a pair of B with g = -1 has omega = lambda_B = 5, and its 25 triples {w} + P have exactly 5 dominators. Corollary S: in every RTF member some vertex of B lies on at least three pairs with g != 0. Identities local to b0: region sums of k, sigma-sums of u through b0, sum_{Y ni b0} u^2 = 975 + Gamma2/4, and sum_{Y ni b0} C(l,3) = sum_{Z in B} C(k_Z - 1, 2). Lemma D, at Gamma2 = 0, uses them to give margin 40450/9 instead of 4625/3.
+
+Computed. The S13 identities, including (R51), hold exactly on four regular tournaments on 51 vertices; they were hand-only before. The closed form of the survival sum agrees on four synthetic twin instances. At Gamma2 = 0 the LP optimum over the Lemma C' identities equals the hand bound 15033.33, so Lemma C' is optimal for its identities. With the b0-local identities the LP optimum is 12080.56, which is Lemma D. On an alternating-4-cycle ansatz, Lemma C' stops excluding at Gamma2 = 44-50; with all identities every allowed n is excluded, up to Gamma2 = 108.
+
+Dead end. Target 1 as phrased (bound sum v^3 from above): sum v^3 = (3/2) sum u^2 G - (3/2) sum_C G u + (43 Gamma3 + 6 Theta)/8 contains a g-weighted second moment of k - l that no identity fixes. Lemma C' alone cannot exclude large Gamma2.
+
+Open. The RTF in general is not excluded. Target 2 was not started. Next: redo the survival sum for the Lemma D certificate with general g, then look for an upper bound on Gamma2 = V_lambdaW - V_lambdaB + 2 Lambda. solved remains false. f(4) stays in 52 <= f(4) <= 67.

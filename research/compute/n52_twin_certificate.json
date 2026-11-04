@@ -1,0 +1,528 @@
+{
+ "A": [
+  {
+   "tag": "rotational51 + 0 3-cycle reversals",
+   "Gamma2": 66300,
+   "Gamma3": 0,
+   "zero_vertex_sums": true,
+   "zero_in_sums": true,
+   "checks": {
+    "L = 12 - sigma + G": true,
+    "sum_T u = 0": true,
+    "sum_C u = 0": true,
+    "sum u^2 = 16575 - G2/4 + G3/3": true,
+    "sum G u = 0": true,
+    "sum G^2 = 47 G2": true,
+    "sum G^3 = 43 G3 + 6 Theta": true,
+    "sum Phi_L(u) = sum u^2": true,
+    "cubic: sum (u^3 + c(L) u) = 0": true,
+    "S13: sum_T v = G2/2": true,
+    "S13: sum_C v = -G2/2": true,
+    "S13: sum v^2 = 16575 + 11.5 G2 + G3/3": true,
+    "S13 (R51) first form": true,
+    "S13 (R51) second form": true,
+    "sum v^3 = 3 sum Delta + 7.125 G2": true,
+    "sum v^3 = (3/2) sum u^2 G - (3/2) sum_C G u + (43 G3 + 6 Theta)/8": true,
+    "sum G l = 23 G2": true,
+    "sum G C(l,2) = 115 G2 + 5 G3 + Xi": true,
+    "local sums at 5 vertices (6900, C(k,2), C(l,2), kl)": true,
+    "local cubic identities at 5 vertices": true
+   },
+   "sum_v3": "7853235/2",
+   "Theta": "5235490",
+   "Xi": 4117230
+  },
+  {
+   "tag": "rotational51 + 300 3-cycle reversals",
+   "Gamma2": 4120,
+   "Gamma3": 36,
+   "zero_vertex_sums": true,
+   "zero_in_sums": true,
+   "checks": {
+    "L = 12 - sigma + G": true,
+    "sum_T u = 0": true,
+    "sum_C u = 0": true,
+    "sum u^2 = 16575 - G2/4 + G3/3": true,
+    "sum G u = 0": true,
+    "sum G^2 = 47 G2": true,
+    "sum G^3 = 43 G3 + 6 Theta": true,
+    "sum Phi_L(u) = sum u^2": true,
+    "cubic: sum (u^3 + c(L) u) = 0": true,
+    "S13: sum_T v = G2/2": true,
+    "S13: sum_C v = -G2/2": true,
+    "S13: sum v^2 = 16575 + 11.5 G2 + G3/3": true,
+    "S13 (R51) first form": true,
+    "S13 (R51) second form": true,
+    "sum v^3 = 3 sum Delta + 7.125 G2": true,
+    "sum v^3 = (3/2) sum u^2 G - (3/2) sum_C G u + (43 G3 + 6 Theta)/8": true,
+    "sum G l = 23 G2": true,
+    "sum G C(l,2) = 115 G2 + 5 G3 + Xi": true,
+    "local sums at 5 vertices (6900, C(k,2), C(l,2), kl)": true,
+    "local cubic identities at 5 vertices": true
+   },
+   "sum_v3": "13500",
+   "Theta": "18154",
+   "Xi": 26453
+  },
+  {
+   "tag": "rotational51 + 3000 3-cycle reversals",
+   "Gamma2": 3966,
+   "Gamma3": 120,
+   "zero_vertex_sums": true,
+   "zero_in_sums": true,
+   "checks": {
+    "L = 12 - sigma + G": true,
+    "sum_T u = 0": true,
+    "sum_C u = 0": true,
+    "sum u^2 = 16575 - G2/4 + G3/3": true,
+    "sum G u = 0": true,
+    "sum G^2 = 47 G2": true,
+    "sum G^3 = 43 G3 + 6 Theta": true,
+    "sum Phi_L(u) = sum u^2": true,
+    "cubic: sum (u^3 + c(L) u) = 0": true,
+    "S13: sum_T v = G2/2": true,
+    "S13: sum_C v = -G2/2": true,
+    "S13: sum v^2 = 16575 + 11.5 G2 + G3/3": true,
+    "S13 (R51) first form": true,
+    "S13 (R51) second form": true,
+    "sum v^3 = 3 sum Delta + 7.125 G2": true,
+    "sum v^3 = (3/2) sum u^2 G - (3/2) sum_C G u + (43 G3 + 6 Theta)/8": true,
+    "sum G l = 23 G2": true,
+    "sum G C(l,2) = 115 G2 + 5 G3 + Xi": true,
+    "local sums at 5 vertices (6900, C(k,2), C(l,2), kl)": true,
+    "local cubic identities at 5 vertices": true
+   },
+   "sum_v3": "50163/4",
+   "Theta": "14383",
+   "Xi": 23114
+  },
+  {
+   "tag": "rotational51 + 20000 3-cycle reversals",
+   "Gamma2": 4100,
+   "Gamma3": -450,
+   "zero_vertex_sums": true,
+   "zero_in_sums": true,
+   "checks": {
+    "L = 12 - sigma + G": true,
+    "sum_T u = 0": true,
+    "sum_C u = 0": true,
+    "sum u^2 = 16575 - G2/4 + G3/3": true,
+    "sum G u = 0": true,
+    "sum G^2 = 47 G2": true,
+    "sum G^3 = 43 G3 + 6 Theta": true,
+    "sum Phi_L(u) = sum u^2": true,
+    "cubic: sum (u^3 + c(L) u) = 0": true,
+    "S13: sum_T v = G2/2": true,
+    "S13: sum_C v = -G2/2": true,
+    "S13: sum v^2 = 16575 + 11.5 G2 + G3/3": true,
+    "S13 (R51) first form": true,
+    "S13 (R51) second form": true,
+    "sum v^3 = 3 sum Delta + 7.125 G2": true,
+    "sum v^3 = (3/2) sum u^2 G - (3/2) sum_C G u + (43 G3 + 6 Theta)/8": true,
+    "sum G l = 23 G2": true,
+    "sum G C(l,2) = 115 G2 + 5 G3 + Xi": true,
+    "local sums at 5 vertices (6900, C(k,2), C(l,2), kl)": true,
+    "local cubic identities at 5 vertices": true
+   },
+   "sum_v3": "18699/2",
+   "Theta": "15766",
+   "Xi": 24587
+  }
+ ],
+ "B": {
+  "lambda(L) = (L-10)^3/3 - 3(L-10)^2/4 + 2(L-10)/3": true,
+  "pi(L) - lambda(L) = (L-10)^2 + 3": true,
+  "pi(L) = (L-8)^3/3 - 7(L-8)^2/4 + 11(L-8)/3": true,
+  "bracket for k = 5 + j (lambda is attained at k = 5)": true,
+  "bracket for k = 4 + m (ratio 3/4)": true,
+  "grid L=4..200, k=5..L+39: Phi_L <= lambda(L)": true,
+  "grid: Phi_L + (4/3)(k-4) <= pi(L), and Phi_L at k=4 equals pi(L)": true,
+  "grid: max of (k-4)/(pi(L) - Phi_L)": "3/4",
+  "dlam_1(G) = G/6 + G^2/4 + G^3/3": true,
+  "dlam_0(G) = 5G/3 + 5G^2/4 + G^3/3": true,
+  "dpi_1(G) = 13G/6 + 5G^2/4 + G^3/3": true,
+  "dpi_0(G) = 17G/3 + 9G^2/4 + G^3/3": true,
+  "table L: (lambda, pi, e)": {
+   "8": [
+    "-7",
+    "0",
+    7
+   ],
+   "9": [
+    "-7/4",
+    "9/4",
+    4
+   ],
+   "10": [
+    "0",
+    "3",
+    3
+   ],
+   "11": [
+    "1/4",
+    "17/4",
+    4
+   ],
+   "12": [
+    "1",
+    "8",
+    7
+   ],
+   "13": [
+    "17/4",
+    "65/4",
+    12
+   ],
+   "14": [
+    "12",
+    "31",
+    19
+   ],
+   "15": [
+    "105/4",
+    "217/4",
+    28
+   ],
+   "16": [
+    "49",
+    "88",
+    39
+   ]
+  },
+  "Lemma C' at a DRT: RHS = 4T + 7C - 7225": true,
+  "twin baseline: sum_out lambda + sum_in pi": "20500",
+  "twin threshold 16575 + (4/3)*4100 - 20500": "4625/3"
+ },
+ "C": [
+  {
+   "seed": 1,
+   "Gamma2": 12,
+   "Gamma3": 0,
+   "Theta": "0",
+   "Lambda": 2,
+   "PsiC": "0",
+   "direct survival sum": "530",
+   "closed form 44.5G2+13G3+2Theta-2Lambda+2PsiC": "530",
+   "agree": true,
+   "sum_{Y in B} G^2 = 21 G2": true,
+   "sum_{Y in B} G^3 = 17 G3 + 6 Theta": true,
+   "PsiT + PsiC = -G2": true,
+   "PsiC = -PsiT_mid": true
+  },
+  {
+   "seed": 2,
+   "Gamma2": 44,
+   "Gamma3": 0,
+   "Theta": "3",
+   "Lambda": 4,
+   "PsiC": "-5",
+   "direct survival sum": "1946",
+   "closed form 44.5G2+13G3+2Theta-2Lambda+2PsiC": "1946",
+   "agree": true,
+   "sum_{Y in B} G^2 = 21 G2": true,
+   "sum_{Y in B} G^3 = 17 G3 + 6 Theta": true,
+   "PsiT + PsiC = -G2": true,
+   "PsiC = -PsiT_mid": true
+  },
+  {
+   "seed": 3,
+   "Gamma2": 98,
+   "Gamma3": -12,
+   "Theta": "-6",
+   "Lambda": -2,
+   "PsiC": "5",
+   "direct survival sum": "4207",
+   "closed form 44.5G2+13G3+2Theta-2Lambda+2PsiC": "4207",
+   "agree": true,
+   "sum_{Y in B} G^2 = 21 G2": true,
+   "sum_{Y in B} G^3 = 17 G3 + 6 Theta": true,
+   "PsiT + PsiC = -G2": true,
+   "PsiC = -PsiT_mid": true
+  },
+  {
+   "seed": 4,
+   "Gamma2": 224,
+   "Gamma3": 6,
+   "Theta": "74",
+   "Lambda": -9,
+   "PsiC": "15",
+   "direct survival sum": "10242",
+   "closed form 44.5G2+13G3+2Theta-2Lambda+2PsiC": "10242",
+   "agree": true,
+   "sum_{Y in B} G^2 = 21 G2": true,
+   "sum_{Y in B} G^3 = 17 G3 + 6 Theta": true,
+   "PsiT + PsiC = -G2": true,
+   "PsiC = -PsiT_mid": true
+  }
+ ],
+ "D": [
+  {
+   "outdeg_range": [
+    16,
+    33
+   ],
+   "sum Phi = sum u^2 + sum(10L-70)u": true,
+   "cubic identity": true
+  },
+  {
+   "outdeg_range": [
+    18,
+    32
+   ],
+   "sum Phi = sum u^2 + sum(10L-70)u": true,
+   "cubic identity": true
+  },
+  {
+   "outdeg_range": [
+    16,
+    35
+   ],
+   "sum Phi = sum u^2 + sum(10L-70)u": true,
+   "cubic identity": true
+  }
+ ],
+ "E": {
+  "all per-triple inequalities hold": true,
+  "equality cases (k)": {
+   "b0,sigma=1": [
+    5,
+    6,
+    7
+   ],
+   "b0,sigma=0": [
+    5,
+    8
+   ],
+   "B,sigma=1": [
+    6,
+    7
+   ],
+   "B,sigma=0": [
+    4,
+    7
+   ],
+   "other,sigma=1": [
+    5,
+    6,
+    7
+   ],
+   "other,sigma=0": [
+    5,
+    7
+   ]
+  },
+  "tables": {
+   "b0,sigma=1": [
+    [
+     5,
+     "409/12"
+    ],
+    [
+     6,
+     "409/12"
+    ],
+    [
+     7,
+     "409/12"
+    ],
+    [
+     8,
+     "111/4"
+    ],
+    [
+     9,
+     "35/4"
+    ],
+    [
+     10,
+     "-117/4"
+    ],
+    [
+     11,
+     "-1111/12"
+    ]
+   ],
+   "b0,sigma=0": [
+    [
+     5,
+     "440/9"
+    ],
+    [
+     6,
+     "140/3"
+    ],
+    [
+     7,
+     "439/9"
+    ],
+    [
+     8,
+     "440/9"
+    ],
+    [
+     9,
+     "122/3"
+    ],
+    [
+     10,
+     "160/9"
+    ],
+    [
+     11,
+     "-235/9"
+    ],
+    [
+     12,
+     "-292/3"
+    ]
+   ],
+   "B,sigma=1": [
+    [
+     4,
+     "527/12"
+    ],
+    [
+     5,
+     "535/12"
+    ],
+    [
+     6,
+     "563/12"
+    ],
+    [
+     7,
+     "563/12"
+    ],
+    [
+     8,
+     "487/12"
+    ],
+    [
+     9,
+     "287/12"
+    ],
+    [
+     10,
+     "-85/12"
+    ],
+    [
+     11,
+     "-677/12"
+    ]
+   ],
+   "B,sigma=0": [
+    [
+     4,
+     "143/3"
+    ],
+    [
+     5,
+     "136/3"
+    ],
+    [
+     6,
+     "140/3"
+    ],
+    [
+     7,
+     "143/3"
+    ],
+    [
+     8,
+     "133/3"
+    ],
+    [
+     9,
+     "98/3"
+    ],
+    [
+     10,
+     "26/3"
+    ],
+    [
+     11,
+     "-95/3"
+    ],
+    [
+     12,
+     "-277/3"
+    ]
+   ],
+   "other,sigma=1": [
+    [
+     5,
+     "1/4"
+    ],
+    [
+     6,
+     "1/4"
+    ],
+    [
+     7,
+     "1/4"
+    ],
+    [
+     8,
+     "-15/4"
+    ],
+    [
+     9,
+     "-63/4"
+    ],
+    [
+     10,
+     "-159/4"
+    ],
+    [
+     11,
+     "-319/4"
+    ]
+   ],
+   "other,sigma=0": [
+    [
+     5,
+     "1"
+    ],
+    [
+     6,
+     "0"
+    ],
+    [
+     7,
+     "1"
+    ],
+    [
+     8,
+     "0"
+    ],
+    [
+     9,
+     "-7"
+    ],
+    [
+     10,
+     "-24"
+    ],
+    [
+     11,
+     "-55"
+    ],
+    [
+     12,
+     "-104"
+    ]
+   ]
+  },
+  "bound on sum u^2": "108725/9",
+  "bound (float)": 12080.555555555555,
+  "true value of sum u^2": 16575,
+  "margin": "40450/9"
+ },
+ "summary": {
+  "A_all_ok": true,
+  "B_all_ok": true,
+  "C_all_ok": true,
+  "D_all_ok": true,
+  "E_ok": true
+ }
+}

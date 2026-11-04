@@ -1,0 +1,33 @@
+DRT twin (n = 0): maximum of sum u^2 under each constraint set; target 16575
+  LemmaC' (B-sum, global sigma-sums, sum Gu = 0, cubic): max=15033.3333, margin=1541.6667, excluded=True
+      duals: {'E1 b0,1,0': -0.25, 'E1 b0,0,0': -1.0, 'E1 W,1,0': -0.25, 'E1 W,0,0': -1.0, 'E1 WWB,1,0': -0.25, 'E1 WWB,0,0': -1.0, 'E1 WBB,1,0': -0.25, 'E1 WBB,0,0': -1.0, 'E1 B,1,0': -9.583333, 'E1 B,0,0': -13.333333, 'E2 B': 1.333333, 'E3 global sigma=0': 50.0, 'E3 global sigma=1': 40.0, 'E7 cubic': -0.666667}
+  + all region k-sums: max=15033.3333, margin=1541.6667, excluded=True
+      duals: {'E1 b0,0,0': -0.727273, 'E1 W,0,0': -0.727273, 'E1 WWB,0,0': -0.727273, 'E1 WBB,0,0': -0.727273, 'E1 B,1,0': -9.333333, 'E1 B,0,0': -13.060606, 'E2 b0': -0.045455, 'E2 W': -0.045455, 'E2 B': 1.287879, 'E2 WWB': -0.045455, 'E2 WBB': -0.045455, 'E3 global sigma=0': 50.045455, 'E3 global sigma=1': 40.045455, 'E7 cubic': -0.666667}
+  + region b0 sigma-sums and u^2: max=15033.3333, margin=1541.6667, excluded=True
+      duals: {'E1 b0,1,0': -0.25, 'E1 b0,0,0': -1.0, 'E1 W,1,0': -0.25, 'E1 W,0,0': -1.0, 'E1 WWB,1,0': -0.25, 'E1 WWB,0,0': -1.0, 'E1 WBB,1,0': -0.25, 'E1 WBB,0,0': -1.0, 'E1 B,1,0': -9.583333, 'E1 B,0,0': -13.333333, 'E2 B': 1.333333, 'E3 global sigma=0': 50.0, 'E3 global sigma=1': 40.0, 'E7 cubic': -0.666667}
+  + G u region sums and WBB pair sums: max=15033.3333, margin=1541.6667, excluded=True
+      duals: {'E1 b0,1,0': -0.25, 'E1 b0,0,0': -1.0, 'E1 W,1,0': -0.25, 'E1 W,0,0': -1.0, 'E1 WWB,1,0': -0.25, 'E1 WWB,0,0': -1.0, 'E1 WBB,1,0': -0.25, 'E1 WBB,0,0': -1.0, 'E1 B,1,0': -9.583333, 'E1 B,0,0': -13.333333, 'E2 B': 1.333333, 'E3 global sigma=0': 50.0, 'E3 global sigma=1': 40.0, 'E7 cubic': -0.666667}
+  LemmaC' + local cubic identities at b0 only: max=15033.3333, margin=1541.6667, excluded=True
+      duals: {'E1 b0,1,0': -0.25, 'E1 b0,0,0': -1.0, 'E1 W,1,0': -0.25, 'E1 W,0,0': -1.0, 'E1 WWB,1,0': -0.25, 'E1 WWB,0,0': -1.0, 'E1 WBB,1,0': -0.25, 'E1 WBB,0,0': -1.0, 'E1 B,1,0': -9.583333, 'E1 B,0,0': -13.333333, 'E2 B': 1.333333, 'E3 global sigma=0': 50.0, 'E3 global sigma=1': 40.0, 'E7 cubic': -0.666667}
+  LemmaC' + region k-sums + local cubic at b0: max=14563.6364, margin=2011.3636, excluded=True
+      duals: {'E1 b0,1,0': -89.704545, 'E1 b0,0,0': -105.363636, 'E1 W,1,0': -6.068182, 'E1 W,0,0': -9.0, 'E1 WWB,1,0': 15.75, 'E1 WWB,0,0': 16.454545, 'E1 WBB,1,0': 15.75, 'E1 WBB,0,0': 16.454545, 'E1 B,1,0': -10.431818, 'E1 B,0,0': -13.454545, 'E2 b0': 15.272727, 'E2 B': 3.272727, 'E2 WWB': -2.909091, 'E2 WBB': -2.909091, 'E3 global sigma=0': 71.090909, 'E3 global sigma=1': 57.454545, 'E7 cubic': -0.909091, 'E9 k3 vs W': -0.727273, 'E9 l3 vs B': 1.090909}
+  all: max=12080.5556, margin=4494.4444, excluded=True
+      duals: {'E1 b0,1,0': -34.083333, 'E1 b0,0,0': -48.888889, 'E1 W,1,0': -0.25, 'E1 W,0,0': -1.0, 'E1 WWB,1,0': -0.25, 'E1 WWB,0,0': -1.0, 'E1 WBB,1,0': -0.25, 'E1 WBB,0,0': -1.0, 'E1 B,1,0': -46.916667, 'E1 B,0,0': -47.666667, 'E2 B': 11.666667, 'E3 global sigma=0': 50.0, 'E3 b0 sigma=0': 29.111111, 'E3 global sigma=1': 40.0, 'E3 b0 sigma=1': 23.333333, 'E7 cubic': -0.666667, 'E8 b0 u^2': -4.666667, 'E9 l3 vs B': 2.333333}
+Model configurations: first n (Gamma2 = 2n) where the identities stop excluding
+  [LemmaC' (B-sum, global sigma-sums, sum Gu = 0, cubic)] lam_plus=0: first n not excluded = None (scan stopped at n = 35)
+  [LemmaC' (B-sum, global sigma-sums, sum Gu = 0, cubic)] lam_plus=3: first n not excluded = 22 (scan stopped at n = 41)
+  [LemmaC' (B-sum, global sigma-sums, sum Gu = 0, cubic)] lam_plus=5: first n not excluded = 22 (scan stopped at n = 47)
+  [LemmaC' (B-sum, global sigma-sums, sum Gu = 0, cubic)] lam_plus=7: first n not excluded = 25 (scan stopped at n = 55)
+  [LemmaC' + local cubic identities at b0 only] lam_plus=0: first n not excluded = None (scan stopped at n = 35)
+  [LemmaC' + local cubic identities at b0 only] lam_plus=3: first n not excluded = 22 (scan stopped at n = 41)
+  [LemmaC' + local cubic identities at b0 only] lam_plus=5: first n not excluded = 22 (scan stopped at n = 47)
+  [LemmaC' + local cubic identities at b0 only] lam_plus=7: first n not excluded = 25 (scan stopped at n = 55)
+  [all] lam_plus=0: first n not excluded = None (scan stopped at n = 35)
+  [all] lam_plus=3: first n not excluded = None (scan stopped at n = 41)
+  [all] lam_plus=5: first n not excluded = None (scan stopped at n = 47)
+  [all] lam_plus=7: first n not excluded = None (scan stopped at n = 55)
+Frozen Gamma2 = 0 multipliers (structural rows); first n not excluded:
+  lam_plus=0: first n not excluded = None; rows n=0,4,8..: 0:12080.828, 4:11545.493, 8:11010.158, 12:10474.824, 16:9939.489, 20:9404.154, 24:8868.82, 28:8333.485, 32:7798.15
+  lam_plus=3: first n not excluded = None; rows n=0,4,8..: 0:12080.828, 4:12165.492, 8:12250.157, 12:12334.822, 16:12419.486, 20:12504.151, 24:12588.815, 28:12673.48, 32:12758.145, 36:12842.809, 40:12927.474
+  lam_plus=5: first n not excluded = None; rows n=0,4,8..: 0:12080.828, 4:12240.158, 8:12399.489, 12:12558.819, 16:12718.15, 20:12877.481, 24:13036.811, 28:13196.142, 32:13355.472, 36:13514.803, 40:13674.133, 44:13833.464
+  lam_plus=7: first n not excluded = None; rows n=0,4,8..: 0:12080.828, 4:12282.824, 8:12484.821, 12:12686.817, 16:12888.814, 20:13090.81, 24:13292.807, 28:13494.803, 32:13696.8, 36:13898.796, 40:14100.792, 44:14302.789, 48:14504.785, 52:14706.782
