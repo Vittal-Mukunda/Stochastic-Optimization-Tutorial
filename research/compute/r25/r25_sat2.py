@@ -53,6 +53,14 @@ for a, b in itertools.combinations(range(n), 2):
         y = pool.id(('y', w, a, b)); ys.append(y)
         cnf.append([-y, arc(w, a)]); cnf.append([-y, arc(w, b)]); cnf.append([y, -arc(w, a), -arc(w, b)])
     r = tot(ys, cmin); cnf.append([r[cmin - 1]])
+if len(sys.argv) > 4 and sys.argv[4] == 's3':
+    for a, b, c in itertools.combinations(range(n), 3):
+        zs = []
+        for w in range(n):
+            if w in (a, b, c): continue
+            z = pool.id(('z', w, a, b, c)); zs.append(z)
+            cnf.append([-z, pool.id(('y', w, a, b))]); cnf.append([-z, arc(w, c)])
+        cnf.append(zs)
 O = list(range(1, m + 1)); R = list(range(m + 1, n))
 for b in O: cnf.append([arc(0, b)])
 for b in R: cnf.append([arc(b, 0)])
@@ -70,4 +78,4 @@ with Solver(name=solver_name, bootstrap_with=cnf.clauses) as s:
         beat = lambda a, b: (x(a, b) in mdl) if a < b else (x(b, a) not in mdl)
         In = [set(w for w in range(n) if w != v and beat(w, v)) for v in range(n)]
         for a in range(n): print(a, sorted(b for b in range(n) if b != a and beat(a, b)))
-        print("min codeg", min(len(In[a] & In[b]) for a, b in itertools.combinations(range(n), 2)))
+        print("min codeg", min(len(In[a] & In[b]) for a, b in itertools.combinations(range(n), 2)), "min k", min(len(In[a] & In[b] & In[c]) for a, b, c in itertools.combinations(range(n), 3)))

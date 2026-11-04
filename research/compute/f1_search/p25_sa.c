@@ -17,7 +17,10 @@ static long cost(int *cd,int *und){ long c=0; int d=0,u=0;
   if(cd)*cd=d; if(und)*und=u; return c; }
 int main(int argc,char**argv){ rs^=(uint64_t)atoll(argv[1])*0x9E3779B97F4A7C15ULL; for(int i=0;i<20;i++)rnd();
   long iters=atol(argv[2]); double t0=atof(argv[3]),t1=atof(argv[4]),lr=log(t1/t0);
-  for(int a=0;a<NV;a++) for(int s=1;s<=12;s++) inb[(a+s)%NV]|=1u<<a;   /* rotational start: a -> a+1..a+12 */
+  if(argc>5){ FILE*fp=fopen(argv[5],"r"); int v; char line[512]; for(int i=0;i<NV;i++) inb[i]=0;
+    while(fgets(line,sizeof line,fp)){ char*p=line; v=strtol(p,&p,10); if(*p!=':') continue; p++; int w;
+      while(sscanf(p,"%d",&w)==1){ inb[w]|=1u<<v; while(*p==' ')p++; while(*p&&*p!=' '&&*p!='\n')p++; } } fclose(fp); }
+  else for(int a=0;a<NV;a++) for(int s=1;s<=12;s++) inb[(a+s)%NV]|=1u<<a;   /* rotational start */
   long c=cost(NULL,NULL), best=c;
   for(long it=0;it<iters;it++){ double T=t0*exp(lr*(double)it/iters);
     int a=rnd()%NV,b=rnd()%NV,e=rnd()%NV; if(a==b||b==e||a==e) continue;
