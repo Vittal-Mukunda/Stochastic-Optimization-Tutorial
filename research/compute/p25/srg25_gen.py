@@ -138,7 +138,8 @@ def main():
             for D in descendants(A):
                 assert is_srg(D)
                 queue.append(D)
-    with open('research/compute/p25/srg25_12_5_6.txt', 'w') as fh:
+    out = sys.argv[2] if len(sys.argv) > 2 else 'research/compute/p25/srg25_12_5_6.txt'
+    with open(out, 'w') as fh:
         for _, _, A in C.reps:
             fh.write(''.join(str(int(A[i, j])) for i, j in itertools.combinations(range(N), 2)) + '\n')
     print('classes found:', len(C.reps))

@@ -112,7 +112,6 @@ def run_sat(Y, tlimit, solver='cadical195', s3=False):
     from pysat.card import CardEnc, EncType
     from pysat.formula import IDPool
     from pysat.solvers import Solver
-    import threading
     pool = IDPool()
     arc = {}
     for a, b in itertools.combinations(range(N), 2):
@@ -145,15 +144,12 @@ def run_sat(Y, tlimit, solver='cadical195', s3=False):
                 lits.append(z)
             cnf.append(lits)
     cnf.append([arc[(0, 1)]])
+    # pysat holds the GIL while solving, so a timer thread cannot interrupt it: the time limit of the CNF mode must be
+    # enforced from outside (e.g. `timeout`); tlimit is ignored here.
     t0 = time.time()
     with Solver(name=solver, bootstrap_with=cnf) as s:
-        timer = threading.Timer(tlimit, lambda: s.interrupt())
-        timer.start()
-        r = s.solve_limited(expect_interrupt=True)
-        timer.cancel()
+        r = s.solve()
         dt = time.time() - t0
-        if r is None:
-            return 'UNKNOWN', dt, None
         if not r:
             return 'UNSAT', dt, None
         model = set(l for l in s.get_model() if l > 0)
