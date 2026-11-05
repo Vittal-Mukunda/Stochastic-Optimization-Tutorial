@@ -1,0 +1,40 @@
+# Raw outputs of the 5 Nov §9 runs, copied from the session scratch logs (see proof/N52_SESSION_2026-11-04.md §9).
+## caypat.log
+Z25 1248 {'killed_D': 670, 'killed_Pf': 566, 'killed_EDC': 10, 'alive_degenerate': 2}
+Z5sq 85 {'killed_D': 42, 'killed_Pf': 31, 'alive_degenerate': 7, 'killed_EDC': 5}
+## blkpat5.log
+t = 1 {}
+t = 2 {(2, 'P'): 1}
+t = 3 {(3, 'P'): 23, (3, 'Pf'): 1}
+t = 4 {(4, 'P'): 326, (4, 'Pf'): 41, (4, 'EDC'): 1}
+t = 5 {(5, 'P'): 13218, (5, 'Pf'): 1071, (5, 'D'): 6, (5, 'EDC'): 34}
+survivors: 0
+## srg_cpsat.log
+{'src': 'npy:/tmp/claude-0/-home-user-Stochastic-Optimization-Tutorial/badd9d03-7113-5326-9200-f48122bb9efc/scratchpad/srgpat/srg00.npy', 'mode': 'cpsat', 'flags': ['workers=1'], 'status': 'UNKNOWN', 'time': 600.0, 'verified': None}
+{'src': 'npy:/tmp/claude-0/-home-user-Stochastic-Optimization-Tutorial/badd9d03-7113-5326-9200-f48122bb9efc/scratchpad/srgpat/srg01.npy', 'mode': 'cpsat', 'flags': ['workers=1'], 'status': 'UNKNOWN', 'time': 600.0, 'verified': None}
+## cal_cpsat13.log
+{'src': 'research/compute/r25/codeg5_reg25_example_seed13.txt', 'mode': 'cpsat', 'flags': ['workers=2'], 'status': 'OPTIMAL', 'time': 0.8, 'verified': True}
+## s4_67_z67.log
+{'N': 67, 'k': 4, 'sigma': '67^1 1^0', 'F': False, 'status': 'UNKNOWN', 'time_limit': 1200.0, 'time': 1200.1}
+## s4F_67_z67.log
+{'N': 67, 'k': 4, 'sigma': '67^1 1^0', 'F': True, 'status': 'UNKNOWN', 'time_limit': 900.0, 'time': 900.1}
+## s4_52_z13.log
+{'N': 52, 'k': 4, 'sigma': '13^4 1^0', 'F': False, 'status': 'UNKNOWN', 'time_limit': 2400.0, 'time': 2400.1}
+## s4_52_z17.log
+{'N': 52, 'k': 4, 'sigma': '17^3 1^1', 'F': False, 'status': 'UNKNOWN', 'time_limit': 2400.0, 'time': 2400.1}
+## Cayley degenerate survivors
+    {'y': (0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 0, 1), 'status': 'degenerate', 'nsols': 0, 'g_factors': [(2, 1), (2, 5)]}
+    {'y': (0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1), 'status': 'degenerate', 'nsols': 0, 'g_factors': [(2, 1), (2, 5)]}
+    {'y': (0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 3, 1), 'status': 'degenerate', 'nsols': 0, 'g_factors': [(2, 1), (2, 1), (2, 2), (1, 4)]}
+    {'y': (0, 0, 0, 0, 0, 1, 1, 0, 2, 0, 2, 0), 'status': 'degenerate', 'nsols': 0, 'g_factors': [(2, 2), (2, 2), (1, 4)]}
+    {'y': (0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1), 'status': 'degenerate', 'nsols': 0, 'g_factors': [(2, 2), (2, 2), (1, 4)]}
+    {'y': (0, 0, 0, 0, 0, 1, 2, 0, 0, 2, 0, 1), 'status': 'degenerate', 'nsols': 0, 'g_factors': [(2, 2), (2, 2), (1, 4)]}
+    {'y': (0, 0, 0, 0, 0, 1, 2, 2, 0, 1, 0, 0), 'status': 'degenerate', 'nsols': 0, 'g_factors': [(2, 2), (1, 4), (1, 4)]}
+    {'y': (0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 1), 'status': 'degenerate', 'nsols': 0, 'g_factors': [(2, 2), (2, 2), (1, 4)]}
+    {'y': (0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1), 'status': 'degenerate', 'nsols': 0, 'g_factors': [(2, 1), (2, 5)]}
+## P25-j / P26 / symmetric runs: as printed in the session (status per run)
+P25j1 Z3 8+1 UNSAT 1.0s | P25j2 Z11 2+3 UNSAT 0.1s | P25j3 Z3 8+1 SAT 128.5s | P25j4 Z3 8+1 UNSAT 1.2s | P25j5 Z5 SAT 1.9s | P25j6 Z3 8+1 UNKNOWN 200s
+P25j1 Z5 4+5 UNKNOWN 150s | P25j1 Z3 7+4 UNSAT 62.0s | P25j2 Z5 4+5 UNSAT 13.0s | P25j2 Z3 7+4 UNSAT 7.8s | P25j4 Z5 4+5 UNSAT 0.5s | P25j4 Z3 7+4 UNKNOWN 150s
+P26 Z5 5+1 SAT 0.9s | P26 Z13 2 SAT 0.0s | R25 Z5 SAT 0.3s | R25 Z3 8+1 SAT 1.3s | P25 Z5 SAT 0.3s | P25 Z3 8+1 SAT 2.5s | NDR Z5 SAT 0.2s | NDRS3 Z5 SAT 1.6s
+S3 N19 Z19 SAT 0.0s | S3 N19 Z3 6+1 SAT 0.2s | S3 N18 Z3 6 UNKNOWN 60s | exact-pattern CP-SAT seed12 OPTIMAL 1.0s, seed13 OPTIMAL 0.8s, seed13 nocommute UNKNOWN 300s
+labelled Z5-invariant P25 solutions enumerated: 1572 in 170 s (cap, not exhaustive)
