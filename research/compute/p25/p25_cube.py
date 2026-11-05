@@ -37,7 +37,7 @@ def cubes(n, c):
             out.append((a, b, max(a + b) if s > 0 else 0))
     return out
 
-OPTS = {'enc': 'seqcounter', 'outcodeg': False, 'nohp': False}
+OPTS = {'enc': 'seqcounter', 'outcodeg': False, 'nohp': False, 'nohp_R': False, 'lexO': False}
 
 def build(n, c, alpha, beta, m, with_s3=True):
     k = (n - 1) // 2
@@ -60,8 +60,24 @@ def build(n, c, alpha, beta, m, with_s3=True):
         card([arc(p, r) for p in R if p != r], c + alpha[i], c + alpha[i])
     for blockvals, verts in ((beta, O), (alpha, R)):      # Hamiltonian path inside each block of equal values
         if OPTS['nohp']: break
+        if OPTS['nohp_R'] and verts is R: continue
+        if OPTS['lexO'] and verts is O: continue
         for i in range(k - 1):
             if blockvals[i] == blockvals[i + 1]: cnf.append([arc(verts[i], verts[i + 1])])
+    if OPTS['lexO']:                                      # lex order of rows (arcs from R) inside each beta-block of O
+        for i in range(k - 1):
+            if beta[i] != beta[i + 1]: continue
+            A = [arc(r, O[i]) for r in R]; Bv = [arc(r, O[i + 1]) for r in R]
+            e_prev = None
+            for t, (av, bv) in enumerate(zip(A, Bv)):
+                pre = [] if e_prev is None else [-e_prev]
+                cnf.append(pre + [av, -bv])                   # equal so far -> a_t >= b_t
+                if t < len(A) - 1:
+                    e = pool.id(('lexeq', O[i], t))
+                    cnf.append(pre + [-av, -bv, e]); cnf.append(pre + [av, bv, e])
+                    if e_prev is not None: cnf.append([-e, e_prev])
+                    cnf.append([-e, -av, bv]); cnf.append([-e, av, -bv])
+                    e_prev = e
     cap = c + m
     for a, b in itertools.combinations(range(n), 2):      # c <= codegree <= c + m
         ys = []
