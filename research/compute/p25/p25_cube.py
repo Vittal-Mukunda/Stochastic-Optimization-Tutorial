@@ -37,6 +37,8 @@ def cubes(n, c):
             out.append((a, b, max(a + b) if s > 0 else 0))
     return out
 
+OPTS = {'enc': 'seqcounter', 'outcodeg': False, 'nohp': False}
+
 def build(n, c, alpha, beta, m, with_s3=True):
     k = (n - 1) // 2
     pool = IDPool(); cnf = CNF()
@@ -45,8 +47,9 @@ def build(n, c, alpha, beta, m, with_s3=True):
     for i, j in itertools.combinations(range(n), 2): x(i, j)
     O = list(range(1, k + 1)); R = list(range(k + 1, n))
     def card(lits, lo, hi):
-        if lo > 0: cnf.extend(CardEnc.atleast(lits=lits, bound=lo, vpool=pool, encoding=EncType.seqcounter).clauses)
-        if hi < len(lits): cnf.extend(CardEnc.atmost(lits=lits, bound=hi, vpool=pool, encoding=EncType.seqcounter).clauses)
+        enc = getattr(EncType, OPTS['enc'])
+        if lo > 0: cnf.extend(CardEnc.atleast(lits=lits, bound=lo, vpool=pool, encoding=enc).clauses)
+        if hi < len(lits): cnf.extend(CardEnc.atmost(lits=lits, bound=hi, vpool=pool, encoding=enc).clauses)
     for a in range(n):                                   # regular: out-degree exactly k
         card([arc(a, b) for b in range(n) if b != a], k, k)
     for b in O: cnf.append([arc(0, b)])                   # vertex 0 beats O, is beaten by R
@@ -56,6 +59,7 @@ def build(n, c, alpha, beta, m, with_s3=True):
     for i, r in enumerate(R):                             # in-degree of r inside T[R] = c + alpha_i
         card([arc(p, r) for p in R if p != r], c + alpha[i], c + alpha[i])
     for blockvals, verts in ((beta, O), (alpha, R)):      # Hamiltonian path inside each block of equal values
+        if OPTS['nohp']: break
         for i in range(k - 1):
             if blockvals[i] == blockvals[i + 1]: cnf.append([arc(verts[i], verts[i + 1])])
     cap = c + m
@@ -66,6 +70,13 @@ def build(n, c, alpha, beta, m, with_s3=True):
             y = pool.id(('y', w, a, b)); ys.append(y)
             cnf.append([-y, arc(w, a)]); cnf.append([-y, arc(w, b)]); cnf.append([y, -arc(w, a), -arc(w, b)])
         card(ys, c, min(cap, len(ys)))
+        if OPTS['outcodeg']:                              # redundant: common out-neighbours (= codegree when regular)
+            ws = []
+            for w in range(n):
+                if w in (a, b): continue
+                v = pool.id(('v', w, a, b)); ws.append(v)
+                cnf.append([-v, arc(a, w)]); cnf.append([-v, arc(b, w)]); cnf.append([v, -arc(a, w), -arc(b, w)])
+            card(ws, c, min(cap, len(ws)))
     if with_s3:                                           # every triple dominated
         for a, b, d in itertools.combinations(range(n), 3):
             zs = []
@@ -101,11 +112,15 @@ def main():
     idx = int(sys.argv[4]); a, b, m = C[idx]
     if cmd == 'dimacs':
         cnf, pool, x = build(n, c, a, b, m); cnf.to_file(sys.argv[5]); return
-    solver = sys.argv[5]; with_s3 = not (len(sys.argv) > 6 and sys.argv[6] == 'nos3')
+    solver = sys.argv[5]; flags = sys.argv[6:]; with_s3 = 'nos3' not in flags
+    for f in flags:
+        if f.startswith('enc='): OPTS['enc'] = f[4:]
+        if f == 'outcodeg': OPTS['outcodeg'] = True
+        if f == 'nohp': OPTS['nohp'] = True
     from pysat.solvers import Solver
     t0 = time.time(); cnf, pool, x = build(n, c, a, b, m, with_s3)
     rec = {"n": n, "c": c, "index": idx, "alpha": ''.join(map(str, a)), "beta": ''.join(map(str, b)), "m": m,
-           "s3": with_s3, "solver": solver, "vars": pool.top, "clauses": len(cnf.clauses)}
+           "s3": with_s3, "solver": solver, "opts": dict(OPTS), "vars": pool.top, "clauses": len(cnf.clauses)}
     with Solver(name=solver, bootstrap_with=cnf.clauses) as S:
         res = S.solve(); rec["time"] = round(time.time() - t0, 1)
         if res:
